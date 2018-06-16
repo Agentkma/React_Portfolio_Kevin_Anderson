@@ -1,8 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import styled from "styled-components";
 
 // import Aux from '../Aux/Aux';
-// import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
-import NavDrawer from "../../components/Navigation/NavDrawer";
+import Nav from "../../Components/Navigation";
+import NavDrawer from "../../Components/Navigation/NavDrawer";
+
+const Main = styled.main`
+    padding: 4em;
+    background: papayawhip;
+`;
 
 class Layout extends Component {
     state = {
@@ -21,22 +27,16 @@ class Layout extends Component {
 
     render() {
         return (
-            <Aux>
-                <Toolbar drawerToggleClicked={this.navDrawerToggleHandler} />
-                <NavDrawer
+            <Fragment>
+                <Nav drawerToggleClicked={this.navDrawerToggleHandler} />
+                {/* <NavDrawer
                     open={this.state.showNavDrawer}
                     closed={this.navDrawerClosedHandler}
-                />
-                <main className={classes.Content}>{this.props.children}</main>
-            </Aux>
+                /> */}
+                <Main>{this.props.children}</Main>
+            </Fragment>
         );
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        isAuthenticated: state.auth.token !== null
-    };
-};
-
-export default connect(mapStateToProps)(Layout);
+export default Layout;

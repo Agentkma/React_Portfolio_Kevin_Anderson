@@ -1,0 +1,149 @@
+/* MAIN-BG.CSS contains Background Image paths & definition rules powered by CSS
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.nav-bg {
+	background-image: url('../images/bg/about-bg-1920x1080.jpg');
+}
+
+.about-bg {
+	background-image: url('../images/bg/about-bg-1920x1080.jpg');
+}
+
+.about-bg-01 {
+	background-image: url('../images/about/about-coding.jpg');
+}
+
+.about-bg-02 {
+	background-image: url('../images/about/about-learn.jpg');
+}
+
+.about-bg-03 {
+	background-image: url('../images/about/about-story1.jpg');
+}
+
+.about-bg-04 {
+	background-image: url('../images/about/about-goals.jpg');
+}
+
+.contact-bg {
+	background-image: url('../images/bg/about-bg-1920x1080.jpg');
+}
+
+.project-01-carousel-item-01 {
+	background-image: url('../images/project/project01/gEats6-1200x700.png');
+}
+
+.project-01-carousel-item-02 {
+	background-image: url('../images/project/project01/gEats2-1200x700.png');
+}
+
+.project-01-carousel-item-03 {
+	background-image: url('../images/project/project01/gEats3-1200x700.png');
+}
+
+.project-02-carousel-item-01 {
+	background-image: url('../images/project/project02/macroPal1-1200x700.png');
+}
+
+.project-02-carousel-item-02 {
+	background-image: url('../images/project/project02/macroPal2-1200x700.png');
+}
+
+.project-02-carousel-item-03 {
+	background-image: url('../images/project/project02/macroPal3-1200x700.png');
+}
+
+.project-05-carousel-item-01 {
+	background-image: url('../images/project/project05/angularToDo1-1200x700.png');
+}
+
+.project-05-carousel-item-02 {
+	background-image: url('../images/project/project05/angularToDo2-1200x700.png');
+}
+.project-05-carousel-item-03 {
+	background-image: url('../images/project/project05/angularToDo3-1200x700.png');
+}
+
+.project-05-carousel-item-04 {
+	background-image: url('../images/project/project05/angularToDo4-1200x700.png');
+}
+
+.project-05-carousel-item-05 {
+	background-image: url('../images/project/project05/angularWeather1-1200x700.png');
+}
+
+.project-05-carousel-item-06 {
+	background-image: url('../images/project/project05/angularWeather2-1200x700.png');
+}
+
+.project-05-carousel-item-07 {
+	background-image: url('../images/project/project05/KaptureAngularJSInbox-1200x700.gif');
+}
+
+.project-08-carousel-item-01 {
+	background-image: url('../images/project/project08/KaptureTerraGOstart.gif');
+}
+
+.project-08-carousel-item-02 {
+	background-image: url('../images/project/project08/KaptureTerraGOlogin.gif');
+}
+
+.project-08-carousel-item-03 {
+	background-image: url('../images/project/project08/KaptureTerraGORideMap1.0.gif');
+}
+
+.project-08-carousel-item-04 {
+	background-image: url('../images/project/project08/KaptureTerraGOrideSummary.gif');
+}
+
+.project-08-carousel-item-05 {
+	background-image: url('../images/project/project08/KaptureTerraGOProfileAndRideView.gif');
+}
+
+.project-08-carousel-item-06 {
+	background-image: url('../images/project/project08/KaptureTerraGORideDelete.gif');
+}
+
+.parallax-showcase-01 {
+	background-image: url('../images/project/project03/safeNav1-1200x700.png');
+}
+
+.parallax-showcase-02 {
+	background-image: url('../images/project/project03/safeNav2-1200x700.png');
+}
+
+.parallax-showcase-03 {
+	background-image: url('../images/project/project03/safeNav3-800x600.png');
+}
+
+.parallax-showcase-04 {
+	background-image: url('../images/project/project06/reactRSVP8-1200x700.png');
+}
+
+.parallax-showcase-05 {
+	background-image: url('../images/project/project06/reactRSVP5-1200x700.png');
+}
+
+.parallax-showcase-06 {
+	background-image: url('../images/project/project06/reactRSVP2-1200x700.png');
+}
+
+.parallax-showcase-07 {
+	background-image: url('../images/project/project07/AngularPhotoLog7-1200x700.png');
+}
+
+.parallax-showcase-08 {
+	background-image: url('../images/project/project07/AngularPhotoLog-1200x700.png');
+}
+
+.parallax-showcase-09 {
+	background-image: url('../images/project/project07/AngularPhotoLog2-1200x700.png');
+}
+
+.call-to-action-bg {
+	background-image: url('../images/bg/about-interested-1600x1006.jpg');
+}
+
+.stats-bg {
+	background-image: url('../images/about/about-stats1.jpg');
+}

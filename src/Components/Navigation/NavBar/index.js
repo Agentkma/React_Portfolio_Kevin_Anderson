@@ -6,7 +6,7 @@ import NavHamburger from "../NavHamburger";
 
 const Logo = styled.div`
     width: auto;
-    height: 25px;
+    height: 90%;
 `;
 const LogoImg = styled.img`
     width: auto;
@@ -15,11 +15,12 @@ const LogoImg = styled.img`
 
 const MenuCollapser = styled.div`
     /* background-image: url("../../../Assets/Images/logo.png"); */
+
     position: relative;
     background-color: #fff;
     color: #444;
     width: 100%;
-    height: 2rem;
+    height: 7.5vh;
     line-height: 2rem;
     font-family: "Montserrat", sans-serif;
     font-size: 0.9rem;
@@ -48,9 +49,3 @@ export const NavBar = ({ click }) => {
 };
 
 export default NavBar;
-
-{
-    /* <div class="filter-notification signature-karl">
-                        <a class="font3bold" href="#"><span class="ion-shuffle black"></span></a>
-                    </div> */
-}

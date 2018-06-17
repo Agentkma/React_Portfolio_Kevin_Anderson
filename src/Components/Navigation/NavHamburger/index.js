@@ -5,40 +5,51 @@ import styled from "styled-components";
 
 const Container = styled.div`
     display: flex;
+    align-items: center;
     position: absolute;
     right: 8px;
     top: 0;
+    height: 90%;
 `;
 
 const StyledCodeIcon = styled(CodeIcon)`
     cursor: pointer;
-    width: 40px !important;
-    padding: 7px 10px;
-    position: relative;
-    text-align: center;
-    &hover,
-    &focus {
-        background-image: none;
-        background-color: #eee;
-        color: #000;
-    }
-`;
-
-const HamburgerDiv = styled.div`
-    width: 40px;
-    background-repeat: repeat-x;
-    color: #ffffff;
+    width: auto !important;
+    height: 1rem;
     padding: 7px 10px;
     margin: auto;
-    cursor: pointer;
-    font-size: 14px;
-    text-align: center;
-    box-sizing: border-box;
     &:hover,
     &:focus {
         background-image: none;
         background-color: #eee;
         color: #000;
+    }
+    @media (min-width: 768px) {
+        height: 2rem;
+    }
+`;
+
+const HamburgerDiv = styled.div`
+    width: auto !important;
+    height: 1rem;
+    background-repeat: repeat-x;
+    color: #ffffff;
+    margin: auto;
+    cursor: pointer;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    &:hover,
+    &:focus {
+        background-image: none;
+        background-color: #eee;
+        color: #000;
+    }
+    @media (min-width: 768px) {
+        height: 2rem;
+        padding: 7px 10px;
     }
 `;
 
@@ -47,8 +58,13 @@ const HamburgerBar = styled.span`
     border-radius: 1px 1px 1px 1px;
     display: block;
     height: 2px;
-    width: 18px;
+    width: 1.2rem;
     margin: 2px 0;
+    @media (min-width: 768px) {
+        width: 1.5rem;
+        height: 3px;
+        margin: 3px 0;
+    }
 `;
 
 const NavHamburger = ({ click }) => {

@@ -13,9 +13,7 @@ const Li = styled.li`
     &:last-child {
         margin-right: 0;
     }
-    color: #666;
     display: block;
-    font-size: 14px;
     font-weight: normal;
     line-height: 21px;
     padding: 6px 0;
@@ -29,7 +27,6 @@ const Li = styled.li`
         width: 75%;
         margin: 0 auto;
         background: transparent;
-        color: black;
         &:last-child {
             margin: 0 auto;
         }
@@ -45,17 +42,18 @@ const StyledNavLink = styled(NavLink)`
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
-    color: #666;
+    color: ${props => props.theme.colorFontPrimary};
+    font-size: ${props => props.theme.fontSizeSmall};
     font-weight: normal;
     @media (min-width: 768px) {
         text-transform: lowercase;
-        color: white;
-        font-size: 1.5rem;
+        color: ${props => props.theme.colorFontSecondary};
+        font-size: ${props => props.theme.fontSizeSecondary};
         font-weight: 400;
         line-height: 2rem;
         letter-spacing: 0.125rem;
         &:hover {
-            color: #ff2238 !important;
+            color: ${props => props.theme.colorFontHoverPrimary};
         }
     }
 `;

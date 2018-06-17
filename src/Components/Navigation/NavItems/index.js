@@ -18,6 +18,7 @@ const Ul = styled.ul`
         background: transparent;
     }
 `;
+// const Li = Ul.withComponent("li");
 
 const Li = styled.li`
     position: relative;
@@ -27,9 +28,10 @@ const Li = styled.li`
     &:first-child {
         border-left: 0;
     }
-    color: #666;
+    color: ${props => props.theme.colorFontPrimary};
+    text-transform: uppercase;
     display: block;
-    font-size: 14px;
+    font-size: ${props => props.theme.fontSizeSmall};
     font-weight: normal;
     line-height: 21px;
     padding: 6px 0;
@@ -43,10 +45,9 @@ const Li = styled.li`
         width: 75%;
         margin: 0 auto;
         background: transparent;
-        color: white;
+        color: ${props => props.theme.colorFontSecondary};
         text-transform: lowercase;
-        color: white;
-        font-size: 1.5rem;
+        font-size: ${props => props.theme.fontSizeSecondary};
         font-weight: 400;
         line-height: 2rem;
         letter-spacing: 0.125rem;
@@ -73,6 +74,8 @@ export class NavItems extends Component {
     };
 
     render() {
+        // const { theme } = this.props;
+
         const projectSubUl = this.state.showSubUl ? (
             <ProjectSubUl>
                 <NavItem link="/project1">100</NavItem>

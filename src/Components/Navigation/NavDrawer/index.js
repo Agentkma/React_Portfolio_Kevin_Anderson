@@ -1,4 +1,5 @@
 // ! External
+import CloseIcon from "@material-ui/icons/Close";
 import React from "react";
 // import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -28,14 +29,26 @@ const Nav = styled.nav`
     }
 `;
 
-export const NavDrawer = () => {
+const StyledCloseIcon = styled(CloseIcon)`
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    font-size: 2rem;
+    color: #ffffff;
+    visibility: hidden @media (min-width: 768px) {
+        visibility: visible;
+    }
+`;
+
+export const NavDrawer = props => {
     return (
         <Nav role="navigation">
+            <StyledCloseIcon />
             <NavItems />
         </Nav>
     );
 };
 
 // index.propTypes = {};
-
+//theme={theme}
 export default NavDrawer;

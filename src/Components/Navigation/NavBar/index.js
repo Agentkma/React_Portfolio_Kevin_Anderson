@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import NavHamburger from "../NavHamburger";
+// import { Rotate } from "../../../Theme/animations";
 
 const Logo = styled.div`
     width: auto;
@@ -14,8 +15,6 @@ const LogoImg = styled.img`
 `;
 
 const MenuCollapser = styled.div`
-    /* background-image: url("../../../Assets/Images/logo.png"); */
-
     position: relative;
     background-color: #fff;
     color: #444;
@@ -28,10 +27,7 @@ const MenuCollapser = styled.div`
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 0 1.125rem;
-    /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);*/
     box-sizing: border-box;
-    /* -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box; */
 `;
 
 export const NavBar = ({ click }) => {

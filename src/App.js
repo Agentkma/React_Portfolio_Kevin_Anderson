@@ -1,11 +1,13 @@
 // ! External
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import { withTheme, ThemeProvider } from "styled-components";
 
-// // ! Internal
+// ! Internal
 // import asyncComponent from "./hoc/asyncComponent";
 import Layout from "./hoc/Layout";
 import Home from "./Pages/Home";
+import { theme } from "./Theme";
 
 // ! Example async component...?
 // const asyncCheckout = asyncComponent(() => {
@@ -16,10 +18,11 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Layout>
-                    <Switch>
-                        <Route path="/" component={Home} />
-                        {/* <Route path="/project1" component={project1} />
+                <ThemeProvider theme={theme}>
+                    <Layout theme={theme}>
+                        <Switch>
+                            <Route path="/" component={Home} />
+                            {/* <Route path="/project1" component={project1} />
                     <Route path="/project2" component={Project2} />
                       <Route path="/project3" component={Project3} />
                         <Route path="/project4" component={Project4} />
@@ -29,12 +32,13 @@ class App extends Component {
                                 <Route path="/project8" component={Project8} />
                     <Route path="/contact" component={contact} />
                     <Route path="/about" component={about} /> */}
-                        <Redirect to="/" />
-                    </Switch>
-                </Layout>
+                            <Redirect to="/" />
+                        </Switch>
+                    </Layout>
+                </ThemeProvider>
             </div>
         );
     }
 }
 
-export default App;
+export default withTheme(App);

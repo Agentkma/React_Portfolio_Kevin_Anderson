@@ -31,7 +31,10 @@ export class Navigation extends Component {
         // const { theme } = this.props.theme;
 
         const navDrawer = this.state.showNavDrawer ? (
-            <NavDrawer onClick={this.navDrawerClosedHandler} />
+            <NavDrawer
+                onClick={this.navDrawerClosedHandler}
+                click={this.navDrawerClosedHandler}
+            />
         ) : null;
         return (
             <div>

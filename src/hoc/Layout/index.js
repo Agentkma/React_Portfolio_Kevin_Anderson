@@ -2,8 +2,7 @@ import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 
 // import Aux from '../Aux/Aux';
-import Nav from "../../Components/Navigation";
-import NavDrawer from "../../Components/Navigation/NavDrawer";
+import Navigation from "../../Components/Navigation";
 
 const Main = styled.main`
     padding: 4em;
@@ -11,28 +10,10 @@ const Main = styled.main`
 `;
 
 class Layout extends Component {
-    state = {
-        showNavDrawer: false
-    };
-
-    navDrawerClosedHandler = () => {
-        this.setState({ showNavDrawer: false });
-    };
-
-    navDrawerToggleHandler = () => {
-        this.setState(prevState => {
-            return { showNavDrawer: !prevState.showNavDrawer };
-        });
-    };
-
     render() {
         return (
             <Fragment>
-                <Nav drawerToggleClicked={this.navDrawerToggleHandler} />
-                {/* <NavDrawer
-                    open={this.state.showNavDrawer}
-                    closed={this.navDrawerClosedHandler}
-                /> */}
+                <Navigation />
                 <Main>{this.props.children}</Main>
             </Fragment>
         );

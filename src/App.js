@@ -1,9 +1,9 @@
 // ! External
 import React, { Component } from "react";
-import { Route, Switch, withRouter, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
-// ! Internal
-import asyncComponent from "./hoc/asyncComponent";
+// // ! Internal
+// import asyncComponent from "./hoc/asyncComponent";
 import Layout from "./hoc/Layout";
 import Home from "./Pages/Home";
 
@@ -17,8 +17,9 @@ class App extends Component {
         return (
             <div>
                 <Layout>
-                    <Route path="/" component={Home} />
-                    {/* <Route path="/project1" component={project1} />
+                    <Switch>
+                        <Route path="/" component={Home} />
+                        {/* <Route path="/project1" component={project1} />
                     <Route path="/project2" component={Project2} />
                       <Route path="/project3" component={Project3} />
                         <Route path="/project4" component={Project4} />
@@ -28,7 +29,8 @@ class App extends Component {
                                 <Route path="/project8" component={Project8} />
                     <Route path="/contact" component={contact} />
                     <Route path="/about" component={about} /> */}
-                    <Redirect to="/" />
+                        <Redirect to="/" />
+                    </Switch>
                 </Layout>
             </div>
         );

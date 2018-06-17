@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import NavItem from "./NavItem";
@@ -34,7 +34,7 @@ export const NavItems = () => {
                     <NavItem link="/project8">800</NavItem>
                 </ul>
             </NavItem>
-            <NavItem link="/contact">Say Hello</NavItem>}
+            <NavItem link="/contact">Say Hello</NavItem>
         </Ul>
     );
 };

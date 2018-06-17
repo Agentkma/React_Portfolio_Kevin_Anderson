@@ -25,16 +25,17 @@ const Li = styled.li`
     -moz-transition: background-color 0.5s ease-out;
     -webkit-transition: background-color 0.5s ease-out;
     &:hover {
-    background-color: #eee;
-    text-decoration: none;
+        background-color: #eee;
+        text-decoration: none;
+    }
 `;
 
-const NavItem = props => (
-    <li>
+export const NavItem = props => (
+    <Li>
         <NavLink to={props.link} exact={props.exact}>
             {props.children}
         </NavLink>
-    </li>
+    </Li>
 );
 
 export default NavItem;

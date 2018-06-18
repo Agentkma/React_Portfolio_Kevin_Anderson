@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 // import PropTypes from "prop-types";
-import styled from "styled-components";
-import NavItem from "./NavItem";
+import styled, { extend } from "styled-components";
+
+// ! Internal
+import NavItem, { Li, StyledNavLink } from "./NavItem";
 
 const Ul = styled.ul`
     text-align: center;
@@ -18,9 +20,20 @@ const Ul = styled.ul`
         background: transparent;
     }
 `;
-// const Li = Ul.withComponent("li");
 
-const Li = styled.li`
+const StyledNavItem = StyledNavLink.extend`
+    @media (min-width: 768px) {
+        font-size: 0.75rem;
+        line-height: 0.5rem !important;
+    }
+`;
+
+const StyledSubLi = Li.extend`
+    padding: 3px 0;
+    line-height: 1rem !important;
+`;
+
+const StyledLi = styled.li`
     position: relative;
     display: inline-block;
     background-color: #fff;
@@ -51,7 +64,6 @@ const Li = styled.li`
         font-weight: 400;
         line-height: 2rem;
         letter-spacing: 0.125rem;
-
         &:hover {
             color: #ff2238 !important;
             background: transparent;
@@ -59,9 +71,6 @@ const Li = styled.li`
         }
     }
 `;
-
-const ProjectSubUl = styled.ul``;
-
 export class NavItems extends Component {
     state = {
         showSubUl: false
@@ -77,16 +86,32 @@ export class NavItems extends Component {
         // const { theme } = this.props;
 
         const projectSubUl = this.state.showSubUl ? (
-            <ProjectSubUl>
-                <NavItem link="/project1">100</NavItem>
-                <NavItem link="/project2">200</NavItem>
-                <NavItem link="/project3">300</NavItem>
-                <NavItem link="/project4">400</NavItem>
-                <NavItem link="/project5">500</NavItem>
-                <NavItem link="/project6">600</NavItem>
-                <NavItem link="/project7">700</NavItem>
-                <NavItem link="/project8">800</NavItem>
-            </ProjectSubUl>
+            <ul>
+                <StyledSubLi>
+                    <StyledNavItem to="/project1">100</StyledNavItem>
+                </StyledSubLi>
+                <StyledSubLi>
+                    <StyledNavItem to="/project2">200</StyledNavItem>
+                </StyledSubLi>
+                <StyledSubLi>
+                    <StyledNavItem to="/project3">300</StyledNavItem>
+                </StyledSubLi>
+                <StyledSubLi>
+                    <StyledNavItem to="/project4">400</StyledNavItem>
+                </StyledSubLi>
+                <StyledSubLi>
+                    <StyledNavItem to="/project5">500</StyledNavItem>
+                </StyledSubLi>
+                <StyledSubLi>
+                    <StyledNavItem to="/project6">600</StyledNavItem>
+                </StyledSubLi>
+                <StyledSubLi>
+                    <StyledNavItem to="/project7">700</StyledNavItem>
+                </StyledSubLi>
+                <StyledSubLi>
+                    <StyledNavItem to="/project8">800</StyledNavItem>
+                </StyledSubLi>
+            </ul>
         ) : null;
 
         return (
@@ -95,10 +120,10 @@ export class NavItems extends Component {
                     Portfolio
                 </NavItem>
                 <NavItem link="/about">About</NavItem>
-                <Li link="/projects" onClick={this.subUlToggleHandler}>
-                    Projects
+                <StyledLi onClick={this.subUlToggleHandler}>
+                    Project View
                     {projectSubUl}
-                </Li>
+                </StyledLi>
                 <NavItem link="/contact">Say Hello</NavItem>
             </Ul>
         );

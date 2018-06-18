@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const Li = styled.li`
+export const Li = styled.li`
     position: relative;
     display: inline-block;
     background-color: #fff;
@@ -15,7 +15,6 @@ const Li = styled.li`
     }
     display: block;
     font-weight: normal;
-    line-height: 21px;
     padding: 6px 0;
     text-shadow: none;
     transition: background-color 0.5s ease-out;
@@ -37,7 +36,7 @@ const Li = styled.li`
     }
 `;
 
-const StyledNavLink = styled(NavLink)`
+export const StyledNavLink = styled(NavLink)`
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;

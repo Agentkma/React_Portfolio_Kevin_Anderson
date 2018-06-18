@@ -1,7 +1,7 @@
 // ! External
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { withTheme, ThemeProvider } from "styled-components";
+import styled, { withTheme, ThemeProvider } from "styled-components";
 
 // ! Internal
 // import asyncComponent from "./hoc/asyncComponent";
@@ -14,10 +14,14 @@ import { theme } from "./Theme";
 //   return import('./containers/Checkout/Checkout');
 // });
 
+const Div = styled.div`
+    box-sizing: border-box;
+`;
+
 class App extends Component {
     render() {
         return (
-            <div>
+            <Div>
                 <ThemeProvider theme={theme}>
                     <Layout theme={theme}>
                         <Switch>
@@ -36,7 +40,7 @@ class App extends Component {
                         </Switch>
                     </Layout>
                 </ThemeProvider>
-            </div>
+            </Div>
         );
     }
 }

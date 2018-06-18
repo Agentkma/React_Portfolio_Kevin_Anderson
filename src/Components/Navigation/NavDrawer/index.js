@@ -1,29 +1,34 @@
 // ! External
 import CloseIcon from "@material-ui/icons/Close";
+// import { withStyles } from "@material-ui/core/styles";
 import React from "react";
 // import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { extend } from "styled-components";
 
 // ! Internal
 import NavItems from "../NavItems";
 import drawerBgImg from "../../../Assets/Images/bg/about-bg-1920x1080.jpg";
+import { SlideDown } from "../../../Theme/animations";
 
-const Nav = styled.nav`
+const SlideDownNavDiv = SlideDown.extend`
     display: block !important;
     position: absolute;
-    top: 7.75vh;
     width: 100%;
+    top: 7.75vh;
     z-index: 101;
-    box-sizing: border-box;
     @media (min-width: 768px) {
-        display: block;
-        height: 640px;
-        width: 100%;
-        position: fixed;
-        top: 0px;
+        top: 0;
         right: 0;
-        padding: 5rem;
         z-index: 999;
+        position: fixed;
+        height: 100vh;
+    }
+`;
+
+const Nav = styled.nav`
+    @media (min-width: 768px) {
+        height: 100%;
+        padding: 5rem;
         text-align: center;
         background-image: url(${drawerBgImg});
         background-size: cover;
@@ -33,13 +38,14 @@ const Nav = styled.nav`
 
 const StyledCloseIcon = styled(CloseIcon)`
     position: absolute;
-    top: 10%;
-    right: 15%;
-    height: 1.5rem;
-    width: 1rem;
+    top: 15%;
+    right: 5%;
+    height: 2rem !important;
+    width: 2rem !important ;
     font-size: 4rem;
     color: #ffffff;
-    visibility: hidden @media (min-width: 768px) {
+    visibility: hidden;
+    @media (min-width: 768px) {
         visibility: visible;
     }
     &:hover {
@@ -49,13 +55,13 @@ const StyledCloseIcon = styled(CloseIcon)`
 
 export const NavDrawer = props => {
     return (
-        <Nav role="navigation">
-            <StyledCloseIcon onClick={props.click} />
-            <NavItems />
-        </Nav>
+        <SlideDownNavDiv>
+            <Nav role="navigation">
+                <StyledCloseIcon onClick={props.click} />
+                <NavItems />
+            </Nav>
+        </SlideDownNavDiv>
     );
 };
 
-// index.propTypes = {};
-//theme={theme}
 export default NavDrawer;

@@ -6,10 +6,7 @@ import Navigation from "../../Components/Navigation";
 import { Rotate } from "../../Theme/animations";
 
 // TODO add styles to match outer container
-export const Header = styled.header`
-    height: 15vh;
-    background: lightblue;
-`;
+
 export const Main = styled.main`
     height: 75vh;
     background: papayawhip;
@@ -20,7 +17,7 @@ class Layout extends Component {
         return (
             <Fragment>
                 <Navigation />
-                <Header>{this.props.children}</Header>
+
                 <Main>
                     {this.props.children}
                     <Rotate>

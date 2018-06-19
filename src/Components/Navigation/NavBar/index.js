@@ -1,14 +1,22 @@
+// ! External
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+// ! Internal
 import NavHamburger from "../NavHamburger";
-// import { Rotate } from "../../../Theme/animations";
+import { Rotate, WobbleHorBottom } from "../../../Theme/animations";
 
-const Logo = styled.div`
+// const StyledWobHorBtm = styled(WobbleHorBottom)`
+//     width: auto;
+//     height: 90%;
+// `;
+
+const StyledLogoRotate = styled(Rotate)`
     width: auto;
     height: 90%;
 `;
+
 const LogoImg = styled.img`
     width: auto;
     height: 100%;
@@ -19,7 +27,7 @@ const MenuCollapser = styled.div`
     background-color: #fff;
     color: #444;
     width: 100%;
-    height: 7.5vh;
+    height: 9vh;
     line-height: 2rem;
     font-family: "Montserrat", sans-serif;
     font-size: 0.9rem;
@@ -34,9 +42,12 @@ export const NavBar = ({ click }) => {
     return (
         <MenuCollapser>
             <Link to={"./"}>
-                <Logo>
-                    <LogoImg src={require("../../../Assets/Images/logo.png")} />
-                </Logo>
+                <StyledLogoRotate>
+                    {" "}
+                    <LogoImg
+                        src={require("../../../Assets/Images/logo@2x.svg")}
+                    />
+                </StyledLogoRotate>
             </Link>
 
             <NavHamburger click={click} />

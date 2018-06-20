@@ -47,5 +47,40 @@ export const content = {
         header: {},
         main: {}
     },
-    footer: {}
+    footer: {
+        social: [
+            {
+                link: "https://github.com/Agentkma",
+                img: {
+                    alt: "weblink to Kevin Anderson github page",
+                    title: "github icon",
+                    src: "Assets/Images/social/github.png"
+                }
+            },
+            {
+                link: "https://www.linkedin.com/in/kevinandersondeveloper/",
+                img: {
+                    alt: "weblink to Kevin Anderson linkedIn page",
+                    title: "linkedIn Icon",
+                    src: "Assets/Images/social/linkedin.png"
+                }
+            },
+            {
+                link: "images/Resume_Kevin_Anderson_Web.pdf",
+                img: {
+                    alt: "weblink to Kevin Anderson resume pdf file",
+                    title: "resume Icon",
+                    src: "Assets/Images/social/resumeDL.png"
+                }
+            },
+            {
+                link: "contact.html",
+                img: {
+                    alt: "a weblink to Kevin Anderson email",
+                    title: "email Icon",
+                    src: "Assets/Images/social/email.png"
+                }
+            }
+        ]
+    }
 };

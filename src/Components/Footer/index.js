@@ -1,6 +1,5 @@
 import moment from "moment";
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { content } from "../../Assets/Content";
@@ -14,8 +13,8 @@ const StyledFooter = styled.footer`
 `;
 
 const StyledContFluidDiv = styled.div`
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 1rem;
+    padding-left: 1rem;
     margin-right: auto;
     margin-left: auto;
 `;
@@ -25,7 +24,7 @@ const StyledUl = styled.ul`
     padding: 0;
     text-align: center;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0.666rem;
     box-sizing: border-box;
 `;
 
@@ -36,52 +35,62 @@ const StyledLi = styled.li`
 `;
 
 const StyledImg = styled.img`
-    width: 32px;
+    width: 1.75rem;
     opacity: 1;
     transition: all 0.8s linear;
     vertical-align: middle;
     border: 0;
 `;
 
-const Footer = () => {
-    const socialLitems = content.footer.social.map(li => {
-        const source = require(`../../${li.img.src}`);
+const StyledArticle = styled.article`
+    font-size: ${props => props.theme.fontSizeSmall};
+    line-height: 1rem;
+    margin-top: 0.666rem;
+    margin-bottom: 0.666rem;
+    text-align: center;
+    p {
+        font-family: ${props => props.theme.fontFamilyPrimary};
+        color: ${props => props.theme.colorFontPrimary};
+        a {
+            text-decoration: none;
+            color: ${props => props.theme.colorFontPrimary};
+        }
+    }
+`;
 
-        return (
-            <StyledLi>
-                <a target="_blank " rel="noopener noreferrer " href={li.link}>
-                    <StyledImg
-                        data-no-retina
-                        alt={li.img.alt}
-                        title={li.img.title}
-                        src={source}
-                    />
-                </a>
-            </StyledLi>
-        );
-    });
+const socialLitems = content.footer.social.map(li => {
+    const source = require(`../../${li.img.src}`);
 
+    return (
+        <StyledLi>
+            <a target="_blank " rel="noopener noreferrer" href={li.link}>
+                <StyledImg
+                    data-no-retina
+                    alt={li.img.alt}
+                    title={li.img.title}
+                    src={source}
+                />
+            </a>
+        </StyledLi>
+    );
+});
+
+const Footer = function() {
     return (
         <StyledFooter role="contentinfo">
             <StyledContFluidDiv>
-                <div class="row ">
-                    <StyledUl>{socialLitems}</StyledUl>
-                </div>
-                <div class="row">
-                    <article class="credits col-md-12 text-center ">
-                        <p class="font3 dark ">
-                            All Rights Reserved &copy; {moment().year()}{" "}
-                            <a target="_blank " href=" ">
-                                Kevin Anderson
-                            </a>.
-                        </p>
-                    </article>
-                </div>
+                <StyledUl>{socialLitems}</StyledUl>
+                <StyledArticle>
+                    <p>
+                        All Rights Reserved &copy; {moment().year()}{" "}
+                        <a target="_blank " href=" ">
+                            Kevin Anderson
+                        </a>.
+                    </p>
+                </StyledArticle>
             </StyledContFluidDiv>
         </StyledFooter>
     );
 };
-
-Footer.propTypes = {};
 
 export default Footer;

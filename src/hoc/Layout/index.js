@@ -6,13 +6,26 @@ import Navigation from "../../Components/Navigation";
 import Footer from "../../Components/Footer";
 import { Rotate } from "../../Theme/animations";
 import { content } from "../../Assets/Content";
+import { mediaAnd } from "../../Theme";
 
 // TODO add styles to match outer container
 
 export const Main = styled.main`
     height: 75vh;
-    background: papayawhip;
+    /* background: papayawhip; */
+    margin-left: 0;
+    margin-top: 4rem;
+    font-family: ${props => props.theme.fontFamilyPrimary};
 `;
+
+const InnerWrap = styled.div`
+    padding: 100px 80px;
+    /*iPhone Landscape Mode and Mediium Smart Phones*/
+    ${mediaAnd.phoneLandscape`
+        padding: 60px 10px;`};
+`;
+
+export const FirstFold = styled.div``;
 
 class Layout extends Component {
     static defaultProps = {
@@ -23,12 +36,8 @@ class Layout extends Component {
         return (
             <Fragment>
                 <Navigation />
-
                 <Main>
-                    {this.props.children}
-                    <Rotate>
-                        &lt; <span role="img">💅 </span> &gt;
-                    </Rotate>
+                    <InnerWrap>{this.props.children}</InnerWrap>
                 </Main>
                 <Footer content={this.props.footer} />
             </Fragment>

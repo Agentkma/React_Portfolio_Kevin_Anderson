@@ -1,8 +1,11 @@
 import React from "react";
 // import PropTypes from "prop-types";
 
+import Layout from "../../hoc/Layout";
+import IntroAbout from "./IntroAbout";
+
 const Home = () => {
-    return <div />;
+    return <IntroAbout />;
 };
 
 // Home.propTypes = {};

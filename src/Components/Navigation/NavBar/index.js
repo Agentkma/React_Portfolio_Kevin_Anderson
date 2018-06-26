@@ -5,12 +5,7 @@ import styled from "styled-components";
 
 // ! Internal
 import NavHamburger from "../NavHamburger";
-import { Rotate, WobbleHorBottom } from "../../../Theme/animations";
-
-// const StyledWobHorBtm = styled(WobbleHorBottom)`
-//     width: auto;
-//     height: 90%;
-// `;
+import { Rotate } from "../../../Theme/animations";
 
 const StyledLogoRotate = styled(Rotate)`
     width: auto;

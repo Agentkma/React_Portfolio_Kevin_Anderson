@@ -3,7 +3,7 @@ import CloseIcon from "@material-ui/icons/Close";
 // import { withStyles } from "@material-ui/core/styles";
 import React from "react";
 // import PropTypes from "prop-types";
-import styled, { extend } from "styled-components";
+import styled from "styled-components";
 
 // ! Internal
 import NavItems from "../NavItems";

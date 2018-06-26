@@ -4,7 +4,6 @@ import styled from "styled-components";
 // import Aux from '../Aux/Aux';
 import Navigation from "../../Components/Navigation";
 import Footer from "../../Components/Footer";
-import { Rotate } from "../../Theme/animations";
 import { content } from "../../Assets/Content";
 import { mediaAnd } from "../../Theme";
 

@@ -1,9 +1,10 @@
-import styled, { css } from "styled-components";
+import { css } from "styled-components";
 
 export const theme = {
     colorBgPrimary: "white",
     colorFontPrimary: "#666",
     colorFontSecondary: "white",
+    colorFontTertiary: "#121212",
     colorFontHoverPrimary: "#ff2238 !important",
     fontSizeSmall: "0.7rem",
     fontSizePrimary: "1rem",
@@ -13,6 +14,8 @@ export const theme = {
 
 // ! Media Queries
 const sizesAnd = {
+    /* Extra Larg Desktop */
+    xlDesktop: 1170,
     tablet: 768,
     /*iPhone Landscape Mode and Mediium Smart Phones*/
     phoneLandscape: 480

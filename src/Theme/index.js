@@ -2,6 +2,7 @@ import { css } from "styled-components";
 
 export const theme = {
     colorBgPrimary: "white",
+    colorBgSecondary: "#292929",
     colorFontPrimary: "#666",
     colorFontSecondary: "white",
     colorFontTertiary: "#121212",

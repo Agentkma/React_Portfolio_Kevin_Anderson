@@ -20,21 +20,32 @@ export const Main = styled.main`
 const InnerWrap = styled.div`
     padding: 100px 80px;
     /*iPhone Landscape Mode and Mediium Smart Phones*/
-    ${mediaAnd.phoneLandscape`
-        padding: 60px 10px;`};
+    ${mediaAnd.phoneLandscape`padding: 60px 10px;`};
 `;
 
 export const FirstFold = styled.div``;
 
 class Layout extends Component {
+    // TODO MOVE THIS STATE AND METHODS TO APP.JS and pass down to Layout
+    state = {
+        showWorksFilter: false
+    };
+
     static defaultProps = {
         footer: content.footer.social
+    };
+
+    // ! Methods
+    handleShowWorksFilter = () => {
+        this.setState({ showWorksFilter: !this.state.showWorksFilter });
     };
 
     render() {
         return (
             <Fragment>
-                <Navigation />
+                <Navigation
+                    toggleShowWorksFilter={this.handleShowWorksFilter}
+                />
                 <Main>
                     <InnerWrap>{this.props.children}</InnerWrap>
                 </Main>

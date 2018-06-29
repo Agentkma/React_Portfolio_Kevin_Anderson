@@ -3,6 +3,23 @@ import React from "react";
 // import PropTypes from "prop-types";
 import styled from "styled-components";
 
+const NavHamburger = ({ click, toggleShowWorksFilter }) => {
+    return (
+        <Container>
+            <StyledCodeIcon onClick={toggleShowWorksFilter} />
+            <HamburgerDiv onClick={click}>
+                <HamburgerBar />
+                <HamburgerBar />
+                <HamburgerBar />
+            </HamburgerDiv>
+        </Container>
+    );
+};
+
+NavHamburger.propTypes = {};
+
+export default NavHamburger;
+
 const Container = styled.div`
     display: flex;
     align-items: center;
@@ -66,20 +83,3 @@ const HamburgerBar = styled.span`
         margin: 3px 0;
     }
 `;
-
-const NavHamburger = ({ click }) => {
-    return (
-        <Container>
-            <StyledCodeIcon />
-            <HamburgerDiv onClick={click}>
-                <HamburgerBar />
-                <HamburgerBar />
-                <HamburgerBar />
-            </HamburgerDiv>
-        </Container>
-    );
-};
-
-NavHamburger.propTypes = {};
-
-export default NavHamburger;

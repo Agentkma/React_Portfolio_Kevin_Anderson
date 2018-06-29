@@ -14,10 +14,6 @@ import { theme } from "./Theme";
 //   return import('./containers/Checkout/Checkout');
 // });
 
-const Div = styled.div`
-    box-sizing: border-box;
-`;
-
 class App extends Component {
     render() {
         return (
@@ -46,3 +42,7 @@ class App extends Component {
 }
 
 export default withTheme(App);
+
+const Div = styled.div`
+    box-sizing: border-box;
+`;

@@ -7,6 +7,28 @@ import styled from "styled-components";
 import NavHamburger from "../NavHamburger";
 import { Rotate } from "../../../Theme/animations";
 
+export const NavBar = ({ click, toggleShowWorksFilter }) => {
+    return (
+        <MenuCollapser>
+            <Link to={"./"}>
+                <StyledLogoRotate>
+                    {" "}
+                    <LogoImg
+                        src={require("../../../Assets/Images/logo@2x.svg")}
+                    />
+                </StyledLogoRotate>
+            </Link>
+
+            <NavHamburger
+                click={click}
+                toggleShowWorksFilter={toggleShowWorksFilter}
+            />
+        </MenuCollapser>
+    );
+};
+
+export default NavBar;
+
 const StyledLogoRotate = styled(Rotate)`
     width: auto;
     height: 90%;
@@ -32,22 +54,3 @@ const MenuCollapser = styled.div`
     padding: 0 1.125rem;
     box-sizing: border-box;
 `;
-
-export const NavBar = ({ click }) => {
-    return (
-        <MenuCollapser>
-            <Link to={"./"}>
-                <StyledLogoRotate>
-                    {" "}
-                    <LogoImg
-                        src={require("../../../Assets/Images/logo@2x.svg")}
-                    />
-                </StyledLogoRotate>
-            </Link>
-
-            <NavHamburger click={click} />
-        </MenuCollapser>
-    );
-};
-
-export default NavBar;

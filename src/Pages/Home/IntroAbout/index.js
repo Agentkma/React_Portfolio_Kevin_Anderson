@@ -5,6 +5,59 @@ import { content } from "../../../Assets/Content";
 import { media, mediaAnd } from "../../../Theme";
 import Container from "../../../Components/Common/Container";
 
+export const IntroAbout = () => {
+    return (
+        <StyledSectionWrap>
+            <StyledHalfHtDiv>
+                <StyledVertAlignDiv>
+                    <Container className="container">
+                        <div className="row">
+                            <StyledArticle>
+                                <StyledSectionMainHeading>
+                                    <StyledH6mHeading className="dark font3light">
+                                        {content.home.header.mainHeading}
+                                    </StyledH6mHeading>
+                                </StyledSectionMainHeading>
+
+                                <StyledSectionCD>
+                                    <StyledH6headline className="cd-headline loading-bar  font3bold">
+                                        <StyledSpanLoadingBar className="cd-words-wrapper">
+                                            <StyledBisVisisble className="is-visible">
+                                                I'm a Full Stack Software
+                                                Engineer.
+                                            </StyledBisVisisble>
+                                            <StyledB>
+                                                I'm based in Boulder, CO.
+                                            </StyledB>
+                                            <StyledB>
+                                                I create web apps.
+                                            </StyledB>
+                                            <StyledB>
+                                                I'm a solution builder.
+                                            </StyledB>
+                                            <StyledB>
+                                                I'm a lifelong learner.
+                                            </StyledB>
+                                            <StyledB>
+                                                I'm a rational optimist.
+                                            </StyledB>
+                                            <StyledB>
+                                                I'm a truth seeker.
+                                            </StyledB>
+                                        </StyledSpanLoadingBar>
+                                    </StyledH6headline>
+                                </StyledSectionCD>
+                            </StyledArticle>
+                        </div>
+                    </Container>
+                </StyledVertAlignDiv>
+            </StyledHalfHtDiv>
+        </StyledSectionWrap>
+    );
+};
+
+export default IntroAbout;
+
 const StyledSectionWrap = styled.section`
     background-color: ${props => props.theme.colorBgPrimary};
 `;
@@ -95,56 +148,3 @@ const StyledBisVisisble = styled.b`
     -moz-animation: slide-in 0.6s;
     animation: slide-in 0.6s;
 `;
-
-export const IntroAbout = () => {
-    return (
-        <StyledSectionWrap>
-            <StyledHalfHtDiv>
-                <StyledVertAlignDiv>
-                    <Container className="container">
-                        <div className="row">
-                            <StyledArticle>
-                                <StyledSectionMainHeading>
-                                    <StyledH6mHeading className="dark font3light">
-                                        {content.home.header.mainHeading}
-                                    </StyledH6mHeading>
-                                </StyledSectionMainHeading>
-
-                                <StyledSectionCD>
-                                    <StyledH6headline className="cd-headline loading-bar  font3bold">
-                                        <StyledSpanLoadingBar className="cd-words-wrapper">
-                                            <StyledBisVisisble className="is-visible">
-                                                I'm a Full Stack Software
-                                                Engineer.
-                                            </StyledBisVisisble>
-                                            <StyledB>
-                                                I'm based in Boulder, CO.
-                                            </StyledB>
-                                            <StyledB>
-                                                I create web apps.
-                                            </StyledB>
-                                            <StyledB>
-                                                I'm a solution builder.
-                                            </StyledB>
-                                            <StyledB>
-                                                I'm a lifelong learner.
-                                            </StyledB>
-                                            <StyledB>
-                                                I'm a rational optimist.
-                                            </StyledB>
-                                            <StyledB>
-                                                I'm a truth seeker.
-                                            </StyledB>
-                                        </StyledSpanLoadingBar>
-                                    </StyledH6headline>
-                                </StyledSectionCD>
-                            </StyledArticle>
-                        </div>
-                    </Container>
-                </StyledVertAlignDiv>
-            </StyledHalfHtDiv>
-        </StyledSectionWrap>
-    );
-};
-
-export default IntroAbout;

@@ -13,21 +13,24 @@ export const content = {
             ]
         },
         main: {
-            projects: {
-                project1: {
-                    img: {
-                        alt: "",
-                        title: "",
-                        srcSet: [
-                            "Assets/Images/works/galvanizeEats1100x650.png",
-                            "Assets/Images/works/galvanizeEats1100x650.webp"
-                        ]
-                    },
-                    name: "Galvanize Eats",
-                    description: "A food ordering app."
+            projects: [
+                {
+                    project1: {
+                        img: {
+                            alt: "pic of home page of macro pal app",
+                            title: "macro pal app",
+                            srcSet: [
+                                "Assets/Images/works/macroPal1100x650.webp"
+                            ],
+                            src: "Assets/Images/works/macroPal1100x650.png"
+                        },
+                        name: "MacroPal",
+                        description:
+                            "A health app that calculates calories  macros, and builds grocery lists."
+                    }
                 },
-                project2: {}
-            }
+                { project2: {} }
+            ]
         }
     },
 

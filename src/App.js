@@ -1,6 +1,7 @@
 // ! External
 import React, { Component } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, withRouter, Redirect } from "react-router-dom";
+
 import styled, { withTheme, ThemeProvider } from "styled-components";
 
 // ! Internal
@@ -15,11 +16,26 @@ import { theme } from "./Theme";
 // });
 
 class App extends Component {
+    state = {
+        showWorksFilter: false
+    };
+
+    // TODO how to change showCodeIcon to false on every page except home page?
+
+    // ! Methods
+    handleShowWorksFilter = () => {
+        this.setState({ showWorksFilter: !this.state.showWorksFilter });
+    };
+
     render() {
         return (
             <Div>
                 <ThemeProvider theme={theme}>
-                    <Layout theme={theme}>
+                    <Layout
+                        theme={theme}
+                        showWorksFilter={this.state.showWorksFilter}
+                        toggleShowWorksFilter={this.handleShowWorksFilter}
+                    >
                         <Switch>
                             <Route path="/" component={Home} />
                             {/* <Route path="/project1" component={project1} />
@@ -41,7 +57,7 @@ class App extends Component {
     }
 }
 
-export default withTheme(App);
+export default withRouter(withTheme(App));
 
 const Div = styled.div`
     box-sizing: border-box;

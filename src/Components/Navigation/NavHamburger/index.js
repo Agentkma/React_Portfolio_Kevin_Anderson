@@ -1,12 +1,21 @@
-import CodeIcon from "@material-ui/icons/Code";
 import React from "react";
+import { withRouter } from "react-router";
+
 // import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const NavHamburger = ({ click, toggleShowWorksFilter }) => {
+import NavCodeIcon from "./NavCodeIcon";
+
+const NavHamburger = ({ click, toggleShowWorksFilter, location }) => {
+    // ! check this: using withRouter can set codeIcon to show only when route is /home
+    const codeIcon =
+        location.pathname === "/" ? (
+            <StyledCodeIcon onClick={toggleShowWorksFilter} />
+        ) : null;
+
     return (
         <Container>
-            <StyledCodeIcon onClick={toggleShowWorksFilter} />
+            {codeIcon}
             <HamburgerDiv onClick={click}>
                 <HamburgerBar />
                 <HamburgerBar />
@@ -18,7 +27,7 @@ const NavHamburger = ({ click, toggleShowWorksFilter }) => {
 
 NavHamburger.propTypes = {};
 
-export default NavHamburger;
+export default withRouter(NavHamburger);
 
 const Container = styled.div`
     display: flex;
@@ -27,23 +36,6 @@ const Container = styled.div`
     right: 8px;
     top: 0;
     height: 90%;
-`;
-
-const StyledCodeIcon = styled(CodeIcon)`
-    cursor: pointer;
-    width: auto !important;
-    height: 1rem;
-    padding: 7px 10px;
-    margin: auto;
-    &:hover,
-    &:focus {
-        background-image: none;
-        background-color: #eee;
-        color: #000;
-    }
-    @media (min-width: 768px) {
-        height: 2rem;
-    }
 `;
 
 const HamburgerDiv = styled.div`

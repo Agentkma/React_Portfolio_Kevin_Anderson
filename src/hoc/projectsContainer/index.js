@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 const projectsContainer = props => {
-    return <div>{props.children}</div>;
+    return <styledContainer>{props.children}</styledContainer>;
 };
 
 // index.propTypes = {

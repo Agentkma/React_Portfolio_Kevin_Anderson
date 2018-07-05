@@ -3,17 +3,18 @@ import styled from "styled-components";
 
 import { content } from "../../../Assets/Content";
 import Container from "../../../Components/Common/Container";
+import { media } from "../../../Theme";
 
 export const WorksFilterPanel = () => {
     return (
         <StyledSection
             id="works-filter-panel"
-            class="works-filter-panel signature-karl dark-bg"
+            className="works-filter-panel signature-karl dark-bg"
         >
             <Container>
                 <StyledUl className="font3">
                     <li>
-                        <a id="all" href="#" data-filter="*" class="active">
+                        <a id="all" href="#" data-filter="*" className="active">
                             <span>All</span>
                         </a>
                     </li>

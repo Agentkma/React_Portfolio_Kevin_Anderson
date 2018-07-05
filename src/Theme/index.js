@@ -6,6 +6,7 @@ export const theme = {
     colorFontPrimary: "#666",
     colorFontSecondary: "white",
     colorFontTertiary: "#121212",
+    colorFontQuaternary: "#292929",
     colorFontHoverPrimary: "#ff2238 !important",
     fontSizeSmall: "0.7rem",
     fontSizePrimary: "1rem",
@@ -23,6 +24,7 @@ const sizesAnd = {
 };
 
 const sizes = {
+    tablet: 768,
     /* Larger than desktop */
     desktop: 992
 };

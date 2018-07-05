@@ -41,7 +41,7 @@ class Layout extends Component {
 
         return (
             <Fragment>
-                <Navigation toggleShowWorksFilter={handleShowWorksFilter} />
+                <Navigation toggleShowWorksFilter={toggleShowWorksFilter} />
                 <Main>
                     <InnerWrap>{this.props.children}</InnerWrap>
                 </Main>

@@ -4,15 +4,14 @@ import { withRouter } from "react-router";
 // import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import NavCodeIcon from "./NavCodeIcon";
+import NavCodeIcon from "../NavCodeIcon";
 
 const NavHamburger = ({ click, toggleShowWorksFilter, location }) => {
     // ! check this: using withRouter can set codeIcon to show only when route is /home
     const codeIcon =
         location.pathname === "/" ? (
-            <StyledCodeIcon onClick={toggleShowWorksFilter} />
+            <NavCodeIcon onClick={toggleShowWorksFilter} />
         ) : null;
-
     return (
         <Container>
             {codeIcon}

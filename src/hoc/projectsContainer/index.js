@@ -3,17 +3,13 @@ import React from "react";
 
 import styled from "styled-components";
 
-const projectsContainer = props => {
-    return <styledContainer>{props.children}</styledContainer>;
-};
+const ProjectsContainer = props => (
+    <StyledContainer>{props.children}</StyledContainer>
+);
 
-// index.propTypes = {
+export default ProjectsContainer;
 
-// }
-
-export default projectsContainer;
-
-const styledContainer = styled.section`
+const StyledContainer = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     padding: 0;

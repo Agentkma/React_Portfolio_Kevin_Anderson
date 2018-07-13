@@ -13,20 +13,6 @@ import { mediaAnd } from "../../Theme";
 
 // TODO add styles to match outer container
 
-export const Main = styled.main`
-    height: 75vh;
-    margin-left: 0;
-    margin-top: 4rem;
-    font-family: ${props => props.theme.fontFamilyPrimary};
-`;
-
-const InnerWrap = styled.div`
-    padding: 100px 80px;
-    ${mediaAnd.phoneLandscape`padding: 60px 10px;`};
-`;
-
-export const FirstFold = styled.div``;
-
 class Layout extends Component {
     static propTypes = {
         showWorksFilter: bool,
@@ -43,7 +29,9 @@ class Layout extends Component {
             <Fragment>
                 <Navigation toggleShowWorksFilter={toggleShowWorksFilter} />
                 <Main>
-                    <InnerWrap>{this.props.children}</InnerWrap>
+                    <InnerWrap showWorksFilter={showWorksFilter}>
+                        {this.props.children}
+                    </InnerWrap>
                 </Main>
                 <Footer content={footer} />
             </Fragment>
@@ -52,5 +40,19 @@ class Layout extends Component {
 }
 
 export default Layout;
+
+export const Main = styled.main`
+    height: 75vh;
+    margin-left: 0;
+    margin-top: 4rem;
+    font-family: ${props => props.theme.fontFamilyPrimary};
+`;
+
+const InnerWrap = styled.div`
+    padding: 100px 80px;
+    ${mediaAnd.phoneLandscape`padding: 60px 10px;`};
+`;
+
+export const FirstFold = styled.div``;
 
 // theme={this.props.theme}

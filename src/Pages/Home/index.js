@@ -5,7 +5,7 @@ import IntroAbout from "./IntroAbout";
 import WorksFilterPanel from "./WorksFilterPanel";
 import ProjectItem from "./ProjectItem";
 import { content } from "../../Assets/Content";
-import projectsContainer from "../../hoc/projectsContainer";
+import ProjectsContainer from "../../hoc/ProjectsContainer";
 
 const projectItems = params => {
     const { projects } = content.home.main;
@@ -21,7 +21,7 @@ const Home = () => {
             {" "}
             <IntroAbout />
             <WorksFilterPanel />
-            <projectsContainer>{projectItems}</projectsContainer>
+            <ProjectsContainer>{projectItems}</ProjectsContainer>
         </Fragment>
     );
 };

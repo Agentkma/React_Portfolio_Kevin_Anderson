@@ -62,7 +62,7 @@ const socialLitems = content.footer.social.map(li => {
     const source = require(`../../${li.img.src}`);
 
     return (
-        <StyledLi>
+        <StyledLi key={li.img.src}>
             <a target="_blank " rel="noopener noreferrer" href={li.link}>
                 <StyledImg
                     data-no-retina

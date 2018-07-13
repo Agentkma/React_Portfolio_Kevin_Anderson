@@ -13,6 +13,15 @@ export const content = {
             ]
         },
         main: {
+            worksFilter: [
+                "all",
+                "css-frameworks",
+                "front-end",
+                "full-stack",
+                "SPA",
+                "pure-css",
+                "mobile"
+            ],
             projects: [
                 {
                     project1: {
@@ -26,7 +35,8 @@ export const content = {
                         },
                         name: "MacroPal",
                         description:
-                            "A health app that calculates calories  macros, and builds grocery lists."
+                            "A health app that calculates calories  macros, and builds grocery lists.",
+                        worksFilter: ["css-frameworks"]
                     }
                 },
                 { project2: {} }

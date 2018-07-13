@@ -5,6 +5,25 @@ import { content } from "../../../Assets/Content";
 import Container from "../../../Components/Common/Container";
 import { media } from "../../../Theme";
 
+const items = content.home.main.worksFilter.map((category, index) => {
+    if (index === 0) {
+        return (
+            <li key={category}>
+                {" "}
+                <a className="active" href="/">
+                    {" "}
+                    {category}
+                </a>
+            </li>
+        );
+    }
+    return (
+        <li key={category}>
+            <a href="/"> {category}</a>
+        </li>
+    );
+});
+
 export const WorksFilterPanel = () => {
     return (
         <StyledSection
@@ -12,43 +31,7 @@ export const WorksFilterPanel = () => {
             className="works-filter-panel signature-karl dark-bg"
         >
             <Container>
-                <StyledUl className="font3">
-                    <li>
-                        <a id="all" href="#" data-filter="*" className="active">
-                            <span>All</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter=".css-frameworks">
-                            <span>CSS Framework</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter=".front-end">
-                            <span>Front End</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter=".full-stack">
-                            <span>Full Stack</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter=".SPA">
-                            <span>Single Page Apps</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter=".pure-css">
-                            <span>Pure CSS</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter=".mobile">
-                            <span>Mobile</span>
-                        </a>
-                    </li>
-                </StyledUl>
+                <StyledUl className="font3">{items}</StyledUl>
             </Container>
         </StyledSection>
     );

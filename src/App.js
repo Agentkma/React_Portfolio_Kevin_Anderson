@@ -25,6 +25,7 @@ class App extends Component {
     // ! Methods
     handleShowWorksFilter = () => {
         this.setState({ showWorksFilter: !this.state.showWorksFilter });
+        console.log("handleShowWorksFilter Called");
     };
 
     render() {

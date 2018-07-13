@@ -17,7 +17,7 @@ export const ProjectItem = ({ description, img, name }) => {
                 />
             </picture>
 
-            <a href="project02.html">
+            <StyledA href="project02.html">
                 <div className=" works-item-inner ContentB">
                     <p>
                         <StyledSpan className="dark font3bold ">
@@ -30,7 +30,7 @@ export const ProjectItem = ({ description, img, name }) => {
                         </StyledH3Span>
                     </h3>
                 </div>
-            </a>
+            </StyledA>
         </div>
     );
 };

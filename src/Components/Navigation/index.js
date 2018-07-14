@@ -39,10 +39,7 @@ export class Navigation extends Component {
         ) : null;
         return (
             <div>
-                <NavBar
-                    click={this.navDrawerToggleHandler}
-                    toggleShowWorksFilter={this.props.toggleShowWorksFilter}
-                />
+                <NavBar click={this.navDrawerToggleHandler} />
                 {navDrawer}
             </div>
         );

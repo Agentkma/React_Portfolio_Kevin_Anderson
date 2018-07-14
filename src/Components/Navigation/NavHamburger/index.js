@@ -1,12 +1,15 @@
+// ! External
 import React from "react";
 import { withRouter } from "react-router";
-
+import { connect } from "react-redux";
 // import PropTypes from "prop-types";
 import styled from "styled-components";
 
+// ! Internal
 import NavCodeIcon from "../NavCodeIcon";
+import * as actions from "../../../ducks/index";
 
-const NavHamburger = ({ click, toggleShowWorksFilter, location }) => {
+const NavHamburger = function({ click, toggleShowWorksFilter, location }) {
     // ! check this: using withRouter can set codeIcon to show only when route is /home
     const codeIcon =
         location.pathname === "/" ? (
@@ -26,7 +29,30 @@ const NavHamburger = ({ click, toggleShowWorksFilter, location }) => {
 
 NavHamburger.propTypes = {};
 
-export default withRouter(NavHamburger);
+const mapStateToProps = state => {
+    const { worksFilterShown } = this.state;
+    return {
+        worksFilterShown: worksFilterShown
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        toggleShowWorksFilter: () => dispatch(actions.toggleShowWorksFilter())
+
+        // onIngredientRemoved: ingName =>
+        //     dispatch(actions.removeIngredient(ingName)),
+        // onInitIngredients: () => dispatch(actions.initIngredients()),
+        // onInitPurchase: () => dispatch(actions.purchaseInit()),
+        // onSetAuthRedirectPath: path =>
+        //     dispatch(actions.setAuthRedirectPath(path))
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withRouter(NavHamburger));
 
 const Container = styled.div`
     display: flex;

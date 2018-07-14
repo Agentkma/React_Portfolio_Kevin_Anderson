@@ -7,7 +7,7 @@ import styled from "styled-components";
 import NavHamburger from "../NavHamburger";
 import { Rotate } from "../../../Theme/animations";
 
-export const NavBar = ({ click, toggleShowWorksFilter }) => {
+export const NavBar = ({ click }) => {
     return (
         <MenuCollapser>
             <Link to={"./"}>
@@ -19,10 +19,7 @@ export const NavBar = ({ click, toggleShowWorksFilter }) => {
                 </StyledLogoRotate>
             </Link>
 
-            <NavHamburger
-                click={click}
-                toggleShowWorksFilter={toggleShowWorksFilter}
-            />
+            <NavHamburger click={click} />
         </MenuCollapser>
     );
 };

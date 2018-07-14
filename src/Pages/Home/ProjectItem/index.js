@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { content } from "../../../Assets/Content";
+// import { content } from "../../../Assets/Content";
 import { media } from "../../../Theme";
 
 export const ProjectItem = ({ description, img, name }) => {

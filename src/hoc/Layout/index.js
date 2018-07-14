@@ -1,6 +1,5 @@
 // ! External
 import React, { Component, Fragment } from "react";
-import { bool, func } from "prop-types";
 
 // ! Internal
 import styled from "styled-components";
@@ -14,24 +13,19 @@ import { mediaAnd } from "../../Theme";
 // TODO add styles to match outer container
 
 class Layout extends Component {
-    static propTypes = {
-        showWorksFilter: bool,
-        toggleShowWorksFilter: func
-    };
+    static propTypes = {};
     static defaultProps = {
         footer: content.footer.social
     };
 
     render() {
-        const { footer, showWorksFilter, toggleShowWorksFilter } = this.props;
+        const { footer } = this.props;
 
         return (
             <Fragment>
-                <Navigation toggleShowWorksFilter={toggleShowWorksFilter} />
+                <Navigation />
                 <Main>
-                    <InnerWrap showWorksFilter={showWorksFilter}>
-                        {this.props.children}
-                    </InnerWrap>
+                    <InnerWrap>{this.props.children}</InnerWrap>
                 </Main>
                 <Footer content={footer} />
             </Fragment>

@@ -1,6 +1,9 @@
+// ! External
 import React, { Fragment } from "react";
+import { connect } from "react-redux";
 // import PropTypes from "prop-types";
 
+// ! Internal
 import IntroAbout from "./IntroAbout";
 import WorksFilterPanel from "./WorksFilterPanel";
 import ProjectItem from "./ProjectItem";
@@ -20,7 +23,7 @@ const Home = () => {
         <Fragment>
             {" "}
             <IntroAbout />
-            <WorksFilterPanel />
+            {this.state.worksFilterShown ? <WorksFilterPanel /> : null}
             <ProjectsContainer>{projectItems}</ProjectsContainer>
         </Fragment>
     );
@@ -28,4 +31,11 @@ const Home = () => {
 
 // Home.propTypes = {};
 
-export default Home;
+const mapStateToProps = state => {
+    const { worksFilterShown } = this.state;
+    return {
+        worksFilterShown: worksFilterShown
+    };
+};
+
+export default connect(mapStateToProps)(Home);

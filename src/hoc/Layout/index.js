@@ -8,7 +8,7 @@ import styled from "styled-components";
 import Navigation from "../../Components/Navigation";
 import Footer from "../../Components/Footer";
 import { content } from "../../Assets/Content";
-import { mediaAnd } from "../../Theme";
+import { media, mediaAnd } from "../../Theme";
 
 // TODO add styles to match outer container
 
@@ -43,8 +43,9 @@ export const Main = styled.main`
 `;
 
 const InnerWrap = styled.div`
-    padding: 100px 80px;
+    box-sizing: border-box;
     ${mediaAnd.phoneLandscape`padding: 60px 10px;`};
+    ${media.desktop`padding: 100px 80px;`};
 `;
 
 export const FirstFold = styled.div``;

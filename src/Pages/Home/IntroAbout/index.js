@@ -11,44 +11,26 @@ export const IntroAbout = () => {
             <StyledHalfHtDiv>
                 <StyledVertAlignDiv>
                     <Container className="container">
-                        <div className="row">
-                            <StyledArticle>
-                                <StyledSectionMainHeading>
-                                    <StyledH6mHeading className="dark font3light">
-                                        {content.home.header.mainHeading}
-                                    </StyledH6mHeading>
-                                </StyledSectionMainHeading>
+                        <StyledArticle>
+                            <StyledSectionMainHeading>
+                                <StyledH6mHeading className="dark font3light">
+                                    {content.home.header.mainHeading}
+                                </StyledH6mHeading>
+                            </StyledSectionMainHeading>
 
-                                <StyledSectionCD>
-                                    <StyledH6headline className="cd-headline loading-bar  font3bold">
-                                        <StyledSpanLoadingBar className="cd-words-wrapper">
-                                            <StyledBisVisisble className="is-visible">
-                                                I'm a Full Stack Software
-                                                Engineer.
-                                            </StyledBisVisisble>
-                                            <StyledB>
-                                                I'm based in Boulder, CO.
-                                            </StyledB>
-                                            <StyledB>
-                                                I create web apps.
-                                            </StyledB>
-                                            <StyledB>
-                                                I'm a solution builder.
-                                            </StyledB>
-                                            <StyledB>
-                                                I'm a lifelong learner.
-                                            </StyledB>
-                                            <StyledB>
-                                                I'm a rational optimist.
-                                            </StyledB>
-                                            <StyledB>
-                                                I'm a truth seeker.
-                                            </StyledB>
-                                        </StyledSpanLoadingBar>
-                                    </StyledH6headline>
-                                </StyledSectionCD>
-                            </StyledArticle>
-                        </div>
+                            <StyledSectionCD>
+                                <StyledH6headline className="cd-headline loading-bar  font3bold">
+                                    <StyledSpanLoadingBar className="cd-words-wrapper">
+                                        <StyledBisVisisble className="is-visible">
+                                            I'm a Full Stack Software Engineer.
+                                        </StyledBisVisisble>
+                                        <StyledB>
+                                            I'm based in Boulder, CO.
+                                        </StyledB>
+                                    </StyledSpanLoadingBar>
+                                </StyledH6headline>
+                            </StyledSectionCD>
+                        </StyledArticle>
                     </Container>
                 </StyledVertAlignDiv>
             </StyledHalfHtDiv>
@@ -62,22 +44,25 @@ const StyledSectionWrap = styled.section`
     background-color: ${props => props.theme.colorBgPrimary};
 `;
 const StyledHalfHtDiv = styled.div`
-    height: 10rem;
+    height: 15rem;
 `;
 const StyledVertAlignDiv = styled.div`
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    box-sizing: border-box;
+    height: inherit;
 `;
 
 const StyledArticle = styled.article`
-    ${media.desktop`
-    width: 50%;
-    float: left;
-    position: relative;
-    min-height: 1px;
-    padding-right: 1rem;
-    padding-left: 1rem;`};
+    @media (min-width: 992px) {
+        width: 50%;
+        float: left;
+        position: relative;
+        min-height: 1px;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
 `;
 
 const StyledSectionMainHeading = styled.section`
@@ -90,6 +75,7 @@ const StyledH6mHeading = styled.h6`
     line-height: 2.25rem;
     margin-top: 0.666rem;
     margin-bottom: 0;
+    font-weight: 500;
 `;
 
 const StyledSectionCD = styled.section`
@@ -97,6 +83,8 @@ const StyledSectionCD = styled.section`
     max-width: 100%;
     width: 100%;
     margin-top: 0.666rem;
+    ${media.desktop`margin-left: 0;
+        padding: 0 2rem;`};
     ${mediaAnd.xlDesktop` width: 100%;
         max-width: 768px;
         text-align: center;

@@ -4,6 +4,43 @@ import styled from "styled-components";
 
 import { content } from "../../Assets/Content";
 
+export const Footer = () => {
+    const socialLitems = content.footer.social.map(li => {
+        const source = require(`../../${li.img.src}`);
+
+        return (
+            <StyledLi key={li.img.src}>
+                <a target="_blank " rel="noopener noreferrer" href={li.link}>
+                    <StyledImg
+                        data-no-retina
+                        alt={li.img.alt}
+                        title={li.img.title}
+                        src={source}
+                    />
+                </a>
+            </StyledLi>
+        );
+    });
+
+    return (
+        <StyledFooter role="contentinfo">
+            <StyledContFluidDiv>
+                <StyledUl>{socialLitems}</StyledUl>
+                <StyledArticle>
+                    <p>
+                        All Rights Reserved &copy; {moment().year()}{" "}
+                        <a target="_blank " href=" ">
+                            Kevin Anderson
+                        </a>.
+                    </p>
+                </StyledArticle>
+            </StyledContFluidDiv>
+        </StyledFooter>
+    );
+};
+
+export default Footer;
+
 const StyledFooter = styled.footer`
     background-color: ${props => props.theme.colorBgPrimary};
     padding: 50px 0;
@@ -32,6 +69,7 @@ const StyledLi = styled.li`
     display: inline-block;
     margin-left: 0.2rem;
     margin-bottom: 0;
+    text-align: left;
 `;
 
 const StyledImg = styled.img`
@@ -57,40 +95,3 @@ const StyledArticle = styled.article`
         }
     }
 `;
-
-const socialLitems = content.footer.social.map(li => {
-    const source = require(`../../${li.img.src}`);
-
-    return (
-        <StyledLi key={li.img.src}>
-            <a target="_blank " rel="noopener noreferrer" href={li.link}>
-                <StyledImg
-                    data-no-retina
-                    alt={li.img.alt}
-                    title={li.img.title}
-                    src={source}
-                />
-            </a>
-        </StyledLi>
-    );
-});
-
-const Footer = function() {
-    return (
-        <StyledFooter role="contentinfo">
-            <StyledContFluidDiv>
-                <StyledUl>{socialLitems}</StyledUl>
-                <StyledArticle>
-                    <p>
-                        All Rights Reserved &copy; {moment().year()}{" "}
-                        <a target="_blank " href=" ">
-                            Kevin Anderson
-                        </a>.
-                    </p>
-                </StyledArticle>
-            </StyledContFluidDiv>
-        </StyledFooter>
-    );
-};
-
-export default Footer;

@@ -30,7 +30,6 @@ export const WorksFilterPanel = () => {
             id="works-filter-panel"
             className="works-filter-panel signature-karl dark-bg"
         >
-            <div>works filter panel</div>
             <Container>
                 <StyledUl className="font3">{items}</StyledUl>
             </Container>
@@ -60,20 +59,23 @@ const StyledUl = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
     ${media.tablet`text-align: center`};
     li {
         display: inline-block;
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 0.625rem;
+        margin-right: 0.625rem;
         &:last-child:after {
             display: none;
         }
 
         a {
-            font-size: 16px;
-            line-height: 23px;
+            font-size: 1rem;
+            line-height: 0.7rem;
             color: ${props => props.theme.colorFontSecondary};
+            text-decoration: none !important;
+            text-transform: capitalize;
             &:hover {
                 color: ${props => props.theme.colorFontHoverPrimary};
             }

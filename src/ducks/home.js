@@ -17,7 +17,11 @@ export default function reducer(state = initialState, action) {
     switch (action.type) {
         // do reducer stuff
         case TOGGLE_SHOW_WORKS_FILTER:
-            return { ...state, worksFilterShown: !state.worksFiltershown };
+            return {
+                ...state,
+                worksFilterShown:
+                    state.worksFilterShown === false ? true : false
+            };
 
         default:
             return state;

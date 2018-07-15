@@ -5,25 +5,12 @@ import { connect } from "react-redux";
 import { toggleShowWorksFilter } from "../../../ducks/home";
 
 const NavCodeIcon = ({ toggleWorksFilter }) => {
-    return (
-        <button onClick={() => toggleWorksFilter()}>
-            <StyledCodeIcon />
-        </button>
-    );
+    return <StyledCodeIcon onClick={() => toggleWorksFilter()} />;
 };
-
-// export default NavCodeIcon;
 
 const mapDispatchToProps = dispatch => {
     return {
         toggleWorksFilter: () => dispatch(toggleShowWorksFilter())
-
-        // onIngredientRemoved: ingName =>
-        //     dispatch(actions.removeIngredient(ingName)),
-        // onInitIngredients: () => dispatch(actions.initIngredients()),
-        // onInitPurchase: () => dispatch(actions.purchaseInit()),
-        // onSetAuthRedirectPath: path =>
-        //     dispatch(actions.setAuthRedirectPath(path))
     };
 };
 

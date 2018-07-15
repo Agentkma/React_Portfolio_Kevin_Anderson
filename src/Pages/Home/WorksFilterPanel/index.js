@@ -30,6 +30,7 @@ export const WorksFilterPanel = () => {
             id="works-filter-panel"
             className="works-filter-panel signature-karl dark-bg"
         >
+            <div>works filter panel</div>
             <Container>
                 <StyledUl className="font3">{items}</StyledUl>
             </Container>
@@ -40,7 +41,6 @@ export const WorksFilterPanel = () => {
 export default WorksFilterPanel;
 
 const StyledSection = styled.section`
-    display: none;
     width: 100%;
     z-index: 9999;
     position: relative;

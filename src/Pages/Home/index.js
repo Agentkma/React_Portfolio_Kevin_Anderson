@@ -18,12 +18,12 @@ const projectItems = params => {
     });
 };
 
-const Home = () => {
+const Home = props => {
     return (
         <Fragment>
             {" "}
             <IntroAbout />
-            {this.state.worksFilterShown ? <WorksFilterPanel /> : null}
+            {props.worksFilterShown ? <WorksFilterPanel /> : null}
             <ProjectsContainer>{projectItems}</ProjectsContainer>
         </Fragment>
     );
@@ -32,7 +32,7 @@ const Home = () => {
 // Home.propTypes = {};
 
 const mapStateToProps = state => {
-    const { worksFilterShown } = this.state;
+    const { worksFilterShown } = state.homeReducer;
     return {
         worksFilterShown: worksFilterShown
     };

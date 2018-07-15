@@ -17,7 +17,7 @@ export default function reducer(state = initialState, action) {
     switch (action.type) {
         // do reducer stuff
         case TOGGLE_SHOW_WORKS_FILTER:
-            return toggleShowWorksFilter(state);
+            return { ...state, worksFilterShown: !state.worksFiltershown };
 
         default:
             return state;
@@ -25,10 +25,10 @@ export default function reducer(state = initialState, action) {
 }
 
 // ! Action Creators
-export function toggleShowWorksFilter(state) {
-    return updateObject(state, {
-        worksFilterShown: !state.worksFilterShown
-    });
+export function toggleShowWorksFilter() {
+    return {
+        type: TOGGLE_SHOW_WORKS_FILTER
+    };
 }
 
 // export function updateWidget(widget) {

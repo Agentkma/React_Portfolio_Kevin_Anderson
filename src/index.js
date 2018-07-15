@@ -8,7 +8,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
 // ! Internal
-import rootReducer from "./ducks";
+import rootReducer from "./ducks/index";
 import App from "./App";
 
 const composeEnhancers =

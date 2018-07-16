@@ -22,6 +22,23 @@ const slideDown = keyframes`
           transform: translateY(0px);
 }`;
 
+const scaleInVerTop = keyframes`
+0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}`;
+
 const wobbleHorBottom = keyframes`
   0%,
   100% {
@@ -61,6 +78,10 @@ export const Rotate = styled.div`
 
 export const SlideDown = styled.div`
     animation: ${slideDown} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+`;
+
+export const ScaleInVerTop = styled.div`
+    animation: ${scaleInVerTop} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 `;
 
 export const WobbleHorBottom = styled.div`

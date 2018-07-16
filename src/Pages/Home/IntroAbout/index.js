@@ -44,20 +44,19 @@ const StyledSectionWrap = styled.section`
     background-color: ${props => props.theme.colorBgPrimary};
 `;
 const StyledHalfHtDiv = styled.div`
-    height: 15rem;
+    height: 20rem;
 `;
 const StyledVertAlignDiv = styled.div`
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     box-sizing: border-box;
-    height: inherit;
+    height: fit-content;
 `;
 
 const StyledArticle = styled.article`
     @media (min-width: 992px) {
         width: 50%;
-        float: left;
         position: relative;
         min-height: 1px;
         padding-right: 1rem;
@@ -71,8 +70,8 @@ const StyledSectionMainHeading = styled.section`
 `;
 
 const StyledH6mHeading = styled.h6`
-    font-size: 2rem;
-    line-height: 2.25rem;
+    font-size: 2.25rem;
+    line-height: 2.675rem;
     margin-top: 0.666rem;
     margin-bottom: 0;
     font-weight: 500;

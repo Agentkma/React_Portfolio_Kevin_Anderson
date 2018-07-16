@@ -38,7 +38,6 @@ export default Layout;
 export const Main = styled.main`
     height: 75vh;
     margin-left: 0;
-    margin-top: 4rem;
     font-family: ${props => props.theme.fontFamilyPrimary};
 `;
 

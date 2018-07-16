@@ -50,3 +50,14 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
 
     return acc;
 }, {});
+
+// Iterate through the sizes and create a media template
+export const mediaMin = Object.keys(sizes).reduce((acc, label) => {
+    acc[label] = (...args) => css`
+        @media (min-width: ${sizes[label] / 16}rem) {
+            ${css(...args)};
+        }
+    `;
+
+    return acc;
+}, {});

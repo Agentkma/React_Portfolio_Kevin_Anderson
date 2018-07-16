@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { content } from "../../../Assets/Content";
 import Container from "../../../Components/Common/Container";
 import { media } from "../../../Theme";
+import { ScaleInVerTop } from "../../../Theme/animations";
 
 const items = content.home.main.worksFilter.map((category, index) => {
     if (index === 0) {
@@ -26,14 +27,16 @@ const items = content.home.main.worksFilter.map((category, index) => {
 
 export const WorksFilterPanel = () => {
     return (
-        <StyledSection
-            id="works-filter-panel"
-            className="works-filter-panel signature-karl dark-bg"
-        >
-            <Container>
-                <StyledUl className="font3">{items}</StyledUl>
-            </Container>
-        </StyledSection>
+        <ScaleInVerTop>
+            <StyledSection
+                id="works-filter-panel"
+                className="works-filter-panel signature-karl dark-bg"
+            >
+                <Container>
+                    <StyledUl className="font3">{items}</StyledUl>
+                </Container>
+            </StyledSection>
+        </ScaleInVerTop>
     );
 };
 

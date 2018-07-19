@@ -3,13 +3,13 @@ export const content = {
         header: {
             mainHeading: "My name is Kevin Anderson",
             subHeading: [
-                "I'm a Full Stack Software Engineer.",
-                "I'm based in Boulder, CO.",
+                "I'm a UI Engineer.",
+                "I work in Denver, CO.",
                 "I create web apps.",
                 "I'm a solution builder.",
                 "I'm a lifelong learner.",
                 "I'm a rational optimist.",
-                "I'm a truth seeker."
+                "I'm a humanist."
             ]
         },
         main: {

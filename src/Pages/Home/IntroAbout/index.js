@@ -1,42 +1,70 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
 import { content } from "../../../Assets/Content";
 import { media, mediaAnd } from "../../../Theme";
 import Container from "../../../Components/Common/Container";
 
-export const IntroAbout = () => {
-    return (
-        <StyledSectionWrap>
-            <StyledHalfHtDiv>
-                <StyledVertAlignDiv>
-                    <Container className="container">
-                        <StyledArticle>
-                            <StyledSectionMainHeading>
-                                <StyledH6mHeading className="dark font3light">
-                                    {content.home.header.mainHeading}
-                                </StyledH6mHeading>
-                            </StyledSectionMainHeading>
+export class IntroAbout extends Component {
+    state = {
+        itemsArray: content.home.header.subHeading,
+        itemCount: 0,
+        itemCurrent: null
+    };
+    // ! Lifecycle Methods
 
-                            <StyledSectionCD>
-                                <StyledH6headline className="cd-headline loading-bar  font3bold">
-                                    <StyledSpanLoadingBar className="cd-words-wrapper">
-                                        <StyledBisVisisble className="is-visible">
-                                            I'm a Full Stack Software Engineer.
-                                        </StyledBisVisisble>
-                                        <StyledB>
-                                            I'm based in Boulder, CO.
-                                        </StyledB>
-                                    </StyledSpanLoadingBar>
-                                </StyledH6headline>
-                            </StyledSectionCD>
-                        </StyledArticle>
-                    </Container>
-                </StyledVertAlignDiv>
-            </StyledHalfHtDiv>
-        </StyledSectionWrap>
-    );
-};
+    componentDidMount() {
+        this.interval = setInterval(() => this.renderAboutItems(), 3000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
+    // ! Methods
+
+    renderAboutItems = () => {
+        let { itemsArray, itemCount } = this.state;
+        this.setState(prevState => ({
+            itemCount: prevState.itemCount + 1,
+            itemCurrent: itemsArray[itemCount]
+        }));
+
+        if (itemCount === itemsArray.length - 1) {
+            this.setState({ itemCount: 0 });
+        }
+    };
+
+    render() {
+        return (
+            <StyledSectionWrap>
+                <StyledHalfHtDiv>
+                    <StyledVertAlignDiv>
+                        <Container className="container">
+                            <StyledArticle>
+                                <StyledSectionMainHeading>
+                                    <StyledH6mHeading className="dark font3light">
+                                        {content.home.header.mainHeading}
+                                    </StyledH6mHeading>
+                                </StyledSectionMainHeading>
+
+                                <StyledSectionCD>
+                                    <StyledH6headline className="cd-headline loading-bar  font3bold">
+                                        <StyledSpanLoadingBar className="cd-words-wrapper">
+                                            <StyledBisVisisble className="is-visible">
+                                                {this.state.itemCurrent}
+                                            </StyledBisVisisble>
+                                        </StyledSpanLoadingBar>
+                                    </StyledH6headline>
+                                </StyledSectionCD>
+                            </StyledArticle>
+                        </Container>
+                    </StyledVertAlignDiv>
+                </StyledHalfHtDiv>
+            </StyledSectionWrap>
+        );
+    }
+}
 
 export default IntroAbout;
 

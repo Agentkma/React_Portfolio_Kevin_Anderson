@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import { content } from "../../../Assets/Content";
+import { LoadingBar } from "../../../Theme/animations";
 import { media, mediaAnd } from "../../../Theme";
 import Container from "../../../Components/Common/Container";
 
@@ -50,11 +51,13 @@ export class IntroAbout extends Component {
 
                                 <StyledSectionCD>
                                     <StyledH6headline className="cd-headline loading-bar  font3bold">
-                                        <StyledSpanLoadingBar className="cd-words-wrapper">
-                                            <StyledBisVisisble className="is-visible">
-                                                {this.state.itemCurrent}
-                                            </StyledBisVisisble>
-                                        </StyledSpanLoadingBar>
+                                        <LoadingBar>
+                                            <StyledSpanLoadingBar className="cd-words-wrapper">
+                                                <StyledBisVisisble className="is-visible">
+                                                    {this.state.itemCurrent}
+                                                </StyledBisVisisble>
+                                            </StyledSpanLoadingBar>
+                                        </LoadingBar>
                                     </StyledH6headline>
                                 </StyledSectionCD>
                             </StyledArticle>
@@ -72,7 +75,7 @@ const StyledSectionWrap = styled.section`
     background-color: ${props => props.theme.colorBgPrimary};
 `;
 const StyledHalfHtDiv = styled.div`
-    height: 20rem;
+    height: 40vh;
 `;
 const StyledVertAlignDiv = styled.div`
     position: relative;
@@ -98,7 +101,7 @@ const StyledSectionMainHeading = styled.section`
 `;
 
 const StyledH6mHeading = styled.h6`
-    font-size: 2.25rem;
+    font-size: 3rem;
     line-height: 2.675rem;
     margin-top: 0.666rem;
     margin-bottom: 0;
@@ -121,7 +124,7 @@ const StyledSectionCD = styled.section`
 
 const StyledH6headline = styled.h6`
     color: ${props => props.theme.colorFontTertiary};
-    font-size: 2rem;
+    font-size: 3rem;
     line-height: 1.2;
     margin-top: 0;
     margin-bottom: 0;
@@ -133,22 +136,10 @@ const StyledH6headline = styled.h6`
 const StyledSpanLoadingBar = styled.span`
     display: inline-block;
     padding: 0.2em 0;
-    overflow: hidden;
-    vertical-align: top;
-    &::after {
-        /* loading bar */
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0px;
-        height: 5px;
-        width: 0;
-        background: #0096a7;
-        z-index: 2;
-        -webkit-transition: width 0.3s -0.1s;
-        -moz-transition: width 0.3s -0.1s;
-        transition: width 0.3s -0.1s;
-    }
+    border-bottom: solid 5px red;
+    /* height: 5px;
+    background: red; */
+    width: 100;
 `;
 
 const StyledB = styled.b`

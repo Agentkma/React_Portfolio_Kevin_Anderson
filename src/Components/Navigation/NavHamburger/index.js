@@ -47,7 +47,7 @@ const HamburgerDiv = styled.div`
     height: 2rem;
     background-repeat: repeat-x;
     color: #ffffff;
-    margin: auto;
+    margin-top: 0;
     cursor: pointer;
     font-size: 0.875rem;
     box-sizing: border-box;
@@ -61,7 +61,7 @@ const HamburgerDiv = styled.div`
         color: #000;
     }
     ${mediaMin.tablet` height: 2.5rem;
-        padding: 7px 10px;`};
+        padding: 7px 0.625rem;`};
 `;
 
 const HamburgerBar = styled.span`

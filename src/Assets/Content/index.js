@@ -15,7 +15,7 @@ export const content = {
         main: {
             worksFilter: [
                 "all",
-                "css-frameworks",
+                "cSS-frameworks",
                 "front-end",
                 "full-stack",
                 "SPA",

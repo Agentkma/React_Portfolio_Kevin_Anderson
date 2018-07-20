@@ -28,8 +28,8 @@ const StyledCodeIcon = styled(CodeIcon)`
     width: auto !important;
     height: 2rem !important;
     padding: 0 0.625rem;
-    padding-top: 0.625rem;
-    margin: auto;
+    margin-top: 0.625rem;
+    /* margin: auto; */
     font-size: 1rem;
     &:hover,
     &:focus {
@@ -37,5 +37,5 @@ const StyledCodeIcon = styled(CodeIcon)`
         background-color: #eee;
         color: #000;
     }
-    ${mediaMin.tablet`  height: 3rem !important;`};
+    ${mediaMin.tablet`  height: 2.5rem !important;`};
 `;

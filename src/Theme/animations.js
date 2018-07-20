@@ -70,6 +70,10 @@ const wobbleHorBottom = keyframes`
 
 `;
 
+const loadingBar = keyframes`
+from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }`;
+
 // Here we create a component that will rotate everything we pass in over two seconds
 export const Rotate = styled.div`
     display: inline-block;
@@ -90,4 +94,8 @@ export const WobbleHorBottom = styled.div`
     &:hover {
         animation-play-state: running;
     }
+`;
+
+export const LoadingBar = styled.span`
+    animation: 3s linear 1s ${loadingBar};
 `;

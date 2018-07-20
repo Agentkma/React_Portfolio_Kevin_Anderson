@@ -48,7 +48,7 @@ const StyledSection = styled.section`
     position: relative;
     top: 0;
     left: 0;
-    padding: 3.75rem 0;
+    padding: 5rem 0;
     background-color: ${props => props.theme.colorBgSecondary};
     li a {
         color: ${props => props.theme.colorFontSecondary};
@@ -67,15 +67,15 @@ const StyledUl = styled.ul`
     ${media.tablet`text-align: center`};
     li {
         display: inline-block;
-        margin-left: 0.625rem;
-        margin-right: 0.625rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
         &:last-child:after {
             display: none;
         }
 
         a {
-            font-size: 1rem;
-            line-height: 0.7rem;
+            font-size: 1.5rem;
+            line-height: 1rem;
             color: ${props => props.theme.colorFontSecondary};
             text-decoration: none !important;
             text-transform: capitalize;

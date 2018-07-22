@@ -8,6 +8,7 @@ export const theme = {
     colorFontTertiary: "#121212",
     colorFontQuaternary: "#292929",
     colorFontHoverPrimary: "#ff2238 !important",
+    colorAccentPrimary: "#ff2238 !important",
     fontSizeSmall: "0.7rem",
     fontSizePrimary: "1rem",
     fontSizeSecondary: "1.5rem",

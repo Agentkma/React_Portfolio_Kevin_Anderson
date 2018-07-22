@@ -1,14 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-
-// import { content } from "../../../Assets/Content";
+import { content } from "../../../Assets/Content";
 import { media } from "../../../Theme";
 
-export const ProjectItem = ({ description, img, name }) => {
+export const ProjectItem = ({ name }) => {
+    const { projects } = content.home.main;
+
+    let project = projects.filter(p => p.name === name);
+
+    const { description, img } = project[0];
+
     return (
         <div className="works-item signature-karl ImageWrapper ContentWrapperB chrome-fix works-item-one-half info css-frameworks front-end ui">
             <picture>
-                <source srcset={img.srcSet[0]} type="image/webp" />
+                <source
+                    srcSet={`../../../${img.srcSet[0]}`}
+                    type="image/webp"
+                />
                 <StyledImg
                     src={img.src}
                     alt={img.alt}
@@ -21,7 +29,7 @@ export const ProjectItem = ({ description, img, name }) => {
                 <div className=" works-item-inner ContentB">
                     <p>
                         <StyledSpan className="dark font3bold ">
-                            MacroPal
+                            {name}
                         </StyledSpan>
                     </p>
                     <h3>
@@ -72,13 +80,13 @@ const StyledH3Span = styled.span`
 `;
 
 const StyledA = styled.a`
-    opacity: 0;
+    opacity: 1;
     display: block;
     width: 100%;
     height: 100%;
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    z-index: 100;
+    z-index: 100; */
     text-align: center;
     text-decoration: none !important;
     transition: all 0.4s ease-in-out;

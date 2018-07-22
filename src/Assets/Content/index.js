@@ -24,22 +24,17 @@ export const content = {
             ],
             projects: [
                 {
-                    project1: {
-                        img: {
-                            alt: "pic of home page of macro pal app",
-                            title: "macro pal app",
-                            srcSet: [
-                                "Assets/Images/works/macroPal1100x650.webp"
-                            ],
-                            src: "Assets/Images/works/macroPal1100x650.png"
-                        },
-                        name: "MacroPal",
-                        description:
-                            "A health app that calculates calories  macros, and builds grocery lists.",
-                        worksFilter: ["css-frameworks"]
-                    }
-                },
-                { project2: {} }
+                    img: {
+                        alt: "pic of home page of macro pal app",
+                        title: "macro pal app",
+                        srcSet: ["Assets/Images/works/macroPal1100x650.webp"],
+                        src: "Assets/Images/works/macroPal1100x650.png"
+                    },
+                    name: "MacroPal",
+                    description:
+                        "A health app that calculates calories  macros, and builds grocery lists.",
+                    worksFilter: ["css-frameworks"]
+                }
             ]
         }
     },

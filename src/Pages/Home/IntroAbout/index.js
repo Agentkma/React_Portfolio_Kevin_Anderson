@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import { content } from "../../../Assets/Content";
-import { LoadingBar } from "../../../Theme/animations";
+import { BounceInLeft } from "../../../Theme/animations";
 import { media, mediaAnd } from "../../../Theme";
 import Container from "../../../Components/Common/Container";
 
@@ -12,10 +12,11 @@ export class IntroAbout extends Component {
         itemCount: 0,
         itemCurrent: null
     };
+
     // ! Lifecycle Methods
 
     componentDidMount() {
-        this.interval = setInterval(() => this.renderAboutItems(), 3000);
+        this.interval = setInterval(() => this.renderAboutItems(), 3500);
     }
 
     componentWillUnmount() {
@@ -35,7 +36,6 @@ export class IntroAbout extends Component {
             this.setState({ itemCount: 0 });
         }
     };
-
     render() {
         return (
             <StyledSectionWrap>
@@ -51,13 +51,11 @@ export class IntroAbout extends Component {
 
                                 <StyledSectionCD>
                                     <StyledH6headline className="cd-headline loading-bar  font3bold">
-                                        <LoadingBar>
-                                            <StyledSpanLoadingBar className="cd-words-wrapper">
-                                                <StyledBisVisisble className="is-visible">
-                                                    {this.state.itemCurrent}
-                                                </StyledBisVisisble>
-                                            </StyledSpanLoadingBar>
-                                        </LoadingBar>
+                                        <StyledLoadingBar className="cd-words-wrapper">
+                                            {/* <StyledBisVisisble className="is-visible"> */}
+                                            {this.state.itemCurrent}
+                                            {/* </StyledBisVisisble> */}
+                                        </StyledLoadingBar>
                                     </StyledH6headline>
                                 </StyledSectionCD>
                             </StyledArticle>
@@ -133,24 +131,34 @@ const StyledH6headline = styled.h6`
     ${mediaAnd.xlDesktop`font-size: 6rem;`};
 `;
 
-const StyledSpanLoadingBar = styled.span`
+const StyledLoadingBar = BounceInLeft.extend`
     display: inline-block;
     padding: 0.2em 0;
-    border-bottom: solid 5px red;
-    /* height: 5px;
-    background: red; */
-    width: 100;
+    overflow: hidden;
+    vertical-align: top;
+    &::after {
+        /* loading bar */
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        height: 5px;
+        width: 100%;
+        background-color: ${props => props.theme.colorAccentPrimary};
+
+        z-index: 2;
+    }
 `;
 
-const StyledB = styled.b`
-    opacity: 0;
-    top: 0.2em;
-`;
+// const StyledB = styled.b`
+//     opacity: 0;
+//     top: 0.2em;
+// `;
 
-const StyledBisVisisble = styled.b`
-    top: 0;
-    opacity: 1;
-    -webkit-animation: slide-in 0.6s;
-    -moz-animation: slide-in 0.6s;
-    animation: slide-in 0.6s;
-`;
+// const StyledBisVisisble = styled.b`
+//     top: 0;
+//     opacity: 1;
+//     -webkit-animation: slide-in 0.6s;
+//     -moz-animation: slide-in 0.6s;
+//     animation: slide-in 0.6s;
+// `;

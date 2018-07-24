@@ -36,7 +36,6 @@ class Layout extends Component {
 export default Layout;
 
 export const Main = styled.main`
-    height: 75vh;
     margin-left: 0;
     font-family: ${props => props.theme.fontFamilyPrimary};
 `;

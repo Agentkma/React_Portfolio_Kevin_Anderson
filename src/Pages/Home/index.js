@@ -10,16 +10,6 @@ import ProjectItem from "./ProjectItem";
 import { content } from "../../Assets/Content";
 import ProjectsContainer from "../../hoc/ProjectsContainer";
 
-// const projectItems = () => {
-//     const { projects } = content.home.main;
-
-//     projects.map(project => {
-//         const { description, img, name } = project;
-
-//         return <ProjectItem description={description} name={name} img={img} />;
-//     });
-// };
-
 const Home = props => {
     const { projects } = content.home.main;
 
@@ -28,7 +18,6 @@ const Home = props => {
             {" "}
             <IntroAbout />
             {props.worksFilterShown ? <WorksFilterPanel /> : null}
-            {/* <ProjectsContainer>{items}</ProjectsContainer> */}
             <ProjectsContainer>
                 {projects.map(project => {
                     const { description, img, name } = project;
@@ -43,7 +32,6 @@ const Home = props => {
                     );
                 })}
             </ProjectsContainer>
-            })
         </Fragment>
     );
 };

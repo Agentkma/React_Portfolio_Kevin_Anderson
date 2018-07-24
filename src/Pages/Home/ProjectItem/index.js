@@ -11,14 +11,14 @@ export const ProjectItem = ({ name }) => {
     const { description, img } = project[0];
 
     return (
-        <div className="works-item signature-karl ImageWrapper ContentWrapperB chrome-fix works-item-one-half info css-frameworks front-end ui">
+        <StyledDiv className="works-item signature-karl ImageWrapper ContentWrapperB chrome-fix works-item-one-half info css-frameworks front-end ui">
             <picture>
                 <source
-                    srcSet={`../../../${img.srcSet[0]}`}
+                    srcSet={require(`../../../${img.srcSet[0]}`)}
                     type="image/webp"
                 />
                 <StyledImg
-                    src={img.src}
+                    src={require(`../../../${img.src}`)}
                     alt={img.alt}
                     title={img.title}
                     className="img-responsive lozad"
@@ -39,17 +39,34 @@ export const ProjectItem = ({ name }) => {
                     </h3>
                 </div>
             </StyledA>
-        </div>
+        </StyledDiv>
     );
 };
 
 export default ProjectItem;
+
+const StyledDiv = styled.div`
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 50% !important;
+    min-height: fit-content;
+    overflow: hidden;
+    display: block;
+    box-sizing: border-box;
+`;
 
 const StyledImg = styled.img`
     display: block;
     width: 100% !important;
     max-width: 100%;
     height: auto;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+        transform: translateY(100%);
+    }
 `;
 
 const StyledSpan = styled.span`
@@ -80,19 +97,18 @@ const StyledH3Span = styled.span`
 `;
 
 const StyledA = styled.a`
-    opacity: 1;
+    opacity: 0;
     display: block;
     width: 100%;
     height: 100%;
-    /* position: absolute;
+    position: absolute;
     top: 0;
-    z-index: 100; */
+    z-index: 100;
     text-align: center;
     text-decoration: none !important;
     transition: all 0.4s ease-in-out;
     color: #121212;
     &:hover {
-        opacity: 1;
         transition: all 0.4s ease-in-out;
         cursor: require('../../../Assets/Images/zoom.png') 40 40, crosshair;
 }

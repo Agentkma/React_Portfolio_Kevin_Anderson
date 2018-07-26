@@ -26,7 +26,7 @@ export const ProjectItem = ({ name }) => {
             </picture>
 
             <StyledA href="project02.html">
-                <div className=" works-item-inner ContentB">
+                <StyledDivProjectItem className=" works-item-inner ContentB">
                     <p>
                         <StyledSpan className="dark font3bold ">
                             {name}
@@ -37,7 +37,7 @@ export const ProjectItem = ({ name }) => {
                             {description}
                         </StyledH3Span>
                     </h3>
-                </div>
+                </StyledDivProjectItem>
             </StyledA>
         </StyledDiv>
     );
@@ -63,11 +63,54 @@ const StyledImg = styled.img`
     width: 100% !important;
     max-width: 100%;
     height: auto;
+    border: 0;
     transition: all 0.4s ease-in-out;
     &:hover {
         transform: translateY(100%);
     }
 `;
+
+const StyledA = styled.a`
+    box-sizing: border-box;
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    text-align: center;
+    text-decoration: none !important;
+    transition: all 0.4s ease-in-out;
+    color: #121212;
+    background-color: transparent;
+    &:hover {
+        text-decoration: none !important;
+        opacity: 1;
+        transition: all 0.4s ease-in-out;
+        cursor: require("../../../Assets/Images/zoom.png") 40 40, crosshair;
+    }
+`;
+
+const StyledDivProjectItem = styled.div`
+    text-align: left;
+    padding: 100px 120px;
+    position: absolute;
+    background: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: -100%;
+    left: 0;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+}`;
 
 const StyledSpan = styled.span`
     font-size: 1.125rem;
@@ -94,23 +137,4 @@ const StyledH3Span = styled.span`
     color: ${props => props.theme.colorFontQuaternary};
     ${media.desktop`font-size: 0.875rem;
     line-height: 1.3125rem;`};
-`;
-
-const StyledA = styled.a`
-    opacity: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 100;
-    text-align: center;
-    text-decoration: none !important;
-    transition: all 0.4s ease-in-out;
-    color: #121212;
-    &:hover {
-        transition: all 0.4s ease-in-out;
-        cursor: require('../../../Assets/Images/zoom.png') 40 40, crosshair;
-}
-    }
 `;

@@ -34,6 +34,117 @@ export const content = {
                     description:
                         "A health app that calculates calories  macros, and builds grocery lists.",
                     worksFilter: ["css-frameworks"]
+                },
+                {
+                    img: {
+                        alt: "pic of galvanize eats app home page",
+                        title: "galvanize eats app",
+                        srcSet: [
+                            "Assets/Images/works/galvanizeEats1100x650.webp"
+                        ],
+                        src: "Assets/Images/works/galvanizeEats1100x650.png"
+                    },
+                    name: "Galvanize Eats",
+                    description: "A food ordering app.",
+                    worksFilter: ["css-frameworks", "front-end"]
+                },
+                {
+                    img: {
+                        alt: "pic of safe nav app home page",
+                        title: "safe nav app",
+                        srcSet: ["Assets/Images/works/safeNav1100x650.webp"],
+                        src: "Assets/Images/works/safeNav1100x650.png"
+                    },
+                    name: "Safe Nav",
+                    description:
+                        "A product site for the Safe Nav wearable technology.",
+                    worksFilter: ["css-frameworks", "front-end"]
+                },
+                {
+                    img: {
+                        alt: "gif of custom video player",
+                        title: "custom video player",
+                        srcSet: ["Assets/Images/works/customVP-550x325.gif"],
+                        src: "Assets/Images/works/customVP-550x325.gif"
+                    },
+                    name: "Custom Video Player",
+                    description:
+                        "Pure HTML:Custom controls, CC, & text highlighting.",
+                    worksFilter: ["pure-css", "front-end"]
+                },
+                {
+                    img: {
+                        alt: "pic of Kev App home page",
+                        title: "Kev App",
+                        srcSet: ["Assets/Images/works/webapp1100x650.webp"],
+                        src: "Assets/Images/works/webapp1100x650.png"
+                    },
+                    name: "KevApp",
+                    description:
+                        "A simple project simulating a web app using Chart.js plugin.",
+                    worksFilter: ["pure-css", "front-end"]
+                },
+                {
+                    img: {
+                        alt: "pic of gRecipes app home page",
+                        title: "gRecipes App",
+                        srcSet: ["Assets/Images/works/gRecipes1100x650.webp"],
+                        src: "Assets/Images/works/gRecipes1100x650.png"
+                    },
+                    name: "gRecipes",
+                    description:
+                        "A web app modeled after AllRecipes.com. Full Stack CRUD app.",
+                    worksFilter: ["css-frameworks", "full-stack"]
+                },
+                {
+                    img: {
+                        alt: "pic of AngularJS Weather App home page",
+                        title: "AngularJS App",
+                        srcSet: [
+                            "Assets/Images/works/angularWeatherApp550x325.gif"
+                        ],
+                        src: "Assets/Images/works/angularWeatherApp550x325.gif"
+                    },
+                    name: "AngularJS Weather App",
+                    description: "Single Page Apps.",
+                    worksFilter: ["css-frameworks", "full-stack", "SPA"]
+                },
+                {
+                    img: {
+                        alt: "pic of React RSVP home page",
+                        title: "React App",
+                        srcSet: ["Assets/Images/works/ReactRSVP01100x650.png"],
+                        src: "Assets/Images/works/ReactRSVP01100x650.png"
+                    },
+                    name: "React Apps",
+                    description: "Single Page Apps.",
+                    worksFilter: ["css-frameworks", "SPA"]
+                },
+                {
+                    img: {
+                        alt: "pic of Angular Photo Log home page",
+                        title: "Angular App",
+                        srcSet: [
+                            "Assets/Images/works/AngularPhotoLog6-1100x650.png"
+                        ],
+                        src: "Assets/Images/works/AngularPhotoLog6-1100x650.png"
+                    },
+                    name: "Angular Apps",
+                    description: "Single Page Apps.",
+                    worksFilter: ["css-frameworks", "SPA"]
+                },
+                {
+                    img: {
+                        alt: "pic of Angular Photo Log home page",
+                        title: "terraGo App",
+                        srcSet: [
+                            "Assets/Images/works/terraGoSplash-1100x650.png"
+                        ],
+                        src: "Assets/Images/works/terraGoSplash-1100x650.png"
+                    },
+                    name: "React-Native",
+                    description: "Mobile Apps.",
+                    worksFilter: ["mobile", "SPA", "full-stack"]
                 }
             ]
         }

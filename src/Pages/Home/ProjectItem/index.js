@@ -46,12 +46,12 @@ export const ProjectItem = ({ name }) => {
 export default ProjectItem;
 
 const StyledDiv = styled.div`
-    position: absolute;
+    /* position: absolute;
     left: 0px;
-    top: 0px;
+    top: 0px; */
     margin: 0 !important;
     padding: 0 !important;
-    width: 50% !important;
+    /* width: 50% !important; */
     min-height: fit-content;
     overflow: hidden;
     display: block;

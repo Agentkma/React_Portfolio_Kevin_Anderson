@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { content } from "../../../Assets/Content";
+import cursor from "../../../Assets/Images/plus@2x.png";
 import { media } from "../../../Theme";
 
 export const ProjectItem = ({ name }) => {
@@ -11,44 +13,45 @@ export const ProjectItem = ({ name }) => {
     const { description, img } = project[0];
 
     return (
-        <StyledDiv className="works-item signature-karl ImageWrapper ContentWrapperB chrome-fix works-item-one-half info css-frameworks front-end ui">
-            <picture>
-                <source
-                    srcSet={require(`../../../${img.srcSet[0]}`)}
-                    type="image/webp"
-                />
-                <StyledImg
-                    src={require(`../../../${img.src}`)}
-                    alt={img.alt}
-                    title={img.title}
-                    className="img-responsive lozad"
-                />
-            </picture>
+        <StyledDivContainer>
+            <StyledDiv className="works-item signature-karl ImageWrapper ContentWrapperB chrome-fix works-item-one-half info css-frameworks front-end ui">
+                <picture>
+                    <source
+                        srcSet={require(`../../../${img.srcSet[0]}`)}
+                        type="image/webp"
+                    />
+                    <StyledImg
+                        src={require(`../../../${img.src}`)}
+                        alt={img.alt}
+                        title={img.title}
+                        className="img-responsive lozad"
+                    />
+                </picture>
 
-            <StyledA href="project02.html">
-                <StyledDivProjectItem className=" works-item-inner ContentB">
-                    <p>
-                        <StyledSpan className="dark font3bold ">
-                            {name}
-                        </StyledSpan>
-                    </p>
-                    <h3>
-                        <StyledH3Span className="dark font3 ">
+                <StyledLink to="/project02">
+                    <StyledDivProjectItem className=" works-item-inner ContentB">
+                        <StyledP className="dark font3bold ">{name}</StyledP>
+
+                        <StyledH3 className="dark font3 ">
                             {description}
-                        </StyledH3Span>
-                    </h3>
-                </StyledDivProjectItem>
-            </StyledA>
-        </StyledDiv>
+                        </StyledH3>
+                    </StyledDivProjectItem>
+                </StyledLink>
+            </StyledDiv>
+        </StyledDivContainer>
     );
 };
 
 export default ProjectItem;
 
+const StyledDivContainer = styled.div`
+    position: relative;
+`;
+
 const StyledDiv = styled.div`
-    /* position: absolute;
+    position: absolute;
     left: 0px;
-    top: 0px; */
+    top: 0px;
     margin: 0 !important;
     padding: 0 !important;
     /* width: 50% !important; */
@@ -70,7 +73,7 @@ const StyledImg = styled.img`
     }
 `;
 
-const StyledA = styled.a`
+const StyledLink = styled(Link)`
     box-sizing: border-box;
     opacity: 0;
     display: block;
@@ -88,7 +91,7 @@ const StyledA = styled.a`
         text-decoration: none !important;
         opacity: 1;
         transition: all 0.4s ease-in-out;
-        cursor: require("../../../Assets/Images/zoom.png") 40 40, crosshair;
+        cursor: url(${cursor}) 40 40, crosshair;
     }
 `;
 
@@ -99,20 +102,21 @@ const StyledDivProjectItem = styled.div`
     background: #ffffff;
     opacity: 0;
     visibility: hidden;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     display: block;
     top: -100%;
     left: 0;
     transition: all 0.3s ease 0s;
-    &:hover {
+    /* &:hover {
         opacity: 1;
         visibility: visible;
         top: 0;
-    }
+        transition: all 0.3s ease 0s;
+    } */
 }`;
 
-const StyledSpan = styled.span`
+const StyledP = styled.p`
     font-size: 1.125rem;
     line-height: 1.5625rem;
     letter-spacing: normal;
@@ -125,7 +129,7 @@ const StyledSpan = styled.span`
     line-height: 1.3125rem;`};
 `;
 
-const StyledH3Span = styled.span`
+const StyledH3 = styled.h3`
     border-color: #ff2238;
     letter-spacing: normal;
     font-size: 1.125rem;

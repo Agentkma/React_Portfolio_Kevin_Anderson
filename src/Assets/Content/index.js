@@ -33,7 +33,8 @@ export const content = {
                     name: "MacroPal",
                     description:
                         "A health app that calculates calories  macros, and builds grocery lists.",
-                    worksFilter: ["css-frameworks"]
+                    worksFilter: ["css-frameworks"],
+                    to: "/project01"
                 },
                 {
                     img: {
@@ -46,7 +47,8 @@ export const content = {
                     },
                     name: "Galvanize Eats",
                     description: "A food ordering app.",
-                    worksFilter: ["css-frameworks", "front-end"]
+                    worksFilter: ["css-frameworks", "front-end"],
+                    to: "/project02"
                 },
                 {
                     img: {
@@ -58,7 +60,8 @@ export const content = {
                     name: "Safe Nav",
                     description:
                         "A product site for the Safe Nav wearable technology.",
-                    worksFilter: ["css-frameworks", "front-end"]
+                    worksFilter: ["css-frameworks", "front-end"],
+                    to: "/project03"
                 },
                 {
                     img: {
@@ -70,7 +73,8 @@ export const content = {
                     name: "Custom Video Player",
                     description:
                         "Pure HTML:Custom controls, CC, & text highlighting.",
-                    worksFilter: ["pure-css", "front-end"]
+                    worksFilter: ["pure-css", "front-end"],
+                    to: "/project04"
                 },
                 {
                     img: {
@@ -82,7 +86,8 @@ export const content = {
                     name: "KevApp",
                     description:
                         "A simple project simulating a web app using Chart.js plugin.",
-                    worksFilter: ["pure-css", "front-end"]
+                    worksFilter: ["pure-css", "front-end"],
+                    to: "/project05"
                 },
                 {
                     img: {
@@ -94,7 +99,8 @@ export const content = {
                     name: "gRecipes",
                     description:
                         "A web app modeled after AllRecipes.com. Full Stack CRUD app.",
-                    worksFilter: ["css-frameworks", "full-stack"]
+                    worksFilter: ["css-frameworks", "full-stack"],
+                    to: "/project06"
                 },
                 {
                     img: {
@@ -107,7 +113,8 @@ export const content = {
                     },
                     name: "AngularJS Weather App",
                     description: "Single Page Apps.",
-                    worksFilter: ["css-frameworks", "full-stack", "SPA"]
+                    worksFilter: ["css-frameworks", "full-stack", "SPA"],
+                    to: "/project07"
                 },
                 {
                     img: {
@@ -118,7 +125,8 @@ export const content = {
                     },
                     name: "React Apps",
                     description: "Single Page Apps.",
-                    worksFilter: ["css-frameworks", "SPA"]
+                    worksFilter: ["css-frameworks", "SPA"],
+                    to: "/project08"
                 },
                 {
                     img: {
@@ -131,7 +139,8 @@ export const content = {
                     },
                     name: "Angular Apps",
                     description: "Single Page Apps.",
-                    worksFilter: ["css-frameworks", "SPA"]
+                    worksFilter: ["css-frameworks", "SPA"],
+                    to: "/project09"
                 },
                 {
                     img: {
@@ -144,7 +153,8 @@ export const content = {
                     },
                     name: "React-Native",
                     description: "Mobile Apps.",
-                    worksFilter: ["mobile", "SPA", "full-stack"]
+                    worksFilter: ["mobile", "SPA", "full-stack"],
+                    to: "/project10"
                 }
             ]
         }

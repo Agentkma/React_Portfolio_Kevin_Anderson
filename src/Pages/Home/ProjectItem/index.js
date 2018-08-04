@@ -10,7 +10,7 @@ export const ProjectItem = ({ name }) => {
 
     let project = projects.filter(p => p.name === name);
 
-    const { description, img } = project[0];
+    const { description, img, to } = project[0];
 
     return (
         <StyledDivContainer>
@@ -28,7 +28,7 @@ export const ProjectItem = ({ name }) => {
                     />
                 </picture>
 
-                <StyledLink to="/project02">
+                <StyledLink to={to}>
                     <StyledDivProjectItem className=" works-item-inner ContentB">
                         <StyledP className="dark font3bold ">{name}</StyledP>
 

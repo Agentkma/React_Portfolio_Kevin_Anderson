@@ -9,6 +9,7 @@ import styled, { withTheme, ThemeProvider } from "styled-components";
 import Layout from "./hoc/Layout";
 import Home from "./Pages/Home";
 import { theme } from "./Theme";
+import Project1 from "./Pages/Project/Project1";
 
 // ! Example async component...?
 // const asyncCheckout = asyncComponent(() => {
@@ -38,9 +39,9 @@ class App extends Component {
                         toggleShowWorksFilter={this.handleShowWorksFilter}
                     >
                         <Switch>
-                            <Route path="/" component={Home} />
-                            {/* <Route path="/project1" component={project1} />
-                    <Route path="/project2" component={Project2} />
+                            <Route path="/" exact component={Home} />
+                            <Route path="/project01" component={Project1} />
+                            {/*<Route path="/project2" component={Project2} />
                       <Route path="/project3" component={Project3} />
                         <Route path="/project4" component={Project4} />
                           <Route path="/project5" component={Project5} />
@@ -48,7 +49,7 @@ class App extends Component {
                               <Route path="/project7" component={Project7} />
                                 <Route path="/project8" component={Project8} />
                     <Route path="/contact" component={contact} />
-                    <Route path="/about" component={about} /> */}
+                    <Route path="/about" component={about} />  */}
                             <Redirect to="/" />
                         </Switch>
                     </Layout>

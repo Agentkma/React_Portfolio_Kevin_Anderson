@@ -1,11 +1,11 @@
 import React from "react";
 import ProjectDescription from "../subComponent/ProjectDescription";
 
-export function Layout1() {
+export function Layout1({ project }) {
     return (
         <div>
             <div>header</div>
-            <ProjectDescription />
+            <ProjectDescription project={project} />
         </div>
     );
 }

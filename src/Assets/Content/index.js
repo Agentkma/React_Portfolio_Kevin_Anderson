@@ -160,10 +160,28 @@ export const content = {
         }
     },
 
-    projects: {
-        header: {},
-        main: {}
-    },
+    projects: [
+        {
+            project01: {
+                banner: {},
+                description: {
+                    taglineHeading: "Good design and clean coding",
+                    taglineSubHeading: "That is a Principle",
+                    projectDescription: `Galvanize Eats is a simple app demonstrating the use of
+                    forms and dynamic menu items received from an API.
+                    <br />
+                    <br />The order data is organized into an order object
+                    and sent to an API.<br />
+                    <br />The app uses Materialize CSS framework, HTML, CSS,
+                    JavaScript, and jQuery.`,
+                    categories: "Front End &amp; CSS Framework",
+                    delivered: "2017 September",
+                    liveSiteLink: "https://agentkma.github.io/MacroPal2.0/"
+                },
+                imgContainer: {}
+            }
+        }
+    ],
     about: {
         header: {},
         main: {}

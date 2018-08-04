@@ -2,24 +2,31 @@ import React from "react";
 import styled from "styled-components";
 import Row from "../../../hoc/Row";
 import { mediaMin } from "../../../Theme";
+import content from "../../../../Assets/Content";
 
-export function ProjectDescription() {
+export function ProjectDescription({ project }) {
+    const {
+        taglineHeading,
+        taglineSubHeading,
+        projectDescription,
+        categories,
+        delivered,
+        liveSiteLink
+    } = content.projects[project].description;
     return (
-        <StyledSection class="hero-text add-top-half add-bottom">
-            <Row class="row">
-                <StyledArticleMd12 class="col-md-12">
-                    <StyledH3BlkFont3Bold class="black font3bold">
-                        Good design and clean coding
-                    </StyledH3BlkFont3Bold>
-                    <StyledDivLinerSm class="liner-small color-bg" />
-                    <StyledH6grFont3Bold class="grey font3bold">
-                        That is a Principle
-                    </StyledH6grFont3Bold>
-                </StyledArticleMd12>
+        <S_Section>
+            <Row>
+                <S_article>
+                    <S_h3>{taglineHeading}</S_h3>
+                    <S_div>
+                        <S_h6>That is a Principle{taglineSubHeading}</S_h6>
+                    </S_div>
+                </S_article>
             </Row>
-            <StyledRow class="row add-top-quarter">
-                <StyledArticleColMd8 class="col-md-8">
-                    <StyledPgray class="grey">
+            <S_Row>
+                <S_article_2>
+                    <S_p>
+                        {projectDescription}
                         Galvanize Eats is a simple app demonstrating the use of
                         forms and dynamic menu items received from an API.{" "}
                         <br />
@@ -27,42 +34,35 @@ export function ProjectDescription() {
                         and sent to an API.<br />
                         <br />The app uses Materialize CSS framework, HTML, CSS,
                         JavaScript, and jQuery.
-                    </StyledPgray>
-                </StyledArticleColMd8>
-                <StyledArticleColMd4 class="col-md-4">
-                    <StyledUlProjectSpec class="project-spec signature-karl">
-                        <StyledLiFont3BoldBlk class="font3bold black">
+                    </S_p>
+                </S_article_2>
+                <S_article_3>
+                    <S_ul>
+                        <S_li>
                             Category:{" "}
-                            <StyledSpanFont3lightDark class="font3light dark">
-                                Front End &amp; CSS Framework
-                            </StyledSpanFont3lightDark>
-                        </StyledLiFont3BoldBlk>
-                        <StyledLiFont3BoldBlk class="font3bold black">
-                            Client:{" "}
-                            <StyledSpanFont3lightDark class="font3light dark">
-                                None/Personal Project
-                            </StyledSpanFont3lightDark>
-                        </StyledLiFont3BoldBlk>
-                        <StyledLiFont3BoldBlk class="font3bold black">
+                            <S_span>
+                                {categories}Front End &amp; CSS Framework
+                            </S_span>
+                        </S_li>
+                        <S_li>
+                            Client: <S_span>None/Personal Project</S_span>
+                        </S_li>
+                        <S_li>
                             Delivered:{" "}
-                            <StyledSpanFont3lightDark class="font3light dark">
-                                2017 September
-                            </StyledSpanFont3lightDark>
-                        </StyledLiFont3BoldBlk>
-                    </StyledUlProjectSpec>
-                    <StyledButton
-                        class="btn btn-signature btn-signature-karl btn-signature-color"
-                        onClick={params => {}}
-                    >
-                        Live Preview
-                    </StyledButton>
-                </StyledArticleColMd4>
-            </StyledRow>
-        </StyledSection>
+                            <S_span>{delivered}2017 September</S_span>
+                        </S_li>
+                    </S_ul>
+                    <S_button onClick={params => {}}>Live Preview</S_button>
+                </S_article_3>
+            </S_Row>
+        </S_Section>
     );
 }
 
 export default ProjectDescription;
+
+// ! Styles
+
 //base styles
 const StyledColArticle = styled.article`
     position: relative;
@@ -72,16 +72,16 @@ const StyledColArticle = styled.article`
     box-sizing: border-box;
     display: block;
 `;
-const StyledSection = styled.section`
+const S_Section = styled.section`
     display: block;
     box-sizing: border-box;
 `;
 
-const StyledArticleMd12 = StyledColArticle.extend`
+const S_article = StyledColArticle.extend`
     width: 100%;
     float: left;
 `;
-const StyledH3BlkFont3Bold = styled.h3`
+const S_h3 = styled.h3`
     font-size: 3rem;
     line-height: 4rem;
     font-family: "designova_ss_bold", sans-serif;
@@ -93,7 +93,7 @@ const StyledH3BlkFont3Bold = styled.h3`
     box-sizing: border-box;
 `;
 
-const StyledDivLinerSm = styled.div`
+const S_div = styled.div`
     background-color: #ff2238;
     width: 100px;
     height: 2px;
@@ -102,7 +102,7 @@ const StyledDivLinerSm = styled.div`
     margin-bottom: 0.625rem;
 `;
 
-const StyledH6grFont3Bold = styled.h6`
+const S_h6 = styled.h6`
     font-size: 1.25rem;
     line-height: 21px;
     font-family: "designova_ss_bold", sans-serif;
@@ -114,15 +114,15 @@ const StyledH6grFont3Bold = styled.h6`
     display: block;
 `;
 
-const StyledRow = styled(Row)`
+const S_Row = styled(Row)`
     margin-top: 40px;
 `;
 
-const StyledArticleColMd8 = StyledColArticle.extend`
+const S_article_2 = StyledColArticle.extend`
     ${mediaMin.desktop` width: 66.66666667%; float:left`};
 `;
 
-const StyledPgray = styled.p`
+const S_p = styled.p`
     color: #999999;
     font-size: 0.75rem;
     line-height: 1.5625rem;
@@ -132,11 +132,11 @@ const StyledPgray = styled.p`
     display: block;
 `;
 
-const StyledArticleColMd4 = StyledColArticle.extend`
+const S_article_3 = StyledColArticle.extend`
     ${mediaMin.desktop` width: 33.333333%; float:left`};
 `;
 
-const StyledUlProjectSpec = styled.ul`
+const S_ul = styled.ul`
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -144,7 +144,7 @@ const StyledUlProjectSpec = styled.ul`
     display: block;
 `;
 
-const StyledLiFont3BoldBlk = styled.li`
+const S_li = styled.li`
     padding: 0.625rem 0;
     border-top: solid 1px #eee;
     font-size: 0.75rem;
@@ -156,7 +156,7 @@ const StyledLiFont3BoldBlk = styled.li`
     padding: 0;
 `;
 
-const StyledSpanFont3lightDark = styled.span`
+const S_span = styled.span`
     font-family: "designova_ss_light", sans-serif;
     font-weight: 200;
     color: #292929;
@@ -164,7 +164,7 @@ const StyledSpanFont3lightDark = styled.span`
     line-height: 1.5rem;
 `;
 
-const StyledButton = styled.button`
+const S_button = styled.button`
     background-color: #ff2238 !important;
     color: #ffffff !important;
     border: none;

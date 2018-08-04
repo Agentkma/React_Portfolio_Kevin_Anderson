@@ -27,7 +27,9 @@ const sizesAnd = {
 const sizes = {
     tablet: 768,
     /* Larger than desktop */
-    desktop: 992
+    desktop: 992,
+    /* xlDesktop */
+    xlDesktop: 1200
 };
 
 // Iterate through the sizes and create a media template

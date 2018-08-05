@@ -29,8 +29,6 @@ export class Navigation extends Component {
     };
 
     render() {
-        // const { theme } = this.props.theme;
-
         const navDrawer = this.state.showNavDrawer ? (
             <NavDrawer
                 onClick={this.navDrawerClosedHandler}

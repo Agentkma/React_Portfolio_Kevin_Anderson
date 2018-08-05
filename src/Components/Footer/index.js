@@ -1,8 +1,12 @@
+// ! External
 import moment from "moment";
 import React from "react";
 import styled from "styled-components";
 
+// ! Internal
+
 import { content } from "../../Assets/Content";
+import { media } from "../../Theme";
 
 export const Footer = () => {
     const socialLitems = content.footer.social.map(li => {
@@ -23,40 +27,40 @@ export const Footer = () => {
     });
 
     return (
-        <StyledFooter role="contentinfo">
-            <StyledContFluidDiv>
-                <StyledUl>{socialLitems}</StyledUl>
-                <StyledArticle>
+        <Sfooter role="contentinfo">
+            <Sdiv>
+                <Sul>{socialLitems}</Sul>
+                <Sarticle>
                     <p>
                         All Rights Reserved &copy; {moment().year()}{" "}
                         <a target="_blank " href=" ">
                             Kevin Anderson
                         </a>.
                     </p>
-                </StyledArticle>
-            </StyledContFluidDiv>
-        </StyledFooter>
+                </Sarticle>
+            </Sdiv>
+        </Sfooter>
     );
 };
 
 export default Footer;
 
-const StyledFooter = styled.footer`
+// ! Styles
+
+const Sfooter = styled.footer`
     background-color: ${props => props.theme.colorBgPrimary};
     padding: 50px 0;
-    @media (max-width: 768px) {
-        text-align: center;
-    }
+    ${media.tablet` text-align: center;`};
 `;
 
-const StyledContFluidDiv = styled.div`
+const Sdiv = styled.div`
     padding-right: 1rem;
     padding-left: 1rem;
     margin-right: auto;
     margin-left: auto;
 `;
 
-const StyledUl = styled.ul`
+const Sul = styled.ul`
     list-style: none outside none;
     padding: 0;
     text-align: center;
@@ -80,7 +84,7 @@ const StyledImg = styled.img`
     border: 0;
 `;
 
-const StyledArticle = styled.article`
+const Sarticle = styled.article`
     font-size: ${props => props.theme.fontSizeSmall};
     line-height: 1rem;
     margin-top: 0.666rem;

@@ -1,4 +1,4 @@
-import { updateObject } from "../shared/utility";
+// import { updateObject } from "../shared/utility";
 
 // ! Actions
 const TOGGLE_SHOW_WORKS_FILTER = "app/ducks/TOGGLE_SHOW_WORKS_FILTER";

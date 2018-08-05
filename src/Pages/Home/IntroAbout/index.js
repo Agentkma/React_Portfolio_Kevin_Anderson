@@ -1,9 +1,11 @@
+// ! External
 import React, { Component } from "react";
 import styled from "styled-components";
 
+// ! Internal
 import { content } from "../../../Assets/Content";
 import { BounceInLeft } from "../../../Theme/animations";
-import { media, mediaAnd } from "../../../Theme";
+import { media, mediaAnd, mediaMin } from "../../../Theme";
 import Container from "../../../Components/Common/Container";
 
 export class IntroAbout extends Component {
@@ -38,44 +40,44 @@ export class IntroAbout extends Component {
     };
     render() {
         return (
-            <StyledSectionWrap>
-                <StyledHalfHtDiv>
-                    <StyledVertAlignDiv>
-                        <Container className="container">
-                            <StyledArticle>
-                                <StyledSectionMainHeading>
-                                    <StyledH6mHeading className="dark font3light">
+            <Ssection>
+                <SdivHalf>
+                    <SdivVertAlign>
+                        <Container>
+                            <Sarticle>
+                                <SsectionMH>
+                                    <Sh6H>
                                         {content.home.header.mainHeading}
-                                    </StyledH6mHeading>
-                                </StyledSectionMainHeading>
+                                    </Sh6H>
+                                </SsectionMH>
 
-                                <StyledSectionCD>
-                                    <StyledH6headline className="cd-headline loading-bar  font3bold">
-                                        <StyledLoadingBar className="cd-words-wrapper">
-                                            {/* <StyledBisVisisble className="is-visible"> */}
+                                <SsectionCD>
+                                    <Sh6HL>
+                                        <SloadingBar>
                                             {this.state.itemCurrent}
-                                            {/* </StyledBisVisisble> */}
-                                        </StyledLoadingBar>
-                                    </StyledH6headline>
-                                </StyledSectionCD>
-                            </StyledArticle>
+                                        </SloadingBar>
+                                    </Sh6HL>
+                                </SsectionCD>
+                            </Sarticle>
                         </Container>
-                    </StyledVertAlignDiv>
-                </StyledHalfHtDiv>
-            </StyledSectionWrap>
+                    </SdivVertAlign>
+                </SdivHalf>
+            </Ssection>
         );
     }
 }
 
 export default IntroAbout;
 
-const StyledSectionWrap = styled.section`
+// ! Styles
+
+const Ssection = styled.section`
     background-color: ${props => props.theme.colorBgPrimary};
 `;
-const StyledHalfHtDiv = styled.div`
+const SdivHalf = styled.div`
     height: 40vh;
 `;
-const StyledVertAlignDiv = styled.div`
+const SdivVertAlign = styled.div`
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -83,22 +85,20 @@ const StyledVertAlignDiv = styled.div`
     height: fit-content;
 `;
 
-const StyledArticle = styled.article`
-    @media (min-width: 992px) {
-        width: 50%;
+const Sarticle = styled.article`
+    ${mediaMin.desktop`width: 50%;
         position: relative;
         min-height: 1px;
         padding-right: 1rem;
-        padding-left: 1rem;
-    }
+        padding-left: 1rem;`};
 `;
 
-const StyledSectionMainHeading = styled.section`
+const SsectionMH = styled.section`
     ${media.desktop`margin-left: 0;
         padding: 0 2rem;`};
 `;
 
-const StyledH6mHeading = styled.h6`
+const Sh6H = styled.h6`
     font-size: 3rem;
     line-height: 2.675rem;
     margin-top: 0.666rem;
@@ -106,7 +106,7 @@ const StyledH6mHeading = styled.h6`
     font-weight: 500;
 `;
 
-const StyledSectionCD = styled.section`
+const SsectionCD = styled.section`
     text-align: left;
     max-width: 100%;
     width: 100%;
@@ -120,7 +120,7 @@ const StyledSectionCD = styled.section`
     ${mediaAnd.tablet` margin: 0 auto;`};
 `;
 
-const StyledH6headline = styled.h6`
+const Sh6HL = styled.h6`
     color: ${props => props.theme.colorFontTertiary};
     font-size: 3rem;
     line-height: 1.2;
@@ -131,7 +131,7 @@ const StyledH6headline = styled.h6`
     ${mediaAnd.xlDesktop`font-size: 6rem;`};
 `;
 
-const StyledLoadingBar = BounceInLeft.extend`
+const SloadingBar = BounceInLeft.extend`
     display: inline-block;
     padding: 0.2em 0;
     overflow: hidden;
@@ -149,16 +149,3 @@ const StyledLoadingBar = BounceInLeft.extend`
         z-index: 2;
     }
 `;
-
-// const StyledB = styled.b`
-//     opacity: 0;
-//     top: 0.2em;
-// `;
-
-// const StyledBisVisisble = styled.b`
-//     top: 0;
-//     opacity: 1;
-//     -webkit-animation: slide-in 0.6s;
-//     -moz-animation: slide-in 0.6s;
-//     animation: slide-in 0.6s;
-// `;

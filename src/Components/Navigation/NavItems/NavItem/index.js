@@ -2,10 +2,25 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const Li = styled.li`
+// ! Internal
+import { mediaMin } from "../../../../Theme";
+
+export const NavItem = props => (
+    <Sli>
+        <SnavLink to={props.link} exact={props.exact}>
+            {props.children}
+        </SnavLink>
+    </Sli>
+);
+
+export default NavItem;
+
+// ! Styles
+
+export const Sli = styled.li`
     position: relative;
     display: inline-block;
-    background-color: #fff;
+    background-color: ${props => props.theme.colorBgPrimary};
     margin-right: -5px;
     &:first-child {
         border-left: 0;
@@ -19,10 +34,10 @@ export const Li = styled.li`
     text-shadow: none;
     transition: background-color 0.5s ease-out;
     &:hover {
-        background-color: #eee;
+        background-color: ${props => props.theme.colorAccentSecondary};
         text-decoration: none;
     }
-    @media (min-width: 768px) {
+    ${mediaMin.tablet`
         width: 75%;
         margin: 0 auto;
         background: transparent;
@@ -32,11 +47,10 @@ export const Li = styled.li`
         &:hover {
             background: transparent;
             text-decoration: none;
-        }
-    }
+        }`};
 `;
 
-export const StyledNavLink = styled(NavLink)`
+export const SnavLink = styled(NavLink)`
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
@@ -44,7 +58,7 @@ export const StyledNavLink = styled(NavLink)`
     color: ${props => props.theme.colorFontPrimary};
     font-size: ${props => props.theme.fontSizeSmall};
     font-weight: normal;
-    @media (min-width: 768px) {
+    ${mediaMin.tablet`
         text-transform: lowercase;
         color: ${props => props.theme.colorFontSecondary};
         font-size: ${props => props.theme.fontSizeSecondary};
@@ -53,15 +67,5 @@ export const StyledNavLink = styled(NavLink)`
         letter-spacing: 0.125rem;
         &:hover {
             color: ${props => props.theme.colorFontHoverPrimary};
-        }
-    }
+        }`};
 `;
-export const NavItem = props => (
-    <Li>
-        <StyledNavLink to={props.link} exact={props.exact}>
-            {props.children}
-        </StyledNavLink>
-    </Li>
-);
-
-export default NavItem;

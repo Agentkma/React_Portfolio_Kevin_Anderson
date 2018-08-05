@@ -10,6 +10,21 @@ import NavItems from "../NavItems";
 import drawerBgImg from "../../../Assets/Images/bg/about-bg-1920x1080.jpg";
 import { SlideDown } from "../../../Theme/animations";
 
+export const NavDrawer = props => {
+    return (
+        <SlideDownNavDiv>
+            <Nav role="navigation">
+                <ScloseIcon onClick={props.click} />
+                <NavItems />
+            </Nav>
+        </SlideDownNavDiv>
+    );
+};
+
+export default NavDrawer;
+
+// ! Styles
+
 const SlideDownNavDiv = SlideDown.extend`
     display: block !important;
     position: absolute;
@@ -36,14 +51,14 @@ const Nav = styled.nav`
     }
 `;
 
-const StyledCloseIcon = styled(CloseIcon)`
+const ScloseIcon = styled(CloseIcon)`
     position: absolute;
     top: 15%;
     right: 5%;
     height: 2rem !important;
     width: 2rem !important ;
     font-size: 4rem;
-    color: #ffffff;
+    color: ${props => props.theme.colorBgPrimary};
     visibility: hidden;
     @media (min-width: 768px) {
         visibility: visible;
@@ -52,16 +67,3 @@ const StyledCloseIcon = styled(CloseIcon)`
         cursor: pointer;
     }
 `;
-
-export const NavDrawer = props => {
-    return (
-        <SlideDownNavDiv>
-            <Nav role="navigation">
-                <StyledCloseIcon onClick={props.click} />
-                <NavItems />
-            </Nav>
-        </SlideDownNavDiv>
-    );
-};
-
-export default NavDrawer;

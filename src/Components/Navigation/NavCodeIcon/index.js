@@ -29,13 +29,11 @@ const StyledCodeIcon = styled(CodeIcon)`
     height: 2rem !important;
     padding: 0 0.625rem;
     margin-top: 0.625rem;
-    /* margin: auto; */
     font-size: 1rem;
     &:hover,
     &:focus {
         background-image: none;
-        background-color: #eee;
-        color: #000;
+        background-color: ${props => props.theme.colorBgPrimary};
     }
     ${mediaMin.tablet`  height: 2.5rem !important;`};
 `;

@@ -1,6 +1,8 @@
+// ! External
 import React from "react";
 import styled from "styled-components";
 
+// ! Internal
 import { content } from "../../../Assets/Content";
 import Container from "../../../Components/Common/Container";
 import { media } from "../../../Theme";
@@ -28,21 +30,20 @@ const items = content.home.main.worksFilter.map((category, index) => {
 export const WorksFilterPanel = () => {
     return (
         <ScaleInVerTop>
-            <StyledSection
-                id="works-filter-panel"
-                className="works-filter-panel signature-karl dark-bg"
-            >
+            <Ssection id="works-filter-panel">
                 <Container>
-                    <StyledUl className="font3">{items}</StyledUl>
+                    <Sul>{items}</Sul>
                 </Container>
-            </StyledSection>
+            </Ssection>
         </ScaleInVerTop>
     );
 };
 
 export default WorksFilterPanel;
 
-const StyledSection = styled.section`
+// ! Styles
+
+const Ssection = styled.section`
     width: 100%;
     z-index: 9999;
     position: relative;
@@ -58,7 +59,7 @@ const StyledSection = styled.section`
     }
 `;
 
-const StyledUl = styled.ul`
+const Sul = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0;

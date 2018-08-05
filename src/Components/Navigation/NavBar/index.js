@@ -38,12 +38,12 @@ const LogoImg = styled.img`
 
 const MenuCollapser = styled.div`
     position: relative;
-    background-color: #fff;
-    color: #444;
+    background-color: ${props => props.theme.colorBgPrimary};
+    /* color: #444; */
     width: 100%;
     height: 9vh;
     line-height: 2rem;
-    font-family: "Montserrat", sans-serif;
+    font-family: ${props => props.theme.fontFamilyPrimary};
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;

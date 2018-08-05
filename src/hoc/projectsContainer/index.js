@@ -1,15 +1,15 @@
+// ! External
 import React from "react";
 // import PropTypes from 'prop-types'
 
+// ! Internal
 import styled from "styled-components";
 
-const ProjectsContainer = props => (
-    <StyledContainer>{props.children}</StyledContainer>
-);
+const ProjectsContainer = props => <Ssection>{props.children}</Ssection>;
 
 export default ProjectsContainer;
 
-const StyledContainer = styled.section`
+const Ssection = styled.section`
     position: relative;
     height: 1500px;
     display: grid;

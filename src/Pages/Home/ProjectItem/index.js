@@ -1,6 +1,9 @@
+// ! External
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+// ! Internal
 import { content } from "../../../Assets/Content";
 import cursor from "../../../Assets/Images/plus@2x.png";
 import { media } from "../../../Theme";
@@ -13,14 +16,14 @@ export const ProjectItem = ({ name }) => {
     const { description, img, to } = project[0];
 
     return (
-        <StyledDivContainer>
-            <StyledDiv className="works-item signature-karl ImageWrapper ContentWrapperB chrome-fix works-item-one-half info css-frameworks front-end ui">
+        <Sdiv>
+            <SDiv2 className="works-item signature-karl ImageWrapper ContentWrapperB chrome-fix works-item-one-half info css-frameworks front-end ui">
                 <picture>
                     <source
                         srcSet={require(`../../../${img.srcSet[0]}`)}
                         type="image/webp"
                     />
-                    <StyledImg
+                    <Simg
                         src={require(`../../../${img.src}`)}
                         alt={img.alt}
                         title={img.title}
@@ -28,30 +31,30 @@ export const ProjectItem = ({ name }) => {
                     />
                 </picture>
 
-                <StyledLink to={to}>
-                    <StyledDivProjectItem className=" works-item-inner ContentB">
-                        <StyledP className="dark font3bold ">{name}</StyledP>
+                <Slink to={to}>
+                    <SdivProjectItem className=" works-item-inner ContentB">
+                        <Sp className="dark font3bold ">{name}</Sp>
 
-                        <StyledH3 className="dark font3 ">
-                            {description}
-                        </StyledH3>
-                    </StyledDivProjectItem>
-                </StyledLink>
-            </StyledDiv>
-        </StyledDivContainer>
+                        <Sh3 className="dark font3 ">{description}</Sh3>
+                    </SdivProjectItem>
+                </Slink>
+            </SDiv2>
+        </Sdiv>
     );
 };
 
 export default ProjectItem;
 
-const StyledDivContainer = styled.div`
+// ! Styles
+
+const Sdiv = styled.div`
     position: relative;
 `;
 
-const StyledDiv = styled.div`
+const SDiv2 = styled.div`
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     margin: 0 !important;
     padding: 0 !important;
     /* width: 50% !important; */
@@ -61,7 +64,7 @@ const StyledDiv = styled.div`
     box-sizing: border-box;
 `;
 
-const StyledImg = styled.img`
+const Simg = styled.img`
     display: block;
     width: 100% !important;
     max-width: 100%;
@@ -73,7 +76,7 @@ const StyledImg = styled.img`
     }
 `;
 
-const StyledLink = styled(Link)`
+const Slink = styled(Link)`
     box-sizing: border-box;
     opacity: 0;
     display: block;
@@ -85,7 +88,7 @@ const StyledLink = styled(Link)`
     text-align: center;
     text-decoration: none !important;
     transition: all 0.4s ease-in-out;
-    color: #121212;
+    color: ${props => props.theme.colorFontTertiary};
     background-color: transparent;
     &:hover {
         text-decoration: none !important;
@@ -95,11 +98,11 @@ const StyledLink = styled(Link)`
     }
 `;
 
-const StyledDivProjectItem = styled.div`
+const SdivProjectItem = styled.div`
     text-align: left;
     padding: 100px 120px;
     position: absolute;
-    background: #ffffff;
+    background: ${props => props.theme.colorBgPrimary};
     opacity: 0;
     visibility: hidden;
     width: auto;
@@ -116,7 +119,7 @@ const StyledDivProjectItem = styled.div`
     } */
 }`;
 
-const StyledP = styled.p`
+const Sp = styled.p`
     font-size: 1.125rem;
     line-height: 1.5625rem;
     letter-spacing: normal;
@@ -129,8 +132,8 @@ const StyledP = styled.p`
     line-height: 1.3125rem;`};
 `;
 
-const StyledH3 = styled.h3`
-    border-color: #ff2238;
+const Sh3 = styled.h3`
+    border-color: ${props => props.theme.colorAccentPrimary};
     letter-spacing: normal;
     font-size: 1.125rem;
     line-height: 1.5625rem;

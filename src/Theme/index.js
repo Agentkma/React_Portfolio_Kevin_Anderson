@@ -7,12 +7,15 @@ export const theme = {
     colorFontSecondary: "white",
     colorFontTertiary: "#121212",
     colorFontQuaternary: "#292929",
+    colorFontQuinternary: "#999999",
     colorFontHoverPrimary: "#ff2238 !important",
     colorAccentPrimary: "#ff2238 !important",
+    colorAccentSecondary: "#eee",
     fontSizeSmall: "0.7rem",
     fontSizePrimary: "1rem",
     fontSizeSecondary: "1.5rem",
-    fontFamilyPrimary: "font-family: 'Montserrat', sans-serif"
+    fontFamilyPrimary: "font-family: 'Montserrat', sans-serif",
+    fontFamilySecondary: "font-family: 'Montserrat', sans-serif"
 };
 
 // ! Media Queries

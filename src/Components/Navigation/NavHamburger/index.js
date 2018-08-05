@@ -10,7 +10,6 @@ import NavCodeIcon from "../NavCodeIcon";
 import { mediaMin } from "../../../Theme";
 
 const NavHamburger = function({ click, location }) {
-    // TODO check this: using withRouter can set codeIcon to show only when route is /home
     const codeIcon =
         location.pathname === "/" ? (
             <div>
@@ -33,6 +32,8 @@ NavHamburger.propTypes = {};
 
 export default withRouter(NavHamburger);
 
+// ! Styles
+
 const Container = styled.div`
     display: flex;
     align-items: center;
@@ -46,7 +47,7 @@ const HamburgerDiv = styled.div`
     width: auto !important;
     height: 2rem;
     background-repeat: repeat-x;
-    color: #ffffff;
+    color: ${props => props.theme.colorBgPrimary};
     margin-top: 0;
     cursor: pointer;
     font-size: 0.875rem;
@@ -57,7 +58,7 @@ const HamburgerDiv = styled.div`
     &:hover,
     &:focus {
         background-image: none;
-        background-color: #eee;
+        background-color: ${props => props.theme.colorAccentSecondary};
         color: #000;
     }
     ${mediaMin.tablet` height: 2.5rem;

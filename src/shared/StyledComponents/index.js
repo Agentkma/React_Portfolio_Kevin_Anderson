@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 import styled from "styled-components";
-import { mediaMin, media } from "../../Theme";
+// import { mediaMin, media } from "../../Theme";
 
 export const Scontainer = styled.div`
     padding-right: 15px;

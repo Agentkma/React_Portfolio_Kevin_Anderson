@@ -8,7 +8,7 @@ import styled from "styled-components";
 import Navigation from "../../Components/Navigation";
 import Footer from "../../Components/Footer";
 import { content } from "../../Assets/Content";
-import { media, mediaAnd, mediaMin } from "../../Theme";
+import { mediaAnd, mediaMin } from "../../Theme";
 
 // TODO add styles to match outer container
 
@@ -51,5 +51,3 @@ const InnerWrap = styled.div`
 `;
 
 export const FirstFold = styled.div``;
-
-// theme={this.props.theme}

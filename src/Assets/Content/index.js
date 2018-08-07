@@ -162,7 +162,15 @@ export const content = {
 
     projects: {
         project01: {
-            banner: {},
+            title: {
+                name: "Galvanize Eats",
+                categories: "Front End & CSS Framework"
+            },
+            banner: [
+                "Assets/Images/project/project01/gEats6-1200x700.png",
+                "Assets/Images/project/project01/gEats2-1200x700.png",
+                "Assets/Images/project/project01/gEats3-1200x700.png"
+            ],
             description: {
                 taglineHeading: "Good design and clean coding",
                 taglineSubHeading: "That is a Principle",

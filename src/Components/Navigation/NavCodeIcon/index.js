@@ -33,7 +33,7 @@ const StyledCodeIcon = styled(CodeIcon)`
     &:hover,
     &:focus {
         background-image: none;
-        background-color: ${props => props.theme.colorBgPrimary};
+        background-color: ${props => props.theme.colorAccentSecondary};
     }
     ${mediaMin.tablet`  height: 2.5rem !important;`};
 `;

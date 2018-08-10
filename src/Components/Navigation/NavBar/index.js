@@ -29,6 +29,10 @@ export default NavBar;
 const StyledLogoRotate = styled(Rotate)`
     width: auto;
     height: 90%;
+    transition: all 0.25s ease-in;
+    &:hover {
+        opacity: 0.4;
+    }
 `;
 
 const LogoImg = styled.img`

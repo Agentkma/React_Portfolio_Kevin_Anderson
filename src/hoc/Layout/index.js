@@ -45,9 +45,9 @@ export const Main = styled.main`
 const InnerWrap = styled.div`
     display: block;
     box-sizing: border-box;
-    padding: 1rem;
-    ${mediaAnd.phoneLandscape`padding: 60px 10px;`};
-    ${mediaMin.desktop`padding: 4rem 3rem;`};
+    padding: 4rem 1rem;
+    ${mediaMin.tablet`padding: 4rem 3rem;`};
+    ${mediaMin.desktop`padding: 0`};
 `;
 
 export const FirstFold = styled.div``;

@@ -17,7 +17,7 @@ export const ProjectItem = ({ name }) => {
 
     return (
         <Sdiv>
-            <SDiv2 className="works-item signature-karl ImageWrapper ContentWrapperB chrome-fix works-item-one-half info css-frameworks front-end ui">
+            <SDiv2>
                 <picture>
                     <source
                         srcSet={require(`../../../${img.srcSet[0]}`)}
@@ -27,15 +27,14 @@ export const ProjectItem = ({ name }) => {
                         src={require(`../../../${img.src}`)}
                         alt={img.alt}
                         title={img.title}
-                        className="img-responsive lozad"
                     />
                 </picture>
 
                 <Slink to={to}>
-                    <SdivProjectItem className=" works-item-inner ContentB">
-                        <Sp className="dark font3bold ">{name}</Sp>
+                    <SdivProjectItem>
+                        <Sp>{name}</Sp>
 
-                        <Sh3 className="dark font3 ">{description}</Sh3>
+                        <Sh3>{description}</Sh3>
                     </SdivProjectItem>
                 </Slink>
             </SDiv2>
@@ -49,15 +48,16 @@ export default ProjectItem;
 
 const Sdiv = styled.div`
     position: relative;
+    display: block;
+    box-sizing: border-box;
 `;
 
 const SDiv2 = styled.div`
-    position: absolute;
+    /* position: absolute;
     left: 0;
-    top: 0;
+    top: 0; */
     margin: 0 !important;
     padding: 0 !important;
-    /* width: 50% !important; */
     min-height: fit-content;
     overflow: hidden;
     display: block;
@@ -68,7 +68,7 @@ const Simg = styled.img`
     display: block;
     width: 100% !important;
     max-width: 100%;
-    height: auto;
+    height: 100%;
     border: 0;
     transition: all 0.4s ease-in-out;
     &:hover {

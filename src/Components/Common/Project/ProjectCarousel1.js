@@ -2,6 +2,8 @@
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import ArrowBack from "@material-ui/icons/ArrowBack";
 import React from "react";
+import ReactDOM from "react-dom";
+import Slider from "react-styled-carousel";
 import styled from "styled-components";
 
 // ! Internal
@@ -9,45 +11,48 @@ import { content } from "../../../Assets/Content";
 import { mediaMin } from "../../../Theme";
 
 let currentImg, currentImgIndex;
+const responsive = [
+    { breakPoint: 1280, cardsToShow: 4 }, // this will be applied if screen size is greater than 1280px. cardsToShow will become 4.
+    { breakPoint: 760, cardsToShow: 2 }
+];
 
 export function ProjectCarousel1({ project }) {
-    const { banner } = content.projects[project];
+    const { bannerImg } = content.projects[project];
 
-    currentImg = `${banner[0]}`;
-    console.log("currentImg", currentImg);
-    currentImgIndex = 0;
+    // currentImg = bannerImg[0];
 
-    const forwardHandler = () => {
-        if (currentImgIndex >= banner.length - 1) {
-            currentImgIndex = 0;
-            currentImg = `${banner[currentImgIndex]}`;
-        } else {
-            currentImg = `${banner[currentImgIndex + 1]}`;
-        }
-    };
-
-    const backHandler = params => {};
+    // currentImgIndex = 0;
 
     return (
         <Ssection>
-            <Sarticle1>
-                <picture>
-                    <source
-                        srcSet={require(`../../../${currentImg}`)}
-                        // type="image/webp"
-                    />
-                    <Simg
-                        src={require(`../../../${currentImg}`)}
-                        // alt={img.alt}
-                        // title={img.title}
-                        // className="img-responsive lozad"
-                    />
-                </picture>
-            </Sarticle1>
-            <Sarticle2>
-                <SarrowBack onClick={backHandler} />
-                <SarrowForward onClick={forwardHandler} />
-            </Sarticle2>
+            {/* <Sarticle1> */}
+            <Slider
+                showArrows
+                showDots={false}
+                cardsToShow={1}
+                infinite={false}
+                padding="0 0"
+                RightArrow={<SrightArrow />}
+                LeftArrow={<SleftArrow />}
+            >
+                {bannerImg.map(img => {
+                    const { alt, src, srcSet, title } = img;
+
+                    return (
+                        <picture>
+                            <source
+                                srcSet={require(`../../../${srcSet[0]}`)}
+                                type="image/png"
+                            />
+                            <Simg
+                                src={require(`../../../${src}`)}
+                                alt={alt}
+                                title={title}
+                            />
+                        </picture>
+                    );
+                })}
+            </Slider>
         </Ssection>
     );
 }
@@ -58,13 +63,8 @@ export default ProjectCarousel1;
 
 const Ssection = styled.section`
     box-sizing: border-box;
-    position: relative;
-    /* background-color: ${props => props.theme.colorBgPrimary}; */
-    height: 40vh;
-    width: 100vw;
-    ${mediaMin.tablet` height: 60vh;`};
-    ${mediaMin.xlDesktop` height: 90vh;`};
-   
+    display: block;
+    padding-bottom: 6rem;
 `;
 
 const Sarticle1 = styled.article`
@@ -87,14 +87,22 @@ const Sarticle2 = styled.article`
     justify-content: space-between;
     align-items: center;
 `;
-const SarrowBack = styled(ArrowBack)`
+const SleftArrow = styled(ArrowBack)`
     padding-left: 1rem;
     font-size: 4rem !important;
     cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 5px);
+    z-index: 1;
 `;
 
-const SarrowForward = styled(ArrowForward)`
+const SrightArrow = styled(ArrowForward)`
     padding-right: 1rem;
     font-size: 4rem !important;
     cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 5px);
+    z-index: 1;
 `;

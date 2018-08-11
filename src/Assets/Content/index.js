@@ -166,11 +166,38 @@ export const content = {
                 name: "Galvanize Eats",
                 categories: "Front End & CSS Framework"
             },
-            banner: [
-                "Assets/Images/project/project01/gEats6-1200x700.png",
-                "Assets/Images/project/project01/gEats2-1200x700.png",
-                "Assets/Images/project/project01/gEats3-1200x700.png"
+            bannerImg: [
+                {
+                    alt: "alt",
+                    title: "title",
+                    srcSet: [
+                        "Assets/Images/project/project01/gEats6-1200x700.png"
+                    ],
+                    src: "Assets/Images/project/project01/gEats6-1200x700.png"
+                },
+                {
+                    alt: "alt",
+                    title: "title",
+                    srcSet: [
+                        "Assets/Images/project/project01/gEats2-1200x700.png"
+                    ],
+                    src: "Assets/Images/project/project01/gEats2-1200x700.png"
+                },
+                {
+                    alt: "alt",
+                    title: "title",
+                    srcSet: [
+                        "Assets/Images/project/project01/gEats3-1200x700.png"
+                    ],
+                    src: "Assets/Images/project/project01/gEats3-1200x700.png"
+                }
             ],
+            img: {
+                alt: "pic of home page of macro pal app",
+                title: "macro pal app",
+                srcSet: ["Assets/Images/works/macroPal1100x650.webp"],
+                src: "Assets/Images/works/macroPal1100x650.png"
+            },
             description: {
                 taglineHeading: "Good design and clean coding",
                 taglineSubHeading: "That is a Principle",

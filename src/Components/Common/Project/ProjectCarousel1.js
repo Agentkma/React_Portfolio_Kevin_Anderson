@@ -2,7 +2,6 @@
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import ArrowBack from "@material-ui/icons/ArrowBack";
 import React from "react";
-import ReactDOM from "react-dom";
 import Slider from "react-styled-carousel";
 import styled from "styled-components";
 
@@ -10,28 +9,18 @@ import styled from "styled-components";
 import { content } from "../../../Assets/Content";
 import { mediaMin } from "../../../Theme";
 
-let currentImg, currentImgIndex;
-const responsive = [
-    { breakPoint: 1280, cardsToShow: 4 }, // this will be applied if screen size is greater than 1280px. cardsToShow will become 4.
-    { breakPoint: 760, cardsToShow: 2 }
-];
-
 export function ProjectCarousel1({ project }) {
     const { bannerImg } = content.projects[project];
 
-    // currentImg = bannerImg[0];
-
-    // currentImgIndex = 0;
-
     return (
         <Ssection>
-            {/* <Sarticle1> */}
             <Slider
-                showArrows
-                showDots={false}
+                autoSlide={false}
                 cardsToShow={1}
                 infinite={false}
                 padding="0 0"
+                showArrows
+                showDots={false}
                 RightArrow={<SrightArrow />}
                 LeftArrow={<SleftArrow />}
             >
@@ -67,10 +56,6 @@ const Ssection = styled.section`
     padding-bottom: 6rem;
 `;
 
-const Sarticle1 = styled.article`
-    width: 100%;
-    height: 100%;
-`;
 const Simg = styled.img`
     display: block;
     max-width: 100%;
@@ -79,14 +64,6 @@ const Simg = styled.img`
     border: 0;
 `;
 
-const Sarticle2 = styled.article`
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`;
 const SleftArrow = styled(ArrowBack)`
     padding-left: 1rem;
     font-size: 4rem !important;
@@ -95,6 +72,10 @@ const SleftArrow = styled(ArrowBack)`
     left: 0;
     top: calc(50% - 5px);
     z-index: 1;
+    &:hover {
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.2);
+    }
 `;
 
 const SrightArrow = styled(ArrowForward)`
@@ -105,4 +86,8 @@ const SrightArrow = styled(ArrowForward)`
     right: 0;
     top: calc(50% - 5px);
     z-index: 1;
+    &:hover {
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.2);
+    }
 `;

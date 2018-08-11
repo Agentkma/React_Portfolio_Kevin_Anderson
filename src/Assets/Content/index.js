@@ -160,8 +160,8 @@ export const content = {
         }
     },
 
-    projects: {
-        project01: {
+    projects: [
+        {
             title: {
                 name: "Galvanize Eats",
                 categories: "Front End & CSS Framework"
@@ -212,7 +212,7 @@ export const content = {
             },
             imgContainer: {}
         }
-    },
+    ],
     about: {
         header: {},
         main: {}

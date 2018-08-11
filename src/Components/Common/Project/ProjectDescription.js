@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 // ! Internal
-import { Scontainer, Srow } from "../../../shared/StyledComponents";
+import { Scontainer, InnerWrap, Srow } from "../../../shared/StyledComponents";
 import { mediaMin } from "../../../Theme";
 import { content } from "../../../Assets/Content";
 
@@ -17,40 +17,42 @@ export function ProjectDescription({ project }) {
         liveSiteLink
     } = content.projects[project].description;
     return (
-        <Scontainer>
-            <Ssection>
-                <Srow>
-                    <Sarticle>
-                        <Sh3>{taglineHeading}</Sh3>
-                        <Sdiv />
-                        <Sh6>{taglineSubHeading}</Sh6>
-                    </Sarticle>
-                </Srow>
-                <Srow2>
-                    <StyledColArticle>
-                        {projectDescription.map((s, index) => (
-                            <Sp key={index}>{s}</Sp>
-                        ))}
-                    </StyledColArticle>
-                    <StyledColArticle>
-                        <Sul>
-                            <Sli>
-                                Category: <Sspan>{categories}</Sspan>
-                            </Sli>
-                            <Sli>
-                                Client: <Sspan>None/Personal Project</Sspan>
-                            </Sli>
-                            <Sli>
-                                Delivered: <Sspan>{delivered}</Sspan>
-                            </Sli>
-                        </Sul>
-                        <Sa href={liveSiteLink} target="_blank">
-                            Live Preview
-                        </Sa>
-                    </StyledColArticle>
-                </Srow2>
-            </Ssection>
-        </Scontainer>
+        <InnerWrap>
+            <Scontainer>
+                <Ssection>
+                    <Srow>
+                        <Sarticle>
+                            <Sh3>{taglineHeading}</Sh3>
+                            <Sdiv />
+                            <Sh6>{taglineSubHeading}</Sh6>
+                        </Sarticle>
+                    </Srow>
+                    <Srow2>
+                        <StyledColArticle>
+                            {projectDescription.map((s, index) => (
+                                <Sp key={index}>{s}</Sp>
+                            ))}
+                        </StyledColArticle>
+                        <StyledColArticle>
+                            <Sul>
+                                <Sli>
+                                    Category: <Sspan>{categories}</Sspan>
+                                </Sli>
+                                <Sli>
+                                    Client: <Sspan>None/Personal Project</Sspan>
+                                </Sli>
+                                <Sli>
+                                    Delivered: <Sspan>{delivered}</Sspan>
+                                </Sli>
+                            </Sul>
+                            <Sa href={liveSiteLink} target="_blank">
+                                Live Preview
+                            </Sa>
+                        </StyledColArticle>
+                    </Srow2>
+                </Ssection>
+            </Scontainer>
+        </InnerWrap>
     );
 }
 

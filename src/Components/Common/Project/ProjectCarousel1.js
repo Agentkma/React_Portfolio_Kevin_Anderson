@@ -7,7 +7,6 @@ import styled from "styled-components";
 
 // ! Internal
 import { content } from "../../../Assets/Content";
-import { mediaMin } from "../../../Theme";
 
 export function ProjectCarousel1({ project }) {
     const { bannerImg } = content.projects[project];
@@ -24,11 +23,11 @@ export function ProjectCarousel1({ project }) {
                 RightArrow={<SrightArrow />}
                 LeftArrow={<SleftArrow />}
             >
-                {bannerImg.map(img => {
+                {bannerImg.map((img, index) => {
                     const { alt, src, srcSet, title } = img;
 
                     return (
-                        <picture>
+                        <picture key={index}>
                             <source
                                 srcSet={require(`../../../${srcSet[0]}`)}
                                 type="image/png"

@@ -32,10 +32,8 @@ export const Footer = () => {
                 <Sul>{socialLitems}</Sul>
                 <Sarticle>
                     <p>
-                        All Rights Reserved &copy; {moment().year()}{" "}
-                        <a target="_blank " href=" ">
-                            Kevin Anderson
-                        </a>.
+                        All Rights Reserved &copy; {moment().year()} Kevin
+                        Anderson
                     </p>
                 </Sarticle>
             </Sdiv>
@@ -77,15 +75,19 @@ const StyledLi = styled.li`
 `;
 
 const StyledImg = styled.img`
-    width: 1.75rem;
+    width: 2rem;
     opacity: 1;
     transition: all 0.8s linear;
     vertical-align: middle;
     border: 0;
+    &:hover {
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.2);
+    }
 `;
 
 const Sarticle = styled.article`
-    font-size: ${props => props.theme.fontSizeSmall};
+    font-size: ${props => props.theme.fontSizePrimary};
     line-height: 1rem;
     margin-top: 0.666rem;
     margin-bottom: 0.666rem;

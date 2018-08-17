@@ -6,6 +6,7 @@ import ProjectDescription from "../../../Components/Common/Project/ProjectDescri
 import ProjectTitle from "../../../Components/Common/Project/ProjectTitle";
 import ProjectCarousel1 from "../../../Components/Common/Project/ProjectCarousel1";
 import ProjectNav from "../../../Components/Common/Project/ProjectNav";
+import ProjectImages from "../../../Components/Common/Project/ProjectImages";
 
 // Todo create project img grid component & pass a grid prop to it based on
 // project number that can be used to dynamically set the id={grid}
@@ -17,6 +18,7 @@ export function Layout1({ project }) {
             <ProjectTitle project={project} />
             <ProjectCarousel1 project={project} />
             <ProjectDescription project={project} />
+            <ProjectImages project={project} />
             <ProjectNav project={project} gridNavHref={project} />
         </div>
     );

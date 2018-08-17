@@ -3,7 +3,7 @@ export const content = {
         header: {
             mainHeading: "My name is Kevin Anderson",
             subHeading: [
-                "I'm a UI Engineer.",
+                "I'm a Software Engineer.",
                 "I work in Denver, CO.",
                 "I create web apps.",
                 "I'm a solution builder.",
@@ -210,7 +210,18 @@ export const content = {
                 delivered: "2017 September",
                 liveSiteLink: "https://agentkma.github.io/MacroPal2.0/"
             },
-            imgContainer: {}
+            imgContainer: [
+                {
+                    alt: "galvanize eats order form and shopping cart",
+                    title: "order form & cart",
+                    src: "Assets/Images/project/project01/gEats1-1200x700.png"
+                },
+                {
+                    alt: "galvanize eats landing page hero image screen shot",
+                    title: "home page",
+                    src: "Assets/Images/project/project01/gEats6-1200x700.png"
+                }
+            ]
         }
     ],
     about: {

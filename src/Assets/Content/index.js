@@ -25,19 +25,6 @@ export const content = {
             projects: [
                 {
                     img: {
-                        alt: "pic of home page of macro pal app",
-                        title: "macro pal app",
-                        srcSet: ["Assets/Images/works/macroPal1100x650.webp"],
-                        src: "Assets/Images/works/macroPal1100x650.png"
-                    },
-                    name: "MacroPal",
-                    description:
-                        "A health app that calculates calories  macros, and builds grocery lists.",
-                    worksFilter: ["css-frameworks"],
-                    to: "/project01"
-                },
-                {
-                    img: {
                         alt: "pic of galvanize eats app home page",
                         title: "galvanize eats app",
                         srcSet: [
@@ -48,8 +35,22 @@ export const content = {
                     name: "Galvanize Eats",
                     description: "A food ordering app.",
                     worksFilter: ["css-frameworks", "front-end"],
+                    to: "/project01"
+                },
+                {
+                    img: {
+                        alt: "pic of home page of macro pal app",
+                        title: "macro pal app",
+                        srcSet: ["Assets/Images/works/macroPal1100x650.webp"],
+                        src: "Assets/Images/works/macroPal1100x650.png"
+                    },
+                    name: "MacroPal",
+                    description:
+                        "A health app that calculates calories  macros, and builds grocery lists.",
+                    worksFilter: ["css-frameworks"],
                     to: "/project02"
                 },
+
                 {
                     img: {
                         alt: "pic of safe nav app home page",
@@ -220,6 +221,26 @@ export const content = {
                     alt: "galvanize eats landing page hero image screen shot",
                     title: "home page",
                     src: "Assets/Images/project/project01/gEats6-1200x700.png"
+                },
+                {
+                    alt: "galvanize eats order confirmation modal",
+                    title: "order confirmation",
+                    src: "Assets/Images/project/project01/gEats2-1200x700.png"
+                },
+                {
+                    alt: "galvanize eats home page about section",
+                    title: "home page about section",
+                    src: "Assets/Images/project/project01/gEats3-1200x700.png"
+                },
+                {
+                    alt: "galvanize eats landing page mobile phone view",
+                    title: "home page on mobile",
+                    src: "Assets/Images/project/project01/gEats4-1200x700.png"
+                },
+                {
+                    alt: "galvanize eats landing page tablet view",
+                    title: "home page on tablet",
+                    src: "Assets/Images/project/project01/gEats5-1200x700.png"
                 }
             ]
         }

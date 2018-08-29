@@ -35,7 +35,7 @@ export const content = {
                     name: "Galvanize Eats",
                     description: "A food ordering app.",
                     worksFilter: ["css-frameworks", "front-end"],
-                    to: "/project01"
+                    to: "/project1"
                 },
                 {
                     img: {
@@ -48,7 +48,7 @@ export const content = {
                     description:
                         "A health app that calculates calories  macros, and builds grocery lists.",
                     worksFilter: ["css-frameworks"],
-                    to: "/project02"
+                    to: "/project2"
                 },
 
                 {
@@ -62,7 +62,7 @@ export const content = {
                     description:
                         "A product site for the Safe Nav wearable technology.",
                     worksFilter: ["css-frameworks", "front-end"],
-                    to: "/project03"
+                    to: "/project3"
                 },
                 {
                     img: {
@@ -75,7 +75,7 @@ export const content = {
                     description:
                         "Pure HTML:Custom controls, CC, & text highlighting.",
                     worksFilter: ["pure-css", "front-end"],
-                    to: "/project04"
+                    to: "/project4"
                 },
                 {
                     img: {
@@ -88,7 +88,7 @@ export const content = {
                     description:
                         "A simple project simulating a web app using Chart.js plugin.",
                     worksFilter: ["pure-css", "front-end"],
-                    to: "/project05"
+                    to: "/project5"
                 },
                 {
                     img: {
@@ -101,7 +101,7 @@ export const content = {
                     description:
                         "A web app modeled after AllRecipes.com. Full Stack CRUD app.",
                     worksFilter: ["css-frameworks", "full-stack"],
-                    to: "/project06"
+                    to: "/project6"
                 },
                 {
                     img: {
@@ -115,7 +115,7 @@ export const content = {
                     name: "AngularJS Weather App",
                     description: "Single Page Apps.",
                     worksFilter: ["css-frameworks", "full-stack", "SPA"],
-                    to: "/project07"
+                    to: "/project7"
                 },
                 {
                     img: {
@@ -127,7 +127,7 @@ export const content = {
                     name: "React Apps",
                     description: "Single Page Apps.",
                     worksFilter: ["css-frameworks", "SPA"],
-                    to: "/project08"
+                    to: "/project8"
                 },
                 {
                     img: {
@@ -141,7 +141,7 @@ export const content = {
                     name: "Angular Apps",
                     description: "Single Page Apps.",
                     worksFilter: ["css-frameworks", "SPA"],
-                    to: "/project09"
+                    to: "/project9"
                 },
                 {
                     img: {
@@ -163,6 +163,90 @@ export const content = {
 
     projects: [
         {
+            url: "project1",
+            title: {
+                name: "Galvanize Eats",
+                categories: "Front End & CSS Framework"
+            },
+            bannerImg: [
+                {
+                    alt: "alt",
+                    title: "title",
+                    srcSet: [
+                        "Assets/Images/project/project01/gEats6-1200x700.png"
+                    ],
+                    src: "Assets/Images/project/project01/gEats6-1200x700.png"
+                },
+                {
+                    alt: "alt",
+                    title: "title",
+                    srcSet: [
+                        "Assets/Images/project/project01/gEats2-1200x700.png"
+                    ],
+                    src: "Assets/Images/project/project01/gEats2-1200x700.png"
+                },
+                {
+                    alt: "alt",
+                    title: "title",
+                    srcSet: [
+                        "Assets/Images/project/project01/gEats3-1200x700.png"
+                    ],
+                    src: "Assets/Images/project/project01/gEats3-1200x700.png"
+                }
+            ],
+            img: {
+                alt: "pic of home page of macro pal app",
+                title: "macro pal app",
+                srcSet: ["Assets/Images/works/macroPal1100x650.webp"],
+                src: "Assets/Images/works/macroPal1100x650.png"
+            },
+            description: {
+                taglineHeading: "Good design and clean coding",
+                taglineSubHeading: "That is a Principle",
+                projectDescription: [
+                    "Galvanize Eats is a simple app demonstrating the use of forms and dynamic menu items received from an API.",
+                    " The order data is organized into an order object and sent to an API.",
+                    "The app uses Materialize CSS framework, HTML, CSS, JavaScript, and jQuery."
+                ],
+                categories: "Front End & CSS Framework",
+                delivered: "2017 September",
+                liveSiteLink: "https://agentkma.github.io/MacroPal2.0/"
+            },
+            imgContainer: [
+                {
+                    alt: "galvanize eats order form and shopping cart",
+                    title: "order form & cart",
+                    src: "Assets/Images/project/project01/gEats1-1200x700.png"
+                },
+                {
+                    alt: "galvanize eats landing page hero image screen shot",
+                    title: "home page",
+                    src: "Assets/Images/project/project01/gEats6-1200x700.png"
+                },
+                {
+                    alt: "galvanize eats order confirmation modal",
+                    title: "order confirmation",
+                    src: "Assets/Images/project/project01/gEats2-1200x700.png"
+                },
+                {
+                    alt: "galvanize eats home page about section",
+                    title: "home page about section",
+                    src: "Assets/Images/project/project01/gEats3-1200x700.png"
+                },
+                {
+                    alt: "galvanize eats landing page mobile phone view",
+                    title: "home page on mobile",
+                    src: "Assets/Images/project/project01/gEats4-1200x700.png"
+                },
+                {
+                    alt: "galvanize eats landing page tablet view",
+                    title: "home page on tablet",
+                    src: "Assets/Images/project/project01/gEats5-1200x700.png"
+                }
+            ]
+        },
+        {
+            url: "project2",
             title: {
                 name: "Galvanize Eats",
                 categories: "Front End & CSS Framework"

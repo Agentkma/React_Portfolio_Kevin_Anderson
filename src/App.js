@@ -10,6 +10,7 @@ import Layout from "./hoc/Layout";
 import Home from "./Pages/Home";
 import { theme } from "./Theme";
 import Project1 from "./Pages/Project/Project1";
+import Project2 from "./Pages/Project/Project2";
 
 // ! Example async component...?
 // const asyncCheckout = asyncComponent(() => {
@@ -40,9 +41,9 @@ class App extends Component {
                     >
                         <Switch>
                             <Route path="/" exact component={Home} />
-                            <Route path="/project01" component={Project1} />
-                            {/*<Route path="/project2" component={Project2} />
-                      <Route path="/project3" component={Project3} />
+                            <Route path="/project1" component={Project1} />
+                            <Route path="/project2" component={Project2} />
+                            {/* <Route path="/project3" component={Project3} />
                         <Route path="/project4" component={Project4} />
                           <Route path="/project5" component={Project5} />
                             <Route path="/project6" component={Project6} />

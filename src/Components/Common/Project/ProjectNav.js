@@ -6,13 +6,25 @@ import styled from "styled-components";
 // ! Internal
 import { content } from "../../../Assets/Content";
 import { Scontainer, Srow } from "../../../shared/StyledComponents";
-export function ProjectNav({ project, gridNavHref }) {
+
+function ProjectNav({ project, gridNavHref }) {
     const currentProject = content.projects[project];
 
-    // const prevProject = (function findPrev(currentProj) {
-    // Todo finish after restructuring projects to be array
-    // })();
-    // const nextProject = {};
+    const prevProject = currentProject => {
+        if (content.projects.indexOf(currentProject - 1) === -1) {
+            const lastProj = Number(content.projects.length - 1);
+
+            return content.projects[lastProj].url;
+        }
+        return content.projects[currentProject - 1].url;
+    };
+    const nextProject = currentProject => {
+        if (content.projects.indexOf(currentProject + 1) === -1) {
+            console.log("last project");
+            return content.projects[0].url;
+        }
+        return content.projects[currentProject + 1].url;
+    };
 
     return (
         <Ssection>
@@ -21,7 +33,7 @@ export function ProjectNav({ project, gridNavHref }) {
                     <Sarticle>
                         <Sul>
                             <Sli>
-                                <Link to="./">
+                                <Link to={prevProject(currentProject)}>
                                     <Simg
                                         alt=""
                                         title=""
@@ -39,7 +51,7 @@ export function ProjectNav({ project, gridNavHref }) {
                                 </a>
                             </Sli>
                             <Sli>
-                                <Link to="./">
+                                <Link to={nextProject(currentProject)}>
                                     <Simg
                                         alt=""
                                         title=""

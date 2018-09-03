@@ -173,7 +173,7 @@ export const content = {
                     alt: "alt",
                     title: "title",
                     srcSet: [
-                        "Assets/Images/project/project01/gEats6-1200x700.png"
+                        "Assets/Images/project/project01/macroPal1-1200x700.png"
                     ],
                     src: "Assets/Images/project/project01/gEats6-1200x700.png"
                 },
@@ -248,7 +248,7 @@ export const content = {
         {
             url: "project2",
             title: {
-                name: "Galvanize Eats",
+                name: "Macro Pal",
                 categories: "Front End & CSS Framework"
             },
             bannerImg: [
@@ -256,25 +256,28 @@ export const content = {
                     alt: "alt",
                     title: "title",
                     srcSet: [
-                        "Assets/Images/project/project01/gEats6-1200x700.png"
+                        "Assets/Images/project/project02/macroPal1-1200x700.png"
                     ],
-                    src: "Assets/Images/project/project01/gEats6-1200x700.png"
+                    src:
+                        "Assets/Images/project/project02/macroPal1-1200x700.png"
                 },
                 {
                     alt: "alt",
                     title: "title",
                     srcSet: [
-                        "Assets/Images/project/project01/gEats2-1200x700.png"
+                        "Assets/Images/project/project02/macroPal2-1200x700.png"
                     ],
-                    src: "Assets/Images/project/project01/gEats2-1200x700.png"
+                    src:
+                        "Assets/Images/project/project02/macroPal2-1200x700.png"
                 },
                 {
                     alt: "alt",
                     title: "title",
                     srcSet: [
-                        "Assets/Images/project/project01/gEats3-1200x700.png"
+                        "Assets/Images/project/project02/macroPal3-1200x700.png"
                     ],
-                    src: "Assets/Images/project/project01/gEats3-1200x700.png"
+                    src:
+                        "Assets/Images/project/project02/macroPal3-1200x700.png"
                 }
             ],
             img: {
@@ -287,44 +290,138 @@ export const content = {
                 taglineHeading: "Good design and clean coding",
                 taglineSubHeading: "That is a Principle",
                 projectDescription: [
-                    "Galvanize Eats is a simple app demonstrating the use of forms and dynamic menu items received from an API.",
-                    " The order data is organized into an order object and sent to an API.",
-                    "The app uses Materialize CSS framework, HTML, CSS, JavaScript, and jQuery."
+                    "MacroPal is an app that uses form user input to calculate how many calories and macros you need daily.",
+                    "You can use this info to build a weekly grocery list. You can also search foods to find their calories and macros.",
+                    "Technology used is HTML, CSS, JavaScript, SASS, jQuery, an API, and Materialize CSS Framework."
                 ],
                 categories: "Front End & CSS Framework",
-                delivered: "2017 September",
+                delivered: "2017 August",
                 liveSiteLink: "https://agentkma.github.io/MacroPal2.0/"
             },
             imgContainer: [
                 {
-                    alt: "galvanize eats order form and shopping cart",
-                    title: "order form & cart",
-                    src: "Assets/Images/project/project01/gEats1-1200x700.png"
-                },
-                {
-                    alt: "galvanize eats landing page hero image screen shot",
+                    alt: "macroPal homepage screen shot",
                     title: "home page",
-                    src: "Assets/Images/project/project01/gEats6-1200x700.png"
+                    src:
+                        "Assets/Images/project/project02/macroPal1-1200x700.png"
                 },
                 {
-                    alt: "galvanize eats order confirmation modal",
-                    title: "order confirmation",
-                    src: "Assets/Images/project/project01/gEats2-1200x700.png"
+                    alt: "macroPal build section screenshot",
+                    title: "build section",
+                    src:
+                        "Assets/Images/project/project02/macroPal3-1200x700.png"
                 },
                 {
-                    alt: "galvanize eats home page about section",
-                    title: "home page about section",
-                    src: "Assets/Images/project/project01/gEats3-1200x700.png"
+                    alt: "macropal choose food section",
+                    title: "choose foods",
+                    src:
+                        "Assets/Images/project/project02/macroPal4-1200x700.png"
                 },
                 {
-                    alt: "galvanize eats landing page mobile phone view",
-                    title: "home page on mobile",
-                    src: "Assets/Images/project/project01/gEats4-1200x700.png"
+                    alt: "macroPal Search Food Section",
+                    title: "search food",
+                    src:
+                        "Assets/Images/project/project02/macroPal5-1200x700.png"
                 },
                 {
-                    alt: "galvanize eats landing page tablet view",
-                    title: "home page on tablet",
-                    src: "Assets/Images/project/project01/gEats5-1200x700.png"
+                    alt: "macroPal mobile phone view",
+                    title: "mobile view",
+                    src:
+                        "Assets/Images/project/project02/macroPal6-1200x700.png"
+                },
+                {
+                    alt: "macroPal Tablet view",
+                    title: "tablet view",
+                    src:
+                        "Assets/Images/project/project02/macroPal7-1200x700.png"
+                }
+            ]
+        },
+        {
+            url: "project3",
+            title: {
+                name: "Safe Nav",
+                categories: "Front End & CSS Framework"
+            },
+            bannerImg: [
+                {
+                    alt: "alt",
+                    title: "title",
+                    srcSet: [
+                        "Assets/Images/project/project03/safeNav1-1200x700.png"
+                    ],
+                    src: "Assets/Images/project/project03/safeNav1-1200x700.png"
+                },
+                {
+                    alt: "alt",
+                    title: "title",
+                    srcSet: [
+                        "Assets/Images/project/project03/safeNav2-1200x700.png"
+                    ],
+                    src: "Assets/Images/project/project03/safeNav2-1200x700.png"
+                },
+                {
+                    alt: "alt",
+                    title: "title",
+                    srcSet: [
+                        "Assets/Images/project/project03/safeNav3-1200x700.png"
+                    ],
+                    src: "Assets/Images/project/project03/safeNav3-1200x700.png"
+                }
+            ],
+            img: {
+                alt: "THIS SECTION NEEDS UPDATE TO SAFENAV",
+                title: "macro pal app",
+                srcSet: ["Assets/Images/works/macroPal1100x650.webp"],
+                src: "Assets/Images/works/macroPal1100x650.png"
+            },
+            description: {
+                taglineHeading: "Good design and clean coding",
+                taglineSubHeading: "That is a Principle",
+                projectDescription: [
+                    "SafeNav is an app demonstrating a basic product info site.",
+                    "Tech used is HTML, CSS, JavaScript, jQuery, and Bootstrap CSS Framework."
+                ],
+                categories: "Front End & CSS Framework",
+                delivered: "2017 July",
+                liveSiteLink: "https://agentkma.github.io/Safenav/"
+            },
+            imgContainer: [
+                {
+                    alt: "THIS SECTION NEEDS UPDAT TO SAFENAV",
+                    title: "home page",
+                    src:
+                        "Assets/Images/project/project02/macroPal1-1200x700.png"
+                },
+                {
+                    alt: "macroPal build section screenshot",
+                    title: "build section",
+                    src:
+                        "Assets/Images/project/project02/macroPal3-1200x700.png"
+                },
+                {
+                    alt: "macropal choose food section",
+                    title: "choose foods",
+                    src:
+                        "Assets/Images/project/project02/macroPal4-1200x700.png"
+                },
+                {
+                    alt: "macroPal Search Food Section",
+                    title: "search food",
+                    src:
+                        "Assets/Images/project/project02/macroPal5-1200x700.png"
+                },
+                {
+                    alt: "macroPal mobile phone view",
+                    title: "mobile view",
+                    src:
+                        "Assets/Images/project/project02/macroPal6-1200x700.png"
+                },
+                {
+                    alt: "macroPal Tablet view",
+                    title: "tablet view",
+                    src:
+                        "Assets/Images/project/project02/macroPal7-1200x700.png"
                 }
             ]
         }

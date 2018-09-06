@@ -16,9 +16,20 @@ const composeEnhancers =
         ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
         : null || compose;
 
+// const store = createStore(
+//     rootReducer,
+//     composeEnhancers(applyMiddleware(thunk))
+// );
+
 const store = createStore(
     rootReducer,
-    composeEnhancers(applyMiddleware(thunk))
+    compose(
+        applyMiddleware(thunk),
+        window.navigator.userAgent.includes("Chrome")
+            ? window.__REDUX_DEVTOOLS_EXTENSION__ &&
+              window.__REDUX_DEVTOOLS_EXTENSION__()
+            : compose
+    )
 );
 
 const app = (

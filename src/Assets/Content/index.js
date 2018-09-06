@@ -370,10 +370,10 @@ export const content = {
                 }
             ],
             img: {
-                alt: "THIS SECTION NEEDS UPDATE TO SAFENAV",
-                title: "macro pal app",
-                srcSet: ["Assets/Images/works/macroPal1100x650.webp"],
-                src: "Assets/Images/works/macroPal1100x650.png"
+                alt: "Safe Nave Home Page",
+                title: "Safe Nav App",
+                srcSet: ["Assets/Images/works/safeNav1100x650.webp"],
+                src: "Assets/Images/works/safeNav1100x650.png"
             },
             description: {
                 taglineHeading: "Good design and clean coding",
@@ -388,40 +388,34 @@ export const content = {
             },
             imgContainer: [
                 {
-                    alt: "THIS SECTION NEEDS UPDAT TO SAFENAV",
+                    alt: "alt text",
                     title: "home page",
-                    src:
-                        "Assets/Images/project/project02/macroPal1-1200x700.png"
+                    src: "Assets/Images/project/project03/safeNav1-1200x700.png"
                 },
                 {
-                    alt: "macroPal build section screenshot",
-                    title: "build section",
-                    src:
-                        "Assets/Images/project/project02/macroPal3-1200x700.png"
+                    alt: "alt text",
+                    title: "title text",
+                    src: "Assets/Images/project/project03/safeNav2-1200x700.png"
                 },
                 {
-                    alt: "macropal choose food section",
-                    title: "choose foods",
-                    src:
-                        "Assets/Images/project/project02/macroPal4-1200x700.png"
+                    alt: "alt text",
+                    title: "title text",
+                    src: "Assets/Images/project/project03/safeNav3-800x600.png"
                 },
                 {
-                    alt: "macroPal Search Food Section",
-                    title: "search food",
-                    src:
-                        "Assets/Images/project/project02/macroPal5-1200x700.png"
+                    alt: "alt text",
+                    title: "title text",
+                    src: "Assets/Images/project/project03/safeNav4-800x600.png"
                 },
                 {
-                    alt: "macroPal mobile phone view",
-                    title: "mobile view",
-                    src:
-                        "Assets/Images/project/project02/macroPal6-1200x700.png"
+                    alt: "alt text",
+                    title: "title text",
+                    src: "Assets/Images/project/project03/safeNav5-800x600.png"
                 },
                 {
-                    alt: "macroPal Tablet view",
-                    title: "tablet view",
-                    src:
-                        "Assets/Images/project/project02/macroPal7-1200x700.png"
+                    alt: "alt text",
+                    title: "title text",
+                    src: "Assets/Images/project/project03/safeNav6-800x600.png"
                 }
             ]
         }

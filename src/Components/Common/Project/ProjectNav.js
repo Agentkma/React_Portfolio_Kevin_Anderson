@@ -8,22 +8,30 @@ import { content } from "../../../Assets/Content";
 import { Scontainer, Srow } from "../../../shared/StyledComponents";
 
 function ProjectNav({ project, gridNavHref }) {
-    const currentProject = content.projects[project];
+    let currentProject = window.location.pathname.split("/").join("");
+    // currentProject = content.projects.filter(p => p.url === currentProject);
+    // console.log("currentProject", currentProject);
 
-    const prevProject = currentProject => {
-        if (content.projects.indexOf(currentProject - 1) === -1) {
+    let currentIndex = content.projects.findIndex(
+        project => project.url === currentProject
+    );
+
+    const prevProject = () => {
+        if (currentIndex === 0) {
             const lastProj = Number(content.projects.length - 1);
-
             return content.projects[lastProj].url;
         }
-        return content.projects[currentProject - 1].url;
+
+        let prevIndex = currentIndex - 1;
+        return content.projects[prevIndex].url;
     };
-    const nextProject = currentProject => {
-        if (content.projects.indexOf(currentProject + 1) === -1) {
-            console.log("last project");
+    const nextProject = () => {
+        if (currentIndex === content.projects.length - 1) {
             return content.projects[0].url;
         }
-        return content.projects[currentProject + 1].url;
+
+        let nextIndex = currentIndex + 1;
+        return content.projects[nextIndex].url;
     };
 
     return (
@@ -35,7 +43,7 @@ function ProjectNav({ project, gridNavHref }) {
                             <Sli>
                                 <Link to={prevProject(currentProject)}>
                                     <Simg
-                                        alt=""
+                                        alt="left arrow"
                                         title=""
                                         src={require("../../../Assets/Images/prev.svg")}
                                     />
@@ -53,7 +61,7 @@ function ProjectNav({ project, gridNavHref }) {
                             <Sli>
                                 <Link to={nextProject(currentProject)}>
                                     <Simg
-                                        alt=""
+                                        alt="right arrow"
                                         title=""
                                         src={require("../../../Assets/Images/next.svg")}
                                     />

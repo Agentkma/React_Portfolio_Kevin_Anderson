@@ -160,7 +160,6 @@ export const content = {
             ]
         }
     },
-
     projects: [
         {
             url: "project1",
@@ -173,7 +172,7 @@ export const content = {
                     alt: "alt",
                     title: "title",
                     srcSet: [
-                        "Assets/Images/project/project01/macroPal1-1200x700.png"
+                        "Assets/Images/project/project01/gEats6-1200x700.png"
                     ],
                     src: "Assets/Images/project/project01/gEats6-1200x700.png"
                 },
@@ -326,14 +325,12 @@ export const content = {
                 {
                     alt: "macroPal mobile phone view",
                     title: "mobile view",
-                    src:
-                        "Assets/Images/project/project02/macroPal6-1200x700.png"
+                    src: "Assets/Images/project/project02/macroPal6-800x600.png"
                 },
                 {
                     alt: "macroPal Tablet view",
                     title: "tablet view",
-                    src:
-                        "Assets/Images/project/project02/macroPal7-1200x700.png"
+                    src: "Assets/Images/project/project02/macroPal7-800x600.png"
                 }
             ]
         },
@@ -364,9 +361,9 @@ export const content = {
                     alt: "alt",
                     title: "title",
                     srcSet: [
-                        "Assets/Images/project/project03/safeNav3-1200x700.png"
+                        "Assets/Images/project/project03/safeNav3-800x600.png"
                     ],
-                    src: "Assets/Images/project/project03/safeNav3-1200x700.png"
+                    src: "Assets/Images/project/project03/safeNav3-800x600.png"
                 }
             ],
             img: {

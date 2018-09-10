@@ -18,48 +18,70 @@ export class NavItems extends Component {
     };
 
     render() {
-        // const { theme } = this.props;
+        const { click } = this.props;
+        // TODO: make subLI and navItems render via map
+        // over content projects array
 
         const projectSubUl = this.state.showSubUl ? (
             <ul>
                 <SsubLi>
-                    <SnavItem to="/project1">100</SnavItem>
+                    <SnavItem to="/project1" onClick={click}>
+                        100
+                    </SnavItem>
                 </SsubLi>
                 <SsubLi>
-                    <SnavItem to="/project2">200</SnavItem>
+                    <SnavItem to="/project2" onClick={click}>
+                        200
+                    </SnavItem>
                 </SsubLi>
                 <SsubLi>
-                    <SnavItem to="/project3">300</SnavItem>
+                    <SnavItem to="/project3" onClick={click}>
+                        300
+                    </SnavItem>
                 </SsubLi>
                 <SsubLi>
-                    <SnavItem to="/project4">400</SnavItem>
+                    <SnavItem to="/project4" onClick={click}>
+                        400
+                    </SnavItem>
                 </SsubLi>
                 <SsubLi>
-                    <SnavItem to="/project5">500</SnavItem>
+                    <SnavItem to="/project5" onClick={click}>
+                        500
+                    </SnavItem>
                 </SsubLi>
                 <SsubLi>
-                    <SnavItem to="/project6">600</SnavItem>
+                    <SnavItem to="/project6" onClick={click}>
+                        600
+                    </SnavItem>
                 </SsubLi>
                 <SsubLi>
-                    <SnavItem to="/project7">700</SnavItem>
+                    <SnavItem to="/project7" onClick={click}>
+                        700
+                    </SnavItem>
                 </SsubLi>
                 <SsubLi>
-                    <SnavItem to="/project8">800</SnavItem>
+                    <SnavItem to="/project8" onClick={click}>
+                        800
+                    </SnavItem>
                 </SsubLi>
             </ul>
         ) : null;
 
         return (
             <Ul>
-                <NavItem link="/" exact>
+                <NavItem link="/" exact click={this.props.click}>
                     Portfolio
                 </NavItem>
-                <NavItem link="/about">About</NavItem>
+                <NavItem link="/about" click={this.props.click}>
+                    About
+                </NavItem>
                 <SLi onClick={this.subUlToggleHandler}>
                     Project View
                     {projectSubUl}
                 </SLi>
-                <NavItem link="/contact">Say Hello</NavItem>
+                <NavItem link="/contact" click={this.props.click}>
+                    Say Hello
+                </NavItem>
             </Ul>
         );
     }

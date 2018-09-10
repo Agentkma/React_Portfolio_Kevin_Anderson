@@ -7,10 +7,9 @@ import styled from "styled-components";
 import { content } from "../../../Assets/Content";
 import { Scontainer, Srow } from "../../../shared/StyledComponents";
 
-function ProjectNav({ project, gridNavHref }) {
+function ProjectNav({ gridNavHref }) {
+    console.log("gridNavHref", gridNavHref);
     let currentProject = window.location.pathname.split("/").join("");
-    // currentProject = content.projects.filter(p => p.url === currentProject);
-    // console.log("currentProject", currentProject);
 
     let currentIndex = content.projects.findIndex(
         project => project.url === currentProject
@@ -50,7 +49,7 @@ function ProjectNav({ project, gridNavHref }) {
                                 </Link>
                             </Sli>
                             <Sli>
-                                <a href={gridNavHref}>
+                                <a href={`#${gridNavHref}`}>
                                     <Simg
                                         alt=""
                                         title=""

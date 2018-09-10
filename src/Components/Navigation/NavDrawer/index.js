@@ -15,7 +15,7 @@ export const NavDrawer = props => {
         <SlideDownNavDiv>
             <Nav role="navigation">
                 <ScloseIcon onClick={props.click} />
-                <NavItems />
+                <NavItems click={props.click} />
             </Nav>
         </SlideDownNavDiv>
     );

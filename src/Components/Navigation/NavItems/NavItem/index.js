@@ -7,7 +7,7 @@ import { mediaMin } from "../../../../Theme";
 
 export const NavItem = props => (
     <Sli>
-        <SnavLink to={props.link} exact={props.exact}>
+        <SnavLink to={props.link} exact={props.exact} onClick={props.click}>
             {props.children}
         </SnavLink>
     </Sli>

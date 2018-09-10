@@ -23,6 +23,7 @@ export class Navigation extends Component {
     };
 
     navDrawerToggleHandler = () => {
+        console.log("navDrawerToggleHandler called");
         this.setState(prevState => {
             return { showNavDrawer: !prevState.showNavDrawer };
         });
@@ -31,8 +32,8 @@ export class Navigation extends Component {
     render() {
         const navDrawer = this.state.showNavDrawer ? (
             <NavDrawer
-                onClick={this.navDrawerClosedHandler}
-                click={this.navDrawerClosedHandler}
+                // onClick={this.navDrawerToggleHandler}
+                click={this.navDrawerToggleHandler}
             />
         ) : null;
         return (

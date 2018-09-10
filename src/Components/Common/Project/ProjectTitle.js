@@ -8,7 +8,7 @@ import { content } from "../../../Assets/Content";
 export function ProjectTitle({ project }) {
     const { name, categories } = content.projects[project].title;
     return (
-        <Ssection>
+        <Ssection id={project}>
             <Sh1>
                 {name} <Sspan>/ {categories}</Sspan>
             </Sh1>

@@ -2,32 +2,27 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import { Scontainer, Srow } from "../../shared/StyledComponents";
+import { mediaMin } from "../../Theme";
 import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
 
 function About() {
     return (
         <div>
-            <section
-                class="first-fold signature-karl fullheight about-bg parallax"
-                data-stellar-background-ratio="0.5"
-            >
-                <div class="fullheight">
-                    <div class="valign">
-                        <div class="container">
-                            <div class="row">
-                                <article class="col-md-6">
-                                    <section class="main-heading">
-                                        <h6 class="white font3bold">
-                                            Welcome to my portfolio site.
-                                        </h6>
-                                        <div class="liner color-bg add-top-quarter" />
-                                    </section>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <SsectionHeading>
+                <SdivValign>
+                    <Scontainer>
+                        <Srow>
+                            <SarticleMainHeading>
+                                <Sh6MainHeading>
+                                    Welcome to my portfolio site.
+                                </Sh6MainHeading>
+                                <SdivLine />
+                            </SarticleMainHeading>
+                        </Srow>
+                    </Scontainer>
+                </SdivValign>
+            </SsectionHeading>
 
             <div class="inner-wrap container-fluid no-pad">
                 <section class="hero-text signature-karl">
@@ -296,4 +291,37 @@ const SsectionHeading = styled.section`
     /* height: 100%; */
     position: relative;
     background-size: cover;
+`;
+
+const SdivValign = styled.div`
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+`;
+
+const SarticleMainHeading = styled.article`
+    width: 50%;
+    margin: auto;
+    text-align: center;
+`;
+
+const Sh6MainHeading = styled.h6`
+    font-family: ${props => props.theme.fontFamilyPrimary};
+    color: ${props => props.theme.colorFontSecondary};
+    font-size: 2rem;
+    line-height: 2.4375rem;
+    margin-top: 0.625rem;
+    /* width: 50%; */
+    margin: auto;
+    ${mediaMin.desktop` font-size: 2.1875rem;
+    line-height: 2.6875rem;`};
+`;
+
+const SdivLine = styled.div`
+    background-color: ${props => props.theme.colorAccentPrimary};
+    margin-top: 2.5rem;
+    width: 50%;
+    height: 0.3125rem;
+    display: inline-block;
+    margin-bottom: 2.25rem;
 `;

@@ -18,5 +18,5 @@ const Ssection = styled.section`
     padding: 0;
     margin: 70px auto 0 auto;
     overflow: hidden;
-    ${mediaMin.desktop` grid-template-columns:repeat(auto-fill, minmax(50vw, 1fr));`};
+    ${mediaMin.desktop` grid-template-columns:repeat(2, minmax(50vw, 1fr));`};
 `;

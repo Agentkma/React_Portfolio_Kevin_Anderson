@@ -9,6 +9,8 @@ export const Scontainer = styled.div`
     margin-left: auto;
     display: block;
     box-sizing: border-box;
+    width: 90%;
+    ${mediaMin.tablet`width: 80%`};
 `;
 
 export const Srow = styled.div`

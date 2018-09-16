@@ -86,11 +86,15 @@ const SdivVertAlign = styled.div`
 `;
 
 const Sarticle = styled.article`
-    ${mediaMin.desktop`width: 50%;
-        position: relative;
-        min-height: 1px;
-        padding-right: 1rem;
-        padding-left: 1rem;`};
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    min-height: 1px;
+    padding-right: 1rem;
+    padding-left: 1rem ${mediaMin.desktop`;
+    width: 100%
+    margin-left: 0;
+       ;`};
 `;
 
 const SsectionMH = styled.section`
@@ -99,7 +103,7 @@ const SsectionMH = styled.section`
 `;
 
 const Sh6H = styled.h6`
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 2.675rem;
     margin-top: 0.666rem;
     margin-bottom: 0;

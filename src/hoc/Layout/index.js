@@ -35,6 +35,7 @@ export const Main = styled.main`
     display: block;
     box-sizing: border-box;
     margin-left: 0;
+    margin-top: 9vh;
     font-family: ${props => props.theme.fontFamilyPrimary};
 `;
 

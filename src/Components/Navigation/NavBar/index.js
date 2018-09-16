@@ -26,6 +26,26 @@ export const NavBar = ({ click }) => {
 
 export default NavBar;
 
+const MenuCollapser = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: ${props => props.theme.colorBgPrimary};
+    width: 100%;
+    z-index: 1000000;
+    height: 9vh;
+    line-height: 2rem;
+    font-family: ${props => props.theme.fontFamilyPrimary};
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0 1.125rem;
+    padding-top: 1rem;
+    box-sizing: border-box;
+`;
+
 const StyledLogoRotate = styled(Rotate)`
     width: auto;
     height: 90%;
@@ -38,20 +58,4 @@ const StyledLogoRotate = styled(Rotate)`
 const LogoImg = styled.img`
     width: auto;
     height: 100%;
-`;
-
-const MenuCollapser = styled.div`
-    position: relative;
-    background-color: ${props => props.theme.colorBgPrimary};
-    /* color: #444; */
-    width: 100%;
-    height: 9vh;
-    line-height: 2rem;
-    font-family: ${props => props.theme.fontFamilyPrimary};
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 0 1.125rem;
-    box-sizing: border-box;
 `;

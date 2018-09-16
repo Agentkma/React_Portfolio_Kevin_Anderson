@@ -8,7 +8,7 @@ import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
 
 function About() {
     return (
-        <div>
+        <Fragment>
             <SsectionHeading>
                 <SdivValign>
                     <Scontainer>
@@ -276,7 +276,7 @@ function About() {
                     </div>
                 </section>
             </div>
-        </div>
+        </Fragment>
     );
 }
 
@@ -288,7 +288,6 @@ const SsectionHeading = styled.section`
     background-image: url(${headingBgImg});
     background-attachment: fixed;
     width: 100%;
-    /* height: 100%; */
     position: relative;
     background-size: cover;
 `;
@@ -303,6 +302,7 @@ const SarticleMainHeading = styled.article`
     width: 50%;
     margin: auto;
     text-align: center;
+    ${mediaMin.desktop` margin-left: 1.125rem; text-align: left;`};
 `;
 
 const Sh6MainHeading = styled.h6`
@@ -311,7 +311,6 @@ const Sh6MainHeading = styled.h6`
     font-size: 2rem;
     line-height: 2.4375rem;
     margin-top: 0.625rem;
-    /* width: 50%; */
     margin: auto;
     ${mediaMin.desktop` font-size: 2.1875rem;
     line-height: 2.6875rem;`};

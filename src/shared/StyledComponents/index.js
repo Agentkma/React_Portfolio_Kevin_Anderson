@@ -16,6 +16,8 @@ export const Scontainer = styled.div`
 export const Srow = styled.div`
     margin-right: -1rem;
     margin-left: -1rem;
+    height: fit-content;
+    box-sizing: border-box;
 `;
 
 export const InnerWrap = styled.div`
@@ -24,4 +26,19 @@ export const InnerWrap = styled.div`
     padding: 4rem 1rem;
     ${mediaMin.tablet`padding: 4rem 3rem;`};
     ${mediaMin.desktop`padding: 0 width: 90%;`};
+`;
+
+export const SdivValign = styled.div`
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+`;
+
+export const SdivLine = styled.div`
+    background-color: ${props => props.theme.colorAccentPrimary};
+    margin-top: 2.5rem;
+    width: 50%;
+    height: 0.3125em;
+    display: inline-block;
+    margin-bottom: 2.25rem;
 `;

@@ -2,9 +2,17 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { Scontainer, Srow } from "../../shared/StyledComponents";
-import { mediaMin } from "../../Theme";
+import {
+    Scontainer,
+    SdivLine,
+    Srow,
+    SdivValign
+} from "../../shared/StyledComponents";
+import { mediaMin, media } from "../../Theme";
 import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
+import heroBgImg from "../../Assets/Images/about/about-coding.jpg";
+import heroBgImg2 from "../../Assets/Images/about/about-learn.jpg";
+import heroBgImg3 from "../../Assets/Images/about/about-story1.jpg";
 
 function About() {
     return (
@@ -24,41 +32,39 @@ function About() {
                 </SdivValign>
             </SsectionHeading>
 
-            <div class="inner-wrap container-fluid no-pad">
-                <section class="hero-text signature-karl">
-                    <div class="row">
-                        <article class="col-md-6 no-pad about-bg-01 img-bg  eq-height1" />
-                        <article class="col-md-6 eq-height1">
-                            <div class="inner-spacing">
-                                <h3 class="black font3 add-top">
+            <SdivContainerFluid>
+                <section>
+                    <Srow>
+                        <SarticleHeroImg />
+                        <SarticleHeroTxt>
+                            <SvertAlign>
+                                <Sh3HeroTxt>
                                     I like solving challenging problems
-                                </h3>
-                                <div class="liner-small color-bg" />
-                                <h6 class="grey font3bold add-bottom">
+                                </Sh3HeroTxt>
+                                <SdivLineHeroTxt />
+                                <Sh6HeroTxt>
                                     And Building Creative Solutions.
-                                </h6>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="row dark-bg">
-                        <article class="col-md-6 eq-height2">
-                            <div class="inner-spacing">
-                                <h3 class="white font3 add-top">
+                                </Sh6HeroTxt>
+                            </SvertAlign>
+                        </SarticleHeroTxt>
+                    </Srow>
+                    <Srow>
+                        <SarticleHeroTxt2>
+                            <SvertAlign>
+                                <Sh3HeroTxt2>
                                     I love to learn and grow
-                                </h3>
-                                <div class="liner-small color-bg" />
-                                <h6 class="grey font3bold add-bottom">
-                                    That is My Passion
-                                </h6>
-                            </div>
-                        </article>
-                        <article class="col-md-6 no-pad about-bg-02 img-bg  eq-height2" />
-                    </div>
-                    <div class="row">
-                        <article class="col-md-6 no-pad about-bg-03 img-bg eq-height3" />
-                        <article class="col-md-6 eq-height3">
-                            <div class="inner-spacing">
-                                <h4 class="font3bold dark add-top">My Story</h4>
+                                </Sh3HeroTxt2>
+                                <SdivLineHeroTxt />
+                                <Sh6HeroTxt>That is My Passion</Sh6HeroTxt>
+                            </SvertAlign>
+                        </SarticleHeroTxt2>
+                        <SarticleHeroImg2 />
+                    </Srow>
+                    <Srow>
+                        <SvertAlign>
+                            <SarticleHeroImg3 />
+                            <SarticleHeroTxt class="col-md-6 eq-height3">
+                                <Sh4HeroTxt3 as="h4">My Story</Sh4HeroTxt3>
                                 <div class="liner-small color-bg" />
                                 <p class="grey add-bottom">
                                     My first career was in construction
@@ -88,10 +94,10 @@ function About() {
                                     bike, and spending time with my family and
                                     dogs.
                                 </p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="row silver-bg">
+                            </SarticleHeroTxt>
+                        </SvertAlign>
+                    </Srow>
+                    <Srow>
                         <article class="col-md-6 eq-height4">
                             <div class="inner-spacing">
                                 <h4 class="font3bold dark add-top">My Goals</h4>
@@ -112,7 +118,7 @@ function About() {
                             </div>
                         </article>
                         <article class="col-md-6 no-pad about-bg-04 img-bg eq-height4" />
-                    </div>
+                    </Srow>
                 </section>
 
                 <section class="team pad-top pad-bottom black-bg">
@@ -124,7 +130,6 @@ function About() {
                                     title="profile pic"
                                     class="img-responsive lozad"
                                     data-src="images/team/kevin.jpg"
-                                    class="lozad"
                                 />
                                 <div class="team-info">
                                     <h4 class="white font3bold">
@@ -275,7 +280,7 @@ function About() {
                         </article>
                     </div>
                 </section>
-            </div>
+            </SdivContainerFluid>
         </Fragment>
     );
 }
@@ -290,12 +295,6 @@ const SsectionHeading = styled.section`
     width: 100%;
     position: relative;
     background-size: cover;
-`;
-
-const SdivValign = styled.div`
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
 `;
 
 const SarticleMainHeading = styled.article`
@@ -316,11 +315,80 @@ const Sh6MainHeading = styled.h6`
     line-height: 2.6875rem;`};
 `;
 
-const SdivLine = styled.div`
+const SdivContainerFluid = styled.div`
+    padding: 0 !important;
+    margin-right: auto;
+    margin-left: auto;
+`;
+
+const SarticleHeroImg = styled.article`
+    box-sizing: border-box;
+    height: 66vh;
+    background-image: url(${heroBgImg});
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 0 !important;
+    position: relative;
+    min-height: 1px;
+    display: block;
+    ${mediaMin.desktop` width: 50%; float: left;`};
+`;
+
+const SarticleHeroTxt = styled.article`
+    box-sizing: border-box;
+    height: 66vh;
+    padding: 0 10%;
+    ${mediaMin.desktop` width: 50%; float: left; padding: 0 5%;`};
+`;
+
+const SvertAlign = styled(SdivValign)`
+    ${media.desktop` top: 20%;`};
+`;
+
+const Sh3HeroTxt = styled.h3`
+    color: ${props => props.theme.colorFontTertiary};
+    font-family: ${props => props.theme.fontFamilyPrimary};
+    font-size: ${props => props.theme.fontSizeSecondary};
+    line-height: 1.9375rem;
+    margin: 0;
+    ${mediaMin.desktop` font-size: ${props =>
+        props.theme.fontSizeTertiary};line-height: 64px;`};
+`;
+
+const SdivLineHeroTxt = styled(SdivLine)`
     background-color: ${props => props.theme.colorAccentPrimary};
-    margin-top: 2.5rem;
-    width: 50%;
-    height: 0.3125rem;
-    display: inline-block;
-    margin-bottom: 2.25rem;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+    width: 25%;
+`;
+
+const Sh6HeroTxt = styled.h6`
+    margin: 0;
+    font-size: ${props => props.theme.fontSizePrimary};
+    line-height: 1.3125rem;
+    font-family: ${props => props.theme.fontFamilyPrimary};
+    color: ${props => props.theme.colorFontQuinternary};
+`;
+
+const SarticleHeroImg2 = styled(SarticleHeroImg)`
+    background-image: url(${heroBgImg2});
+    ${mediaMin.desktop` width: 50%; float: right;`};
+`;
+
+const SarticleHeroTxt2 = styled(SarticleHeroTxt)`
+    background-color: ${props => props.theme.colorBgSecondary};
+`;
+
+const Sh3HeroTxt2 = styled(Sh3HeroTxt)`
+    color: ${props => props.theme.colorBgPrimary};
+`;
+
+const SarticleHeroImg3 = styled(SarticleHeroImg)`
+    background-image: url(${heroBgImg3});
+    ${mediaMin.desktop` width: 50%; float: left;`};
+`;
+
+const Sh4HeroTxt3 = styled(Sh3HeroTxt)`
+    font-size: ${props => props.theme.fontSizeSecondary};
 `;

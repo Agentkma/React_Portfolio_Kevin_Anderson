@@ -15,6 +15,7 @@ export const theme = {
     fontSizeSmall: "0.7rem",
     fontSizePrimary: "1rem",
     fontSizeSecondary: "1.5rem",
+    fontSizeTertiary: "3rem",
     fontFamilyPrimary: "font-family: 'Montserrat', sans-serif !important",
     fontFamilySecondary: "font-family: 'Montserrat', sans-serif !important"
 };

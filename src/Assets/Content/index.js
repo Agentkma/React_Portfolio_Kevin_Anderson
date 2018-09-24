@@ -418,12 +418,150 @@ export const content = {
         }
     ],
     about: {
-        header: {},
-        main: {}
+        header: { intro: "Welcome to my portfolio site." },
+        main: {
+            gridItems: [
+                {
+                    type: "value image",
+                    value: {
+                        img: "Assets/Images/about/about-coding.jpg",
+                        alt: "laptop computer",
+                        title: "coding"
+                    }
+                },
+                {
+                    type: "value text",
+                    value: {
+                        txt: {
+                            primary: "I like solving challenging problems",
+                            secondary: "And Building Creative Solutions."
+                        }
+                    }
+                },
+                {
+                    type: "value text",
+                    value: {
+                        txt: {
+                            primary: "I love to learn and grow",
+                            secondary: "That is My Passion."
+                        }
+                    }
+                },
+                {
+                    type: "value image",
+                    value: {
+                        img: "Assets/Images/about/about-learn.jpg",
+                        alt:
+                            "human face profile view with universe inside the head",
+                        title: "learning"
+                    }
+                },
+
+                {
+                    type: "story image",
+                    story: {
+                        img: "Assets/Images/about/about-story1.jpg"
+                    }
+                },
+                {
+                    type: "story text",
+                    story: {
+                        txt: {
+                            primary: "My Story",
+                            secondary: [
+                                "My first career was in construction management.",
+                                "Managing different teams and employees while solving the problems of custom building was challenging. I enjoyed finding improvements in our product and process through continous process improvement.",
+                                "I decided to apply my love for problem solving and solution building to the world of technology which I had become more and more interested in.",
+                                "My technical education has been primarily through project based course education with Treehouse, Galvanize, and Udemy. In addition I've learned from working with others in person, many other web based education sources, and of course documentation.",
+                                "I also love to laugh, read, hike, bike, and spending time with my family and dogs."
+                            ]
+                        }
+                    }
+                },
+
+                {
+                    type: "story text",
+                    story: {
+                        txt: {
+                            primary: "My Goals",
+                            secondary: [
+                                "My goals are to continue to learn about life, reality, and grow my abilities to create solutions through code as part of a team.",
+                                "I want to share my knowledge and learn from others.",
+                                "I want to make the most of my time on earth and continue to learn, grow, and contribute as long as I'm here."
+                            ]
+                        }
+                    }
+                },
+                {
+                    type: "story image",
+                    story: {
+                        img: "Assets/Images/about/about-goals.jpg"
+                    }
+                }
+            ],
+
+            profile: {
+                img: {
+                    src: "Assets/Images/team/kevin.jpg",
+                    alt: "profile pic of kevin anderson",
+                    title: "profile / view of head and torso of Kevin Anderson"
+                },
+                name: "Kevin Anderson",
+                title: "Full Stack Software Engineer",
+                details:
+                    "Lifelong Learner. Humanist. Realist. Rational Optimist. Husband. Coder."
+            },
+            // TODO: makes stat values dynamic by fetching data from relevant apis
+            stats: [
+                {
+                    title: "Projects",
+                    value: 35
+                },
+                {
+                    title: "Education Pts",
+                    value: 30395
+                },
+                {
+                    title: "Tech Skills",
+                    value: 45
+                },
+                {
+                    title: "Degrees & Certs",
+                    value: 5
+                }
+            ],
+            values: [
+                {
+                    iconClass: "ion-ios-sunny-outline color",
+                    title: "Live",
+                    text: "to enjoy family, friends, and this wonderful planet."
+                },
+                {
+                    iconClass: "ion-ios-book-outline color",
+                    title: "Learn",
+                    text: "about the world, people, and creative coding."
+                },
+                {
+                    iconClass: "ion-ios-body-outline color",
+                    title: "Grow",
+                    text: "as a human, husband, and team member."
+                },
+                {
+                    iconClass: "ion-ios-flask-outline color",
+                    title: "Create",
+                    text:
+                        "solutions to challenging problems and interesting apps that imrove people's lives."
+                }
+            ],
+            contact: {
+                header: "Interested in working together?",
+                main: "Let's talk"
+            }
+        }
     },
     contact: {
-        header: {},
-        main: {}
+        header: "Interested in working together?",
+        main: "Let's talk"
     },
     error: {
         header: {},

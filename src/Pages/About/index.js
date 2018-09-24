@@ -1,18 +1,37 @@
+// ! External
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
+// ! Internal
+import { content } from "../../Assets/Content";
 import {
     Scontainer,
     SdivLine,
     Srow,
+    SsectionGrid,
     SdivValign
 } from "../../shared/StyledComponents";
-import { mediaMin, media } from "../../Theme";
+import { mediaMin } from "../../Theme";
+import GridItem from "./GridItem";
 import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
-import heroBgImg from "../../Assets/Images/about/about-coding.jpg";
-import heroBgImg2 from "../../Assets/Images/about/about-learn.jpg";
-import heroBgImg3 from "../../Assets/Images/about/about-story1.jpg";
+
+const renderGridItemsValues = () => {
+    return content.about.main.gridItems.map((item, index) => {
+        switch (item.type) {
+            case "value image":
+                return <GridItem type={item.type} index={index} key={index} />;
+            case "value text":
+                return <GridItem type={item.type} index={index} key={index} />;
+            case "story image":
+                return <GridItem type={item.type} index={index} key={index} />;
+            case "story text":
+                return <GridItem type={item.type} index={index} key={index} />;
+            default:
+                return <GridItem type={item.type} index={index} key={index} />;
+        }
+    });
+};
 
 function About() {
     return (
@@ -23,7 +42,7 @@ function About() {
                         <Srow>
                             <SarticleMainHeading>
                                 <Sh6MainHeading>
-                                    Welcome to my portfolio site.
+                                    {content.about.header.intro}
                                 </Sh6MainHeading>
                                 <SdivLine />
                             </SarticleMainHeading>
@@ -31,95 +50,8 @@ function About() {
                     </Scontainer>
                 </SdivValign>
             </SsectionHeading>
-
             <SdivContainerFluid>
-                <section>
-                    <Srow>
-                        <SarticleHeroImg />
-                        <SarticleHeroTxt>
-                            <SvertAlign>
-                                <Sh3HeroTxt>
-                                    I like solving challenging problems
-                                </Sh3HeroTxt>
-                                <SdivLineHeroTxt />
-                                <Sh6HeroTxt>
-                                    And Building Creative Solutions.
-                                </Sh6HeroTxt>
-                            </SvertAlign>
-                        </SarticleHeroTxt>
-                    </Srow>
-                    <Srow>
-                        <SarticleHeroTxt2>
-                            <SvertAlign>
-                                <Sh3HeroTxt2>
-                                    I love to learn and grow
-                                </Sh3HeroTxt2>
-                                <SdivLineHeroTxt />
-                                <Sh6HeroTxt>That is My Passion</Sh6HeroTxt>
-                            </SvertAlign>
-                        </SarticleHeroTxt2>
-                        <SarticleHeroImg2 />
-                    </Srow>
-                    <Srow>
-                        <SvertAlign>
-                            <SarticleHeroImg3 />
-                            <SarticleHeroTxt class="col-md-6 eq-height3">
-                                <Sh4HeroTxt3 as="h4">My Story</Sh4HeroTxt3>
-                                <div class="liner-small color-bg" />
-                                <p class="grey add-bottom">
-                                    My first career was in construction
-                                    management.
-                                    <br />
-                                    <br />
-                                    Managing different teams and employees while
-                                    solving the problems of custom building was
-                                    challenging. I enjoyed finding improvements
-                                    in our product and process through continous
-                                    process improvement.
-                                    <br />
-                                    <br />I decided to apply my love for problem
-                                    solving and solution building to the world
-                                    of technology which I had become more and
-                                    more interested in.
-                                    <br />
-                                    <br />
-                                    My technical education has been primarily
-                                    through project based course education with
-                                    Treehouse, Galvanize, and Udemy. In addition
-                                    I've learned from working with others in
-                                    person, many other web based education
-                                    sources, and of course documentation.
-                                    <br />
-                                    <br />I also love to laugh, read, hike,
-                                    bike, and spending time with my family and
-                                    dogs.
-                                </p>
-                            </SarticleHeroTxt>
-                        </SvertAlign>
-                    </Srow>
-                    <Srow>
-                        <article class="col-md-6 eq-height4">
-                            <div class="inner-spacing">
-                                <h4 class="font3bold dark add-top">My Goals</h4>
-                                <div class="liner-small color-bg" />
-                                <p class="grey add-bottom">
-                                    My goals are to continue to learn about
-                                    life, reality, and grow my abilities to
-                                    create solutions through code as part of a
-                                    team.
-                                    <br />
-                                    <br />I want to share my knowledge and learn
-                                    from others.
-                                    <br />
-                                    <br />I want to make the most of my time on
-                                    earth and continue to learn, grow, and
-                                    contribute as long as I'm here.
-                                </p>
-                            </div>
-                        </article>
-                        <article class="col-md-6 no-pad about-bg-04 img-bg eq-height4" />
-                    </Srow>
-                </section>
+                <SsectionGrid>{renderGridItemsValues()}</SsectionGrid>
 
                 <section class="team pad-top pad-bottom black-bg">
                     <div class="container">
@@ -287,6 +219,8 @@ function About() {
 
 export default About;
 
+// ! Styles
+
 const SsectionHeading = styled.section`
     height: 800px;
     background-position: 0px 35px;
@@ -321,74 +255,61 @@ const SdivContainerFluid = styled.div`
     margin-left: auto;
 `;
 
-const SarticleHeroImg = styled.article`
-    box-sizing: border-box;
-    height: 66vh;
-    background-image: url(${heroBgImg});
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 0 !important;
-    position: relative;
-    min-height: 1px;
-    display: block;
-    ${mediaMin.desktop` width: 50%; float: left;`};
-`;
+// const SarticleHeroImg = styled.article`
+//     box-sizing: border-box;
+//     height: 66vh;
+//     width: 100%;
+//     background-image: url(${heroBgImg});
+//     background-size: cover;
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//     padding: 0 !important;
+//     position: relative;
+//     min-height: 1px;
+//     display: block;
+// `;
 
-const SarticleHeroTxt = styled.article`
-    box-sizing: border-box;
-    height: 66vh;
-    padding: 0 10%;
-    ${mediaMin.desktop` width: 50%; float: left; padding: 0 5%;`};
-`;
+// const SarticleHeroTxt = styled.article`
+//     box-sizing: border-box;
+//     width: 100%;
+//     height: 66vh;
+//     padding: 0 10%;
+// `;
 
-const SvertAlign = styled(SdivValign)`
-    ${media.desktop` top: 20%;`};
-`;
+// const Sh3HeroTxt = styled.h3`
+//     color: ${props => props.theme.colorFontTertiary};
+//     font-family: ${props => props.theme.fontFamilyPrimary};
+//     font-size: ${props => props.theme.fontSizeSecondary};
+//     line-height: 1.9375rem;
+//     margin: 0;
+//     ${mediaMin.desktop` font-size: ${props =>
+//         props.theme.fontSizeTertiary};line-height: 64px;`};
+// `;
 
-const Sh3HeroTxt = styled.h3`
-    color: ${props => props.theme.colorFontTertiary};
-    font-family: ${props => props.theme.fontFamilyPrimary};
-    font-size: ${props => props.theme.fontSizeSecondary};
-    line-height: 1.9375rem;
-    margin: 0;
-    ${mediaMin.desktop` font-size: ${props =>
-        props.theme.fontSizeTertiary};line-height: 64px;`};
-`;
+// const SarticleHeroImg2 = styled(SarticleHeroImg)`
+//     background-image: url(${heroBgImg2});
+// `;
 
-const SdivLineHeroTxt = styled(SdivLine)`
-    background-color: ${props => props.theme.colorAccentPrimary};
-    margin-top: 0.625rem;
-    margin-bottom: 0.625rem;
-    width: 25%;
-`;
+// const SarticleHeroTxt2 = styled(SarticleHeroTxt)`
+//     background-color: ${props => props.theme.colorBgSecondary};
+// `;
 
-const Sh6HeroTxt = styled.h6`
-    margin: 0;
-    font-size: ${props => props.theme.fontSizePrimary};
-    line-height: 1.3125rem;
-    font-family: ${props => props.theme.fontFamilyPrimary};
-    color: ${props => props.theme.colorFontQuinternary};
-`;
+// const Sh3HeroTxt2 = styled(Sh3HeroTxt)`
+//     color: ${props => props.theme.colorBgPrimary};
+// `;
 
-const SarticleHeroImg2 = styled(SarticleHeroImg)`
-    background-image: url(${heroBgImg2});
-    ${mediaMin.desktop` width: 50%; float: right;`};
-`;
+// const SarticleHeroImg3 = styled(SarticleHeroImg)`
+//     background-image: url(${heroBgImg3});
+// `;
 
-const SarticleHeroTxt2 = styled(SarticleHeroTxt)`
-    background-color: ${props => props.theme.colorBgSecondary};
-`;
+// const Sh4HeroTxt3 = styled(Sh3HeroTxt)`
+//     font-size: ${props => props.theme.fontSizeSecondary};
+// `;
 
-const Sh3HeroTxt2 = styled(Sh3HeroTxt)`
-    color: ${props => props.theme.colorBgPrimary};
-`;
+// const SpHero = styled.p`
+//     color: ${props => props.theme.colorFontQuinternary};
+// `;
 
-const SarticleHeroImg3 = styled(SarticleHeroImg)`
-    background-image: url(${heroBgImg3});
-    ${mediaMin.desktop` width: 50%; float: left;`};
-`;
-
-const Sh4HeroTxt3 = styled(Sh3HeroTxt)`
-    font-size: ${props => props.theme.fontSizeSecondary};
-`;
+// const SarticleHeroImg4 = styled(SarticleHeroImg)`
+//     background-image: url(${heroBgImg4});
+// `;

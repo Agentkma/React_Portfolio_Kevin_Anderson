@@ -42,3 +42,13 @@ export const SdivLine = styled.div`
     display: inline-block;
     margin-bottom: 2.25rem;
 `;
+
+export const SsectionGrid = styled.section`
+    position: relative;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 0;
+
+    ${mediaMin.desktop` grid-template-columns:repeat(2, minmax(50vw, 1fr));`};
+`;

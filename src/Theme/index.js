@@ -4,6 +4,7 @@ export const theme = {
     colorBgPrimary: "white",
     colorBgSecondary: "#292929",
     colorBgTertiary: "#f0f4f4",
+    colorBgQuaternary: "#121212",
     colorFontPrimary: "#666",
     colorFontSecondary: "white",
     colorFontTertiary: "#121212",

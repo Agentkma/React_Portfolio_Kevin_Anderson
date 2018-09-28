@@ -52,3 +52,11 @@ export const SsectionGrid = styled.section`
 
     ${mediaMin.desktop` grid-template-columns:repeat(2, minmax(50vw, 1fr));`};
 `;
+
+export const SresponsiveImg = styled.img`
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+    height: 100%;
+    border: 0;
+`;

@@ -10,11 +10,13 @@ import {
     SdivLine,
     Srow,
     SsectionGrid,
-    SdivValign
+    SdivValign,
+    SresponsiveImg
 } from "../../shared/StyledComponents";
 import { mediaMin } from "../../Theme";
 import GridItem from "./GridItem";
 import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
+//import profileImg from "../../Assets/Images/about/kevin.jpg";
 
 const renderGridItemsValues = () => {
     return content.about.main.gridItems.map((item, index) => {
@@ -53,41 +55,38 @@ function About() {
             <SdivContainerFluid>
                 <SsectionGrid>{renderGridItemsValues()}</SsectionGrid>
 
-                <section class="team pad-top pad-bottom black-bg">
-                    <div class="container">
-                        <div class="row">
-                            <article class="col-md-6 col-md-offset-3 team-block signature-karl">
-                                <img
-                                    alt="profile pic of kevin anderson"
-                                    title="profile pic"
-                                    class="img-responsive lozad"
-                                    data-src="images/team/kevin.jpg"
-                                />
-                                <div class="team-info">
-                                    <h4 class="white font3bold">
-                                        Kevin Anderson
-                                    </h4>
-                                    <div class="liner-small color-bg" />
-                                    <h6 class="grey font3bold">
-                                        Full Stack Software Engineer
-                                    </h6>
-                                </div>
-                                <div class="team-overlay">
-                                    <p class="grey">
-                                        Lifelong Learner. Humanist. Realist.
-                                        Rational Optimist. Husband. Programmer.
-                                    </p>
-                                    <div class="liner-small color-bg" />
-                                    <div />
-                                    {/* <ul class="team-social">
+                <SsectionProfile>
+                    {/* <SdivValign> */}
+                    <Scontainer>
+                        <SarticleProfile>
+                            <SresponsiveImg
+                                alt="profile pic of kevin anderson"
+                                title="profile pic"
+                                src={require("../../Assets/Images/about/kevin.jpg")}
+                            />
+                            <div class="team-info">
+                                <h4 class="white font3bold">Kevin Anderson</h4>
+                                <div class="liner-small color-bg" />
+                                <h6 class="grey font3bold">
+                                    Full Stack Software Engineer
+                                </h6>
+                            </div>
+                            <div class="team-overlay">
+                                <p class="grey">
+                                    Lifelong Learner. Humanist. Realist.
+                                    Rational Optimist. Husband. Programmer.
+                                </p>
+                                <div class="liner-small color-bg" />
+                                <div />
+                                {/* <ul class="team-social">
                                     <li><a href="#"><img data-no-retina alt="" title="" src="images/social/01.svg"/></a></li>
                                     <li><a href="#"><img data-no-retina alt="" title="" src="images/social/02.svg"/></a></li>
                                 </ul> */}
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </section>
+                            </div>
+                        </SarticleProfile>
+                    </Scontainer>
+                    {/* </SdivValign> */}
+                </SsectionProfile>
 
                 <section
                     class="stats signature-karl pad pad-top pad-bottom stats-bg parallax"
@@ -253,6 +252,18 @@ const SdivContainerFluid = styled.div`
     padding: 0 !important;
     margin-right: auto;
     margin-left: auto;
+`;
+
+const SsectionProfile = styled.section`
+    height: 60vh;
+    padding 15vh 0;
+    background-color: ${props => props.theme.colorBgQuaternary};
+`;
+
+const SarticleProfile = styled.article`
+    width: 100%;
+    margin: 0;
+    ${mediaMin.desktop` margin-left: 25%; width:50%`};
 `;
 
 // const SarticleHeroImg = styled.article`

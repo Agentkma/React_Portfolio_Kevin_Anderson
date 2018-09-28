@@ -3,7 +3,11 @@ import React from "react";
 import styled from "styled-components";
 
 // ! Internal
-import { SdivLine, SdivValign } from "../../shared/StyledComponents";
+import {
+    SdivLine,
+    SdivValign,
+    SresponsiveImg
+} from "../../shared/StyledComponents";
 import { mediaMin, media } from "../../Theme";
 import { content } from "../../Assets/Content";
 
@@ -18,7 +22,7 @@ export const GridItem = ({ index, type }) => {
             <SarticleHeroImg>
                 <picture>
                     <source srcSet={require(`../../${img}`)} type="image/jpg" />
-                    <Simg
+                    <SresponsiveImg
                         src={require(`../../${img}`)}
                         alt={alt}
                         title={title}
@@ -44,7 +48,7 @@ export const GridItem = ({ index, type }) => {
             <SarticleHeroImg>
                 <picture>
                     <source srcSet={require(`../../${img}`)} type="image/jpg" />
-                    <Simg
+                    <SresponsiveImg
                         src={require(`../../${img}`)}
                         alt={alt}
                         title={title}
@@ -126,14 +130,6 @@ const Sh6HeroTxt = styled.h6`
     line-height: 1.3125rem;
     font-family: ${props => props.theme.fontFamilyPrimary};
     color: ${props => props.theme.colorFontQuinternary};
-`;
-
-const Simg = styled.img`
-    display: block;
-    width: 100% !important;
-    max-width: 100%;
-    height: 100%;
-    border: 0;
 `;
 
 const SpHero = styled.p`

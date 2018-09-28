@@ -256,7 +256,7 @@ const SdivContainerFluid = styled.div`
 
 const SsectionProfile = styled.section`
     height: 60vh;
-    padding 15vh 0;
+    padding: 15vh 0;
     background-color: ${props => props.theme.colorBgQuaternary};
 `;
 

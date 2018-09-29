@@ -5,6 +5,7 @@ import styled from "styled-components";
 // ! Internal
 import {
     SdivLine,
+    SdivLineSmall,
     SdivValign,
     SresponsiveImg
 } from "../../shared/StyledComponents";
@@ -36,7 +37,7 @@ export const GridItem = ({ index, type }) => {
             <SarticleHeroTxt>
                 <SvertAlign>
                     <Sh3HeroTxt>{primary}</Sh3HeroTxt>
-                    <SdivLineHeroTxt />
+                    <SdivLineSmall />
                     <Sh6HeroTxt>{secondary}</Sh6HeroTxt>
                 </SvertAlign>
             </SarticleHeroTxt>
@@ -62,7 +63,7 @@ export const GridItem = ({ index, type }) => {
             <SarticleHeroTxt>
                 <SvertAlign>
                     <Sh4HeroTxt3 as="h4">{primary}</Sh4HeroTxt3>
-                    <SdivLineHeroTxt />
+                    <SdivLineSmall />
                     <SpHero>
                         {secondary.map((text, i) => {
                             console.log("text", text);
@@ -115,13 +116,6 @@ const Sh3HeroTxt = styled.h3`
 `;
 const Sh4HeroTxt3 = styled(Sh3HeroTxt)`
     font-size: ${props => props.theme.fontSizeSecondary};
-`;
-
-const SdivLineHeroTxt = styled(SdivLine)`
-    background-color: ${props => props.theme.colorAccentPrimary};
-    margin-top: 0.625rem;
-    margin-bottom: 0.625rem;
-    width: 25%;
 `;
 
 const Sh6HeroTxt = styled.h6`

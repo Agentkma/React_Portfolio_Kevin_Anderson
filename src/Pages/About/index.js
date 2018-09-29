@@ -8,6 +8,7 @@ import { content } from "../../Assets/Content";
 import {
     Scontainer,
     SdivLine,
+    SdivLineSmall,
     Srow,
     SsectionGrid,
     SdivValign,
@@ -56,7 +57,6 @@ function About() {
                 <SsectionGrid>{renderGridItemsValues()}</SsectionGrid>
 
                 <SsectionProfile>
-                    {/* <SdivValign> */}
                     <Scontainer>
                         <SarticleProfile>
                             <SresponsiveImg
@@ -64,28 +64,20 @@ function About() {
                                 title="profile pic"
                                 src={require("../../Assets/Images/about/kevin.jpg")}
                             />
-                            <div class="team-info">
-                                <h4 class="white font3bold">Kevin Anderson</h4>
-                                <div class="liner-small color-bg" />
-                                <h6 class="grey font3bold">
-                                    Full Stack Software Engineer
-                                </h6>
-                            </div>
-                            <div class="team-overlay">
-                                <p class="grey">
+                            <SdivInfo>
+                                <Sh4Info>Kevin Anderson</Sh4Info>
+                                <SdivLineSmall />
+                                <Sh6Info>Full Stack Software Engineer</Sh6Info>
+                            </SdivInfo>
+                            <SdivOverlayInfo>
+                                <SpInfo>
                                     Lifelong Learner. Humanist. Realist.
                                     Rational Optimist. Husband. Programmer.
-                                </p>
-                                <div class="liner-small color-bg" />
-                                <div />
-                                {/* <ul class="team-social">
-                                    <li><a href="#"><img data-no-retina alt="" title="" src="images/social/01.svg"/></a></li>
-                                    <li><a href="#"><img data-no-retina alt="" title="" src="images/social/02.svg"/></a></li>
-                                </ul> */}
-                            </div>
+                                </SpInfo>
+                                <SdivLineSmall />
+                            </SdivOverlayInfo>
                         </SarticleProfile>
                     </Scontainer>
-                    {/* </SdivValign> */}
                 </SsectionProfile>
 
                 <section
@@ -261,66 +253,52 @@ const SsectionProfile = styled.section`
 `;
 
 const SarticleProfile = styled.article`
+    position: relative;
     width: 100%;
     margin: 0;
     ${mediaMin.desktop` margin-left: 25%; width:50%`};
 `;
 
-// const SarticleHeroImg = styled.article`
-//     box-sizing: border-box;
-//     height: 66vh;
-//     width: 100%;
-//     background-image: url(${heroBgImg});
-//     background-size: cover;
-//     background-position: center center;
-//     background-repeat: no-repeat;
-//     padding: 0 !important;
-//     position: relative;
-//     min-height: 1px;
-//     display: block;
-// `;
+const SdivInfo = styled.div`
+    display: block;
+    padding: 1.25rem;
+`;
 
-// const SarticleHeroTxt = styled.article`
-//     box-sizing: border-box;
-//     width: 100%;
-//     height: 66vh;
-//     padding: 0 10%;
-// `;
+const Sh4Info = styled.h4`
+    text-transform: uppercase;
+    font-family: ${props => props.theme.fontFamilyPrimary};
+    color: ${props => props.theme.colorFontSecondary};
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: ${props => props.theme.fontSizePrimary};
+`;
 
-// const Sh3HeroTxt = styled.h3`
-//     color: ${props => props.theme.colorFontTertiary};
-//     font-family: ${props => props.theme.fontFamilyPrimary};
-//     font-size: ${props => props.theme.fontSizeSecondary};
-//     line-height: 1.9375rem;
-//     margin: 0;
-//     ${mediaMin.desktop` font-size: ${props =>
-//         props.theme.fontSizeTertiary};line-height: 64px;`};
-// `;
+const Sh6Info = styled.h6`
+    color: ${props => props.theme.colorFontQuinternary};
+    font-family: ${props => props.theme.fontFamilyPrimary};
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: ${props => props.theme.fontSizeSmall};
+`;
 
-// const SarticleHeroImg2 = styled(SarticleHeroImg)`
-//     background-image: url(${heroBgImg2});
-// `;
+const SdivOverlayInfo = styled.div`
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    border-color: ${props => props.theme.colorBorderPrimary};
+    height: 100%;
+    left: 0;
+    padding: 2.5rem;
+    position: absolute;
+    width: auto;
+    z-index: 1000000;
+    opacity: 0;
+    ${SarticleProfile}:hover & {
+        opacity: 1;
+        transition: all 1s ease-in-out;
+    }
+`;
 
-// const SarticleHeroTxt2 = styled(SarticleHeroTxt)`
-//     background-color: ${props => props.theme.colorBgSecondary};
-// `;
-
-// const Sh3HeroTxt2 = styled(Sh3HeroTxt)`
-//     color: ${props => props.theme.colorBgPrimary};
-// `;
-
-// const SarticleHeroImg3 = styled(SarticleHeroImg)`
-//     background-image: url(${heroBgImg3});
-// `;
-
-// const Sh4HeroTxt3 = styled(Sh3HeroTxt)`
-//     font-size: ${props => props.theme.fontSizeSecondary};
-// `;
-
-// const SpHero = styled.p`
-//     color: ${props => props.theme.colorFontQuinternary};
-// `;
-
-// const SarticleHeroImg4 = styled(SarticleHeroImg)`
-//     background-image: url(${heroBgImg4});
-// `;
+const SpInfo = styled.p`
+    color: ${props => props.theme.colorFontQuinternary};
+`;

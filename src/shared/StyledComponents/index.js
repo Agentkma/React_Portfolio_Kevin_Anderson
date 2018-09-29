@@ -43,6 +43,13 @@ export const SdivLine = styled.div`
     margin-bottom: 2.25rem;
 `;
 
+export const SdivLineSmall = styled(SdivLine)`
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+    width: 25%;
+    height: 0.125rem;
+`;
+
 export const SsectionGrid = styled.section`
     position: relative;
     height: auto;

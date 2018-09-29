@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 // ! Internal
 import {
-    SdivLine,
     SdivLineSmall,
     SdivValign,
     SresponsiveImg

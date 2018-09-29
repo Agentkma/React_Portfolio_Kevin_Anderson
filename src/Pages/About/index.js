@@ -8,16 +8,15 @@ import { content } from "../../Assets/Content";
 import {
     Scontainer,
     SdivLine,
-    SdivLineSmall,
     Srow,
     SsectionGrid,
-    SdivValign,
-    SresponsiveImg
+    SdivValign
 } from "../../shared/StyledComponents";
 import { mediaMin } from "../../Theme";
 import GridItem from "./GridItem";
+import Profile from "./Profile";
+import Stats from "./Stats";
 import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
-//import profileImg from "../../Assets/Images/about/kevin.jpg";
 
 const renderGridItemsValues = () => {
     return content.about.main.gridItems.map((item, index) => {
@@ -55,88 +54,8 @@ function About() {
             </SsectionHeading>
             <SdivContainerFluid>
                 <SsectionGrid>{renderGridItemsValues()}</SsectionGrid>
-
-                <SsectionProfile>
-                    <Scontainer>
-                        <SarticleProfile>
-                            <SresponsiveImg
-                                alt="profile pic of kevin anderson"
-                                title="profile pic"
-                                src={require("../../Assets/Images/about/kevin.jpg")}
-                            />
-                            <SdivInfo>
-                                <Sh4Info>Kevin Anderson</Sh4Info>
-                                <SdivLineSmall />
-                                <Sh6Info>Full Stack Software Engineer</Sh6Info>
-                            </SdivInfo>
-                            <SdivOverlayInfo>
-                                <SpInfo>
-                                    Lifelong Learner. Humanist. Realist.
-                                    Rational Optimist. Husband. Programmer.
-                                </SpInfo>
-                                <SdivLineSmall />
-                            </SdivOverlayInfo>
-                        </SarticleProfile>
-                    </Scontainer>
-                </SsectionProfile>
-
-                <section
-                    class="stats signature-karl pad pad-top pad-bottom stats-bg parallax"
-                    data-stellar-background-ratio="0.5"
-                >
-                    <div class="row">
-                        <article class="text-center col-md-12">
-                            <ul class="elements-counter-wrap signature-karl">
-                                <li
-                                    data-delay="100"
-                                    class="elements-counter signature-karl"
-                                >
-                                    <div class="number font3bold white ">
-                                        35+
-                                    </div>
-                                    <div class="subject font3 dark-bg white">
-                                        Projects
-                                    </div>
-                                </li>
-
-                                <li
-                                    data-delay="300"
-                                    class="elements-counter signature-karl"
-                                >
-                                    <div
-                                        id="pointCount"
-                                        class="number font3bold white"
-                                    >
-                                        24453
-                                    </div>
-                                    <div class="subject font3 color-bg white">
-                                        Education Pts
-                                    </div>
-                                </li>
-
-                                <li
-                                    data-delay="500"
-                                    class="elements-counter signature-karl"
-                                >
-                                    <div class="number font3bold white">45</div>
-                                    <div class="subject font3 dark-bg white">
-                                        Tech Skills
-                                    </div>
-                                </li>
-
-                                <li
-                                    data-delay="700"
-                                    class="elements-counter signature-karl"
-                                >
-                                    <div class="number font3bold white">5</div>
-                                    <div class="subject font3 color-bg white">
-                                        Degrees & Certs
-                                    </div>
-                                </li>
-                            </ul>
-                        </article>
-                    </div>
-                </section>
+                <Profile />
+                <Stats />
 
                 <section class="services signature-karl pad-top pad-bottom dark-bg">
                     <div class="container">
@@ -244,61 +163,4 @@ const SdivContainerFluid = styled.div`
     padding: 0 !important;
     margin-right: auto;
     margin-left: auto;
-`;
-
-const SsectionProfile = styled.section`
-    height: 60vh;
-    padding: 15vh 0;
-    background-color: ${props => props.theme.colorBgQuaternary};
-`;
-
-const SarticleProfile = styled.article`
-    position: relative;
-    width: 100%;
-    margin: 0;
-    ${mediaMin.desktop` margin-left: 25%; width:50%`};
-`;
-
-const SdivInfo = styled.div`
-    display: block;
-    padding: 1.25rem;
-`;
-
-const Sh4Info = styled.h4`
-    text-transform: uppercase;
-    font-family: ${props => props.theme.fontFamilyPrimary};
-    color: ${props => props.theme.colorFontSecondary};
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: ${props => props.theme.fontSizePrimary};
-`;
-
-const Sh6Info = styled.h6`
-    color: ${props => props.theme.colorFontQuinternary};
-    font-family: ${props => props.theme.fontFamilyPrimary};
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: ${props => props.theme.fontSizeSmall};
-`;
-
-const SdivOverlayInfo = styled.div`
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.7);
-    bottom: 0;
-    border-color: ${props => props.theme.colorBorderPrimary};
-    height: 100%;
-    left: 0;
-    padding: 2.5rem;
-    position: absolute;
-    width: auto;
-    z-index: 1000000;
-    opacity: 0;
-    ${SarticleProfile}:hover & {
-        opacity: 1;
-        transition: all 1s ease-in-out;
-    }
-`;
-
-const SpInfo = styled.p`
-    color: ${props => props.theme.colorFontQuinternary};
 `;

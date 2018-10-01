@@ -13,6 +13,7 @@ export const theme = {
     colorFontHoverPrimary: "#ff2238 !important",
     colorAccentPrimary: "#ff2238 !important",
     colorAccentSecondary: "#eee",
+    colorAccentTertiary: "#000",
     colorBorderPrimary: "#121212",
     fontSizeSmall: "0.7rem",
     fontSizePrimary: "1rem",

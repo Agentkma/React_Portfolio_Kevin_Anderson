@@ -65,7 +65,6 @@ export const GridItem = ({ index, type }) => {
                     <SdivLineSmall />
                     <SpHero>
                         {secondary.map((text, i) => {
-                            console.log("text", text);
                             return (
                                 <span key={i}>
                                     {text} <br /> <br />

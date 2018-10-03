@@ -69,8 +69,8 @@ export default Stats;
 
 // ! Styles
 
-const Ssection = styled.section`
-    height: 50vh;
+export const Ssection = styled.section`
+    height: auto;
     position: relative;
     background-image: url(${StatsBgImg});
     background-position: 0px -113.5px;
@@ -81,16 +81,16 @@ const Ssection = styled.section`
     padding: 10%;
 `;
 
-const Sarticle = styled.article`
+export const Sarticle = styled.article`
     text-align: center;
 `;
 
-const Sul = styled.ul`
+export const Sul = styled.ul`
     width: 100%;
     padding: 0;
 `;
 
-const Sli = styled.li`
+export const Sli = styled.li`
     width: 100%;
     display: block;
     margin-bottom: 1.25rem;

@@ -16,6 +16,7 @@ import { mediaMin } from "../../Theme";
 import GridItem from "./GridItem";
 import Profile from "./Profile";
 import Stats from "./Stats";
+import Values from "./Values";
 import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
 
 const renderGridItemsValues = () => {
@@ -56,52 +57,7 @@ function About() {
                 <SsectionGrid>{renderGridItemsValues()}</SsectionGrid>
                 <Profile />
                 <Stats />
-
-                <section class="services signature-karl pad-top pad-bottom dark-bg">
-                    <div class="container">
-                        <div class="row">
-                            <article class="col-md-3 text-center service-block signature-karl">
-                                <span class="ion-ios-sunny-outline color" />
-                                <h3 class="font3bold white">Live</h3>
-                                <div class="liner-small color-bg" />
-                                <p class="white">
-                                    to enjoy family, friends, and this wonderful
-                                    planet.
-                                </p>
-                            </article>
-
-                            <article class="col-md-3 text-center service-block signature-karl">
-                                <span class="ion-ios-book-outline color" />
-                                <h3 class="font3bold white">Learn</h3>
-                                <div class="liner-small color-bg" />
-                                <p class="white">
-                                    about the world, people, and creative
-                                    coding.{" "}
-                                </p>
-                            </article>
-
-                            <article class="col-md-3 text-center service-block signature-karl">
-                                <span class="ion-ios-body-outline color" />
-                                <h3 class="font3bold white">Grow</h3>
-                                <div class="liner-small color-bg" />
-                                <p class="white">
-                                    as a human, husband, and team member.
-                                </p>
-                            </article>
-
-                            <article class="col-md-3 text-center service-block signature-karl">
-                                <span class="ion-ios-flask-outline color" />
-                                <h3 class="font3bold white">Create</h3>
-                                <div class="liner-small color-bg" />
-                                <p class="white">
-                                    solutions to challenging problems and
-                                    interesting apps that imrove people's lives.
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                </section>
-
+                <Values />
                 <section
                     class="call-to-action signature-karl call-to-action-bg parallax"
                     data-stellar-background-ratio="0.5"

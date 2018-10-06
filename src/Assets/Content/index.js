@@ -532,22 +532,22 @@ export const content = {
             ],
             values: [
                 {
-                    iconClass: "ion-ios-sunny-outline color",
+                    icon: "Ssun",
                     title: "Live",
                     text: "to enjoy family, friends, and this wonderful planet."
                 },
                 {
-                    iconClass: "ion-ios-book-outline color",
+                    icon: "Sschool",
                     title: "Learn",
                     text: "about the world, people, and creative coding."
                 },
                 {
-                    iconClass: "ion-ios-body-outline color",
+                    icon: "Sperson",
                     title: "Grow",
                     text: "as a human, husband, and team member."
                 },
                 {
-                    iconClass: "ion-ios-flask-outline color",
+                    icon: "Screate",
                     title: "Create",
                     text:
                         "solutions to challenging problems and interesting apps that imrove people's lives."

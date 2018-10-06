@@ -8,53 +8,48 @@ import styled from "styled-components";
 
 // ! Internal
 
+import { content } from "../../Assets/Content";
 import { mediaMin, theme } from "../../Theme";
-import { Srow } from "../../shared/StyledComponents";
+import { SdivLineSmall } from "../../shared/StyledComponents";
+
+const values = content.about.main.values;
+
+const renderIcon = icon => {
+    switch (icon) {
+        case "Ssun":
+            return <Ssun />;
+        case "Sschool":
+            return <Sschool />;
+        case "Sperson":
+            return <Sperson />;
+        case "Screate":
+            return <Screate />;
+        default:
+            return <Ssun />;
+    }
+};
+
+const renderArticleItems = () => {
+    return values.map(a => {
+        const { icon, title, text } = a;
+        return (
+            <SarticleV as="article">
+                {renderIcon(icon)}
+                <Sh3>{title}</Sh3>
+                <SdivLine />
+                <Sp>{text}</Sp>
+            </SarticleV>
+        );
+    });
+};
 
 const Values = () => {
-    return (
-        <Ssection>
-            <Srow>
-                <SarticleV as="article">
-                    <Ssun />
-                    <h3 class="font3bold white">Live</h3>
-                    <div class="liner-small color-bg" />
-                    <p class="white">
-                        to enjoy family, friends, and this wonderful planet.
-                    </p>
-                </SarticleV>
-
-                <SarticleV as="article">
-                    <Sschool />
-                    <h3 class="font3bold white">Learn</h3>
-                    <div class="liner-small color-bg" />
-                    <p class="white">
-                        about the world, people, and creative coding.{" "}
-                    </p>
-                </SarticleV>
-
-                <SarticleV as="article">
-                    <Sperson />
-                    <h3 class="font3bold white">Grow</h3>
-                    <div class="liner-small color-bg" />
-                    <p class="white">as a human, husband, and team member.</p>
-                </SarticleV>
-
-                <SarticleV as="article">
-                    <Screate />
-                    <h3 class="font3bold white">Create</h3>
-                    <div class="liner-small color-bg" />
-                    <p class="white">
-                        solutions to challenging problems and interesting apps
-                        that imrove people's lives.
-                    </p>
-                </SarticleV>
-            </Srow>
-        </Ssection>
-    );
+    return <Ssection>{renderArticleItems()}</Ssection>;
 };
 
 export default Values;
+
+// ! Styles
 
 const Ssection = styled.section`
     background-color: ${props => props.theme.colorBgSecondary};
@@ -62,14 +57,17 @@ const Ssection = styled.section`
     height: auto;
     padding: 10%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    ${mediaMin.desktop`  flex-direction: row;`};
 `;
 
 const SarticleV = styled.article`
     box-sizing: border-box;
     display: block;
+    flex-basis: 1;
     list-style: none;
     margin-bottom: 1.25rem;
-    ${mediaMin.desktop` display: inline-block; width: 25%`};
     padding-right: 15px;
     padding-left: 15px;
     text-align: center;
@@ -106,4 +104,22 @@ const Screate = styled(Create)`
         width: 3rem;
         height: 3rem;
     }
+`;
+
+const Sh3 = styled.h3`
+    font-size: ${props => props.theme.fontSizeSecondary};
+    line-height: 25px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 1.25rem 0 0.25rem;
+    font-family: ${props => props.theme.fontFamilyPrimary};
+    color: ${props => props.theme.colorFontSecondary};
+`;
+
+const SdivLine = styled(SdivLineSmall)`
+    width: 5rem;
+`;
+
+const Sp = styled.p`
+    color: ${props => props.theme.colorFontSecondary};
 `;

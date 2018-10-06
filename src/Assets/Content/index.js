@@ -511,18 +511,18 @@ export const content = {
                 details:
                     "Lifelong Learner. Humanist. Realist. Rational Optimist. Husband. Coder."
             },
-            // TODO: makes stat values dynamic by fetching data from relevant apis
+
             stats: [
                 {
                     title: "Projects",
-                    value: 35
+                    value: "dynamic fetch in component"
                 },
                 {
                     title: "Education Pts",
-                    value: 30395
+                    value: "dynamic fetch in component"
                 },
                 {
-                    title: "Tech Skills",
+                    title: "Skills",
                     value: 45
                 },
                 {

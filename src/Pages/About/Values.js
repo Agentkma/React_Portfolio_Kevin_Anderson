@@ -30,10 +30,10 @@ const renderIcon = icon => {
 };
 
 const renderArticleItems = () => {
-    return values.map(a => {
+    return values.map((a, i) => {
         const { icon, title, text } = a;
         return (
-            <SarticleV as="article">
+            <SarticleV as="article" key={i}>
                 {renderIcon(icon)}
                 <Sh3>{title}</Sh3>
                 <SdivLine />

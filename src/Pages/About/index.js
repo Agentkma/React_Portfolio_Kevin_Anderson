@@ -59,19 +59,19 @@ function About() {
                 <Stats />
                 <Values />
                 <section
-                    class="call-to-action signature-karl call-to-action-bg parallax"
+                    className="call-to-action signature-karl call-to-action-bg parallax"
                     data-stellar-background-ratio="0.5"
                 >
-                    <div class="row add-top add-bottom">
-                        <article class="col-md-12 text-center">
-                            <h3 class="white font3bold">
+                    <div className="row add-top add-bottom">
+                        <article className="col-md-12 text-center">
+                            <h3 className="white font3bold">
                                 Interested in working together?
                             </h3>
-                            <div class="liner-small color-bg" />
-                            <h6 class="white font3bold">Let's talk...</h6>
+                            <div className="liner-small color-bg" />
+                            <h6 className="white font3bold">Let's talk...</h6>
                             <a
                                 href="contact.html"
-                                class="btn btn-signature btn-signature-karl btn-signature-color"
+                                className="btn btn-signature btn-signature-karl btn-signature-color"
                             >
                                 Contact Me
                             </a>

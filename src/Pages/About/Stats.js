@@ -5,23 +5,45 @@ import styled from "styled-components";
 
 // ! Internal
 
+import { content } from "../../Assets/Content";
+import StatsBgImg from "../../Assets/Images/about/about-stats1.jpg";
+import { Srow } from "../../shared/StyledComponents";
 import { mediaMin } from "../../Theme";
 
-import { Srow } from "../../shared/StyledComponents";
-import StatsBgImg from "../../Assets/Images/about/about-stats1.jpg";
+const { stats } = content.about.main;
 
 class Stats extends Component {
     state = {
-        educationPoints: 0
+        educationPoints: 0,
+        projects: 0,
+        skills: 0
     };
 
     // ! Lifecylec Methods
 
     componentDidMount() {
+        this.getLinkedInSkills();
+        this.getGitHubProjects();
         this.getTreehousePoints();
     }
 
     // ! Methods
+
+    getGitHubProjects = () => {
+        fetch("https://api.github.com/users/Agentkma/repos")
+            .then(response => response.json())
+            .then(myJson => this.setState({ projects: myJson.length }));
+    };
+    // Todo: set up LI JS SDK
+    //https://developer.linkedin.com/docs/getting-started-js-sdk
+    getLinkedInSkills = () => {
+        fetch(
+            "https://api.linkedin.com/v2/skills?locale.language=en&locale.country=US"
+        )
+            .then(response => response.json())
+            .then(myJson => this.setState({ skills: myJson.elements.length }));
+    };
+
     getTreehousePoints = () => {
         fetch("https://teamtreehouse.com/kevinanderson6.json")
             .then(response => response.json())
@@ -30,19 +52,55 @@ class Stats extends Component {
             );
     };
 
+    renderLi = () => {
+        return stats.map((s, i) => {
+            const { title, value } = s;
+            if (title === "Education Pts") {
+                return (
+                    <Sli key={i}>
+                        <SdivNumber>{this.state.educationPoints}</SdivNumber>
+                        <SdivSubject>{title}</SdivSubject>
+                    </Sli>
+                );
+            } else if (title === "Projects") {
+                return (
+                    <Sli key={i}>
+                        <SdivNumber>{this.state.projects}</SdivNumber>
+                        <SdivSubject>{title}</SdivSubject>
+                    </Sli>
+                );
+            } else if (title === "Skills") {
+                return (
+                    <Sli key={i}>
+                        <SdivNumber>{this.state.skills}</SdivNumber>
+                        <SdivSubject>{title}</SdivSubject>
+                    </Sli>
+                );
+            }
+
+            return (
+                <Sli key={i}>
+                    <SdivNumber>{value}</SdivNumber>
+                    <SdivSubject>{title}</SdivSubject>
+                </Sli>
+            );
+        });
+    };
+
     render() {
         return (
             <Ssection>
                 <Srow>
                     <Sarticle>
                         <Sul>
-                            <Sli>
+                            {this.renderLi()}
+                            {/* <Sli>
                                 <SdivNumber>35+</SdivNumber>
                                 <SdivSubject>Projects</SdivSubject>
                             </Sli>
 
                             <Sli>
-                                <SdivNumber id="pointCount">
+                                <SdivNumber>
                                     {this.state.educationPoints}
                                 </SdivNumber>
                                 <SdivSubjectRed>Education Pts</SdivSubjectRed>
@@ -56,7 +114,7 @@ class Stats extends Component {
                             <Sli>
                                 <SdivNumber>5</SdivNumber>
                                 <SdivSubjectRed>Degrees & Certs</SdivSubjectRed>
-                            </Sli>
+                            </Sli> */}
                         </Sul>
                     </Sarticle>
                 </Srow>

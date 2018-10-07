@@ -29,8 +29,8 @@ const items = content.home.main.worksFilter.map((category, index) => {
 
 export const WorksFilterPanel = () => {
     return (
-        <ScaleInVerTop>
-            <Ssection id="works-filter-panel">
+        <ScaleInVerTop id="works-filter-panel">
+            <Ssection>
                 <Container>
                     <Sul>{items}</Sul>
                 </Container>

@@ -7,7 +7,6 @@ import styled from "styled-components";
 
 import Input from "./Input";
 import { mediaMin } from "../../Theme";
-import { Sa } from "../../shared/StyledComponents";
 
 class Form extends Component {
     state = {

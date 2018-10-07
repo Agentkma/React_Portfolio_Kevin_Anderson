@@ -135,7 +135,7 @@ const Sh6HL = styled.h6`
     ${mediaAnd.xlDesktop`font-size: 6rem;`};
 `;
 
-const SloadingBar = BounceInLeft.extend`
+const SloadingBar = styled(BounceInLeft)`
     display: inline-block;
     padding: 0.2em 0;
     overflow: hidden;

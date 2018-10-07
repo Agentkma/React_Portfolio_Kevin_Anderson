@@ -107,12 +107,12 @@ const Ul = styled.ul`
         background: transparent;`};
 `;
 
-const SnavItem = SnavLink.extend`
+const SnavItem = styled(SnavLink)`
     ${mediaMin.tablet`font-size: 0.75rem;
         line-height: 0.5rem !important;`};
 `;
 
-const SsubLi = Sli.extend`
+const SsubLi = styled(Sli)`
     padding: 3px 0;
     line-height: 1rem !important;
 `;

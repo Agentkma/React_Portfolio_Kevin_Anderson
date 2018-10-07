@@ -79,7 +79,7 @@ const Ssection = styled.section`
     box-sizing: border-box;
 `;
 
-const Sarticle = StyledColArticle.extend`
+const Sarticle = styled(StyledColArticle)`
     width: 100%;
 `;
 const Sh3 = styled.h3`
@@ -115,7 +115,7 @@ const Sh6 = styled.h6`
     display: block;
 `;
 
-const Srow2 = Srow.extend`
+const Srow2 = styled(Srow)`
     margin-top: 40px;
     margin-left: -1rem;
     margin-right: -1rem;

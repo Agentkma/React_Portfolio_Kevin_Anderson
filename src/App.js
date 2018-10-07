@@ -1,7 +1,7 @@
 // ! External
 import React, { Component } from "react";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
-import styled, { withTheme, ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
 // ! Internal
 // import asyncComponent from "./hoc/asyncComponent";
@@ -60,7 +60,7 @@ class App extends Component {
     }
 }
 
-export default withRouter(withTheme(App));
+export default withRouter(App);
 
 const Div = styled.div`
     box-sizing: border-box;

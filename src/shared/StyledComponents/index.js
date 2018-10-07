@@ -111,3 +111,9 @@ export const SarticleMainHeading = styled.article`
     text-align: center;
     ${mediaMin.desktop` margin-left: 1.125rem; text-align: left;`};
 `;
+
+export const SscrollContainer = styled.div`
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth !important;
+`;

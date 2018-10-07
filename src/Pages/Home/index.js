@@ -1,7 +1,6 @@
 // ! External
-import React, { Fragment } from "react";
+import React from "react";
 import { connect } from "react-redux";
-// import PropTypes from "prop-types";
 
 // ! Internal
 import IntroAbout from "./IntroAbout";
@@ -9,12 +8,13 @@ import WorksFilterPanel from "./WorksFilterPanel";
 import ProjectItem from "./ProjectItem";
 import { content } from "../../Assets/Content";
 import ProjectsContainer from "../../hoc/ProjectsContainer";
+import { FadeInPageContainer } from "../../Theme/animations";
 
 const Home = props => {
     const { projects } = content.home.main;
 
     return (
-        <Fragment>
+        <FadeInPageContainer>
             {" "}
             <IntroAbout />
             {props.worksFilterShown ? <WorksFilterPanel /> : null}
@@ -32,11 +32,9 @@ const Home = props => {
                     );
                 })}
             </ProjectsContainer>
-        </Fragment>
+        </FadeInPageContainer>
     );
 };
-
-// Home.propTypes = {};
 
 const mapStateToProps = state => {
     const { worksFilterShown } = state.homeReducer;

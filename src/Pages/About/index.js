@@ -1,5 +1,5 @@
 // ! External
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 
 // ! Internal
@@ -14,6 +14,7 @@ import {
     SarticleMainHeading
 } from "../../shared/StyledComponents";
 import { mediaMin } from "../../Theme";
+import { FadeInPageContainer } from "../../Theme/animations";
 import GridItem from "./GridItem";
 import Profile from "./Profile";
 import Stats from "./Stats";
@@ -40,7 +41,7 @@ const renderGridItemsValues = () => {
 
 function About() {
     return (
-        <Fragment>
+        <FadeInPageContainer>
             <SsectionHeading>
                 <SdivValign>
                     <Scontainer>
@@ -62,7 +63,7 @@ function About() {
                 <Values />
                 <CTA />
             </SdivContainerFluid>
-        </Fragment>
+        </FadeInPageContainer>
     );
 }
 

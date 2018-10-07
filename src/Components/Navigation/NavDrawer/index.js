@@ -25,7 +25,7 @@ export default NavDrawer;
 
 // ! Styles
 
-const SlideDownNavDiv = SlideDown.extend`
+const SlideDownNavDiv = styled(SlideDown)`
     display: block !important;
     position: absolute;
     width: 100%;

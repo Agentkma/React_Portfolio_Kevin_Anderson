@@ -9,7 +9,11 @@ import { toggleShowWorksFilter } from "../../../ducks/home";
 import { mediaMin } from "../../../Theme";
 
 const NavCodeIcon = ({ toggleWorksFilter }) => {
-    return <StyledCodeIcon onClick={() => toggleWorksFilter()} />;
+    return (
+        // <a href="#works-filter-panel">
+        <StyledCodeIcon onClick={() => toggleWorksFilter()} />
+        // </a>
+    );
 };
 
 const mapDispatchToProps = dispatch => {

@@ -1,6 +1,6 @@
 // ! External
 
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 
 // ! Internal
@@ -16,12 +16,13 @@ import {
     SarticleMainHeading
 } from "../../shared/StyledComponents";
 import { mediaMin } from "../../Theme";
+import { FadeInPageContainer } from "../../Theme/animations";
 import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
 
 const Contact = () => {
     const { email, location } = content.contact.header;
     return (
-        <Fragment>
+        <FadeInPageContainer>
             <SsectionHeading>
                 <SdivValign>
                     <Scontainer>
@@ -36,7 +37,7 @@ const Contact = () => {
                 </SdivValign>
             </SsectionHeading>
             <Form />
-        </Fragment>
+        </FadeInPageContainer>
     );
 };
 

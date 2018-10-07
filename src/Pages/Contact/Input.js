@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Input = ({ elementType, elementConfig, value }) => {
+const Input = ({ change, elementType, elementConfig, value }) => {
     let inputType = null;
     switch (elementType) {
         case "text":
@@ -10,27 +10,39 @@ const Input = ({ elementType, elementConfig, value }) => {
                     <Slabel for={elementConfig.id}>
                         {elementConfig.placeholder}
                     </Slabel>
-                    <Sinput {...elementConfig} value={value} />{" "}
+                    <Sinput
+                        {...elementConfig}
+                        value={value}
+                        onChange={change}
+                    />{" "}
                 </Sdiv>
             );
             break;
         case "textarea":
             inputType = (
                 <Sdiv>
-                    <Slabel for={elementConfig.id}>
+                    <Slabel htmlFor={elementConfig.id}>
                         {elementConfig.placeholder}
                     </Slabel>
-                    <Stextarea {...elementConfig} value={value} />{" "}
+                    <Stextarea
+                        {...elementConfig}
+                        value={value}
+                        onChange={change}
+                    />{" "}
                 </Sdiv>
             );
             break;
         default:
             inputType = (
                 <Sdiv>
-                    <Slabel for={elementConfig.id}>
+                    <Slabel htmlFor={elementConfig.id}>
                         {elementConfig.placeholder}
                     </Slabel>
-                    <Sinput {...elementConfig} value={value} />
+                    <Sinput
+                        {...elementConfig}
+                        value={value}
+                        onChange={change}
+                    />
                 </Sdiv>
             );
     }

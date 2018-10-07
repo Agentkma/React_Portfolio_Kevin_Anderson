@@ -19,7 +19,8 @@ class Form extends Component {
                     placeholder: "Your Name",
                     name: "name",
                     id: "name"
-                }
+                },
+                value: ""
             },
             email: {
                 elementType: "input",
@@ -28,7 +29,8 @@ class Form extends Component {
                     placeholder: "Your Email",
                     name: "email",
                     id: "email"
-                }
+                },
+                value: ""
             },
             message: {
                 elementType: "textarea",
@@ -37,9 +39,18 @@ class Form extends Component {
                     placeholder: "Your Message",
                     name: "message",
                     id: "message"
-                }
+                },
+                value: ""
             }
         }
+    };
+
+    handleInputChange = (event, id) => {
+        const updatedForm = { ...this.state.formData };
+        const updatedElement = { ...updatedForm[id] };
+        updatedElement.value = event.target.value;
+        updatedForm[id] = updatedElement;
+        this.setState({ formData: updatedForm });
     };
 
     renderInputs = () => {
@@ -56,6 +67,7 @@ class Form extends Component {
                 key={i}
                 elementType={input.config.elementType}
                 elementConfig={input.config.elementConfig}
+                change={event => this.handleInputChange(event, input.id)}
             />
         ));
     };
@@ -83,16 +95,10 @@ class Form extends Component {
                     <Sfieldset>
                         <Slegend>Reach Out...</Slegend>
                         {this.renderInputs()}
-                        <div class="btn-wrap  text-left">
-                            <Sa
-                                as="button"
-                                id="submit"
-                                name="submit"
-                                type="submit"
-                            >
-                                Send Message
-                            </Sa>
-                        </div>
+
+                        <Sbutton id="submit" name="submit" type="submit">
+                            Send Message
+                        </Sbutton>
                     </Sfieldset>
                 </Sform>
             </Ssection>
@@ -134,4 +140,32 @@ const Slegend = styled.legend`
     ${mediaMin.desktop`
     font-size: 2.25rem;
     line-height: 43px;`};
+`;
+
+const Sbutton = styled.button`
+    background-color: ${props => props.theme.colorAccentPrimary};
+    color: ${props => props.theme.colorFontSecondary};
+    border: none;
+    border-radius: 0;
+    padding: 1rem 1.25rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    margin-top: 1.25rem;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    &:hover {
+        opacity: 0.4;
+    }
 `;

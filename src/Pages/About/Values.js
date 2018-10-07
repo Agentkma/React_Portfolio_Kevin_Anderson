@@ -9,7 +9,7 @@ import styled from "styled-components";
 // ! Internal
 
 import { content } from "../../Assets/Content";
-import { mediaMin, theme } from "../../Theme";
+import { mediaMin } from "../../Theme";
 import { SdivLineSmall } from "../../shared/StyledComponents";
 
 const values = content.about.main.values;
@@ -68,8 +68,8 @@ const SarticleV = styled.article`
     flex-basis: 1;
     list-style: none;
     margin-bottom: 1.25rem;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 1rem;
+    padding-left: 1rem;
     text-align: center;
     width: 100%;
 `;
@@ -116,7 +116,7 @@ const Sh3 = styled.h3`
     color: ${props => props.theme.colorFontSecondary};
 `;
 
-const SdivLine = styled(SdivLineSmall)`
+export const SdivLine = styled(SdivLineSmall)`
     width: 5rem;
 `;
 

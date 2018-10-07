@@ -1,6 +1,5 @@
 // ! External
 import React, { Fragment } from "react";
-
 import styled from "styled-components";
 
 // ! Internal
@@ -10,13 +9,16 @@ import {
     SdivLine,
     Srow,
     SsectionGrid,
-    SdivValign
+    SdivValign,
+    SsectionParallax,
+    SarticleMainHeading
 } from "../../shared/StyledComponents";
 import { mediaMin } from "../../Theme";
 import GridItem from "./GridItem";
 import Profile from "./Profile";
 import Stats from "./Stats";
 import Values from "./Values";
+import CTA from "./CTA";
 import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
 
 const renderGridItemsValues = () => {
@@ -58,26 +60,7 @@ function About() {
                 <Profile />
                 <Stats />
                 <Values />
-                <section
-                    className="call-to-action signature-karl call-to-action-bg parallax"
-                    data-stellar-background-ratio="0.5"
-                >
-                    <div className="row add-top add-bottom">
-                        <article className="col-md-12 text-center">
-                            <h3 className="white font3bold">
-                                Interested in working together?
-                            </h3>
-                            <div className="liner-small color-bg" />
-                            <h6 className="white font3bold">Let's talk...</h6>
-                            <a
-                                href="contact.html"
-                                className="btn btn-signature btn-signature-karl btn-signature-color"
-                            >
-                                Contact Me
-                            </a>
-                        </article>
-                    </div>
-                </section>
+                <CTA />
             </SdivContainerFluid>
         </Fragment>
     );
@@ -87,21 +70,8 @@ export default About;
 
 // ! Styles
 
-const SsectionHeading = styled.section`
-    height: 800px;
-    background-position: 0px 35px;
+const SsectionHeading = styled(SsectionParallax)`
     background-image: url(${headingBgImg});
-    background-attachment: fixed;
-    width: 100%;
-    position: relative;
-    background-size: cover;
-`;
-
-const SarticleMainHeading = styled.article`
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    ${mediaMin.desktop` margin-left: 1.125rem; text-align: left;`};
 `;
 
 const Sh6MainHeading = styled.h6`

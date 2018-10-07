@@ -560,8 +560,13 @@ export const content = {
         }
     },
     contact: {
-        header: "Interested in working together?",
-        main: "Let's talk"
+        header: {
+            email: "kevin@kevinanderson.codes",
+            location: "Denver, CO"
+        },
+        form: {
+            submit: "Send Message"
+        }
     },
     error: {
         header: {},

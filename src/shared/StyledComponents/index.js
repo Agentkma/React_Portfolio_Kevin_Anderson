@@ -67,3 +67,47 @@ export const SresponsiveImg = styled.img`
     height: 100%;
     border: 0;
 `;
+
+export const Sa = styled.a`
+    background-color: ${props => props.theme.colorAccentPrimary};
+    color: ${props => props.theme.colorFontSecondary};
+    border: none;
+    border-radius: 0;
+    padding: 1rem 1.25rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    margin-top: 1.25rem;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    &:hover {
+        opacity: 0.4;
+    }
+`;
+
+export const SsectionParallax = styled.section`
+    height: 800px;
+    background-position: 0px 35px;
+    background-attachment: fixed;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+`;
+
+export const SarticleMainHeading = styled.article`
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    ${mediaMin.desktop` margin-left: 1.125rem; text-align: left;`};
+`;

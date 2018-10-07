@@ -5,9 +5,10 @@ import styled, { withTheme, ThemeProvider } from "styled-components";
 
 // ! Internal
 // import asyncComponent from "./hoc/asyncComponent";
-import Layout from "./hoc/Layout";
 import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
+import Layout from "./hoc/Layout";
 import { theme } from "./Theme";
 import Project1 from "./Pages/Project/Project1";
 import Project2 from "./Pages/Project/Project2";
@@ -47,8 +48,8 @@ class App extends Component {
                           <Route path="/project5" component={Project5} />
                             <Route path="/project6" component={Project6} />
                               <Route path="/project7" component={Project7} />
-                                <Route path="/project8" component={Project8} />
-                    <Route path="/contact" component={contact} />*/}
+                                <Route path="/project8" component={Project8} />*/}
+                            <Route path="/contact" component={Contact} />
                             <Route path="/about" component={About} />
                             <Redirect to="/" />
                         </Switch>

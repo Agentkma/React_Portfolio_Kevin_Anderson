@@ -59,7 +59,7 @@ class Stats extends Component {
                 return (
                     <Sli key={i}>
                         <SdivNumber>{this.state.educationPoints}</SdivNumber>
-                        <SdivSubject>{title}</SdivSubject>
+                        <SdivSubjectRed>{title}</SdivSubjectRed>
                     </Sli>
                 );
             } else if (title === "Projects") {
@@ -81,7 +81,7 @@ class Stats extends Component {
             return (
                 <Sli key={i}>
                     <SdivNumber>{value}</SdivNumber>
-                    <SdivSubject>{title}</SdivSubject>
+                    <SdivSubjectRed>{title}</SdivSubjectRed>
                 </Sli>
             );
         });
@@ -92,30 +92,7 @@ class Stats extends Component {
             <Ssection>
                 <Srow>
                     <Sarticle>
-                        <Sul>
-                            {this.renderLi()}
-                            {/* <Sli>
-                                <SdivNumber>35+</SdivNumber>
-                                <SdivSubject>Projects</SdivSubject>
-                            </Sli>
-
-                            <Sli>
-                                <SdivNumber>
-                                    {this.state.educationPoints}
-                                </SdivNumber>
-                                <SdivSubjectRed>Education Pts</SdivSubjectRed>
-                            </Sli>
-
-                            <Sli>
-                                <SdivNumber>45</SdivNumber>
-                                <SdivSubject>Tech Skills</SdivSubject>
-                            </Sli>
-
-                            <Sli>
-                                <SdivNumber>5</SdivNumber>
-                                <SdivSubjectRed>Degrees & Certs</SdivSubjectRed>
-                            </Sli> */}
-                        </Sul>
+                        <Sul>{this.renderLi()}</Sul>
                     </Sarticle>
                 </Srow>
             </Ssection>

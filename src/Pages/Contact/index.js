@@ -11,11 +11,11 @@ import {
     Scontainer,
     SdivLine,
     Srow,
-    SsectionGrid,
     SdivValign,
     SsectionParallax,
     SarticleMainHeading
 } from "../../shared/StyledComponents";
+import { mediaMin } from "../../Theme";
 import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
 
 const Contact = () => {
@@ -49,21 +49,27 @@ const SsectionHeading = styled(SsectionParallax)`
 `;
 
 const Sh1 = styled.h1`
-    font-size: 48px;
+    font-size: ${props => props.theme.fontSizeSecondary};
+    line-height: 31px;
     font-weight: 500;
-    line-height: 55px;
     color: #ff2238;
     margin-top: 0;
     margin-bottom: 0;
+    ${mediaMin.desktop`
+    font-size:${props => props.theme.fontSizeTertiary};
+    line-height: 55px;`};
 `;
 
 const Sh6 = styled.h6`
-    font-size: 2.25rem;
-    line-height: 43px;
+    font-size: ${props => props.theme.fontSizeSmall};
+    line-height: 19px;
     margin-top: 10px;
     margin-bottom: 0;
     font-family: ${props => props.theme.fontFamilySecondary};
     color: ${props => props.theme.colorFontSecondary};
+    ${mediaMin.desktop`
+    font-size:2.25rem;
+    line-height: 43px;`};
 `;
 
 const SdivlineHeading = styled(SdivLine)`

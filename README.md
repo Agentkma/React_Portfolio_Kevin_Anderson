@@ -2265,6 +2265,7 @@ In this case, ensure that the file is there with the proper lettercase and thatâ
 npm install netlify-cli -g
 netlify deploy
 ```
+```
 
 Choose `build` as the path to deploy.
 

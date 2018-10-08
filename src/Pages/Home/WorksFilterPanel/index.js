@@ -8,26 +8,19 @@ import Container from "../../../Components/Common/Container";
 import { media } from "../../../Theme";
 import { ScaleInVerTop } from "../../../Theme/animations";
 
-const items = content.home.main.worksFilter.map((category, index) => {
-    if (index === 0) {
+export const WorksFilterPanel = ({ click }) => {
+    const items = content.home.main.worksFilter.map((category, index) => {
         return (
-            <li key={category}>
-                {" "}
-                <a className="active" href="/">
-                    {" "}
-                    {category}
-                </a>
+            <li
+                activeClass="active"
+                key={category}
+                onClick={event => click(event)}
+            >
+                {category}
             </li>
         );
-    }
-    return (
-        <li key={category}>
-            <a href="/"> {category}</a>
-        </li>
-    );
-});
+    });
 
-export const WorksFilterPanel = () => {
     return (
         <ScaleInVerTop id="works-filter-panel">
             <Ssection>
@@ -51,12 +44,6 @@ const Ssection = styled.section`
     left: 0;
     padding: 5rem 0;
     background-color: ${props => props.theme.colorBgSecondary};
-    li a {
-        color: ${props => props.theme.colorFontSecondary};
-        &:hover {
-            ${props => props.theme.colorFontHoverPrimary};
-        }
-    }
 `;
 
 const Sul = styled.ul`
@@ -73,16 +60,16 @@ const Sul = styled.ul`
         &:last-child:after {
             display: none;
         }
-
-        a {
-            font-size: 1.5rem;
-            line-height: 1rem;
-            color: ${props => props.theme.colorFontSecondary};
-            text-decoration: none !important;
-            text-transform: capitalize;
-            &:hover {
-                color: ${props => props.theme.colorFontHoverPrimary};
-            }
+        font-size: 1.5rem;
+        line-height: 1rem;
+        color: ${props => props.theme.colorFontSecondary};
+        text-decoration: none !important;
+        text-transform: capitalize;
+        &:hover {
+            color: ${props => props.theme.colorFontHoverPrimary};
+        }
+        &:hover {
+            cursor: pointer;
         }
     }
 `;

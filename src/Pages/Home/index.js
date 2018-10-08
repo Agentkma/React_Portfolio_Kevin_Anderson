@@ -1,5 +1,5 @@
 // ! External
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 
 // ! Internal
@@ -10,31 +10,49 @@ import { content } from "../../Assets/Content";
 import ProjectsContainer from "../../hoc/ProjectsContainer";
 import { FadeInPageContainer } from "../../Theme/animations";
 
-const Home = props => {
-    const { projects } = content.home.main;
+const { projects } = content.home.main;
 
-    return (
-        <FadeInPageContainer>
-            {" "}
-            <IntroAbout />
-            {props.worksFilterShown ? <WorksFilterPanel /> : null}
-            <ProjectsContainer>
-                {projects.map(project => {
-                    const { description, img, name } = project;
+class Home extends Component {
+    state = {
+        filter: "all"
+    };
 
-                    return (
-                        <ProjectItem
-                            key={name}
-                            description={description}
-                            name={name}
-                            img={img}
-                        />
-                    );
-                })}
-            </ProjectsContainer>
-        </FadeInPageContainer>
-    );
-};
+    handleFilter = event => {
+        this.setState({ filter: event.target.textContent });
+    };
+
+    renderProjects = () => {
+        return projects
+            .filter(p => {
+                return p.worksFilter.includes(this.state.filter);
+            })
+            .map(project => {
+                const { description, img, name } = project;
+
+                return (
+                    <ProjectItem
+                        key={name}
+                        description={description}
+                        name={name}
+                        img={img}
+                    />
+                );
+            });
+    };
+
+    render() {
+        return (
+            <FadeInPageContainer>
+                {" "}
+                <IntroAbout />
+                {this.props.worksFilterShown ? (
+                    <WorksFilterPanel click={this.handleFilter} />
+                ) : null}
+                <ProjectsContainer>{this.renderProjects()}</ProjectsContainer>
+            </FadeInPageContainer>
+        );
+    }
+}
 
 const mapStateToProps = state => {
     const { worksFilterShown } = state.homeReducer;

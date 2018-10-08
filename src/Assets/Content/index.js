@@ -3,7 +3,7 @@ export const content = {
         header: {
             mainHeading: "My name is Kevin Anderson",
             subHeading: [
-                "I'm a Software Engineer.",
+                "I'm a Software Developer.",
                 "I work in Denver, CO.",
                 "I create web apps.",
                 "I'm a solution builder.",
@@ -15,7 +15,7 @@ export const content = {
         main: {
             worksFilter: [
                 "all",
-                "cSS-frameworks",
+                "css-frameworks",
                 "front-end",
                 "full-stack",
                 "SPA",
@@ -34,7 +34,7 @@ export const content = {
                     },
                     name: "Galvanize Eats",
                     description: "A food ordering app.",
-                    worksFilter: ["css-frameworks", "front-end"],
+                    worksFilter: ["all", "css-frameworks", "front-end"],
                     to: "/project1"
                 },
                 {
@@ -47,7 +47,7 @@ export const content = {
                     name: "MacroPal",
                     description:
                         "A health app that calculates calories  macros, and builds grocery lists.",
-                    worksFilter: ["css-frameworks"],
+                    worksFilter: ["all", "css-frameworks"],
                     to: "/project2"
                 },
 
@@ -61,7 +61,7 @@ export const content = {
                     name: "Safe Nav",
                     description:
                         "A product site for the Safe Nav wearable technology.",
-                    worksFilter: ["css-frameworks", "front-end"],
+                    worksFilter: ["all", "css-frameworks", "front-end"],
                     to: "/project3"
                 },
                 {
@@ -74,7 +74,7 @@ export const content = {
                     name: "Custom Video Player",
                     description:
                         "Pure HTML:Custom controls, CC, & text highlighting.",
-                    worksFilter: ["pure-css", "front-end"],
+                    worksFilter: ["all", "pure-css", "front-end"],
                     to: "/project4"
                 },
                 {
@@ -87,7 +87,7 @@ export const content = {
                     name: "KevApp",
                     description:
                         "A simple project simulating a web app using Chart.js plugin.",
-                    worksFilter: ["pure-css", "front-end"],
+                    worksFilter: ["all", "pure-css", "front-end"],
                     to: "/project5"
                 },
                 {
@@ -100,7 +100,7 @@ export const content = {
                     name: "gRecipes",
                     description:
                         "A web app modeled after AllRecipes.com. Full Stack CRUD app.",
-                    worksFilter: ["css-frameworks", "full-stack"],
+                    worksFilter: ["all", "css-frameworks", "full-stack"],
                     to: "/project6"
                 },
                 {
@@ -114,7 +114,7 @@ export const content = {
                     },
                     name: "AngularJS Weather App",
                     description: "Single Page Apps.",
-                    worksFilter: ["css-frameworks", "full-stack", "SPA"],
+                    worksFilter: ["all", "css-frameworks", "full-stack", "SPA"],
                     to: "/project7"
                 },
                 {
@@ -126,7 +126,7 @@ export const content = {
                     },
                     name: "React Apps",
                     description: "Single Page Apps.",
-                    worksFilter: ["css-frameworks", "SPA"],
+                    worksFilter: ["all", "css-frameworks", "SPA"],
                     to: "/project8"
                 },
                 {
@@ -140,7 +140,7 @@ export const content = {
                     },
                     name: "Angular Apps",
                     description: "Single Page Apps.",
-                    worksFilter: ["css-frameworks", "SPA"],
+                    worksFilter: ["all", "css-frameworks", "SPA"],
                     to: "/project9"
                 },
                 {
@@ -154,7 +154,7 @@ export const content = {
                     },
                     name: "React-Native",
                     description: "Mobile Apps.",
-                    worksFilter: ["mobile", "SPA", "full-stack"],
+                    worksFilter: ["all", "mobile", "SPA", "full-stack"],
                     to: "/project10"
                 }
             ]

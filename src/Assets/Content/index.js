@@ -600,7 +600,7 @@ export const content = {
                     title: "profile / view of head and torso of Kevin Anderson"
                 },
                 name: "Kevin Anderson",
-                title: "Full Stack Software Engineer",
+                title: "Software Developer",
                 details:
                     "Lifelong Learner. Humanist. Realist. Rational Optimist. Husband. Coder."
             },

@@ -84,7 +84,7 @@ export default GridItem;
 
 const SarticleHeroImg = styled.article`
     box-sizing: border-box;
-    height: 66vh;
+    height: 75vh;
     width: 100%;
     padding: 0 !important;
     position: relative;
@@ -95,7 +95,7 @@ const SarticleHeroImg = styled.article`
 const SarticleHeroTxt = styled.article`
     box-sizing: border-box;
     width: 100%;
-    height: 66vh;
+    height: 75vh;
     padding: 0 10%;
 `;
 

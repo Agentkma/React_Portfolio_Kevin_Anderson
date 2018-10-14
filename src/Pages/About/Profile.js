@@ -11,8 +11,10 @@ import {
     SresponsiveImg
 } from "../../shared/StyledComponents";
 import { mediaMin } from "../../Theme";
+import { content } from "../../Assets/Content";
 
 export default () => {
+    const { profile } = content.about.main;
     return (
         <SsectionProfile>
             <Scontainer>
@@ -23,15 +25,12 @@ export default () => {
                         src={require("../../Assets/Images/about/kevin.jpg")}
                     />
                     <SdivInfo>
-                        <Sh4Info>Kevin Anderson</Sh4Info>
+                        <Sh4Info>{profile.name}</Sh4Info>
                         <SdivLineSmall />
-                        <Sh6Info>Full Stack Software Engineer</Sh6Info>
+                        <Sh6Info>{profile.title}</Sh6Info>
                     </SdivInfo>
                     <SdivOverlayInfo>
-                        <SpInfo>
-                            Lifelong Learner. Humanist. Realist. Rational
-                            Optimist. Husband. Programmer.
-                        </SpInfo>
+                        <SpInfo>{profile.details}</SpInfo>
                         <SdivLineSmall />
                     </SdivOverlayInfo>
                 </SarticleProfile>
@@ -42,7 +41,7 @@ export default () => {
 
 // ! Styles
 const SsectionProfile = styled.section`
-    height: 60vh;
+    height: auto;
     padding: 15vh 0;
     background-color: ${props => props.theme.colorBgQuaternary};
 `;

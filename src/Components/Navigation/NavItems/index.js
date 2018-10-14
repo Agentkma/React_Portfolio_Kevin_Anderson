@@ -3,8 +3,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 // ! Internal
+
 import NavItem, { Sli, SnavLink } from "./NavItem";
 import { mediaMin } from "../../../Theme";
+import { content } from "../../../Assets/Content";
 
 export class NavItems extends Component {
     state = {
@@ -12,59 +14,30 @@ export class NavItems extends Component {
     };
 
     subUlToggleHandler = () => {
-        this.setState(prevState => {
-            return { showSubUl: !prevState.showSubUl };
+        console.log("projects li clicked");
+        this.setState(({ showSubUl }) => {
+            return { showSubUl: !showSubUl };
+        });
+    };
+
+    renderProjectSubul = () => {
+        const { projects } = content;
+        return projects.map((project, index) => {
+            const { url, id } = project;
+
+            return (
+                <SsubLi key={index}>
+                    <SnavItem to={`/${url}`} onClick={this.props.click}>
+                        {id}
+                    </SnavItem>
+                </SsubLi>
+            );
         });
     };
 
     render() {
-        const { click } = this.props;
-        // TODO: make subLI and navItems render via map
-        // over content projects array
-
         const projectSubUl = this.state.showSubUl ? (
-            <ul>
-                <SsubLi>
-                    <SnavItem to="/project1" onClick={click}>
-                        100
-                    </SnavItem>
-                </SsubLi>
-                <SsubLi>
-                    <SnavItem to="/project2" onClick={click}>
-                        200
-                    </SnavItem>
-                </SsubLi>
-                <SsubLi>
-                    <SnavItem to="/project3" onClick={click}>
-                        300
-                    </SnavItem>
-                </SsubLi>
-                <SsubLi>
-                    <SnavItem to="/project4" onClick={click}>
-                        400
-                    </SnavItem>
-                </SsubLi>
-                <SsubLi>
-                    <SnavItem to="/project5" onClick={click}>
-                        500
-                    </SnavItem>
-                </SsubLi>
-                <SsubLi>
-                    <SnavItem to="/project6" onClick={click}>
-                        600
-                    </SnavItem>
-                </SsubLi>
-                <SsubLi>
-                    <SnavItem to="/project7" onClick={click}>
-                        700
-                    </SnavItem>
-                </SsubLi>
-                <SsubLi>
-                    <SnavItem to="/project8" onClick={click}>
-                        800
-                    </SnavItem>
-                </SsubLi>
-            </ul>
+            <ul>{this.renderProjectSubul()}</ul>
         ) : null;
 
         return (
@@ -118,6 +91,7 @@ const SsubLi = styled(Sli)`
 `;
 
 const SLi = styled.li`
+    cursor: pointer;
     position: relative;
     display: inline-block;
     background-color: ${props => props.theme.colorBgPrimary};

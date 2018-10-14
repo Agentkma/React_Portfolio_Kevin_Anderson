@@ -163,6 +163,7 @@ export const content = {
     projects: [
         {
             url: "project1",
+            id: "100",
             title: {
                 name: "Galvanize Eats",
                 categories: "Front End & CSS Framework"
@@ -246,6 +247,7 @@ export const content = {
         },
         {
             url: "project2",
+            id: "200",
             title: {
                 name: "Macro Pal",
                 categories: "Front End & CSS Framework"
@@ -336,6 +338,7 @@ export const content = {
         },
         {
             url: "project3",
+            id: "300",
             title: {
                 name: "Safe Nav",
                 categories: "Front End & CSS Framework"
@@ -418,6 +421,7 @@ export const content = {
         },
         {
             url: "project4",
+            id: "400",
             title: {
                 name: "gRecipes",
                 categories: "Full Stack"
@@ -688,7 +692,7 @@ export const content = {
                 }
             },
             {
-                link: "contact.html",
+                link: "/contact",
                 img: {
                     alt: "a weblink to Kevin Anderson email",
                     title: "email Icon",

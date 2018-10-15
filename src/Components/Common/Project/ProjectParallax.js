@@ -35,7 +35,6 @@ const renderBgSections = bannerImg => {
 
 const ProjectParallax = ({ project }) => {
     const { bannerImg } = content.projects[project];
-    // TODO: can't get section background dynamic this way
 
     return <Fragment>{renderBgSections(bannerImg)}</Fragment>;
 };

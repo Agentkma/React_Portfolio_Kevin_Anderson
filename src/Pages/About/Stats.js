@@ -22,7 +22,7 @@ class Stats extends Component {
     // ! Lifecylec Methods
 
     componentDidMount() {
-        this.getLinkedInSkills();
+        // this.getLinkedInSkills();
         this.getGitHubProjects();
         this.getTreehousePoints();
     }
@@ -72,7 +72,8 @@ class Stats extends Component {
             } else if (title === "Skills") {
                 return (
                     <Sli key={i}>
-                        <SdivNumber>{this.state.skills}</SdivNumber>
+                        {/* <SdivNumber>{this.state.skills}</SdivNumber> */}
+                        <SdivNumber>45</SdivNumber>
                         <SdivSubject>{title}</SdivSubject>
                     </Sli>
                 );

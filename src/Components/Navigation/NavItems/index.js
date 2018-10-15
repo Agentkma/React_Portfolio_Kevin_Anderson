@@ -9,17 +9,6 @@ import { mediaMin } from "../../../Theme";
 import { content } from "../../../Assets/Content";
 
 export class NavItems extends Component {
-    state = {
-        showSubUl: false
-    };
-
-    subUlToggleHandler = () => {
-        console.log("projects li clicked");
-        this.setState(({ showSubUl }) => {
-            return { showSubUl: !showSubUl };
-        });
-    };
-
     renderProjectSubul = () => {
         const { projects } = content;
         return projects.map((project, index) => {
@@ -36,10 +25,6 @@ export class NavItems extends Component {
     };
 
     render() {
-        const projectSubUl = this.state.showSubUl ? (
-            <ul>{this.renderProjectSubul()}</ul>
-        ) : null;
-
         return (
             <Ul>
                 <NavItem link="/" exact click={this.props.click}>
@@ -48,9 +33,13 @@ export class NavItems extends Component {
                 <NavItem link="/about" click={this.props.click}>
                     About
                 </NavItem>
-                <SLi onClick={this.subUlToggleHandler}>
+                <SLi
+                    onMouseEnter={this.subUlFocusHandler}
+                    onMouseLeave={this.subUlFocusHandler}
+                >
                     Project View
-                    {projectSubUl}
+                    {/* {projectSubUl} */}
+                    <SprojectSubUL>{this.renderProjectSubul()}</SprojectSubUL>
                 </SLi>
                 <NavItem link="/contact" click={this.props.click}>
                     Say Hello
@@ -91,6 +80,7 @@ const SsubLi = styled(Sli)`
 `;
 
 const SLi = styled.li`
+    height: 2rem;
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -107,8 +97,12 @@ const SLi = styled.li`
     line-height: 21px;
     padding: 6px 0;
     text-shadow: none;
-    transition: background-color 0.5s ease-out;
+    /* transition-property: height, background-color;
+    transition-duration: 1.5s, 0.5s;
+    transition: height linear, background-color ease-out; */
+    transition: all 0.5s ease-out;
     &:hover {
+        height: 100%;
         background-color: ${props => props.theme.colorAccentSecondary};
         text-decoration: none;
     }
@@ -126,4 +120,15 @@ const SLi = styled.li`
             background: transparent;
             text-decoration: none;
         }`};
+`;
+
+const SprojectSubUL = styled.ul`
+    transform: scaleY(0);
+    opacity: 0;
+    transition: all 0.3s linear;
+
+    ${SLi}:hover & {
+        opacity: 1;
+        transform: scaleY(1);
+    }
 `;

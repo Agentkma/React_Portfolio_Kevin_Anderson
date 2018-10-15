@@ -9,7 +9,8 @@ import { content } from "../../../Assets/Content";
 import { mediaMin } from "../../../Theme";
 import {
     SsectionParallax,
-    SarticleMainHeading
+    SarticleMainHeading,
+    SdivValign
 } from "../../../shared/StyledComponents";
 
 const renderBgSections = bannerImg => {
@@ -22,7 +23,11 @@ const renderBgSections = bannerImg => {
 
         return (
             <Ssection key={index} style={style}>
-                <Soverlay>{overLay}</Soverlay>
+                <Soverlay>
+                    <SdivValign>
+                        <Sh1>{overLay}</Sh1>
+                    </SdivValign>
+                </Soverlay>
             </Ssection>
         );
     });
@@ -41,16 +46,29 @@ export default ProjectParallax;
 
 const Ssection = styled(SsectionParallax)`
     height: 95vh;
+
     background-image: url();
 `;
 
 const Soverlay = styled(SarticleMainHeading)`
+    width: 100%;
+    height: 100%;
     opacity: 0;
-    transition: all 1s ease-in;
+    transition: all 0.4s linear;
+    background-color: rgba(0, 0, 0, 0.8);
     ${Ssection}:hover & {
         opacity: 1;
     }
     ${mediaMin.desktop`
     margin: auto;
     text-align: center;`};
+`;
+
+const Sh1 = styled.h1`
+    color: white;
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.1;
+    font-weight: 500;
 `;

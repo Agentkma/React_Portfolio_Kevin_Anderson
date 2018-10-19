@@ -14,25 +14,23 @@ import {
     SresponsiveImg
 } from "../../../shared/StyledComponents";
 
-const renderBgSections = bannerImg => {
-    return bannerImg.map((img, index) => {
+const renderBgSections = bannerImgsArray => {
+    return bannerImgsArray.map((img, index) => {
         const { overLay, src } = img;
 
         return (
-            <Ssection key={index}>
-                <Sarticle>
-                    <SresponsiveImg />
-                    <Soverlay> {overLay}</Soverlay>
-                </Sarticle>
-            </Ssection>
+            <Sarticle key={index}>
+                <SresponsiveImg />
+                <Soverlay> {overLay}</Soverlay>
+            </Sarticle>
         );
     });
 };
 
 const ProjectMasonry = ({ project }) => {
-    const { bannerImg } = content.projects[project];
+    const { bannerImg: bannerImgsArray } = content.projects[project];
 
-    return <Fragment>{renderBgSections(bannerImg)}</Fragment>;
+    return <Ssection>{renderBgSections(bannerImgsArray)}</Ssection>;
 };
 
 export default ProjectMasonry;

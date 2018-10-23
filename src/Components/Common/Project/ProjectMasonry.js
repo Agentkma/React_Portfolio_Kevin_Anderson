@@ -1,18 +1,13 @@
 // ! External
 
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 
 // ! Internal
 
 import { content } from "../../../Assets/Content";
 import { mediaMin } from "../../../Theme";
-import {
-    SsectionParallax,
-    SarticleMainHeading,
-    SdivValign,
-    SresponsiveImg
-} from "../../../shared/StyledComponents";
+import { SresponsiveImg } from "../../../shared/StyledComponents";
 
 const renderBgSections = bannerImgsArray => {
     return bannerImgsArray.map((img, index) => {
@@ -26,7 +21,9 @@ const renderBgSections = bannerImgsArray => {
                     title={title}
                     srcSet={require(`../../../${srcSet}`)}
                 />
-                <Soverlay> {overLay}</Soverlay>
+                <Soverlay>
+                    <Sh3>{overLay}</Sh3>
+                </Soverlay>
             </Sarticle>
         );
     });
@@ -50,6 +47,7 @@ const Sarticle = styled.article`
     overflow: hidden;
     display: block;
     border: 1px solid black;
+    position: relative;
 `;
 
 const Ssection = styled.section`
@@ -89,24 +87,34 @@ const Ssection = styled.section`
 `;
 
 const Soverlay = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: all 0.4s linear;
     background-color: rgba(0, 0, 0, 0.8);
-    ${Ssection}:hover & {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-0.25turn);
+    transition: all 0.25s linear;
+    &:hover {
         opacity: 1;
+        transform: rotate(0turn);
     }
     ${mediaMin.desktop`
     margin: auto;
     text-align: center;`};
 `;
 
-// const Sh1 = styled.h1`
-//     color: white;
-//     font-size: 3rem;
-//     margin-top: 0;
-//     margin-bottom: 0;
-//     line-height: 1.1;
-//     font-weight: 500;
-// `;
+const Sh3 = styled.h3`
+    color: white;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.1;
+    font-weight: 500;
+`;

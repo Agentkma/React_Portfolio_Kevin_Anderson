@@ -16,11 +16,16 @@ import {
 
 const renderBgSections = bannerImgsArray => {
     return bannerImgsArray.map((img, index) => {
-        const { overLay, src } = img;
+        const { alt, title, overLay, src, srcSet } = img;
 
         return (
             <Sarticle key={index}>
-                <SresponsiveImg />
+                <SresponsiveImg
+                    src={require(`../../../${src}`)}
+                    alt={alt}
+                    title={title}
+                    srcSet={require(`../../../${srcSet}`)}
+                />
                 <Soverlay> {overLay}</Soverlay>
             </Sarticle>
         );
@@ -37,8 +42,18 @@ export default ProjectMasonry;
 
 // ! Styles
 
+const Sarticle = styled.article`
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    border: 1px solid black;
+`;
+
 const Ssection = styled.section`
-    height: 95vh;
+    height: 80vh;
     background-color: ${props => props.theme.colorBgSecondary};
     margin: 0px !important;
     padding: 0;
@@ -51,18 +66,26 @@ const Ssection = styled.section`
     grid-template-areas:
         "one two three three"
         "one two three three"
-        "four five three three"
-        "four five six seven";
-`;
-
-const Sarticle = styled.article`
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: block;
-    border: 1px solid black;
+        "four five five six"
+        "four five five six";
+    ${Sarticle}:nth-child(1) {
+        grid-area: one;
+    }
+    ${Sarticle}:nth-child(2) {
+        grid-area: two;
+    }
+    ${Sarticle}:nth-child(3) {
+        grid-area: three;
+    }
+    ${Sarticle}:nth-child(4) {
+        grid-area: six;
+    }
+    ${Sarticle}:nth-child(5) {
+        grid-area: five;
+    }
+    ${Sarticle}:nth-child(6) {
+        grid-area: four;
+    }
 `;
 
 const Soverlay = styled.div`

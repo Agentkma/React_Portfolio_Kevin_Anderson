@@ -513,89 +513,125 @@ export const content = {
             url: "project5",
             id: "500",
             title: {
-                name: "TODO:  UPDATE ALL CONTENT IN THIS PROJECT TO PROJECT 5",
-                categories: "Full Stack"
+                name: "AngularJS Projects",
+                categories: "SPA & CSS Framework"
             },
             bannerImg: [
                 {
                     alt: "alt",
-                    title: "Full Stack & CSS Framework",
+                    title: "SPA & CSS Framework",
                     srcSet: [
-                        "Assets/Images/project/project04/gRecipe1-1200x700.png"
+                        "Assets/Images/project/project05/angularToDo1-1200x700.png"
                     ],
                     src:
-                        "Assets/Images/project/project04/gRecipe1-1200x700.png",
-                    overLay: "Full Stack & CSS Framework"
+                        "Assets/Images/project/project05/angularToDo1-1200x700.png",
+                    overLay: "SPA & CSS Framework"
                 },
                 {
                     alt: "alt",
                     title: "Mobile First",
                     srcSet: [
-                        "Assets/Images/project/project04/gRecipe2-1200x700.png"
+                        "Assets/Images/project/project05/angularToDo2-1200x700.png"
                     ],
                     src:
-                        "Assets/Images/project/project04/gRecipe2-1200x700.png",
+                        "Assets/Images/project/project05/angularToDo2-1200x700.png",
                     overLay: "Mobile First"
                 },
                 {
                     alt: "alt",
                     title: "Material Design",
                     srcSet: [
-                        "Assets/Images/project/project04/gRecipe3-1200x700.png"
+                        "Assets/Images/project/project05/angularWeather1-1200x700.png"
                     ],
                     src:
-                        "Assets/Images/project/project04/gRecipe3-1200x700.png",
+                        "Assets/Images/project/project05/angularWeather1-1200x700.png",
+                    overLay: "Material Design"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    srcSet: [
+                        "Assets/Images/project/project05/angularToDo3-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project05/angularToDo3-1200x700.png",
+                    overLay: "Material Design"
+                },
+
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    srcSet: [
+                        "Assets/Images/project/project05/angularToDo4-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project05/angularToDo4-1200x700.png",
+                    overLay: "Material Design"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    srcSet: [
+                        "Assets/Images/project/project05/angularWeather2-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project05/angularWeather2-1200x700.png",
                     overLay: "Material Design"
                 }
             ],
             img: {
-                alt: "gRecipes Home Page",
-                title: "gRecipes App",
-                srcSet: ["Assets/Images/works/gRecipes1100x650.webp"],
-                src: "Assets/Images/works/gRecipes1100x650.png"
+                alt: "Weather Now App",
+                title: "Weather Now App",
+                srcSet: ["Assets/Images/works/angularWeather2-1200x700.png"],
+                src: "Assets/Images/works//angularWeather2-1200x700.png"
             },
             description: {
                 taglineHeading: "Good design and clean coding",
                 taglineSubHeading: "That is a Principle",
                 projectDescription: [
-                    "gRecipes is a demo app modeled after allrecipes.com.",
-                    "It is a Full Stack CRUD decoupled app. The front end is deployed with Firebase while the back end is deployed with Heroku.",
-                    "Other tech includes HTML, CSS, JavaScript, jQuery, Materialize CSS, Node.js, Express.js, and Knex."
+                    "These Single Page Apps are built with AngularJS.",
+                    "The apps also use Bootstrap CSS framework, HTML, CSS, JavaScript, and jQuery."
                 ],
-                categories: "Full Stack & CSS Framework",
-                delivered: "2017 September",
-                liveSiteLink: "https://grecipes-2be24.firebaseapp.com/"
+                categories: "SPA & CSS Framework",
+                delivered: "2017 October",
+                liveSiteLink: "NA"
             },
             imgContainer: [
                 {
                     alt: "alt text",
                     title: "home page",
-                    src: "Assets/Images/project/project04/gRecipe1-1200x700.png"
+                    src:
+                        "Assets/Images/project/project05/angularToDo1-1200x700.png"
                 },
                 {
                     alt: "alt text",
                     title: "title text",
-                    src: "Assets/Images/project/project04/gRecipe2-1200x700.png"
+                    src:
+                        "Assets/Images/project/project05/angularToDo2-1200x700.png"
                 },
                 {
                     alt: "alt text",
                     title: "title text",
-                    src: "Assets/Images/project/project04/gRecipe3-1200x700.png"
+                    src:
+                        "Assets/Images/project/project05/angularToDo3-1200x700.png"
                 },
                 {
                     alt: "alt text",
                     title: "title text",
-                    src: "Assets/Images/project/project04/gRecipe4-1200x700.png"
+                    src:
+                        "Assets/Images/project/project05/angularToDo4-1200x700.png"
                 },
                 {
                     alt: "alt text",
                     title: "title text",
-                    src: "Assets/Images/project/project04/gRecipe5-1200x700.png"
+                    src:
+                        "Assets/Images/project/project05/angularWeather1-1200x700.png"
                 },
                 {
                     alt: "alt text",
                     title: "title text",
-                    src: "Assets/Images/project/project04/gRecipe6-800x600.png"
+                    src:
+                        "Assets/Images/project/project05/angularWeather2-1200x700.png"
                 }
             ]
         }

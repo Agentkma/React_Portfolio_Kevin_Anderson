@@ -1,33 +1,74 @@
 // ! External
-
-import React from "react";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 import styled from "styled-components";
 
 // ! Internal
 import { mediaMin } from "../../../Theme";
 import { content } from "../../../Assets/Content";
+import ProjectImagesOverlaySlider from "./ProjectImageOverlaySlider";
 
-export function ProjectImages({ project }) {
-    const { imgContainer } = content.projects[project];
+class ProjectImages extends Component {
+    state = {
+        showImageOverlaySlider: false
+    };
+    static propTypes = {
+        prop: PropTypes
+    };
 
-    const images = imgContainer.map((img, index) => {
-        return (
-            <article key={index}>
-                <a href="images/project/project01/gEats6-1200x700.png">
+    overlaySliderToggleHandler = () => {
+        this.setState(({ showImageOverlaySlider }) => {
+            return { showImageOverlaySlider: !showImageOverlaySlider };
+        });
+    };
+
+    render() {
+        const { project } = this.props;
+
+        const { imgContainer } = content.projects[project];
+        const images = imgContainer.map((img, index) => {
+            return (
+                <article key={index} onClick={this.overlaySliderToggleHandler}>
+                    {this.state.showImageOverlaySlider ? (
+                        <ProjectImagesOverlaySlider
+                            click={this.overlaySliderToggleHandler}
+                        />
+                    ) : null}
                     <Simg
                         alt={img.alt}
                         title={img.title}
                         src={require(`../../../${img.src}`)}
                     />
-                </a>
-            </article>
-        );
-    });
+                </article>
+            );
+        });
 
-    return <Ssection>{images}</Ssection>;
+        return <Ssection>{images}</Ssection>;
+    }
 }
 
 export default ProjectImages;
+
+// export function ProjectImages({ project }) {
+//     const { imgContainer } = content.projects[project];
+
+//     const images = imgContainer.map((img, index) => {
+//         return (
+//             <article key={index} >
+//                 <ProjectImagesOverlaySlider />
+//                 <Simg
+//                     alt={img.alt}
+//                     title={img.title}
+//                     src={require(`../../../${img.src}`)}
+//                 />
+//             </article>
+//         );
+//     });
+
+//     return <Ssection>{images}</Ssection>;
+// }
+
+// export default ProjectImages;
 
 // ! Styles
 

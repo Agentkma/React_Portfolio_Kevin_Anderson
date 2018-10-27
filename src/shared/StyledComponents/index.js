@@ -1,4 +1,9 @@
-// import React from "react";
+// ! External
+
+import CloseIcon from "@material-ui/icons/Close";
+
+// ! Internal
+
 import styled from "styled-components";
 import { mediaMin } from "../../Theme";
 
@@ -116,4 +121,18 @@ export const SscrollContainer = styled.div`
     height: 100vh;
     overflow-y: scroll;
     scroll-behavior: smooth !important;
+`;
+
+export const ScloseIcon = styled(CloseIcon)`
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    height: 2rem !important;
+    width: 2rem !important ;
+    font-size: 4rem;
+    color: ${props => props.theme.colorBgPrimary};
+
+    &:hover {
+        cursor: pointer;
+    }
 `;

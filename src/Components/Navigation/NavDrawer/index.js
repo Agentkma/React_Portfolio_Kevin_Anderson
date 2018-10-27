@@ -1,21 +1,20 @@
 // ! External
-import CloseIcon from "@material-ui/icons/Close";
-// import { withStyles } from "@material-ui/core/styles";
+
 import React from "react";
-// import PropTypes from "prop-types";
 import styled from "styled-components";
 
 // ! Internal
 import NavItems from "../NavItems";
 import drawerBgImg from "../../../Assets/Images/bg/about-bg-1920x1080.jpg";
 import { SlideDown } from "../../../Theme/animations";
+import { ScloseIcon } from "../../../shared/StyledComponents";
 
-export const NavDrawer = props => {
+export const NavDrawer = ({ click }) => {
     return (
         <SlideDownNavDiv>
             <Nav role="navigation">
-                <ScloseIcon onClick={props.click} />
-                <NavItems click={props.click} />
+                <ScloseIconMod onClick={click} />
+                <NavItems click={click} />
             </Nav>
         </SlideDownNavDiv>
     );
@@ -51,19 +50,9 @@ const Nav = styled.nav`
     }
 `;
 
-const ScloseIcon = styled(CloseIcon)`
-    position: absolute;
-    top: 15%;
-    right: 5%;
-    height: 2rem !important;
-    width: 2rem !important ;
-    font-size: 4rem;
-    color: ${props => props.theme.colorBgPrimary};
+const ScloseIconMod = styled(ScloseIcon)`
     visibility: hidden;
     @media (min-width: 768px) {
         visibility: visible;
-    }
-    &:hover {
-        cursor: pointer;
     }
 `;

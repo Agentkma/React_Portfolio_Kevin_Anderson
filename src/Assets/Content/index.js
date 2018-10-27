@@ -525,7 +525,7 @@ export const content = {
                     ],
                     src:
                         "Assets/Images/project/project05/angularToDo1-1200x700.png",
-                    overLay: "SPA & CSS Framework"
+                    overLay: "SPA"
                 },
                 {
                     alt: "alt",
@@ -535,17 +535,17 @@ export const content = {
                     ],
                     src:
                         "Assets/Images/project/project05/angularToDo2-1200x700.png",
-                    overLay: "Mobile First"
+                    overLay: "Bootstrap CSS"
                 },
                 {
                     alt: "alt",
-                    title: "Material Design",
+                    title: "jQuery",
                     srcSet: [
                         "Assets/Images/project/project05/angularWeather1-1200x700.png"
                     ],
                     src:
                         "Assets/Images/project/project05/angularWeather1-1200x700.png",
-                    overLay: "Material Design"
+                    overLay: "API Integration"
                 },
                 {
                     alt: "alt text",
@@ -555,7 +555,7 @@ export const content = {
                     ],
                     src:
                         "Assets/Images/project/project05/angularToDo3-1200x700.png",
-                    overLay: "Material Design"
+                    overLay: "Angular JS"
                 },
 
                 {
@@ -566,7 +566,7 @@ export const content = {
                     ],
                     src:
                         "Assets/Images/project/project05/angularToDo4-1200x700.png",
-                    overLay: "Material Design"
+                    overLay: "Semantic HTML"
                 },
                 {
                     alt: "alt text",
@@ -576,7 +576,7 @@ export const content = {
                     ],
                     src:
                         "Assets/Images/project/project05/angularWeather2-1200x700.png",
-                    overLay: "Material Design"
+                    overLay: "Mobile First"
                 }
             ],
             img: {

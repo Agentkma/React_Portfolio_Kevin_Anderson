@@ -22,8 +22,8 @@ export class Navigation extends Component {
     };
 
     navDrawerToggleHandler = () => {
-        this.setState(prevState => {
-            return { showNavDrawer: !prevState.showNavDrawer };
+        this.setState(({ showNavDrawer }) => {
+            return { showNavDrawer: !showNavDrawer };
         });
     };
 

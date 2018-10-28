@@ -10,12 +10,20 @@ import styled from "styled-components";
 import { content } from "../../../Assets/Content";
 import { FadeInPageContainer } from "../../../Theme/animations";
 
-export function ProjectImageOverlaySlider({ click, project }) {
-    const { bannerImg } = content.projects[project];
+export function ProjectImageOverlaySlider({
+    click,
+    currentImg,
+    imgCount,
+    project
+}) {
+    const { imgContainer } = content.projects[project];
+    console.log(currentImg);
+    currentImg = Number(currentImg);
 
     return (
         <FadeInPageContainer>
             <Ssection>
+                <Scounter>{`${currentImg}/${imgCount}`}</Scounter>
                 <ScloseIconMod onClick={click} />
                 <Slider
                     autoSlide={false}
@@ -27,19 +35,11 @@ export function ProjectImageOverlaySlider({ click, project }) {
                     RightArrow={<SrightArrow />}
                     LeftArrow={<SleftArrow />}
                 >
-                    {bannerImg.map((img, index) => {
-                        const { alt, src, srcSet, title } = img;
-                        const counterCurrent = index + 1;
-                        const counterTotal = bannerImg.length;
+                    {imgContainer.map((img, index) => {
+                        const { alt, src, title } = img;
 
                         return (
                             <picture key={index}>
-                                <source
-                                    srcSet={require(`../../../${srcSet[0]}`)}
-                                    type="image/png"
-                                />
-                                <Scounter
-                                >{`${counterCurrent}/${counterTotal}`}</Scounter>
                                 <Simg
                                     src={require(`../../../${src}`)}
                                     alt={alt}
@@ -65,17 +65,16 @@ const Ssection = styled.section`
     top: 7.75vh;
     z-index: 101;
     @media (min-width: 768px) {
-        top: 0;
         right: 0;
         z-index: 999;
         position: fixed;
-        height: 100vh;
+        height: 92.75vh;
     }
 `;
 
 const Scounter = styled.article`
     position: absolute;
-    top: 0%;
+    top: 7.75vh;
     left: 0%;
     height: 2rem !important;
     width: 2rem !important ;
@@ -120,6 +119,7 @@ const SrightArrow = styled(ArrowForward)`
 `;
 
 const ScloseIconMod = styled(ScloseIcon)`
-    top: 0%;
+    position: absolute;
+    top: 7.75vh;
     right: 0%;
 `;

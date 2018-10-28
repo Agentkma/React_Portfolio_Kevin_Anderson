@@ -8,7 +8,6 @@ import { content } from "../../../Assets/Content";
 import { Scontainer, Srow } from "../../../shared/StyledComponents";
 
 function ProjectNav({ gridNavHref }) {
-    console.log("gridNavHref", gridNavHref);
     let currentProject = window.location.pathname.split("/").join("");
 
     let currentIndex = content.projects.findIndex(

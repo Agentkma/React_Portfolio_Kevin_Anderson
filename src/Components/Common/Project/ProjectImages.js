@@ -1,5 +1,5 @@
 // ! External
-import PropTypes from "prop-types";
+
 import React, { Component } from "react";
 import styled from "styled-components";
 
@@ -10,30 +10,33 @@ import ProjectImagesOverlaySlider from "./ProjectImageOverlaySlider";
 
 class ProjectImages extends Component {
     state = {
-        showImageOverlaySlider: false
-    };
-    static propTypes = {
-        prop: PropTypes
+        showImageOverlaySlider: false,
+        currentImg: null
     };
 
-    overlaySliderToggleHandler = () => {
+    overlaySliderToggleHandler = index => {
         this.setState(({ showImageOverlaySlider }) => {
-            return { showImageOverlaySlider: !showImageOverlaySlider };
+            return {
+                currentImg: index,
+                showImageOverlaySlider: !showImageOverlaySlider,
+                totalImgCount:
+                    content.projects[this.props.project].imgContainer.length
+            };
         });
     };
 
     render() {
         const { project } = this.props;
+        const {
+            currentImg,
+            showImageOverlaySlider,
+            totalImgCount
+        } = this.state;
 
         const { imgContainer } = content.projects[project];
         const images = imgContainer.map((img, index) => {
             return (
                 <article key={index} onClick={this.overlaySliderToggleHandler}>
-                    {this.state.showImageOverlaySlider ? (
-                        <ProjectImagesOverlaySlider
-                            click={this.overlaySliderToggleHandler}
-                        />
-                    ) : null}
                     <Simg
                         alt={img.alt}
                         title={img.title}
@@ -43,32 +46,24 @@ class ProjectImages extends Component {
             );
         });
 
-        return <Ssection>{images}</Ssection>;
+        return (
+            <Ssection>
+                {" "}
+                {showImageOverlaySlider ? (
+                    <ProjectImagesOverlaySlider
+                        click={this.overlaySliderToggleHandler}
+                        currentImg={currentImg}
+                        imgCount={totalImgCount}
+                        project={project}
+                    />
+                ) : null}
+                {images}
+            </Ssection>
+        );
     }
 }
 
 export default ProjectImages;
-
-// export function ProjectImages({ project }) {
-//     const { imgContainer } = content.projects[project];
-
-//     const images = imgContainer.map((img, index) => {
-//         return (
-//             <article key={index} >
-//                 <ProjectImagesOverlaySlider />
-//                 <Simg
-//                     alt={img.alt}
-//                     title={img.title}
-//                     src={require(`../../../${img.src}`)}
-//                 />
-//             </article>
-//         );
-//     });
-
-//     return <Ssection>{images}</Ssection>;
-// }
-
-// export default ProjectImages;
 
 // ! Styles
 
@@ -87,4 +82,7 @@ const Simg = styled.img`
     max-width: 100%;
     height: 100%;
     border: 0;
+    &:hover {
+        cursor: crosshair;
+    }
 `;

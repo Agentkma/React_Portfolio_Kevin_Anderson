@@ -63,7 +63,7 @@ const Ssection = styled.section`
     position: absolute;
     width: 100%;
     top: 7.75vh;
-    z-index: 101;
+
     @media (min-width: 768px) {
         right: 0;
         z-index: 999;
@@ -75,18 +75,23 @@ const Ssection = styled.section`
 const Scounter = styled.article`
     position: absolute;
     top: 7.75vh;
-    left: 0%;
+    left: 2.5%;
     height: 2rem !important;
     width: 2rem !important ;
-    font-size: 4rem;
-    color: ${props => props.theme.colorBgPrimary};
+    font-size: 2rem;
+    color: ${props => props.theme.colorFontQuaternary};
+    z-index: 1000;
 `;
 
 const Simg = styled.img`
+    box-sizing: border-box;
+    padding: 10% 20%;
+    background-color: ${props => props.theme.colorBgPrimary};
     display: block;
     max-width: 100%;
     width: 100%;
-    height: 100%;
+
+    height: 92.75vh;
     border: 0;
 `;
 

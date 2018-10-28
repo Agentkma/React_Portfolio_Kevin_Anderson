@@ -47,7 +47,7 @@ export default Footer;
 
 const Sfooter = styled.footer`
     background-color: ${props => props.theme.colorBgPrimary};
-    padding: 50px 0;
+    padding: 1rem 0;
     ${media.tablet` text-align: center;`};
 `;
 

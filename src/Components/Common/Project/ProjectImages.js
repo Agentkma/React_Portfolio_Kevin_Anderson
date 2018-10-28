@@ -15,6 +15,7 @@ class ProjectImages extends Component {
     };
 
     overlaySliderToggleHandler = index => {
+        index = index + 1;
         this.setState(({ showImageOverlaySlider }) => {
             return {
                 currentImg: index,
@@ -36,7 +37,10 @@ class ProjectImages extends Component {
         const { imgContainer } = content.projects[project];
         const images = imgContainer.map((img, index) => {
             return (
-                <article key={index} onClick={this.overlaySliderToggleHandler}>
+                <article
+                    key={index}
+                    onClick={() => this.overlaySliderToggleHandler(index)}
+                >
                     <Simg
                         alt={img.alt}
                         title={img.title}

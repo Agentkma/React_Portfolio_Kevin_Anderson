@@ -11,36 +11,28 @@ import ProjectImagesOverlaySlider from "./ProjectImageOverlaySlider";
 class ProjectImages extends Component {
     state = {
         showImageOverlaySlider: false,
-        currentImg: null
+        currentImg: null,
+        imgCount: content.projects[this.props.project].imgContainer.length
     };
 
     overlaySliderToggleHandler = index => {
-        index = index + 1;
+        index++;
         this.setState(({ showImageOverlaySlider }) => {
             return {
-                currentImg: index,
                 showImageOverlaySlider: !showImageOverlaySlider,
-                totalImgCount:
-                    content.projects[this.props.project].imgContainer.length
+                imgCount: index
             };
         });
     };
 
     render() {
         const { project } = this.props;
-        const {
-            currentImg,
-            showImageOverlaySlider,
-            totalImgCount
-        } = this.state;
+        const { currentImg, showImageOverlaySlider, imgCount } = this.state;
 
         const { imgContainer } = content.projects[project];
         const images = imgContainer.map((img, index) => {
             return (
-                <article
-                    key={index}
-                    onClick={() => this.overlaySliderToggleHandler(index)}
-                >
+                <article key={index} onClick={this.overlaySliderToggleHandler}>
                     <Simg
                         alt={img.alt}
                         title={img.title}
@@ -57,7 +49,7 @@ class ProjectImages extends Component {
                     <ProjectImagesOverlaySlider
                         click={this.overlaySliderToggleHandler}
                         currentImg={currentImg}
-                        imgCount={totalImgCount}
+                        imgCount={imgCount}
                         project={project}
                     />
                 ) : null}

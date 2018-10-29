@@ -63,7 +63,7 @@ const Ssection = styled.section`
     position: absolute;
     width: 100%;
     top: 7.75vh;
-
+    z-index: 101;
     @media (min-width: 768px) {
         right: 0;
         z-index: 999;
@@ -75,11 +75,11 @@ const Ssection = styled.section`
 const Scounter = styled.article`
     position: absolute;
     top: 7.75vh;
-    left: 2.5%;
+    left: 0%;
     height: 2rem !important;
     width: 2rem !important ;
-    font-size: 2rem;
-    color: ${props => props.theme.colorFontQuaternary};
+    font-size: 4rem;
+    color: ${props => props.theme.colorFontQuinternary};
     z-index: 1000;
 `;
 

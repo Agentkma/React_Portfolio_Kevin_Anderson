@@ -15,24 +15,29 @@ class ProjectImages extends Component {
         imgCount: content.projects[this.props.project].imgContainer.length
     };
 
-    overlaySliderToggleHandler = index => {
-        index++;
+    handleOverlayToggle = index => {
+        console.log("toggle clicked");
         this.setState(({ showImageOverlaySlider }) => {
             return {
                 showImageOverlaySlider: !showImageOverlaySlider,
-                imgCount: index
+                currentImg: index + 1
             };
         });
     };
 
     render() {
         const { project } = this.props;
-        const { currentImg, showImageOverlaySlider, imgCount } = this.state;
+        const { showImageOverlaySlider } = this.state;
 
         const { imgContainer } = content.projects[project];
         const images = imgContainer.map((img, index) => {
             return (
-                <article key={index} onClick={this.overlaySliderToggleHandler}>
+                <article
+                    key={index}
+                    onClick={() => {
+                        this.handleOverlayToggle(index);
+                    }}
+                >
                     <Simg
                         alt={img.alt}
                         title={img.title}
@@ -47,9 +52,7 @@ class ProjectImages extends Component {
                 {" "}
                 {showImageOverlaySlider ? (
                     <ProjectImagesOverlaySlider
-                        click={this.overlaySliderToggleHandler}
-                        currentImg={currentImg}
-                        imgCount={imgCount}
+                        click={this.handleOverlayToggle}
                         project={project}
                     />
                 ) : null}

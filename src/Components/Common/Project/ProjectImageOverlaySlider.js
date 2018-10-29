@@ -1,6 +1,7 @@
 // ! External
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import ArrowBack from "@material-ui/icons/ArrowBack";
+import Picture from "@material-ui/icons/PictureInPicture";
 import { ScloseIcon } from "../../../shared/StyledComponents";
 import React from "react";
 import Slider from "react-styled-carousel";
@@ -12,18 +13,15 @@ import { FadeInPageContainer } from "../../../Theme/animations";
 
 export function ProjectImageOverlaySlider({
     click,
-    currentImg,
-    imgCount,
+    counterPlus,
+    counterMinus,
     project
 }) {
     const { imgContainer } = content.projects[project];
-    console.log(currentImg);
-    currentImg = Number(currentImg);
 
     return (
         <FadeInPageContainer>
             <Ssection>
-                <Scounter>{`${currentImg}/${imgCount}`}</Scounter>
                 <ScloseIconMod onClick={click} />
                 <Slider
                     autoSlide={false}
@@ -31,9 +29,25 @@ export function ProjectImageOverlaySlider({
                     infinite={false}
                     padding="0 0"
                     showArrows
-                    showDots={false}
-                    RightArrow={<SrightArrow />}
-                    LeftArrow={<SleftArrow />}
+                    showDots
+                    Dot={Picture}
+                    DotsWrapper={() => {
+                        return (
+                            <ul
+                                style={{
+                                    position: "absolute",
+                                    top: "10%",
+                                    left: "2.5%",
+                                    height: "2rem !important",
+                                    width: "2rem !important",
+                                    fontSize: "2rem",
+                                    zIndex: 1000
+                                }}
+                            />
+                        );
+                    }}
+                    RightArrow={<SrightArrow onClick={counterPlus} />}
+                    LeftArrow={<SleftArrow onClick={counterMinus} />}
                 >
                     {imgContainer.map((img, index) => {
                         const { alt, src, title } = img;
@@ -72,14 +86,14 @@ const Ssection = styled.section`
     }
 `;
 
-const Scounter = styled.article`
+const Sdots = styled.ul`
     position: absolute;
-    top: 7.75vh;
-    left: 0%;
+    top: 10%;
+    left: 2.5%;
     height: 2rem !important;
     width: 2rem !important ;
-    font-size: 4rem;
-    color: ${props => props.theme.colorFontQuinternary};
+    font-size: 2rem;
+    color: ${props => props.theme.colorFontQuaternary};
     z-index: 1000;
 `;
 
@@ -90,7 +104,6 @@ const Simg = styled.img`
     display: block;
     max-width: 100%;
     width: 100%;
-
     height: 92.75vh;
     border: 0;
 `;
@@ -126,5 +139,10 @@ const SrightArrow = styled(ArrowForward)`
 const ScloseIconMod = styled(ScloseIcon)`
     position: absolute;
     top: 7.75vh;
-    right: 0%;
+    right: 2.5%;
+    height: 2rem !important;
+    width: 2rem !important ;
+    font-size: 2rem;
+    color: ${props => props.theme.colorFontQuaternary};
+    z-index: 1000;
 `;

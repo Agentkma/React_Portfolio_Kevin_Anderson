@@ -45,19 +45,19 @@ export class IntroAbout extends Component {
                     <SdivVertAlign>
                         <Container>
                             <Sarticle>
-                                <SsectionMH>
+                                <SdivMH>
                                     <Sh6H>
                                         {content.home.header.mainHeading}
                                     </Sh6H>
-                                </SsectionMH>
+                                </SdivMH>
 
-                                <SsectionCD>
+                                <SdivCD>
                                     <Sh6HL>
                                         <SloadingBar>
                                             {this.state.itemCurrent}
                                         </SloadingBar>
                                     </Sh6HL>
-                                </SsectionCD>
+                                </SdivCD>
                             </Sarticle>
                         </Container>
                     </SdivVertAlign>
@@ -97,7 +97,7 @@ const Sarticle = styled.article`
        ;`};
 `;
 
-const SsectionMH = styled.section`
+const SdivMH = styled.div`
     ${media.desktop`margin-left: 0;
         padding: 0 2rem;`};
 `;
@@ -110,7 +110,7 @@ const Sh6H = styled.h6`
     font-weight: 500;
 `;
 
-const SsectionCD = styled.section`
+const SdivCD = styled.div`
     text-align: left;
     max-width: 100%;
     width: 100%;
@@ -137,7 +137,7 @@ const Sh6HL = styled.h6`
 
 const SloadingBar = styled(BounceInLeft)`
     display: inline-block;
-    padding: 0.2em 0;
+    /* padding: 0.2em 0; */
     overflow: hidden;
     vertical-align: top;
     &::after {
@@ -149,7 +149,6 @@ const SloadingBar = styled(BounceInLeft)`
         height: 5px;
         width: 100%;
         background-color: ${props => props.theme.colorAccentPrimary};
-
         z-index: 2;
     }
 `;

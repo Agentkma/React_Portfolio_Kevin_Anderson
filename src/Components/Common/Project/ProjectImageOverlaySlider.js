@@ -23,29 +23,15 @@ export function ProjectImageOverlaySlider({
         <FadeInPageContainer>
             <Ssection>
                 <ScloseIconMod onClick={click} />
-                <Slider
+                <Sslider
                     autoSlide={false}
                     cardsToShow={1}
                     infinite={false}
                     padding="0 0"
                     showArrows
                     showDots
-                    Dot={Picture}
-                    DotsWrapper={() => {
-                        return (
-                            <ul
-                                style={{
-                                    position: "absolute",
-                                    top: "10%",
-                                    left: "2.5%",
-                                    height: "2rem !important",
-                                    width: "2rem !important",
-                                    fontSize: "2rem",
-                                    zIndex: 1000
-                                }}
-                            />
-                        );
-                    }}
+                    Dot={<Picture />}
+                    DotsWrapper={() => <Sdots />}
                     RightArrow={<SrightArrow onClick={counterPlus} />}
                     LeftArrow={<SleftArrow onClick={counterMinus} />}
                 >
@@ -62,7 +48,7 @@ export function ProjectImageOverlaySlider({
                             </picture>
                         );
                     })}
-                </Slider>
+                </Sslider>
             </Ssection>
         </FadeInPageContainer>
     );
@@ -84,6 +70,10 @@ const Ssection = styled.section`
         position: fixed;
         height: 92.75vh;
     }
+`;
+
+const Sslider = styled(Slider)`
+    position: relative;
 `;
 
 const Sdots = styled.ul`

@@ -70,10 +70,11 @@ const Simg = styled.img`
     max-width: 100%;
     height: 100%;
     border: 0;
-    transition: all 0.4s ease-in-out;
-    &:hover {
+    /* transition: all 0.4s ease-in-out;
+    transform: translateY(0);
+    ${Slink}:hover & {
         transform: translateY(100%);
-    }
+    } */
 `;
 
 const Slink = styled(Link)`
@@ -84,16 +85,14 @@ const Slink = styled(Link)`
     height: 100%;
     position: absolute;
     top: 0;
-    z-index: 100;
-    text-align: center;
+    z-index: 100000000;
+
     text-decoration: none !important;
     transition: all 0.4s ease-in-out;
     color: ${props => props.theme.colorFontTertiary};
-    background-color: transparent;
+    background-color: white;
     &:hover {
-        text-decoration: none !important;
         opacity: 1;
-        transition: all 0.4s ease-in-out;
         cursor: url(${cursor}) 40 40, crosshair;
     }
 `;
@@ -101,22 +100,10 @@ const Slink = styled(Link)`
 const SdivProjectItem = styled.div`
     text-align: left;
     padding: 100px 120px;
-    position: absolute;
-    background: ${props => props.theme.colorBgPrimary};
-    opacity: 0;
-    visibility: hidden;
     width: auto;
     height: auto;
     display: block;
-    top: -100%;
-    left: 0;
-    transition: all 0.3s ease 0s;
-    /* &:hover {
-        opacity: 1;
-        visibility: visible;
-        top: 0;
-        transition: all 0.3s ease 0s;
-    } */
+
 }`;
 
 const Sp = styled.p`
@@ -127,6 +114,7 @@ const Sp = styled.p`
     border-bottom: solid 5px;
     padding-bottom: 5px;
     text-transform: none;
+    width: fit-content;
     color: ${props => props.theme.colorFontQuaternary};
     ${media.desktop`font-size: 0.875rem;
     line-height: 1.3125rem;`};
@@ -138,10 +126,11 @@ const Sh3 = styled.h3`
     font-size: 1.125rem;
     line-height: 1.5625rem;
     text-transform: none;
-    margin-bottom: 5px;
+    padding-bottom: 5px;
     border-bottom: solid 2px;
     font-weight: 200;
     color: ${props => props.theme.colorFontQuaternary};
+    width: fit-content;
     ${media.desktop`font-size: 0.875rem;
     line-height: 1.3125rem;`};
 `;

@@ -15,20 +15,14 @@ function ProjectNav({ gridNavHref }) {
     );
 
     const prevProject = () => {
-        if (currentIndex === 0) {
-            const lastProj = Number(content.projects.length - 1);
-            return content.projects[lastProj].url;
-        }
+        let prevIndex =
+            (currentIndex - 1 + content.projects.length) %
+            content.projects.length;
 
-        let prevIndex = currentIndex - 1;
         return content.projects[prevIndex].url;
     };
     const nextProject = () => {
-        if (currentIndex === content.projects.length - 1) {
-            return content.projects[0].url;
-        }
-
-        let nextIndex = currentIndex + 1;
+        let nextIndex = (currentIndex + 1) % content.projects.length;
         return content.projects[nextIndex].url;
     };
 
@@ -42,7 +36,7 @@ function ProjectNav({ gridNavHref }) {
                                 <Link to={prevProject(currentProject)}>
                                     <Simg
                                         alt="left arrow"
-                                        title=""
+                                        title="left arrow button"
                                         src={require("../../../Assets/Images/prev.svg")}
                                     />
                                 </Link>
@@ -50,8 +44,8 @@ function ProjectNav({ gridNavHref }) {
                             <Sli>
                                 <a href={`#${gridNavHref}`}>
                                     <Simg
-                                        alt=""
-                                        title=""
+                                        alt="image grid icon"
+                                        title="image grid icon"
                                         src={require("../../../Assets/Images/grid.svg")}
                                     />
                                 </a>
@@ -60,7 +54,7 @@ function ProjectNav({ gridNavHref }) {
                                 <Link to={nextProject(currentProject)}>
                                     <Simg
                                         alt="right arrow"
-                                        title=""
+                                        title="right arrow button"
                                         src={require("../../../Assets/Images/next.svg")}
                                     />
                                 </Link>

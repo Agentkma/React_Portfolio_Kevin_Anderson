@@ -32,9 +32,8 @@ export const ProjectItem = ({ name }) => {
 
                 <Slink to={to}>
                     <SdivProjectItem>
-                        <Sp>{name}</Sp>
-
-                        <Sh3>{description}</Sh3>
+                        <Sh1>{name}</Sh1>
+                        <Sp>{description}</Sp>
                     </SdivProjectItem>
                 </Slink>
             </SDiv2>
@@ -53,9 +52,6 @@ const Sdiv = styled.div`
 `;
 
 const SDiv2 = styled.div`
-    /* position: absolute;
-    left: 0;
-    top: 0; */
     margin: 0 !important;
     padding: 0 !important;
     min-height: fit-content;
@@ -70,11 +66,6 @@ const Simg = styled.img`
     max-width: 100%;
     height: 100%;
     border: 0;
-    /* transition: all 0.4s ease-in-out;
-    transform: translateY(0);
-    ${Slink}:hover & {
-        transform: translateY(100%);
-    } */
 `;
 
 const Slink = styled(Link)`
@@ -86,7 +77,6 @@ const Slink = styled(Link)`
     position: absolute;
     top: 0;
     z-index: 100000000;
-
     text-decoration: none !important;
     transition: all 0.4s ease-in-out;
     color: ${props => props.theme.colorFontTertiary};
@@ -111,7 +101,8 @@ const Sp = styled.p`
     line-height: 1.5625rem;
     letter-spacing: normal;
     margin-top: 0;
-    border-bottom: solid 5px;
+    border-bottom: solid 2px;
+    border-color: ${props => props.theme.colorAccentPrimary};
     padding-bottom: 5px;
     text-transform: none;
     width: fit-content;
@@ -120,17 +111,15 @@ const Sp = styled.p`
     line-height: 1.3125rem;`};
 `;
 
-const Sh3 = styled.h3`
-    border-color: ${props => props.theme.colorAccentPrimary};
+const Sh1 = styled.h1`
     letter-spacing: normal;
-    font-size: 1.125rem;
-    line-height: 1.5625rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.5625rem;
     text-transform: none;
     padding-bottom: 5px;
-    border-bottom: solid 2px;
-    font-weight: 200;
     color: ${props => props.theme.colorFontQuaternary};
     width: fit-content;
-    ${media.desktop`font-size: 0.875rem;
-    line-height: 1.3125rem;`};
+    ${media.desktop`font-size: 2.875rem;
+    line-height: 3.3125rem;`};
 `;

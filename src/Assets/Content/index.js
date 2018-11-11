@@ -121,8 +121,8 @@ export const content = {
                     img: {
                         alt: "pic of React RSVP home page",
                         title: "React App",
-                        srcSet: ["Assets/Images/works/ReactRSVP01100x650.png"],
-                        src: "Assets/Images/works/ReactRSVP01100x650.png"
+                        srcSet: ["Assets/Images/works/reactRSVP01100x650.png"],
+                        src: "Assets/Images/works/reactRSVP01100x650.png"
                     },
                     name: "React Apps",
                     description: "Single Page Apps.",
@@ -521,7 +521,7 @@ export const content = {
                     alt: "alt",
                     title: "SPA & CSS Framework",
                     srcSet: [
-                        "Assets/Images/project/project05/angularToDo1-1200x700.png"
+                        "Assets/Images/project/project06/reactRSVP1-1200x700.png"
                     ],
                     src:
                         "Assets/Images/project/project05/angularToDo1-1200x700.png",
@@ -583,7 +583,7 @@ export const content = {
                 alt: "Weather Now App",
                 title: "Weather Now App",
                 srcSet: ["Assets/Images/works/angularWeather2-1200x700.png"],
-                src: "Assets/Images/works//angularWeather2-1200x700.png"
+                src: "Assets/Images/works/angularWeather2-1200x700.png"
             },
             description: {
                 taglineHeading: "Good design and clean coding",
@@ -632,6 +632,113 @@ export const content = {
                     title: "title text",
                     src:
                         "Assets/Images/project/project05/angularWeather2-1200x700.png"
+                }
+            ]
+        },
+        {
+            url: "project8",
+            id: "800",
+            title: {
+                name: "React Apps",
+                categories: "SPA"
+            },
+            bannerImg: [
+                {
+                    alt: "alt",
+                    title: "SPA",
+                    srcSet: [
+                        "Assets/Images/project/project06/reactRSVP1-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project06/reactRSVP1-1200x700.png",
+                    overLay: "update info"
+                },
+                {
+                    alt: "alt",
+                    title: "update info",
+                    srcSet: [
+                        "Assets/Images/project/project06/reactRSVP2-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project06/reactRSVP2-1200x700.png",
+                    overLay: "update info"
+                },
+                {
+                    alt: "alt",
+                    title: "update info",
+                    srcSet: [
+                        "Assets/Images/project/project06/reactRSVP3-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project06/reactRSVP3-1200x700.png",
+                    overLay: "update info"
+                }
+            ],
+            img: {
+                alt: "Let's RSVP App",
+                title: "Let's RSVP App",
+                srcSet: ["Assets/Images/works/reactRSVP021100x650.png"],
+                src: "Assets/Images/works/reactRSVP021100x650.png"
+            },
+            description: {
+                taglineHeading: "Good design and clean coding",
+                taglineSubHeading: "That is a Principle",
+                projectDescription: [
+                    "These Single Page Apps are built with React JS.",
+                    "The apps also use HTML, CSS, and JavaScript."
+                ],
+                categories: "SPA",
+                delivered: "2017 September",
+                liveSiteLink: "NA"
+            },
+            imgContainer: [
+                {
+                    alt: "alt text",
+                    title: "home page",
+                    src:
+                        "Assets/Images/project/project06/reactRSVP1-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project06/reactRSVP2-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project06/reactRSVP3-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project06/reactRSVP4-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project06/reactRSVP5-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project06/reactRSVP6-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project06/reactRSVP7-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project06/reactRSVP8-1200x700.png"
                 }
             ]
         }

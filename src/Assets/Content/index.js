@@ -75,7 +75,7 @@ export const content = {
                     description:
                         "Pure HTML:Custom controls, CC, & text highlighting.",
                     worksFilter: ["all", "pure-css", "front-end"],
-                    to: "/project4"
+                    to: "/"
                 },
                 {
                     img: {
@@ -88,7 +88,7 @@ export const content = {
                     description:
                         "A simple project simulating a web app using Chart.js plugin.",
                     worksFilter: ["all", "pure-css", "front-end"],
-                    to: "/project5"
+                    to: "/"
                 },
                 {
                     img: {
@@ -101,7 +101,7 @@ export const content = {
                     description:
                         "A web app modeled after AllRecipes.com. Full Stack CRUD app.",
                     worksFilter: ["all", "css-frameworks", "full-stack"],
-                    to: "/project6"
+                    to: "/project4"
                 },
                 {
                     img: {
@@ -115,7 +115,7 @@ export const content = {
                     name: "AngularJS Weather App",
                     description: "Single Page Apps.",
                     worksFilter: ["all", "css-frameworks", "full-stack", "SPA"],
-                    to: "/project7"
+                    to: "/project5"
                 },
                 {
                     img: {
@@ -127,7 +127,7 @@ export const content = {
                     name: "React Apps",
                     description: "Single Page Apps.",
                     worksFilter: ["all", "css-frameworks", "SPA"],
-                    to: "/project8"
+                    to: "/project6"
                 },
                 {
                     img: {
@@ -141,7 +141,7 @@ export const content = {
                     name: "Angular Apps",
                     description: "Single Page Apps.",
                     worksFilter: ["all", "css-frameworks", "SPA"],
-                    to: "/project9"
+                    to: "/project7"
                 },
                 {
                     img: {
@@ -155,7 +155,7 @@ export const content = {
                     name: "React-Native",
                     description: "Mobile Apps.",
                     worksFilter: ["all", "mobile", "SPA", "full-stack"],
-                    to: "/project10"
+                    to: "/project8"
                 }
             ]
         }
@@ -521,7 +521,7 @@ export const content = {
                     alt: "alt",
                     title: "SPA & CSS Framework",
                     srcSet: [
-                        "Assets/Images/project/project06/reactRSVP1-1200x700.png"
+                        "Assets/Images/project/project05/angularToDo1-1200x700.png"
                     ],
                     src:
                         "Assets/Images/project/project05/angularToDo1-1200x700.png",
@@ -636,8 +636,8 @@ export const content = {
             ]
         },
         {
-            url: "project8",
-            id: "800",
+            url: "project6",
+            id: "600",
             title: {
                 name: "React Apps",
                 categories: "SPA"
@@ -740,6 +740,205 @@ export const content = {
                     src:
                         "Assets/Images/project/project06/reactRSVP8-1200x700.png"
                 }
+            ]
+        },
+        {
+            url: "project7",
+            id: "700",
+            title: {
+                name: "Angular Apps",
+                categories: "SPA"
+            },
+            bannerImg: [
+                {
+                    alt: "alt",
+                    title: "SPA",
+                    srcSet: [
+                        "Assets/Images/project/project07/AngularPhotoLog1-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project07/AngularPhotoLog1-1200x700.png",
+                    overLay: "update info"
+                },
+                {
+                    alt: "alt",
+                    title: "update info",
+                    srcSet: [
+                        "Assets/Images/project/project07/AngularPhotoLog2-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project07/AngularPhotoLog2-1200x700.png",
+                    overLay: "update info"
+                },
+                {
+                    alt: "alt",
+                    title: "update info",
+                    srcSet: [
+                        "Assets/Images/project/project07/AngularPhotoLog3-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project07/AngularPhotoLog3-1200x700.png",
+                    overLay: "update info"
+                }
+            ],
+            img: {
+                alt: "AngularPhotoLog App",
+                title: "AngularPhotoLog App",
+                srcSet: ["Assets/Images/works/AngularPhotoLog-1100x650.png"],
+                src: "Assets/Images/works/AngularPhotoLog6-1100x650.png"
+            },
+            description: {
+                taglineHeading: "Good design and clean coding",
+                taglineSubHeading: "That is a Principle",
+                projectDescription: [
+                    "These Single Page Apps are built with Angular.",
+                    "The apps also use HTML, CSS, and JavaScript."
+                ],
+                categories: "SPA",
+                delivered: "2018 January",
+                liveSiteLink: "NA"
+            },
+            imgContainer: [
+                {
+                    alt: "alt text",
+                    title: "home page",
+                    src:
+                        "Assets/Images/project/project07/AngularPhotoLog1-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project07/AngularPhotoLog2-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project07/AngularPhotoLog3-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project07/AngularPhotoLog4-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project07/AngularPhotoLog5-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project07/AngularPhotoLog6-1200x700.png"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project07/AngularPhotoLog7-1200x700.png"
+                }
+            ]
+        },
+        {
+            url: "project8",
+            id: "800",
+            title: {
+                name: "React Native",
+                categories: "Mobile"
+            },
+            bannerImg: [
+                {
+                    alt: "alt",
+                    title: "mobile",
+                    srcSet: ["Assets/Images/works/terraGoSplash-1100x650.png"],
+                    src: "Assets/Images/works/terraGoSplash-1100x650.png",
+                    overLay: "update info"
+                },
+                {
+                    alt: "alt",
+                    title: "update info",
+                    srcSet: [
+                        "Assets/Images/project/project08/KaptureTerraGOlogin.gif"
+                    ],
+                    src:
+                        "Assets/Images/project/project08/KaptureTerraGOlogin.gif",
+                    overLay: "update info"
+                }
+                // {
+                //     alt: "alt",
+                //     title: "update info",
+                //     srcSet: [
+                //         "Assets/Images/project/project08/KaptureTerraGo3-1200x700.png"
+                //     ],
+                //     src:
+                //         "Assets/Images/project/project08/KaptureTerraGo3-1200x700.png",
+                //     overLay: "update info"
+                // }
+            ],
+            img: {
+                alt: "TerraGo App",
+                title: "TerraGo App",
+                srcSet: ["Assets/Images/works/terraGoSplash-1100x650.png"],
+                src: "Assets/Images/works/terraGoSplash-1100x650.png"
+            },
+            description: {
+                taglineHeading: "Good design and clean coding",
+                taglineSubHeading: "That is a Principle",
+                projectDescription: [
+                    "These Single Page Apps are built with React-Native.",
+                    "The apps also use CSS, and JavaScript."
+                ],
+                categories: "Mobile",
+                delivered: "2017 December",
+                liveSiteLink: "NA"
+            },
+            imgContainer: [
+                {
+                    alt: "alt text",
+                    title: "home page",
+                    src:
+                        "Assets/Images/project/project08/KaptureTerraGOlogin.gif"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project08/KaptureTerraGOProfileAndRideView.gif"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project08/KaptureTerraGORideDelete.gif"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project08/KaptureTerraGORideMap1.0.gif"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project08/KaptureTerraGOrideSummary.gif"
+                },
+                {
+                    alt: "alt text",
+                    title: "title text",
+                    src:
+                        "Assets/Images/project/project08/KaptureTerraGOstart.gif"
+                }
+                // {
+                //     alt: "alt text",
+                //     title: "title text",
+                //     src:
+                //         "Assets/Images/project/project08/KaptureTerraGo7-1200x700.png"
+                // }
             ]
         }
     ],

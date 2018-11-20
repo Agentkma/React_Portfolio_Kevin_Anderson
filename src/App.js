@@ -15,6 +15,8 @@ import Project2 from "./Pages/Project/Project2";
 import Project3 from "./Pages/Project/Project3";
 import Project4 from "./Pages/Project/Project4";
 import Project5 from "./Pages/Project/Project5";
+import Project6 from "./Pages/Project/Project6";
+import Project7 from "./Pages/Project/Project7";
 import Project8 from "./Pages/Project/Project8";
 
 // ! Example async component...?
@@ -48,8 +50,8 @@ class App extends Component {
                             <Route path="/project3" component={Project3} />
                             <Route path="/project4" component={Project4} />
                             <Route path="/project5" component={Project5} />
-                            {/*  <Route path="/project6" component={Project6} />
-                            <Route path="/project7" component={Project7} />*/}
+                            <Route path="/project6" component={Project6} />
+                            <Route path="/project7" component={Project7} />
                             <Route path="/project8" component={Project8} />
                             <Route path="/contact" component={Contact} />
                             <Route path="/about" component={About} />

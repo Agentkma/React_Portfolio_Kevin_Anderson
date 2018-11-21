@@ -118,7 +118,7 @@ export const SarticleMainHeading = styled.article`
 `;
 
 export const SscrollContainer = styled.div`
-    height: 100vh;
+    height: auto;
     overflow-y: scroll;
     scroll-behavior: smooth !important;
 `;

@@ -535,7 +535,7 @@ export const content = {
                     ],
                     src:
                         "Assets/Images/project/project05/angularToDo2-1200x700.png",
-                    overLay: "Bootstrap CSS"
+                    overLay: "TypeScript"
                 },
                 {
                     alt: "alt",
@@ -566,7 +566,7 @@ export const content = {
                     ],
                     src:
                         "Assets/Images/project/project05/angularToDo4-1200x700.png",
-                    overLay: "Semantic HTML"
+                    overLay: "Bootstrap CSS"
                 },
                 {
                     alt: "alt text",
@@ -590,7 +590,7 @@ export const content = {
                 taglineSubHeading: "That is a Principle",
                 projectDescription: [
                     "These Single Page Apps are built with AngularJS.",
-                    "The apps also use Bootstrap CSS framework, HTML, CSS, JavaScript, and jQuery."
+                    "The apps also use Bootstrap CSS framework, HTML, CSS, JavaScript, TypeScript, Webpack, and jQuery."
                 ],
                 categories: "SPA & CSS Framework",
                 delivered: "2017 October",
@@ -684,11 +684,12 @@ export const content = {
                 taglineHeading: "Good design and clean coding",
                 taglineSubHeading: "That is a Principle",
                 projectDescription: [
+                    "This Portfolio Site is the lates React JS app build.",
                     "These Single Page Apps are built with React JS.",
-                    "The apps also use HTML, CSS, and JavaScript."
+                    "The apps also use HTML, CSS, JavaScript, Styled-Components, and Material UI."
                 ],
                 categories: "SPA",
-                delivered: "2017 September",
+                delivered: "2018 November",
                 liveSiteLink: "NA"
             },
             imgContainer: [
@@ -751,34 +752,34 @@ export const content = {
             },
             bannerImg: [
                 {
-                    alt: "alt",
+                    alt: "SPA",
                     title: "SPA",
                     srcSet: [
                         "Assets/Images/project/project07/AngularPhotoLog1-1200x700.png"
                     ],
                     src:
                         "Assets/Images/project/project07/AngularPhotoLog1-1200x700.png",
-                    overLay: "update info"
+                    overLay: "Single Page App"
                 },
                 {
-                    alt: "alt",
-                    title: "update info",
+                    alt: "Angular",
+                    title: "Angular",
                     srcSet: [
                         "Assets/Images/project/project07/AngularPhotoLog2-1200x700.png"
                     ],
                     src:
                         "Assets/Images/project/project07/AngularPhotoLog2-1200x700.png",
-                    overLay: "update info"
+                    overLay: "Angular"
                 },
                 {
-                    alt: "alt",
-                    title: "update info",
+                    alt: "TypeScript",
+                    title: "TypeScript",
                     srcSet: [
                         "Assets/Images/project/project07/AngularPhotoLog3-1200x700.png"
                     ],
                     src:
                         "Assets/Images/project/project07/AngularPhotoLog3-1200x700.png",
-                    overLay: "update info"
+                    overLay: "TypeScript"
                 }
             ],
             img: {
@@ -792,7 +793,7 @@ export const content = {
                 taglineSubHeading: "That is a Principle",
                 projectDescription: [
                     "These Single Page Apps are built with Angular.",
-                    "The apps also use HTML, CSS, and JavaScript."
+                    "The apps also use HTML, CSS, and TypeScript."
                 ],
                 categories: "SPA",
                 delivered: "2018 January",
@@ -995,10 +996,10 @@ export const content = {
                             primary: "My Story",
                             secondary: [
                                 "My first career was in construction management.",
-                                "Managing different teams and employees while solving the problems of custom building was challenging. I enjoyed finding improvements in our product and process through continous process improvement.",
+                                "Managing different teams and employees while solving the problems of custom building was challenging. I enjoyed finding improvements in our product and process through continuous process improvement.",
                                 "I decided to apply my love for problem solving and solution building to the world of technology which I had become more and more interested in.",
                                 "My technical education has been primarily through project based course education with Treehouse, Galvanize, and Udemy. In addition I've learned from working with others in person, many other web based education sources, and of course documentation.",
-                                "I also love to laugh, read, hike, bike, and spending time with my family and dogs."
+                                "I also love to laugh, read, hike, bike, snowboard, and spending time with my family and dogs."
                             ]
                         }
                     }
@@ -1075,7 +1076,7 @@ export const content = {
                     icon: "Screate",
                     title: "Create",
                     text:
-                        "solutions to challenging problems and interesting apps that imrove people's lives."
+                        "solutions to challenging problems and apps that imrove lives."
                 }
             ],
             contact: {

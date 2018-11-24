@@ -9,7 +9,7 @@ import ProjectItem from "./ProjectItem";
 import { content } from "../../Assets/Content";
 import ProjectsContainer from "<div className=""/>
 <div className=""/>
-<HOC></HOC>/ProjectsContainer";
+<Hoc></Hoc>/ProjectsContainer";
 import { FadeInPageContainer } from "../../Theme/animations";
 
 const { projects } = content.home.main;

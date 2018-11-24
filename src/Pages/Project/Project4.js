@@ -1,5 +1,5 @@
 import React from "react";
-import Layout2 from "../../HOC/Layout/projectLayouts/Layout2";
+import Layout2 from "../../Hoc/Layout/projectLayouts/Layout2";
 import { FadeInPageContainer } from "../../Theme/animations";
 
 export function Project4() {

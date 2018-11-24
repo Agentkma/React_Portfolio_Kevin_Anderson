@@ -4,11 +4,11 @@ import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 
 // ! Internal
-// import asyncComponent from "./HOC/asyncComponent";
+// import asyncComponent from "./Hoc/asyncComponent";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
-import Layout from "./HOC/Layout";
+import Layout from "./Hoc/Layout";
 import { theme } from "./Theme";
 import Project1 from "./Pages/Project/Project1";
 import Project2 from "./Pages/Project/Project2";

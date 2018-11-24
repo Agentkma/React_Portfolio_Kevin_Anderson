@@ -7,9 +7,7 @@ import IntroAbout from "./IntroAbout";
 import WorksFilterPanel from "./WorksFilterPanel";
 import ProjectItem from "./ProjectItem";
 import { content } from "../../Assets/Content";
-import ProjectsContainer from "<div className=""/>
-<div className=""/>
-<Hoc></Hoc>/ProjectsContainer";
+import ProjectsContainer from "../../Hoc/ProjectsContainer";
 import { FadeInPageContainer } from "../../Theme/animations";
 
 const { projects } = content.home.main;

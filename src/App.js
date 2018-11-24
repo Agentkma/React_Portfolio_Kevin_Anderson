@@ -4,7 +4,7 @@ import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 
 // ! Internal
-// import asyncComponent from "./Hoc/asyncComponent";
+
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";

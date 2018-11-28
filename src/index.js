@@ -8,7 +8,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
 // ! Internal
-import rootReducer from "./Ducks";
+import RootReducer from "./Ducks";
 import App from "./App";
 
 // const composeEnhancers =
@@ -17,12 +17,12 @@ import App from "./App";
 //         : null || compose;
 
 // const store = createStore(
-//     rootReducer,
+//     RootReducer,
 //     composeEnhancers(applyMiddleware(thunk))
 // );
 
 const store = createStore(
-    rootReducer,
+    RootReducer,
     compose(
         applyMiddleware(thunk),
         window.navigator.userAgent.includes("Chrome")

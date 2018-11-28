@@ -8,7 +8,7 @@ import styled, { ThemeProvider } from "styled-components";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
-import Layout from "./Hoc/Layout";
+import Layout from "./Hoc/Layout/index";
 import { theme } from "./Theme";
 import Project1 from "./Pages/Project/Project1";
 import Project2 from "./Pages/Project/Project2";

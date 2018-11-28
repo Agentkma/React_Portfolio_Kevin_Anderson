@@ -19,11 +19,6 @@ import Project6 from "./Pages/Project/Project6";
 import Project7 from "./Pages/Project/Project7";
 import Project8 from "./Pages/Project/Project8";
 
-// ! Example async component...?
-// const asyncCheckout = asyncComponent(() => {
-//   return import('./containers/Checkout/Checkout');
-// });
-
 class App extends Component {
     state = {
         showWorksFilter: false

@@ -1,7 +1,7 @@
 // import { updateObject } from "../shared/utility";
 
 // ! Actions
-const TOGGLE_SHOW_WORKS_FILTER = "app/ducks/TOGGLE_SHOW_WORKS_FILTER";
+const TOGGLE_SHOW_WORKS_FILTER = "app/Ducks/TOGGLE_SHOW_WORKS_FILTER";
 // const LOAD   = 'my-app/widgets/LOAD';
 // const CREATE = 'my-app/widgets/CREATE';
 // const UPDATE = 'my-app/widgets/UPDATE';

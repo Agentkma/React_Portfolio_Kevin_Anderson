@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 
 // ! Internal
-import { toggleShowWorksFilter } from "../../../ducks/home";
+import { toggleShowWorksFilter } from "../../../Ducks/home";
 import { mediaMin } from "../../../Theme";
 
 const NavCodeIcon = ({ toggleWorksFilter }) => {

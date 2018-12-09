@@ -64,32 +64,46 @@ export const content = {
                     worksFilter: ["all", "css-frameworks", "front-end"],
                     to: "/project3"
                 },
-                {
-                    img: {
-                        alt: "gif of custom video player",
-                        title: "custom video player",
-                        srcSet: ["Assets/Images/works/customVP-550x325.gif"],
-                        src: "Assets/Images/works/customVP-550x325.gif"
-                    },
-                    name: "Custom Video Player",
-                    description:
-                        "Pure HTML:Custom controls, CC, & text highlighting.",
-                    worksFilter: ["all", "pure-css", "front-end"],
-                    to: "/"
-                },
-                {
-                    img: {
-                        alt: "pic of Kev App home page",
-                        title: "Kev App",
-                        srcSet: ["Assets/Images/works/webapp1100x650.webp"],
-                        src: "Assets/Images/works/webapp1100x650.png"
-                    },
-                    name: "KevApp",
-                    description:
-                        "A simple project simulating a web app using Chart.js plugin.",
-                    worksFilter: ["all", "pure-css", "front-end"],
-                    to: "/"
-                },
+                // {
+                //     img: {
+                //         alt: "movie flyer",
+                //         title: "movie flyer",
+                //         srcSet: ["Assets/Images/works/UPDATE1100x650.webp"],
+                //         src: "Assets/Images/works/UPDATE11100x650.png"
+                //     },
+                //     name: "Design & CSS",
+                //     description:
+                //         "A space where creative designs, styling, and animations can be born.",
+                //     worksFilter: ["all", "pure-css", "front-end"],
+                //     to: "/project3"
+                // },
+                // * REMOVING THIS CONTENT FOR NOW 12.8.18
+                // {
+                //     img: {
+                //         alt: "gif of custom video player",
+                //         title: "custom video player",
+                //         srcSet: ["Assets/Images/works/customVP-550x325.gif"],
+                //         src: "Assets/Images/works/customVP-550x325.gif"
+                //     },
+                //     name: "Custom Video Player",
+                //     description:
+                //         "Pure HTML:Custom controls, CC, & text highlighting.",
+                //     worksFilter: ["all", "pure-css", "front-end"],
+                //     to: "/"
+                // },
+                // {
+                //     img: {
+                //         alt: "pic of Kev App home page",
+                //         title: "Kev App",
+                //         srcSet: ["Assets/Images/works/webapp1100x650.webp"],
+                //         src: "Assets/Images/works/webapp1100x650.png"
+                //     },
+                //     name: "KevApp",
+                //     description:
+                //         "A simple project simulating a web app using Chart.js plugin.",
+                //     worksFilter: ["all", "pure-css", "front-end"],
+                //     to: "/"
+                // },
                 {
                     img: {
                         alt: "pic of gRecipes app home page",
@@ -684,7 +698,7 @@ export const content = {
                 taglineHeading: "Good design and clean coding",
                 taglineSubHeading: "That is a Principle",
                 projectDescription: [
-                    "This Portfolio Site is the lates React JS app build.",
+                    "This Portfolio Site is the latest React JS app build.",
                     "These Single Page Apps are built with React JS.",
                     "The apps also use HTML, CSS, JavaScript, Styled-Components, and Material UI."
                 ],

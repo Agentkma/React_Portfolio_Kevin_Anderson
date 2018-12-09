@@ -42,7 +42,7 @@ const Ssection = styled.section`
     position: relative;
     top: 0;
     left: 0;
-    padding: 5rem 0;
+    padding: 2.5rem 0;
     background-color: ${props => props.theme.colorBgSecondary};
 `;
 
@@ -52,11 +52,11 @@ const Sul = styled.ul`
     margin: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     ${media.tablet`text-align: center`};
     li {
         display: inline-block;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin: 1rem;
         &:last-child:after {
             display: none;
         }

@@ -9,6 +9,7 @@ import ProjectItem from "./ProjectItem";
 import { content } from "../../Assets/Content";
 import ProjectsContainer from "../../Hoc/ProjectsContainer";
 import { FadeInPageContainer } from "../../Theme/animations";
+import { SscrollContainer } from "../../shared/StyledComponents";
 
 const { projects } = content.home.main;
 
@@ -44,11 +45,16 @@ class Home extends Component {
         return (
             <FadeInPageContainer>
                 {" "}
-                <IntroAbout />
-                {this.props.worksFilterShown ? (
-                    <WorksFilterPanel click={this.handleFilter} />
-                ) : null}
-                <ProjectsContainer>{this.renderProjects()}</ProjectsContainer>
+                <SscrollContainer>
+                    <IntroAbout />
+
+                    {this.props.worksFilterShown ? (
+                        <WorksFilterPanel click={this.handleFilter} />
+                    ) : null}
+                    <ProjectsContainer>
+                        {this.renderProjects()}
+                    </ProjectsContainer>
+                </SscrollContainer>
             </FadeInPageContainer>
         );
     }

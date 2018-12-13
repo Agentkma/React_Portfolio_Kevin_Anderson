@@ -6,13 +6,13 @@ import { connect } from "react-redux";
 
 // ! Internal
 import { toggleShowWorksFilter } from "../../../Ducks/home";
-import { mediaMin } from "../../../Theme";
+import { mediaMin, theme } from "../../../Theme";
 
 const NavCodeIcon = ({ toggleWorksFilter }) => {
     return (
-        // <a href="#works-filter-panel">
-        <StyledCodeIcon onClick={() => toggleWorksFilter()} />
-        // </a>
+        <a href="#works-filter-panel" style={{ color: theme.colorBgSecondary }}>
+            <StyledCodeIcon onClick={() => toggleWorksFilter()} />
+        </a>
     );
 };
 

@@ -964,8 +964,8 @@ export const content = {
                 {
                     type: "value image",
                     value: {
-                        img: "Assets/Images/about/about-coding.jpg",
-                        alt: "laptop computer",
+                        img: "Assets/Images/about/about-code.png",
+                        alt: "javascript and react code on screen",
                         title: "coding"
                     }
                 },
@@ -1000,7 +1000,7 @@ export const content = {
                 {
                     type: "story image",
                     story: {
-                        img: "Assets/Images/about/about-story1.jpg"
+                        img: "Assets/Images/about/about-mountain_river.jpg"
                     }
                 },
                 {
@@ -1035,7 +1035,7 @@ export const content = {
                 {
                     type: "story image",
                     story: {
-                        img: "Assets/Images/about/about-goals.jpg"
+                        img: "Assets/Images/about/about-goals-dog.jpg"
                     }
                 }
             ],

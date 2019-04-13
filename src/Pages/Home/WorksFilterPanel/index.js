@@ -7,6 +7,7 @@ import { content } from "../../../Assets/Content";
 import Container from "../../../Components/Common/Container";
 import { media } from "../../../Theme";
 import { ScaleInVerTop } from "../../../Theme/animations";
+//* misc
 
 export const WorksFilterPanel = ({ click }) => {
     const items = content.home.main.worksFilter.map((category, index) => {

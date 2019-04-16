@@ -19,6 +19,7 @@ class Home extends Component {
     };
 
     handleFilter = event => {
+        console.log("event", event);
         this.setState({ filter: event.target.textContent });
     };
 

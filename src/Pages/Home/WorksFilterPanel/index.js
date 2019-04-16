@@ -11,7 +11,11 @@ import { ScaleInVerTop } from "../../../Theme/animations";
 
 export const WorksFilterPanel = ({ click }) => {
     const items = content.home.main.worksFilter.map((category, index) => {
-        return <li onClick={click}>{category}</li>;
+        return (
+            <li key={index} onClick={e => click(e)}>
+                {category}
+            </li>
+        );
     });
 
     return (

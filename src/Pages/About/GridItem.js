@@ -10,7 +10,7 @@ import {
 } from "../../shared/StyledComponents";
 import { mediaMin, media } from "../../Theme";
 import { content } from "../../Assets/Content";
-import { VALUE_IMAGE } from ".../.../Constants";
+import { VALUE_IMAGE } from "../../Constants";
 
 export const GridItem = ({ index, type }) => {
     const { gridItems } = content.about.main;

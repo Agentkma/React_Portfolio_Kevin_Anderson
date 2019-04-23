@@ -10,7 +10,11 @@ import { mediaMin, theme } from "../../../Theme";
 
 const NavCodeIcon = ({ toggleWorksFilter }) => {
     return (
-        <a href="#works-filter-panel" style={{ color: theme.colorBgSecondary }}>
+        <a
+            data-testid="nav-code-icon"
+            href="#works-filter-panel"
+            style={{ color: theme.colorBgSecondary }}
+        >
             <StyledCodeIcon onClick={() => toggleWorksFilter()} />
         </a>
     );

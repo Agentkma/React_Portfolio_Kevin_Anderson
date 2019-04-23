@@ -10,12 +10,13 @@ import {
 } from "../../shared/StyledComponents";
 import { mediaMin, media } from "../../Theme";
 import { content } from "../../Assets/Content";
+import { VALUE_IMAGE } from "../../Constants";
 
 export const GridItem = ({ index, type }) => {
     const { gridItems } = content.about.main;
     const gridItem = gridItems[index];
 
-    if (type === "value image") {
+    if (type === VALUE_IMAGE) {
         const { img, alt, title } = gridItem.value;
 
         return (

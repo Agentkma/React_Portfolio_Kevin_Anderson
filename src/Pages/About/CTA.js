@@ -71,27 +71,27 @@ const Sh6 = styled.h6`
 
 const Sspan = styled.span`
     background-color: ${props => props.theme.colorAccentPrimary};
-    color: ${props => props.theme.colorFontSecondary};
     border: none;
     border-radius: 0;
-    padding: 1rem 1.25rem;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    text-transform: uppercase;
-    letter-spacing: 0.25rem;
-    margin-top: 1.25rem;
-    transition: all 0.4s ease-in-out;
+    box-sizing: border-box;
+    color: ${props => props.theme.colorFontSecondary};
+    cursor: pointer;
     display: inline-block;
-    margin-bottom: 0;
+    font-size: 0.75rem;
     font-weight: normal;
+    letter-spacing: 0.25rem;
+    line-height: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+    padding: 1rem 1.25rem;
+    text-transform: uppercase;
+    transition: all 0.4s ease-in-out;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
     vertical-align: middle;
     touch-action: manipulation;
-    cursor: pointer;
     user-select: none;
-    box-sizing: border-box;
     &:hover {
         opacity: 0.4;
     }

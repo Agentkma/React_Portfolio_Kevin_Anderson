@@ -5,9 +5,9 @@
     "dependencies": {
         "@material-ui/core": "^1.5.1",
         "@material-ui/icons": "^1.1.1",
-        "moment": "^2.22.2",
-        "react": "^16.6.3",
-        "react-dom": "^16.6.3",
+        "moment": "^2.24.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
         "react-redux": "^5.1.1",
         "react-router-dom": "^4.3.1",
         "react-scripts": "^2.1.5",
@@ -21,9 +21,7 @@
         "build": "react-scripts build",
         "now-build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject",
-        "deploy": "aws s3 sync --acl public-read --profile Portfolio --delete build/ s3://kevinanderson.codes && npm run invalidate",
-        "invalidate": "aws cloudfront --profile Portfolio create-invalidation --distribution-id E26NOBTDOGJRMM --paths '/*'"
+        "eject": "react-scripts eject"
     },
     "browserslist": [
         ">0.2%",

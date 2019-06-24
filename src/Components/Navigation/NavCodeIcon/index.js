@@ -26,6 +26,7 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
+export { NavCodeIcon };
 export default connect(
     null,
     mapDispatchToProps

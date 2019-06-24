@@ -13,7 +13,7 @@ import {
 //import "jest-dom/extend-expect";
 
 // the component to test
-import NavCodeIcon from "./index";
+import { NavCodeIcon } from "./index";
 
 // automatically unmount and cleanup DOM after the test is finished.
 afterEach(cleanup);
@@ -26,12 +26,12 @@ test("opens and closes WorksFilter on click of NavCodeIcon", () => {
     // Assert
 
     // The render method renders a React element into the DOM and returns utility functions for testing the component
-    const url = "/greeting";
     const { getByText, getByTestId, container, asFragment } = render(
         <NavCodeIcon toggleWorksFilter={toggleWorksFilter} />
     );
+    const navCodeIconBtn = getByTestId("nav-code-icon");
 
-    fireEvent.click(getByTestId("nav-code-icon"));
+    fireEvent.click(navCodeIconBtn);
 
     expect(toggleWorksFilter).toHaveBeenCalledTimes(1);
 

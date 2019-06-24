@@ -37,7 +37,7 @@ const Ssection = styled.section`
     width: 100%;
     z-index: 9999;
     position: relative;
-    top: 0;
+    top: 9vh;
     left: 0;
     padding: 2.5rem 0;
     background-color: ${props => props.theme.colorBgSecondary};

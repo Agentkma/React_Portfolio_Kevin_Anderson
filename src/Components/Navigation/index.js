@@ -13,8 +13,7 @@ export class Navigation extends Component {
     };
 
     static propTypes = {
-        click: func,
-        toggleShowWorksFilter: func
+        click: func
     };
 
     navDrawerClosedHandler = () => {

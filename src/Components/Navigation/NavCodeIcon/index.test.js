@@ -7,10 +7,10 @@ import {
     fireEvent,
     cleanup,
     waitForElement
-} from "react-testing-library";
+} from "@testing-library/react";
 
 // add custom jest matchers from jest-dom
-import "jest-dom/extend-expect";
+//import "jest-dom/extend-expect";
 
 // the component to test
 import NavCodeIcon from "./index";

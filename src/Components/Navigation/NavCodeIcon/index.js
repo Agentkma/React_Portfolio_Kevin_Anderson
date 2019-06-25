@@ -10,12 +10,11 @@ import { mediaMin, theme } from "../../../Theme";
 
 const NavCodeIcon = ({ toggleWorksFilter }) => {
     return (
-        <a
-            data-testid="nav-code-icon"
-            href="#works-filter-panel"
-            style={{ color: theme.colorBgSecondary }}
-        >
-            <StyledCodeIcon onClick={() => toggleWorksFilter()} />
+        <a href="#works-filter-panel" style={{ color: theme.colorBgSecondary }}>
+            <StyledCodeIcon
+                onClick={() => toggleWorksFilter()}
+                data-testid="nav-code-icon"
+            />
         </a>
     );
 };
@@ -26,6 +25,7 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
+export { NavCodeIcon };
 export default connect(
     null,
     mapDispatchToProps

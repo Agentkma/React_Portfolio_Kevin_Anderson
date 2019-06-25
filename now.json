@@ -1,8 +1,8 @@
 {
     "version": 2,
-    "alias": ["kevinanderson.codes", "www.kevinanderson.codes"],
+    "alias": ["kevinanderson.codes"],
     "github": {
-        "enabled": false
+        "enabled": true
     },
     "name": "kevin-anderson-portfolio",
     "builds": [

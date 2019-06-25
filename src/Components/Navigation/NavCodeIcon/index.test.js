@@ -2,15 +2,10 @@
 import React from "react";
 
 // import react-testing methods
-import {
-    render,
-    fireEvent,
-    cleanup,
-    waitForElement
-} from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 
 // add custom jest matchers from jest-dom
-//import "jest-dom/extend-expect";
+import "jest-dom/extend-expect";
 
 // the component to test
 import { NavCodeIcon } from "./index";
@@ -22,23 +17,15 @@ const toggleWorksFilter = jest.fn();
 
 test("opens and closes WorksFilter on click of NavCodeIcon", () => {
     // Arrange
-    // Act
-    // Assert
 
     // The render method renders a React element into the DOM and returns utility functions for testing the component
-    const { getByText, getByTestId, container, asFragment } = render(
+    const { getByTestId } = render(
         <NavCodeIcon toggleWorksFilter={toggleWorksFilter} />
     );
     const navCodeIconBtn = getByTestId("nav-code-icon");
-
+    // Act
     fireEvent.click(navCodeIconBtn);
 
+    // Assert
     expect(toggleWorksFilter).toHaveBeenCalledTimes(1);
-
-    // snapshots work great with regular DOM nodes!
-    //expect(container.firstChild).toMatchSnapshot();
-
-    // you can also use get a `DocumentFragment`,
-    // which is useful if you want to compare nodes across render
-    // expect(asFragment()).toMatchSnapshot();
 });

@@ -1,5 +1,5 @@
 // ! External
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 import { connect } from "react-redux";
 
 // ! Internal
@@ -13,58 +13,44 @@ import { SscrollContainer } from "../../shared/StyledComponents";
 
 const { projects } = content.home.main;
 
-class Home extends Component {
-    state = {
-        filter: "all"
-    };
+const renderProjects = filterSelection => {
+    return projects
+        .filter(p => {
+            return p.worksFilter.includes(filterSelection);
+        })
+        .map(project => {
+            const { description, img, name } = project;
 
-    handleFilter = event => {
-        this.setState({ filter: event.target.textContent });
-    };
-
-    renderProjects = () => {
-        return projects
-            .filter(p => {
-                return p.worksFilter.includes(this.state.filter);
-            })
-            .map(project => {
-                const { description, img, name } = project;
-
-                return (
-                    <ProjectItem
-                        key={name}
-                        description={description}
-                        name={name}
-                        img={img}
-                    />
-                );
-            });
-    };
-
-    render() {
-        return (
-            <FadeInPageContainer>
-                {" "}
-                <SscrollContainer>
-                    <IntroAbout />
-
-                    {this.props.worksFilterShown ? (
-                        <WorksFilterPanel click={this.handleFilter} />
-                    ) : null}
-                    <ProjectsContainer>
-                        {this.renderProjects()}
-                    </ProjectsContainer>
-                </SscrollContainer>
-            </FadeInPageContainer>
-        );
-    }
-}
-
-const mapStateToProps = state => {
-    const { worksFilterShown } = state.homeReducer;
-    return {
-        worksFilterShown: worksFilterShown
-    };
+            return (
+                <ProjectItem
+                    key={name}
+                    description={description}
+                    name={name}
+                    img={img}
+                />
+            );
+        });
 };
 
-export default connect(mapStateToProps)(Home);
+export default function Home() {
+    // Declare a new state variable, which we'll call "count"
+
+    const [filterSelection, setFilterSelection] = useState("all");
+    return (
+        <FadeInPageContainer>
+            {" "}
+            <SscrollContainer>
+                <IntroAbout />
+
+                {worksFilterVisibility ? (
+                    <WorksFilterPanel
+                        click={e => setFilterSelection(e.target.textContent)}
+                    />
+                ) : null}
+                <ProjectsContainer>
+                    {this.renderProjects(filterSelection)}
+                </ProjectsContainer>
+            </SscrollContainer>
+        </FadeInPageContainer>
+    );
+}

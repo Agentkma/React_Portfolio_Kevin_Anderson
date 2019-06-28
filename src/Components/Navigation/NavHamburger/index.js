@@ -19,7 +19,7 @@ const NavHamburger = function({ click, location }) {
     return (
         <Container>
             {codeIcon}
-            <HamburgerDiv onClick={click}>
+            <HamburgerDiv onClick={click} data-testid="nav-hamburger">
                 <HamburgerBar />
                 <HamburgerBar />
                 <HamburgerBar />

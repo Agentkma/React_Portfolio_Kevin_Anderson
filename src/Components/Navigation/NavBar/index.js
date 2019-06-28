@@ -19,7 +19,7 @@ export const NavBar = ({ click }) => {
                 </StyledLogoRotate>
             </Link>
 
-            <NavHamburger click={click} />
+            <NavHamburger click={click} data-testid="nav-hamburger" />
         </MenuCollapser>
     );
 };

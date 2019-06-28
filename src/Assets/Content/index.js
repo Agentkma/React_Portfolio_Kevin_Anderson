@@ -1131,7 +1131,7 @@ export const content = {
                 }
             },
             {
-                link: "images/Resume_Kevin_Anderson_Web.pdf",
+                link: "public/Resume_Kevin_Anderson_Web.pdf",
                 img: {
                     alt: "weblink to Kevin Anderson resume pdf file",
                     title: "resume Icon",

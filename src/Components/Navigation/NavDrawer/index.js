@@ -11,7 +11,7 @@ import { ScloseIcon } from "../../../shared/StyledComponents";
 
 export const NavDrawer = ({ click }) => {
     return (
-        <SlideDownNavDiv>
+        <SlideDownNavDiv data-testid="nav-dawer">
             <Nav role="navigation">
                 <ScloseIconMod onClick={click} />
                 <NavItems click={click} />

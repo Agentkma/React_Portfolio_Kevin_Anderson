@@ -2,12 +2,7 @@
 import React from "react";
 
 // import react-testing methods
-import {
-    render,
-    fireEvent,
-    cleanup,
-    waitForElement
-} from "@testing-library/react//";
+import { render, fireEvent, cleanup } from "@testing-library/react//";
 
 // add custom jest matchers from jest-dom
 //import "jest-dom/extend-expect";

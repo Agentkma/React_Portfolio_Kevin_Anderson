@@ -12,18 +12,42 @@ export const Footer = () => {
     const socialLitems = content.footer.social.map(li => {
         const source = require(`../../${li.img.src}`);
 
-        return (
-            <StyledLi key={li.img.src}>
-                <a target="_blank " rel="noopener noreferrer" href={li.link}>
-                    <StyledImg
-                        data-no-retina
-                        alt={li.img.alt}
-                        title={li.img.title}
-                        src={source}
-                    />
-                </a>
-            </StyledLi>
-        );
+        if (li.title === "resume Icon") {
+            return (
+                <StyledLi key={li.img.src}>
+                    <a
+                        download
+                        target="_blank "
+                        rel="noopener noreferrer"
+                        href={li.link}
+                    >
+                        <StyledImg
+                            data-no-retina
+                            alt={li.img.alt}
+                            title={li.img.title}
+                            src={source}
+                        />
+                    </a>
+                </StyledLi>
+            );
+        } else {
+            return (
+                <StyledLi key={li.img.src}>
+                    <a
+                        target="_blank "
+                        rel="noopener noreferrer"
+                        href={li.link}
+                    >
+                        <StyledImg
+                            data-no-retina
+                            alt={li.img.alt}
+                            title={li.img.title}
+                            src={source}
+                        />
+                    </a>
+                </StyledLi>
+            );
+        }
     });
 
     return (

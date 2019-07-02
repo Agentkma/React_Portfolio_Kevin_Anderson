@@ -9,7 +9,10 @@ export const content = {
                 "I'm a solution builder.",
                 "I'm a lifelong learner.",
                 "I'm a rational optimist.",
-                "I'm a humanist."
+                "I'm a humanist.",
+                "This site was built with....",
+                "React 16.x, Styled-Components,",
+                "Material UI, and Testing-Library/React"
             ]
         },
         main: {
@@ -19,7 +22,7 @@ export const content = {
                 "front-end",
                 "full-stack",
                 "SPA",
-                "pure-css",
+                // "pure-css",
                 "mobile"
             ],
             projects: [

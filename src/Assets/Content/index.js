@@ -19,7 +19,7 @@ export const content = {
                 "front-end",
                 "full-stack",
                 "SPA",
-                "pure-css",
+                // "pure-css",
                 "mobile"
             ],
             projects: [

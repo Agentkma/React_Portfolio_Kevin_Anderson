@@ -2,34 +2,32 @@
 import CodeIcon from "@material-ui/icons/Code";
 import React from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
 
 // ! Internal
-import { toggleShowWorksFilter } from "../../../Ducks/home";
+
+import { WorksFilterContext } from "../../../Hoc/Layout/context";
+
 import { mediaMin, theme } from "../../../Theme";
 
-const NavCodeIcon = ({ toggleWorksFilter }) => {
+const NavCodeIcon = () => {
     return (
-        <a href="#works-filter-panel" style={{ color: theme.colorBgSecondary }}>
-            <StyledCodeIcon
-                onClick={() => toggleWorksFilter()}
-                data-testid="nav-code-icon"
-            />
-        </a>
+        <WorksFilterContext.Consumer>
+            {({ toggleWorksFilter }) => (
+                <a
+                    href="#works-filter-panel"
+                    style={{ color: theme.colorBgSecondary }}
+                >
+                    <StyledCodeIcon
+                        onClick={toggleWorksFilter}
+                        data-testid="nav-code-icon"
+                    />
+                </a>
+            )}
+        </WorksFilterContext.Consumer>
     );
 };
-
-const mapDispatchToProps = dispatch => {
-    return {
-        toggleWorksFilter: () => dispatch(toggleShowWorksFilter())
-    };
-};
-
 export { NavCodeIcon };
-export default connect(
-    null,
-    mapDispatchToProps
-)(NavCodeIcon);
+export default NavCodeIcon;
 
 const StyledCodeIcon = styled(CodeIcon)`
     cursor: pointer;

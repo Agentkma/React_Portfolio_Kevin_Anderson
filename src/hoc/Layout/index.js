@@ -1,5 +1,5 @@
 // ! External
-import React, { Component, Fragment, useContext, useState } from "react";
+import React, { Component, Fragment } from "react";
 
 // ! Internal
 import styled from "styled-components";

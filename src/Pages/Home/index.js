@@ -1,6 +1,5 @@
 // ! External
-import React, { useState, Component } from "react";
-import { connect } from "react-redux";
+import React, { useState } from "react";
 
 // ! Internal
 import IntroAbout from "./IntroAbout";
@@ -10,7 +9,7 @@ import { content } from "../../Assets/Content";
 import ProjectsContainer from "../../Hoc/ProjectsContainer";
 import { FadeInPageContainer } from "../../Theme/animations";
 import { SscrollContainer } from "../../shared/StyledComponents";
-
+import { WorksFilterContext } from "../../Hoc/Layout/context";
 const { projects } = content.home.main;
 
 const renderProjects = filterSelection => {
@@ -37,20 +36,26 @@ export default function Home() {
 
     const [filterSelection, setFilterSelection] = useState("all");
     return (
-        <FadeInPageContainer>
-            {" "}
-            <SscrollContainer>
-                <IntroAbout />
+        <WorksFilterContext.Consumer>
+            {({ showWorksFilter }) => (
+                <FadeInPageContainer>
+                    {" "}
+                    <SscrollContainer>
+                        <IntroAbout />
 
-                {worksFilterVisibility ? (
-                    <WorksFilterPanel
-                        click={e => setFilterSelection(e.target.textContent)}
-                    />
-                ) : null}
-                <ProjectsContainer>
-                    {this.renderProjects(filterSelection)}
-                </ProjectsContainer>
-            </SscrollContainer>
-        </FadeInPageContainer>
+                        {showWorksFilter ? (
+                            <WorksFilterPanel
+                                click={e =>
+                                    setFilterSelection(e.target.textContent)
+                                }
+                            />
+                        ) : null}
+                        <ProjectsContainer>
+                            {renderProjects(filterSelection)}
+                        </ProjectsContainer>
+                    </SscrollContainer>
+                </FadeInPageContainer>
+            )}
+        </WorksFilterContext.Consumer>
     );
 }

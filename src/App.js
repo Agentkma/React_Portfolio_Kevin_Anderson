@@ -8,6 +8,7 @@ import styled, { ThemeProvider } from "styled-components";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
+import Error from "./Pages/Error";
 import Layout from "./Hoc/Layout/index";
 import { theme } from "./Theme";
 import Project1 from "./Pages/Project/Project1";
@@ -50,7 +51,8 @@ class App extends Component {
                             <Route path="/project8" component={Project8} />
                             <Route path="/contact" component={Contact} />
                             <Route path="/about" component={About} />
-                            <Redirect to="/" />
+                            <Route path="/Error" component={Error} />
+                            {/* <Redirect to="/" /> */}
                         </Switch>
                     </Layout>
                 </ThemeProvider>

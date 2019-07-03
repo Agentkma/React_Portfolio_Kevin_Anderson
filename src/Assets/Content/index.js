@@ -1112,8 +1112,11 @@ export const content = {
         }
     },
     error: {
-        header: {},
-        main: {}
+        header: "404",
+        main: {
+            message: "The page you are looking for is not found",
+            button: "Go Home"
+        }
     },
     footer: {
         social: [

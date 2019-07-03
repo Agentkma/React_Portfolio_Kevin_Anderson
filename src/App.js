@@ -51,7 +51,7 @@ class App extends Component {
                             <Route path="/project8" component={Project8} />
                             <Route path="/contact" component={Contact} />
                             <Route path="/about" component={About} />
-                            <Route path="/Error" component={Error} />
+                            <Route path="/error" component={Error} />
                             {/* <Redirect to="/" /> */}
                         </Switch>
                     </Layout>

@@ -3,6 +3,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+import { Formik, Form, Field, ErrorMessage } from "formik";
+
 // ! Internal
 
 import Input from "./Input";
@@ -109,7 +111,7 @@ export default Form;
 
 // ! Styles
 
-const Ssection = styled.section`
+export const Ssection = styled.section`
     background-color: ${props => props.theme.colorBgSecondary};
     box-sizing: border-box;
     height: auto;
@@ -121,16 +123,16 @@ const Ssection = styled.section`
     justify-content: center;
 `;
 
-const Sform = styled.form`
+export const Sform = styled(Form)`
     width: 100%;
     ${mediaMin.tablet` width: 80%;`};
 `;
 
-const Sfieldset = styled.fieldset`
+export const Sfieldset = styled.fieldset`
     border: none !important;
 `;
 
-const Slegend = styled.legend`
+export const Slegend = styled.legend`
     padding-bottom: 2rem;
     font-size: ${props => props.theme.fontSizeSecondary};
     line-height: 19px;
@@ -141,7 +143,7 @@ const Slegend = styled.legend`
     line-height: 43px;`};
 `;
 
-const Sbutton = styled.button`
+export const Sbutton = styled.button`
     background-color: ${props => props.theme.colorAccentPrimary};
     color: ${props => props.theme.colorFontSecondary};
     border: none;
@@ -167,4 +169,51 @@ const Sbutton = styled.button`
     &:hover {
         opacity: 0.4;
     }
+`;
+
+const Sfield = styled(Field)`
+    border-color: #ccc !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    color: #ccc !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    font-weight: 300 !important;
+    margin-bottom: 30px !important;
+    padding: 10px 0 !important;
+    width: 100%;
+    transition: all 0.8s linear;
+`;
+
+const Stextarea = styled.textarea`
+    border: none !important;
+    border-bottom: 1px solid !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    font: none !important;
+    font-family: ${props => props.theme.fontFamilySecondary} !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    font-weight: 300 !important;
+    margin-bottom: 0px !important;
+    padding: 10px 0 !important;
+    resize: none;
+    width: 100%;
+    transition: all 0.8s linear;
+    &::placeholder {
+        font: none !important;
+        font-family: ${props => props.theme.fontFamilySecondary} !important;
+        font-size: 14px !important;
+        font-weight: 300 !important;
+    }
+`;
+
+const Sdiv = styled.div`
+    display: block;
+`;
+const Slabel = styled.label`
+    visibility: collapse;
 `;

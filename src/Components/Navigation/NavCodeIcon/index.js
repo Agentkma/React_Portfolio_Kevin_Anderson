@@ -1,6 +1,6 @@
 // ! External
 import CodeIcon from "@material-ui/icons/Code";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
 // ! Internal
@@ -10,20 +10,14 @@ import { WorksFilterContext } from "../../../Hoc/Layout/context";
 import { mediaMin, theme } from "../../../Theme";
 
 const NavCodeIcon = () => {
+    const { toggleWorksFilter } = useContext(WorksFilterContext);
     return (
-        <WorksFilterContext.Consumer>
-            {({ toggleWorksFilter }) => (
-                <a
-                    href="#works-filter-panel"
-                    style={{ color: theme.colorBgSecondary }}
-                >
-                    <StyledCodeIcon
-                        onClick={toggleWorksFilter}
-                        data-testid="nav-code-icon"
-                    />
-                </a>
-            )}
-        </WorksFilterContext.Consumer>
+        <a href="#works-filter-panel" style={{ color: theme.colorBgSecondary }}>
+            <StyledCodeIcon
+                onClick={toggleWorksFilter}
+                data-testid="nav-code-icon"
+            />
+        </a>
     );
 };
 export { NavCodeIcon };

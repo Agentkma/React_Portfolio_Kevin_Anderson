@@ -2,7 +2,7 @@
     "version": 2,
     "alias": ["kevinanderson.codes"],
     "github": {
-        "enabled": true
+        "enabled": false
     },
     "name": "kevin-anderson-portfolio",
     "builds": [

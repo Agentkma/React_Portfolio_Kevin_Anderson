@@ -1,5 +1,5 @@
 // ! External
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 // ! Internal
 import IntroAbout from "./IntroAbout";
@@ -33,29 +33,23 @@ const renderProjects = filterSelection => {
 
 export default function Home() {
     // Declare a new state variable, which we'll call "count"
-
+    const { showWorksFilter } = useContext(WorksFilterContext);
     const [filterSelection, setFilterSelection] = useState("all");
     return (
-        <WorksFilterContext.Consumer>
-            {({ showWorksFilter }) => (
-                <FadeInPageContainer>
-                    {" "}
-                    <SscrollContainer>
-                        <IntroAbout />
+        <FadeInPageContainer>
+            {" "}
+            <SscrollContainer>
+                <IntroAbout />
 
-                        {showWorksFilter ? (
-                            <WorksFilterPanel
-                                click={e =>
-                                    setFilterSelection(e.target.textContent)
-                                }
-                            />
-                        ) : null}
-                        <ProjectsContainer>
-                            {renderProjects(filterSelection)}
-                        </ProjectsContainer>
-                    </SscrollContainer>
-                </FadeInPageContainer>
-            )}
-        </WorksFilterContext.Consumer>
+                {showWorksFilter ? (
+                    <WorksFilterPanel
+                        click={e => setFilterSelection(e.target.textContent)}
+                    />
+                ) : null}
+                <ProjectsContainer>
+                    {renderProjects(filterSelection)}
+                </ProjectsContainer>
+            </SscrollContainer>
+        </FadeInPageContainer>
     );
 }

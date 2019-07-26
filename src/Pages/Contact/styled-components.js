@@ -163,15 +163,15 @@ export const Sbutton = styled.button`
     white-space: nowrap;
     vertical-align: middle;
     touch-action: manipulation;
-    cursor: pointer;
+    cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
     user-select: none;
     box-sizing: border-box;
     &:hover {
-        opacity: 0.4;
+        opacity: ${props => props.disabled ? 1 : 0.4}
     }
 `;
 
-export const Sinput = styled.input`
+export const Sfield = styled(Field)`
     border-color: #ccc !important;
     background: transparent !important;
     border: none !important;

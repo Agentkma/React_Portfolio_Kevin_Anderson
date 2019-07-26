@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { isEmpty } from 'lodash'
 
 import {
     Ssection,
@@ -8,7 +9,7 @@ import {
     Sfieldset,
     Slegend,
     Sbutton,
-    Sinput,
+    Sfield,
     Stextarea,
     Slabel,
     Sdiv,
@@ -47,27 +48,29 @@ export const Form = () => (
                 <Sform>
                     <Sfieldset>
                         <Slegend>Reach Out...</Slegend>
-                        <Field
+                        <Sfield
                             name="name"
                             type="name"
-                            component={Sinput}
-                        />
-                        <ErrorMessage component={SerrorMessage} name="name" />
-                        <Field
+                            placeholder='Your Name'
+                        ></Sfield>
+                        <ErrorMessage name="name" component={SerrorMessage} />
+                        <Sfield
                             name="email"
                             type="email"
-                            component={Sinput}
-                        />
+                            placeholder='your@email.com'
+
+                        ></Sfield>
                         <ErrorMessage component={SerrorMessage} name="email" />
 
-                        <Field
+                        <Sfield
                             name="message"
                             type="message"
-                            component={Stextarea}
+                            component='textarea'
+                            placeholder='Your Message'
                         />
                         <ErrorMessage component={SerrorMessage} name="message" />
 
-                        <Sbutton id="submit" name="submit" type="submit">
+                        <Sbutton id="submit" name="submit" type="submit" disabled={errors.name || errors.email || errors.message}>
                             Send Message
                         </Sbutton>
                     </Sfieldset>
@@ -78,3 +81,14 @@ export const Form = () => (
 );
 
 export default Form;
+
+
+const CustomErrorMessage = ({
+    field, // { name, value, onChange, onBlur }
+    form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+    ...props
+}) => {
+    return (
+        touched.email && errors.email ? <SerrorMessage>{errors.email}</SerrorMessage> : null
+    );
+}

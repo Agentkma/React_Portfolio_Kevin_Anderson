@@ -1,113 +1,11 @@
 // ! External
 
-import React, { Component } from "react";
 import styled from "styled-components";
-
-import { Form, Field, ErrorMessage } from "formik";
+import { Form, Field } from "formik";
 
 // ! Internal
 
-import Input from "./Input";
 import { mediaMin } from "../../Theme";
-
-// class Form extends Component {
-//     state = {
-//         formData: {
-//             name: {
-//                 elementType: "input",
-//                 elementConfig: {
-//                     type: "text",
-//                     placeholder: "Your Name",
-//                     name: "name",
-//                     id: "name"
-//                 },
-//                 value: ""
-//             },
-//             email: {
-//                 elementType: "input",
-//                 elementConfig: {
-//                     type: "email",
-//                     placeholder: "Your Email",
-//                     name: "email",
-//                     id: "email"
-//                 },
-//                 value: ""
-//             },
-//             message: {
-//                 elementType: "textarea",
-//                 elementConfig: {
-//                     type: "",
-//                     placeholder: "Your Message",
-//                     name: "message",
-//                     id: "message"
-//                 },
-//                 value: ""
-//             }
-//         }
-//     };
-
-//     handleInputChange = (event, id) => {
-//         const updatedForm = { ...this.state.formData };
-//         const updatedElement = { ...updatedForm[id] };
-//         updatedElement.value = event.target.value;
-//         updatedForm[id] = updatedElement;
-//         this.setState({ formData: updatedForm });
-//     };
-
-//     renderInputs = () => {
-//         let formElements = [];
-//         for (let key in this.state.formData) {
-//             formElements.push({
-//                 id: key,
-//                 config: this.state.formData[key]
-//             });
-//         }
-
-//         return formElements.map((input, i) => (
-//             <Input
-//                 key={i}
-//                 elementType={input.config.elementType}
-//                 elementConfig={input.config.elementConfig}
-//                 change={event => this.handleInputChange(event, input.id)}
-//             />
-//         ));
-//     };
-
-//     render() {
-//         return (
-//             <Ssection>
-//                 {/* <div class="alert alert-error error color-bg" id="fname">
-//                     <p class="black">Name must not be empty</p>
-//                 </div>
-//                 <div class="alert alert-error  error color-bg" id="fmail">
-//                     <p class="black">Please provide a valid email</p>
-//                 </div>
-//                 <div class="alert alert-error  error color-bg" id="fmsg">
-//                     <p class="black">Message should not be empty</p>
-//                 </div> */}
-
-//                 <Sform
-//                     name="myform"
-//                     id="contactForm"
-//                     action="https://formspree.io/kevin@kevinanderson.codes"
-//                     enctype="multipart/form-data"
-//                     method="post"
-//                 >
-//                     <Sfieldset>
-//                         <Slegend>Reach Out...</Slegend>
-//                         {this.renderInputs()}
-
-//                         <Sbutton id="submit" name="submit" type="submit">
-//                             Send Message
-//                         </Sbutton>
-//                     </Sfieldset>
-//                 </Sform>
-//             </Ssection>
-//         );
-//     }
-// }
-
-// export default Form;
 
 // ! Styles
 
@@ -212,6 +110,7 @@ export const Stextarea = styled.textarea`
 `;
 export const SerrorMessage = styled.p` 
     padding-bottom: 1rem; 
+    margin-top: 0;
     font-size: ${props => props.theme.fontSizeSmall};
     font-family: ${props => props.theme.fontFamilySecondary};
     color: ${props => props.theme.colorFontSecondary};`;

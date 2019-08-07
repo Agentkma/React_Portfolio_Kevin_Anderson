@@ -1,7 +1,6 @@
 import React from "react";
-import { Formik, Field, ErrorMessage } from "formik";
+import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { isEmpty } from 'lodash'
 
 import {
     Ssection,
@@ -10,11 +9,9 @@ import {
     Slegend,
     Sbutton,
     Sfield,
-    Stextarea,
-    Slabel,
-    Sdiv,
     SerrorMessage
 } from "./styled-components";
+const formSpreeUrl = 'https://formspree.io/kevin@kevinanderson.codes'
 
 const ContactSchema = Yup.object().shape({
     name: Yup.string()
@@ -40,9 +37,28 @@ export const Form = () => (
             }}
             validationSchema={ContactSchema}
             onSubmit={values => {
+
                 // same shape as initial values
+                // TODO: add a form submitted state
                 console.log(values);
+                fetch(formSpreeUrl, {
+                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                    mode: 'cors', // no-cors, cors, *same-origin
+                    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: 'same-origin', // include, *same-origin, omit
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    redirect: 'follow', // manual, *follow, error
+                    referrer: 'no-referrer', // no-referrer, *client
+                    body: JSON.stringify(values), // * body data type must match "Content-Type" header
+                })
             }}
+
+            enctype="multipart/form-data"
+            method="post"
+            name='contact'
         >
             {({ errors, touched }) => (
                 <Sform>
@@ -83,12 +99,3 @@ export const Form = () => (
 export default Form;
 
 
-const CustomErrorMessage = ({
-    field, // { name, value, onChange, onBlur }
-    form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-    ...props
-}) => {
-    return (
-        touched.email && errors.email ? <SerrorMessage>{errors.email}</SerrorMessage> : null
-    );
-}

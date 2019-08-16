@@ -2,7 +2,7 @@
 # Kevinanderson.codes
 
 ## Description
-Kevin Anderson's Portfolio site [link to the live site](#https://kevinanderson.codes).
+Kevin Anderson's Portfolio site. [Live Site ](https://kevinanderson.codes).
 
 ### Features
 - [x] **completed feature**: What this feature does

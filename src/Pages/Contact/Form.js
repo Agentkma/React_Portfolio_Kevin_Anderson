@@ -47,7 +47,7 @@ const ContactSchema = Yup.object().shape({
 const handleSubmit = async (values, actions) => {
 
     const { email, message, name } = values;
-    const { setStatus, setSubmitting, setErrors } = actions;
+    const { setStatus, setSubmitting, setErrors, resetForm } = actions;
 
     template_params["from_name"] = name;
     template_params["message_html"] = message;
@@ -55,7 +55,8 @@ const handleSubmit = async (values, actions) => {
 
     try {
         await emailjs.send(service_id, template_id, template_params, emailJsUserID);
-        setSubmitting(false);
+
+        resetForm();
 
     }
     catch (error) {

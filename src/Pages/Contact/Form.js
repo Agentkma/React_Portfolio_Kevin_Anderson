@@ -1,6 +1,9 @@
+
+import * as emailjs from 'emailjs-com';
 import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
+
 
 import {
     Ssection,
@@ -11,7 +14,21 @@ import {
     Sfield,
     SerrorMessage
 } from "./styled-components";
-const formSpreeUrl = 'https://formspree.io/kevin@kevinanderson.codes'
+
+import { emailJsUserID } from '../../config';
+
+let template_params = {
+    "reply_to": "reply_to_value",
+    "from_name": "from_name_value",
+    "to_name": "Kevin Anderson",
+    "message_html": "message_html_value"
+}
+
+const service_id = "gmail";
+const template_id = "template_iAQcKsQI";
+
+
+
 
 const ContactSchema = Yup.object().shape({
     name: Yup.string()
@@ -27,6 +44,32 @@ const ContactSchema = Yup.object().shape({
         .required("Required")
 });
 
+const handleSubmit = async (values, actions) => {
+
+    const { email, message, name } = values;
+    const { setStatus, setSubmitting, setErrors } = actions;
+
+    template_params["from_name"] = name;
+    template_params["message_html"] = message;
+    template_params["reply_to"] = email;
+
+    try {
+        await emailjs.send(service_id, template_id, template_params, emailJsUserID);
+        setSubmitting(false);
+
+    }
+    catch (error) {
+        setSubmitting(false);
+        setErrors(JSON.stringify(error));
+        setStatus({
+            msg: 'Error Sending Message'
+        });
+
+    }
+
+
+}
+
 export const Form = () => (
     <Ssection>
         <Formik
@@ -36,31 +79,11 @@ export const Form = () => (
                 message: ""
             }}
             validationSchema={ContactSchema}
-            onSubmit={values => {
+            onSubmit={(values, actions) => handleSubmit(values, actions)}
 
-                // same shape as initial values
-                // TODO: add a form submitted state
-                console.log(values);
-                fetch(formSpreeUrl, {
-                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                    mode: 'cors', // no-cors, cors, *same-origin
-                    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-                    credentials: 'same-origin', // include, *same-origin, omit
-                    headers: {
-                        'Content-Type': 'application/json',
-                        // 'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    redirect: 'follow', // manual, *follow, error
-                    referrer: 'no-referrer', // no-referrer, *client
-                    body: JSON.stringify(values), // * body data type must match "Content-Type" header
-                })
-            }}
 
-            enctype="multipart/form-data"
-            method="post"
-            name='contact'
         >
-            {({ errors, touched }) => (
+            {({ errors, touched, }) => (
                 <Sform>
                     <Sfieldset>
                         <Slegend>Reach Out...</Slegend>

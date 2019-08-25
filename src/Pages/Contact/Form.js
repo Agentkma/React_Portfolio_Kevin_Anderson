@@ -1,6 +1,6 @@
 
 import * as emailjs from 'emailjs-com';
-import React from "react";
+import React, { useState } from "react";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
@@ -27,7 +27,11 @@ let template_params = {
 const service_id = "gmail";
 const template_id = "template_iAQcKsQI";
 
-
+const legendMessage = {
+    default: 'Reach Out...',
+    messageSent: 'Message Sent!',
+    messageSentError: 'Error Sending Message'
+}
 
 
 const ContactSchema = Yup.object().shape({
@@ -44,7 +48,9 @@ const ContactSchema = Yup.object().shape({
         .required("Required")
 });
 
-const handleSubmit = async (values, actions) => {
+
+
+const handleSubmit = async (values, actions, setLegend) => {
 
     const { email, message, name } = values;
     const { setStatus, setSubmitting, setErrors, resetForm } = actions;
@@ -57,68 +63,85 @@ const handleSubmit = async (values, actions) => {
         await emailjs.send(service_id, template_id, template_params, emailJsUserID);
 
         resetForm();
+        setLegend(legendMessage.messageSent)
 
     }
     catch (error) {
         setSubmitting(false);
         setErrors(JSON.stringify(error));
         setStatus({
-            msg: 'Error Sending Message'
+            msg: legendMessage.messageSentError
         });
+        setLegend(legendMessage.messageSentError)
 
     }
 
 
 }
 
-export const Form = () => (
-    <Ssection>
-        <Formik
-            initialValues={{
-                name: "",
-                email: "",
-                message: ""
-            }}
-            validationSchema={ContactSchema}
-            onSubmit={(values, actions) => handleSubmit(values, actions)}
+
+export const Form = () => {
+
+    const [legend, setLegend] = useState(legendMessage.default);
 
 
-        >
-            {({ errors, touched, }) => (
-                <Sform>
-                    <Sfieldset>
-                        <Slegend>Reach Out...</Slegend>
-                        <Sfield
-                            name="name"
-                            type="name"
-                            placeholder='Your Name'
-                        ></Sfield>
-                        <ErrorMessage name="name" component={SerrorMessage} />
-                        <Sfield
-                            name="email"
-                            type="email"
-                            placeholder='your@email.com'
+    const handleBlur = () => {
+        setLegend(legendMessage.default)
+    }
 
-                        ></Sfield>
-                        <ErrorMessage component={SerrorMessage} name="email" />
+    return (
+        <Ssection>
+            <Formik
+                initialValues={{
+                    name: "",
+                    email: "",
+                    message: ""
+                }}
+                validationSchema={ContactSchema}
+                onSubmit={(values, actions) => handleSubmit(values, actions, setLegend)}
 
-                        <Sfield
-                            name="message"
-                            type="message"
-                            component='textarea'
-                            placeholder='Your Message'
-                        />
-                        <ErrorMessage component={SerrorMessage} name="message" />
 
-                        <Sbutton id="submit" name="submit" type="submit" disabled={errors.name || errors.email || errors.message}>
-                            Send Message
+            >
+
+                {({ errors, touched, }) => (
+                    <Sform>
+                        <Sfieldset>
+                            <Slegend>{legend}</Slegend>
+                            <Sfield
+                                name="name"
+                                type="name"
+                                placeholder='Your Name'
+                                onBlur={handleBlur}
+                            ></Sfield>
+                            <ErrorMessage name="name" component={SerrorMessage} />
+                            <Sfield
+                                name="email"
+                                type="email"
+                                placeholder='your@email.com'
+                                onBlur={handleBlur}
+
+                            ></Sfield>
+                            <ErrorMessage component={SerrorMessage} name="email" />
+
+                            <Sfield
+                                name="message"
+                                type="message"
+                                component='textarea'
+                                placeholder='Your Message'
+                                onBlur={handleBlur}
+                            />
+                            <ErrorMessage component={SerrorMessage} name="message" />
+
+                            <Sbutton id="submit" name="submit" type="submit" disabled={errors.name || errors.email || errors.message} >
+                                Send Message
                         </Sbutton>
-                    </Sfieldset>
-                </Sform>
-            )}
-        </Formik>
-    </Ssection>
-);
+                        </Sfieldset>
+                    </Sform>
+                )}
+            </Formik>
+        </Ssection>
+    )
+};
 
 export default Form;
 

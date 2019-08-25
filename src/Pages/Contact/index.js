@@ -19,7 +19,7 @@ import { mediaMin } from "../../Theme";
 import { FadeInPageContainer } from "../../Theme/animations";
 import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
 
-const Contact = () => {
+export const Contact = () => {
     const { email, location } = content.contact.header;
     return (
         <FadeInPageContainer>

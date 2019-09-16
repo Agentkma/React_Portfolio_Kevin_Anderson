@@ -27,7 +27,7 @@ let template_params = {
 const service_id = "gmail";
 const template_id = "template_iAQcKsQI";
 
-const legendMessage = {
+export const legendMessage = {
     default: 'Reach Out...',
     messageSent: 'Message Sent!',
     messageSentError: 'Error Sending Message'
@@ -36,7 +36,7 @@ const legendMessage = {
 
 const ContactSchema = Yup.object().shape({
     name: Yup.string()
-        .min(2, "Too Short!")
+        .min(3, "Too Short!")
         .max(70, "Too Long!")
         .required("Required"),
     email: Yup.string()
@@ -103,8 +103,8 @@ export const Form = () => {
 
             >
 
-                {({ errors, touched, }) => (
-                    <Sform>
+                {({ errors }) => (
+                    <Sform aria-label='contact form'>
                         <Sfieldset>
                             <Slegend>{legend}</Slegend>
                             <Sfield
@@ -113,7 +113,9 @@ export const Form = () => {
                                 placeholder='Your Name'
                                 onBlur={handleBlur}
                             ></Sfield>
-                            <ErrorMessage name="name" component={SerrorMessage} />
+                            {/* <ErrorMessage data-testid='name-field-error' name="name" component={SerrorMessage} /> */}
+                            <ErrorMessage data-testid='name-field-error' name="name" >{msg => <div>{msg}</div>}</ErrorMessage>
+
                             <Sfield
                                 name="email"
                                 type="email"

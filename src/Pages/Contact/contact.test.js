@@ -15,6 +15,8 @@ import { Contact } from "./index";
 // automatically unmount and cleanup DOM after the test is finished.
 afterEach(cleanup);
 
+
+
 test("should have correct Legend text upon first view", () => {
     // Arrange
 
@@ -35,11 +37,12 @@ test('should give error message if name input too short', () => {
         <Contact />
     );
     const nameField = getByPlaceholderText('Your Name');
-
+    const sumbitBtn = getByText('Send Message')
 
 
     // Act
     fireEvent.change(nameField, { target: { value: 'jl' } });
+    fireEvent.click(sumbitBtn);
 
     const nameError = getByText('Too Short!')
 

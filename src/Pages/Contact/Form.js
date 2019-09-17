@@ -113,9 +113,7 @@ export const Form = () => {
                                 placeholder='Your Name'
                                 onBlur={handleBlur}
                             ></Sfield>
-                            {/* <ErrorMessage data-testid='name-field-error' name="name" component={SerrorMessage} /> */}
-                            <ErrorMessage data-testid='name-field-error' name="name" >{msg => <div>{msg}</div>}</ErrorMessage>
-
+                            <ErrorMessage data-testid='name-field-error' name="name" component={SerrorMessage} />
                             <Sfield
                                 name="email"
                                 type="email"
@@ -134,7 +132,7 @@ export const Form = () => {
                             />
                             <ErrorMessage component={SerrorMessage} name="message" />
 
-                            <Sbutton id="submit" name="submit" type="submit" disabled={errors.name || errors.email || errors.message} >
+                            <Sbutton id="submit" name="submit" type="submit" >
                                 Send Message
                         </Sbutton>
                         </Sfieldset>

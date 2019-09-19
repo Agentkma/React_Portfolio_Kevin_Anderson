@@ -2,7 +2,7 @@
 import React from "react";
 
 // import react-testing methods
-import { render, fireEvent, cleanup, getByPlaceholderText, getByTestId } from "@testing-library/react";
+import { render, fireEvent, cleanup, waitForElement, getByPlaceholderText, getByTestId } from "@testing-library/react";
 
 // add custom jest matchers from jest-dom
 // test test
@@ -29,7 +29,7 @@ test("should have correct Legend text upon first view", () => {
     // Assert
     expect(legendText).toBeInTheDocument();
 });
-test('should give error message if name input too short', () => {
+test('should give error message if name input too short', async () => {
 
     // The render method renders a React element into the DOM and returns utility functions for testing the component
 
@@ -37,14 +37,19 @@ test('should give error message if name input too short', () => {
         <Contact />
     );
     const nameField = getByPlaceholderText('Your Name');
-    const sumbitBtn = getByText('Send Message')
+    const submitBtn = getByText('Send Message')
 
 
     // Act
-    fireEvent.change(nameField, { target: { value: 'jl' } });
-    fireEvent.click(sumbitBtn);
+    //fireEvent.change(nameField, { target: { value: 'jl' } });
+    nameField.value = 'jl'
 
-    const nameError = getByText('Too Short!')
+    fireEvent.click(submitBtn);
+
+    const nameError = await waitForElement(() =>
+        getByText('Too Short!')
+    )
+
 
     // Assert
     expect(nameError).toBeInTheDocument();

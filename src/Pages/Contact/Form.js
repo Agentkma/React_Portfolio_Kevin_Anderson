@@ -38,14 +38,14 @@ const ContactSchema = Yup.object().shape({
     name: Yup.string()
         .min(3, "Too Short!")
         .max(70, "Too Long!")
-        .required("Required"),
+        .required("Name Required"),
     email: Yup.string()
         .email("Invalid email")
-        .required("Required"),
+        .required("Email Required"),
     message: Yup.string()
         .min(10, "Too Short!")
         .max(500, "Too Long!")
-        .required("Required")
+        .required("Message Required")
 });
 
 

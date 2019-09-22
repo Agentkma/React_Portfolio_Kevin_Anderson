@@ -2,7 +2,8 @@
 import React from "react";
 
 // import react-testing methods
-import { render, fireEvent, cleanup, waitForElement, getByPlaceholderText, getByTestId } from "@testing-library/react";
+
+import { render, fireEvent, cleanup, waitForElement } from "@testing-library/react";
 
 // add custom jest matchers from jest-dom
 // test test
@@ -29,11 +30,42 @@ test("should have correct Legend text upon first view", () => {
     // Assert
     expect(legendText).toBeInTheDocument();
 });
+
+test('should have correct error messages if inputs left blank', async () => {
+    const { getByText } = render(
+        <Contact />
+    );
+
+    const submitBtn = getByText('Send Message')
+
+
+    // Assert
+
+    fireEvent.click(submitBtn);
+
+    const nameFieldError = await waitForElement(() =>
+        getByText('Name Required')
+    );
+
+    const emailFieldError = await waitForElement(() =>
+        getByText('Email Required')
+    );
+
+    const textFieldError = await waitForElement(() =>
+        getByText('Message Required')
+    );
+
+    expect(nameFieldError).toBeInTheDocument();
+    expect(emailFieldError).toBeInTheDocument();
+    expect(textFieldError).toBeInTheDocument();
+
+
+});
 test('should give error message if name input too short', async () => {
 
     // The render method renders a React element into the DOM and returns utility functions for testing the component
 
-    const { getByPlaceholderText, getByText } = render(
+    const { getByPlaceholderText, getByText, debug } = render(
         <Contact />
     );
     const nameField = getByPlaceholderText('Your Name');
@@ -41,8 +73,10 @@ test('should give error message if name input too short', async () => {
 
 
     // Act
-    //fireEvent.change(nameField, { target: { value: 'jl' } });
-    nameField.value = 'jl'
+    fireEvent.change(nameField, { target: { value: 'jl' } });
+    debug();
+
+    // Assert
 
     fireEvent.click(submitBtn);
 
@@ -50,29 +84,28 @@ test('should give error message if name input too short', async () => {
         getByText('Too Short!')
     )
 
-
-    // Assert
     expect(nameError).toBeInTheDocument();
+
 });
 
-test('should give error message if name input too long', () => {
+// test('should give error message if name input too long', () => {
 
-    // The render method renders a React element into the DOM and returns utility functions for testing the component
-    const { getByPlaceholderText, getByText } = render(
-        <Contact />
-    );
-    const nameField = getByPlaceholderText('Your Name');
+//     // The render method renders a React element into the DOM and returns utility functions for testing the component
+//     const { getByPlaceholderText, getByText } = render(
+//         <Contact />
+//     );
+//     const nameField = getByPlaceholderText('Your Name');
 
 
 
-    // Act
-    fireEvent.change(nameField, { target: { value: 'This Name is Way too Long To be allowed in the Name Field So you should consider putting in somehting with less than 70 characters. This Name is Way too Long To be allowed in the Name Field So you should consider putting in somehting with less than 70 characters. This Name is Way too Long To be allowed in the Name Field So you should consider putting in somehting with less than 70 characters' } });
+//     // Act
+//     fireEvent.change(nameField, { target: { value: 'This Name is Way too Long To be allowed in the Name Field So you should consider putting in somehting with less than 70 characters. This Name is Way too Long To be allowed in the Name Field So you should consider putting in somehting with less than 70 characters. This Name is Way too Long To be allowed in the Name Field So you should consider putting in somehting with less than 70 characters' } });
 
-    const nameError = getByText("Too Long!")
+//     const nameError = getByText("Too Long!")
 
-    // Assert
-    expect(nameError).toBeInTheDocument();
-});
+//     // Assert
+//     expect(nameError).toBeInTheDocument();
+// });
 
 // test('should have correct Legend message upon successful form submission', () => {
     //const emailFeild = getByPlaceholderText('your@email.com');

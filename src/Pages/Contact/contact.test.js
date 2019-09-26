@@ -74,7 +74,7 @@ test('should give error message if name input too short', async () => {
 
     // Act
     fireEvent.change(nameField, { target: { value: 'jl' } });
-    debug();
+
 
     // Assert
 
@@ -88,26 +88,4 @@ test('should give error message if name input too short', async () => {
 
 });
 
-// test('should give error message if name input too long', () => {
 
-//     // The render method renders a React element into the DOM and returns utility functions for testing the component
-//     const { getByPlaceholderText, getByText } = render(
-//         <Contact />
-//     );
-//     const nameField = getByPlaceholderText('Your Name');
-
-
-
-//     // Act
-//     fireEvent.change(nameField, { target: { value: 'This Name is Way too Long To be allowed in the Name Field So you should consider putting in somehting with less than 70 characters. This Name is Way too Long To be allowed in the Name Field So you should consider putting in somehting with less than 70 characters. This Name is Way too Long To be allowed in the Name Field So you should consider putting in somehting with less than 70 characters' } });
-
-//     const nameError = getByText("Too Long!")
-
-//     // Assert
-//     expect(nameError).toBeInTheDocument();
-// });
-
-// test('should have correct Legend message upon successful form submission', () => {
-    //const emailFeild = getByPlaceholderText('your@email.com');
-    // const messageFeild = getByPlaceholderText('Your Message');
-// });

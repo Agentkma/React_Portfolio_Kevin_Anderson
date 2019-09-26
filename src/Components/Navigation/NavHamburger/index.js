@@ -1,15 +1,13 @@
 // ! External
 import React from "react";
 import { withRouter } from "react-router";
-// import { connect } from "react-redux";
-// import PropTypes from "prop-types";
 import styled from "styled-components";
 
 // ! Internal
 import NavCodeIcon from "../NavCodeIcon";
 import { mediaMin } from "../../../Theme";
 
-const NavHamburger = function({ click, location }) {
+const NavHamburger = function ({ click, location }) {
     const codeIcon =
         location.pathname === "/" ? (
             <div>

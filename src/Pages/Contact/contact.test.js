@@ -65,7 +65,7 @@ test('should give error message if name input too short', async () => {
 
     // The render method renders a React element into the DOM and returns utility functions for testing the component
 
-    const { getByPlaceholderText, getByText, debug } = render(
+    const { getByPlaceholderText, getByText } = render(
         <Contact />
     );
     const nameField = getByPlaceholderText('Your Name');

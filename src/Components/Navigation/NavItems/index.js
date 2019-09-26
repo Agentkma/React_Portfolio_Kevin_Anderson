@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-// import PropTypes from "prop-types";
+import React, { useState } from 'react'
+import { func } from 'prop-types'
 import styled from "styled-components";
 
 // ! Internal
@@ -8,15 +8,25 @@ import NavItem, { Sli, SnavLink } from "./NavItem";
 import { mediaMin } from "../../../Theme";
 import { content } from "../../../Assets/Content";
 
-export class NavItems extends Component {
-    renderProjectSubul = () => {
+
+
+function NavItems({ click }) {
+
+    const [projectListOpen, setProjectListOpen] = useState(false);
+
+    const projectListClickHandler = () => {
+        setProjectListOpen(!projectListOpen)
+    }
+
+
+    const renderProjectSubul = () => {
         const { projects } = content;
         return projects.map((project, index) => {
             const { url, id } = project;
 
             return (
                 <SsubLi key={index}>
-                    <SnavItem to={`/${url}`} onClick={this.props.click}>
+                    <SnavItem to={`/${url}`} onClick={click}>
                         {id}
                     </SnavItem>
                 </SsubLi>
@@ -24,34 +34,39 @@ export class NavItems extends Component {
         });
     };
 
-    render() {
-        return (
-            <Ul>
-                <NavItem link="/" exact click={this.props.click}>
-                    Portfolio
+    return (
+        <Ul>
+            <NavItem link="/" exact click={click}>
+                Portfolio
                 </NavItem>
-                <NavItem link="/about" click={this.props.click}>
-                    About
+            <NavItem link="/about" click={click}>
+                About
                 </NavItem>
-                <SLi
-                    onMouseEnter={this.subUlFocusHandler}
-                    onMouseLeave={this.subUlFocusHandler}
-                >
-                    Project View
+            <SLi
+                onClick={projectListClickHandler}
+
+            >
+                Project View
                     {/* {projectSubUl} */}
-                    <SprojectSubUL>{this.renderProjectSubul()}</SprojectSubUL>
-                </SLi>
-                <NavItem link="/contact" click={this.props.click}>
-                    Say Hello
+                {projectListOpen && <ul>{renderProjectSubul()}</ul>}
+
+            </SLi>
+            <NavItem link="/contact" click={click}>
+                Say Hello
                 </NavItem>
-            </Ul>
-        );
-    }
+        </Ul>
+    );
+
 }
 
-NavItems.propTypes = {};
+NavItems.propTypes = {
+    click: func,
+}
 
-export default NavItems;
+export default NavItems
+
+
+
 
 // ! Styles
 
@@ -127,8 +142,8 @@ const SprojectSubUL = styled.ul`
     opacity: 0;
     transition: all 0.3s linear;
 
-    ${SLi}:hover & {
+    /* ${SLi}:hover & {
         opacity: 1;
         transform: scaleY(1);
-    }
+    } */
 `;

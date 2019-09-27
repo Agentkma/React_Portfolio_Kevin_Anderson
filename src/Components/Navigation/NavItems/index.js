@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 import NavItem, { Sli, SnavLink } from "./NavItem";
 import { mediaMin } from "../../../Theme";
+import { ScaleInVerTop } from "../../../Theme/animations";
 import { content } from "../../../Assets/Content";
 
 
@@ -47,8 +48,8 @@ function NavItems({ click }) {
 
             >
                 Project View
-                    {/* {projectSubUl} */}
-                {projectListOpen && <ul>{renderProjectSubul()}</ul>}
+                {projectListOpen && (<ScaleInVerTop><Sul>{renderProjectSubul()}</Sul></ScaleInVerTop>)
+                }
 
             </SLi>
             <NavItem link="/contact" click={click}>
@@ -83,6 +84,7 @@ const Ul = styled.ul`
         top: 10%;
         background: transparent;`};
 `;
+const Sul = styled(Ul)`padding: 0`;
 
 const SnavItem = styled(SnavLink)`
     ${mediaMin.tablet`font-size: 0.75rem;

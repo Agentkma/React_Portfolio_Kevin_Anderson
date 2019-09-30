@@ -11,7 +11,7 @@ import { Container, HamburgerDiv, HamburgerBar, StyledCodeIcon } from '../styled
 import { func, object } from "prop-types";
 
 
-const NavHamburger = function ({ click, location }) {
+export const NavHamburger = function ({ click, location }) {
     const { toggleWorksFilter } = useContext(WorksFilterContext);
     const codeIcon =
         location.pathname === "/" ? (

@@ -9,7 +9,7 @@
 // import "jest-dom/extend-expect";
 
 // // the component to test
-// import { NavCodeIcon } from "../NavCodeIcon/index";
+// import { NavHamburger } from "./index";
 
 // // automatically unmount and cleanup DOM after the test is finished.
 // afterEach(cleanup);
@@ -21,7 +21,7 @@
 
 //     // The render method renders a React element into the DOM and returns utility functions for testing the component
 //     const { getByTestId } = render(
-//         <NavCodeIcon toggleWorksFilter={toggleWorksFilter} />
+//         <NavHamburger toggleWorksFilter={toggleWorksFilter} />
 //     );
 //     const navCodeIconBtn = getByTestId("nav-code-icon");
 //     // Act

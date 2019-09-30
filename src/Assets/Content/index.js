@@ -6,13 +6,17 @@ export const content = {
                 "I'm a Software Developer.",
                 "I work in Denver, CO.",
                 "I create web apps.",
-                "I'm a solution builder.",
-                "I'm a lifelong learner.",
-                "I'm a rational optimist.",
-                "I'm a humanist.",
+                "I'm a solution builder...",
+                "...a lifelong learner...",
+                "...a rational optimist...",
+                "...and a humanist.",
                 "This site was built with....",
-                "React 16.x, Styled-Components,",
-                "Material UI, and Testing-Library/React"
+                "React 16.x...",
+                "Styled-Components...",
+                "Material UI...",
+                "and Testing-Library/React"
+
+
             ]
         },
         main: {

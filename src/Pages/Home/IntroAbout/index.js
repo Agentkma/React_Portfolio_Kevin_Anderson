@@ -75,7 +75,10 @@ const Ssection = styled.section`
     background-color: ${props => props.theme.colorBgPrimary};
 `;
 const SdivHalf = styled.div`
-    height: 40vh;
+    margin-left: 0;
+    height: 60vh;
+    ${media.desktop`
+    height: 40vh;`};
 `;
 const SdivVertAlign = styled.div`
     position: relative;
@@ -86,15 +89,13 @@ const SdivVertAlign = styled.div`
 `;
 
 const Sarticle = styled.article`
-    width: 50%;
     margin: 0 auto;
     position: relative;
     min-height: 1px;
     padding-right: 1rem;
     padding-left: 1rem ${mediaMin.desktop`;
     width: 100%
-    margin-left: 0;
-       ;`};
+    margin-left: 0;`};
 `;
 
 const SdivMH = styled.div`
@@ -103,11 +104,13 @@ const SdivMH = styled.div`
 `;
 
 const Sh6H = styled.h6`
-    font-size: 2.5rem;
-    line-height: 2.675rem;
+    font-size: 2rem;
+    line-height: 2.175rem;
     margin-top: 0.666rem;
     margin-bottom: 0;
     font-weight: 500;
+    ${media.desktop`font-size: 2.5rem;
+    line-height: 2.675rem;`};
 `;
 
 const SdivCD = styled.div`
@@ -126,7 +129,7 @@ const SdivCD = styled.div`
 
 const Sh6HL = styled.h6`
     color: ${props => props.theme.colorFontTertiary};
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     margin-top: 0;
     margin-bottom: 0;

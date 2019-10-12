@@ -35,11 +35,11 @@ export const GridItem = ({ index, type }) => {
         const { primary, secondary } = gridItem.value.txt;
         return (
             <SarticleHeroTxt>
-                <SvertAlign>
+                <div>
                     <Sh3HeroTxt>{primary}</Sh3HeroTxt>
                     <SdivLineSmall />
                     <Sh6HeroTxt>{secondary}</Sh6HeroTxt>
-                </SvertAlign>
+                </div>
             </SarticleHeroTxt>
         );
     } else if (type === "story image") {
@@ -61,7 +61,7 @@ export const GridItem = ({ index, type }) => {
         const { primary, secondary } = gridItem.story.txt;
         return (
             <SarticleHeroTxt>
-                <SvertAlign>
+                <div>
                     <Sh4HeroTxt3 as="h4">{primary}</Sh4HeroTxt3>
                     <SdivLineSmall />
                     <SpHero>
@@ -73,7 +73,7 @@ export const GridItem = ({ index, type }) => {
                             );
                         })}
                     </SpHero>
-                </SvertAlign>
+                </div>
             </SarticleHeroTxt>
         );
     }
@@ -94,14 +94,18 @@ const SarticleHeroImg = styled.article`
 `;
 
 const SarticleHeroTxt = styled.article`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     box-sizing: border-box;
     width: 100%;
-    height: 75vh;
+    height: 100vh;
     padding: 0 10%;
+    ${mediaMin.desktop`height: 75vh;`};
 `;
 
-const SvertAlign = styled(SdivValign)`
-    ${media.desktop` top: 20%;`};
+const SvertAlign = styled.div`
+   
 `;
 
 const Sh3HeroTxt = styled.h3`

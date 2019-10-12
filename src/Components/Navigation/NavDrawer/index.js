@@ -11,8 +11,8 @@ import { ScloseIcon } from "../../../shared/StyledComponents";
 
 export const NavDrawer = ({ click }) => {
     return (
-        <SlideDownNavDiv data-testid="nav-dawer">
-            <Nav role="navigation">
+        <SlideDownNavDiv data-testid="nav-dawer" >
+            <Nav role="navigation" >
                 <ScloseIconMod onClick={click} />
                 <NavItems click={click} />
             </Nav>
@@ -26,9 +26,9 @@ export default NavDrawer;
 
 const SlideDownNavDiv = styled(SlideDown)`
     display: block !important;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    top: 7.75vh;
+    top: 9vh;
     z-index: 101;
     @media (min-width: 768px) {
         top: 0;
@@ -40,6 +40,7 @@ const SlideDownNavDiv = styled(SlideDown)`
 `;
 
 const Nav = styled.nav`
+  
     @media (min-width: 768px) {
         height: 100%;
         padding: 5rem;

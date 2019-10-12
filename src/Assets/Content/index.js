@@ -7,13 +7,14 @@ export const content = {
                 "I work in Denver, CO.",
                 "I create web apps.",
                 "I'm a solution builder...",
-                "...a lifelong learner...",
-                "...a rational optimist...",
-                "...and a humanist.",
-                "This site was built with....",
-                "React 16.x...",
-                "Styled-Components...",
-                "Material UI...",
+                "a lifelong learner...",
+                "a rational optimist...",
+                "a humanist and...",
+                "an open source enthusiast",
+                "This site was built with...",
+                "React 16 ...",
+                "Styled-Components ...",
+                "Material UI ...",
                 "and Testing-Library/React"
 
 

@@ -5,10 +5,9 @@ import styled from "styled-components";
 // ! Internal
 import {
     SdivLineSmall,
-    SdivValign,
     SresponsiveImg
 } from "../../shared/StyledComponents";
-import { mediaMin, media } from "../../Theme";
+import { mediaMin } from "../../Theme";
 import { content } from "../../Assets/Content";
 import { VALUE_IMAGE } from "../../Constants";
 
@@ -104,9 +103,7 @@ const SarticleHeroTxt = styled.article`
     ${mediaMin.desktop`height: 75vh;`};
 `;
 
-const SvertAlign = styled.div`
-   
-`;
+
 
 const Sh3HeroTxt = styled.h3`
     color: ${props => props.theme.colorFontTertiary};

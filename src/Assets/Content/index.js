@@ -28,7 +28,8 @@ export const content = {
                 "full-stack",
                 "SPA",
                 // "pure-css",
-                "mobile"
+                "mobile",
+                "design"
             ],
             projects: [
                 {
@@ -58,7 +59,6 @@ export const content = {
                     worksFilter: ["all", "css-frameworks"],
                     to: "/project2"
                 },
-
                 {
                     img: {
                         alt: "pic of safe nav app home page",
@@ -127,18 +127,33 @@ export const content = {
                 },
                 {
                     img: {
-                        alt: "pic of AngularJS Weather App home page",
-                        title: "AngularJS App",
+                        alt: "Album Art",
+                        title: "Design & Animation",
                         srcSet: [
-                            "Assets/Images/works/angularWeatherApp550x325.gif"
+                            "Assets/Images/works/AlbumArtOne.png"
                         ],
-                        src: "Assets/Images/works/angularWeatherApp550x325.gif"
+                        src: "Assets/Images/works/AlbumArtOne.png"
                     },
-                    name: "AngularJS Weather App",
-                    description: "Single Page Apps.",
-                    worksFilter: ["all", "css-frameworks", "full-stack", "SPA"],
+                    name: "Album Art",
+                    description: "Creative Design & Animation.",
+                    worksFilter: ["all", "design"],
                     to: "/project5"
                 },
+
+                // {
+                //     img: {
+                //         alt: "pic of AngularJS Weather App home page",
+                //         title: "AngularJS App",
+                //         srcSet: [
+                //             "Assets/Images/works/angularWeatherApp550x325.gif"
+                //         ],
+                //         src: "Assets/Images/works/angularWeatherApp550x325.gif"
+                //     },
+                //     name: "AngularJS Weather App",
+                //     description: "Single Page Apps.",
+                //     worksFilter: ["all", "css-frameworks", "full-stack", "SPA"],
+                //     to: "/project5"
+                // },
                 {
                     img: {
                         alt: "pic of React RSVP home page",
@@ -153,7 +168,7 @@ export const content = {
                 },
                 {
                     img: {
-                        alt: "pic of Angular Photo Log home page",
+                        alt: "Angular Photo Log home page",
                         title: "Angular App",
                         srcSet: [
                             "Assets/Images/works/AngularPhotoLog6-1100x650.png"
@@ -167,7 +182,7 @@ export const content = {
                 },
                 {
                     img: {
-                        alt: "pic of Angular Photo Log home page",
+                        alt: "Terra Go home page",
                         title: "terraGo App",
                         srcSet: [
                             "Assets/Images/works/terraGoSplash-1100x650.png"
@@ -178,7 +193,8 @@ export const content = {
                     description: "Mobile Apps.",
                     worksFilter: ["all", "mobile", "SPA", "full-stack"],
                     to: "/project8"
-                }
+                },
+
             ]
         }
     },
@@ -535,128 +551,254 @@ export const content = {
             url: "project5",
             id: "500",
             title: {
-                name: "AngularJS Projects",
-                categories: "SPA & CSS Framework"
+                name: "Design & Animation",
+                categories: "Design"
             },
             bannerImg: [
                 {
                     alt: "alt",
-                    title: "SPA & CSS Framework",
+                    title: "Design & Animation",
                     srcSet: [
-                        "Assets/Images/project/project05/angularToDo1-1200x700.png"
+                        "Assets/Images/project/project09/AlbumArtOne.png"
                     ],
                     src:
-                        "Assets/Images/project/project05/angularToDo1-1200x700.png",
-                    overLay: "SPA"
+                        "Assets/Images/project/project09/AlbumArtOne.png",
+                    overLay: "Design"
                 },
-                {
-                    alt: "alt",
-                    title: "Mobile First",
-                    srcSet: [
-                        "Assets/Images/project/project05/angularToDo2-1200x700.png"
-                    ],
-                    src:
-                        "Assets/Images/project/project05/angularToDo2-1200x700.png",
-                    overLay: "TypeScript"
-                },
-                {
-                    alt: "alt",
-                    title: "jQuery",
-                    srcSet: [
-                        "Assets/Images/project/project05/angularWeather1-1200x700.png"
-                    ],
-                    src:
-                        "Assets/Images/project/project05/angularWeather1-1200x700.png",
-                    overLay: "API Integration"
-                },
-                {
-                    alt: "alt text",
-                    title: "title text",
-                    srcSet: [
-                        "Assets/Images/project/project05/angularToDo3-1200x700.png"
-                    ],
-                    src:
-                        "Assets/Images/project/project05/angularToDo3-1200x700.png",
-                    overLay: "Angular JS"
-                },
+                // {
+                //     alt: "alt",
+                //     title: "Mobile First",
+                //     srcSet: [
+                //         "Assets/Images/project/project05/angularToDo2-1200x700.png"
+                //     ],
+                //     src:
+                //         "Assets/Images/project/project05/angularToDo2-1200x700.png",
+                //     overLay: "TypeScript"
+                // },
+                // {
+                //     alt: "alt",
+                //     title: "jQuery",
+                //     srcSet: [
+                //         "Assets/Images/project/project05/angularWeather1-1200x700.png"
+                //     ],
+                //     src:
+                //         "Assets/Images/project/project05/angularWeather1-1200x700.png",
+                //     overLay: "API Integration"
+                // },
+                // {
+                //     alt: "alt text",
+                //     title: "title text",
+                //     srcSet: [
+                //         "Assets/Images/project/project05/angularToDo3-1200x700.png"
+                //     ],
+                //     src:
+                //         "Assets/Images/project/project05/angularToDo3-1200x700.png",
+                //     overLay: "Angular JS"
+                // },
 
-                {
-                    alt: "alt text",
-                    title: "title text",
-                    srcSet: [
-                        "Assets/Images/project/project05/angularToDo4-1200x700.png"
-                    ],
-                    src:
-                        "Assets/Images/project/project05/angularToDo4-1200x700.png",
-                    overLay: "Bootstrap CSS"
-                },
-                {
-                    alt: "alt text",
-                    title: "title text",
-                    srcSet: [
-                        "Assets/Images/project/project05/angularWeather2-1200x700.png"
-                    ],
-                    src:
-                        "Assets/Images/project/project05/angularWeather2-1200x700.png",
-                    overLay: "Mobile First"
-                }
+                // {
+                //     alt: "alt text",
+                //     title: "title text",
+                //     srcSet: [
+                //         "Assets/Images/project/project05/angularToDo4-1200x700.png"
+                //     ],
+                //     src:
+                //         "Assets/Images/project/project05/angularToDo4-1200x700.png",
+                //     overLay: "Bootstrap CSS"
+                // },
+                // {
+                //     alt: "alt text",
+                //     title: "title text",
+                //     srcSet: [
+                //         "Assets/Images/project/project05/angularWeather2-1200x700.png"
+                //     ],
+                //     src:
+                //         "Assets/Images/project/project05/angularWeather2-1200x700.png",
+                //     overLay: "Mobile First"
+                // }
             ],
             img: {
-                alt: "Weather Now App",
-                title: "Weather Now App",
-                srcSet: ["Assets/Images/works/angularWeather2-1200x700.png"],
-                src: "Assets/Images/works/angularWeather2-1200x700.png"
+                alt: "Album Art",
+                title: "Album Art One",
+                srcSet: ["Assets/Images/project/project09/AlbumArtOne.png",],
+                src: "Assets/Images/project/project09/AlbumArtOne.png",
             },
             description: {
                 taglineHeading: "Good design and clean coding",
                 taglineSubHeading: "That is a Principle",
                 projectDescription: [
-                    "These Single Page Apps are built with AngularJS.",
-                    "The apps also use Bootstrap CSS framework, HTML, CSS, JavaScript, TypeScript, Webpack, and jQuery."
+
+                    "The design and animations are built with React,CSS, and Styled-Components."
                 ],
-                categories: "SPA & CSS Framework",
-                delivered: "2017 October",
+                categories: "Design",
+                delivered: "2018 - Present",
                 liveSiteLink: "NA"
             },
             imgContainer: [
                 {
-                    alt: "alt text",
-                    title: "home page",
+                    alt: "album art one",
+                    title: "still pic",
                     src:
-                        "Assets/Images/project/project05/angularToDo1-1200x700.png"
+                        "Assets/Images/project/project09/AlbumArtOne.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "album art one animated",
+                    title: "animated",
                     src:
-                        "Assets/Images/project/project05/angularToDo2-1200x700.png"
+                        "Assets/Images/project/project09/AlbumArtOne.gif"
                 },
-                {
-                    alt: "alt text",
-                    title: "title text",
-                    src:
-                        "Assets/Images/project/project05/angularToDo3-1200x700.png"
-                },
-                {
-                    alt: "alt text",
-                    title: "title text",
-                    src:
-                        "Assets/Images/project/project05/angularToDo4-1200x700.png"
-                },
-                {
-                    alt: "alt text",
-                    title: "title text",
-                    src:
-                        "Assets/Images/project/project05/angularWeather1-1200x700.png"
-                },
-                {
-                    alt: "alt text",
-                    title: "title text",
-                    src:
-                        "Assets/Images/project/project05/angularWeather2-1200x700.png"
-                }
+                // {
+                //     alt: "alt text",
+                //     title: "title text",
+                //     src:
+                //         "Assets/Images/project/project05/angularToDo3-1200x700.png"
+                // },
+                // {
+                //     alt: "alt text",
+                //     title: "title text",
+                //     src:
+                //         "Assets/Images/project/project05/angularToDo4-1200x700.png"
+                // },
+                // {
+                //     alt: "alt text",
+                //     title: "title text",
+                //     src:
+                //         "Assets/Images/project/project05/angularWeather1-1200x700.png"
+                // },
+                // {
+                //     alt: "alt text",
+                //     title: "title text",
+                //     src:
+                //         "Assets/Images/project/project05/angularWeather2-1200x700.png"
+                // }
             ]
         },
+        // {
+        //     url: "project5",
+        //     id: "500",
+        //     title: {
+        //         name: "AngularJS Projects",
+        //         categories: "SPA & CSS Framework"
+        //     },
+        //     bannerImg: [
+        //         {
+        //             alt: "alt",
+        //             title: "SPA & CSS Framework",
+        //             srcSet: [
+        //                 "Assets/Images/project/project05/angularToDo1-1200x700.png"
+        //             ],
+        //             src:
+        //                 "Assets/Images/project/project05/angularToDo1-1200x700.png",
+        //             overLay: "SPA"
+        //         },
+        //         {
+        //             alt: "alt",
+        //             title: "Mobile First",
+        //             srcSet: [
+        //                 "Assets/Images/project/project05/angularToDo2-1200x700.png"
+        //             ],
+        //             src:
+        //                 "Assets/Images/project/project05/angularToDo2-1200x700.png",
+        //             overLay: "TypeScript"
+        //         },
+        //         {
+        //             alt: "alt",
+        //             title: "jQuery",
+        //             srcSet: [
+        //                 "Assets/Images/project/project05/angularWeather1-1200x700.png"
+        //             ],
+        //             src:
+        //                 "Assets/Images/project/project05/angularWeather1-1200x700.png",
+        //             overLay: "API Integration"
+        //         },
+        //         {
+        //             alt: "alt text",
+        //             title: "title text",
+        //             srcSet: [
+        //                 "Assets/Images/project/project05/angularToDo3-1200x700.png"
+        //             ],
+        //             src:
+        //                 "Assets/Images/project/project05/angularToDo3-1200x700.png",
+        //             overLay: "Angular JS"
+        //         },
+
+        //         {
+        //             alt: "alt text",
+        //             title: "title text",
+        //             srcSet: [
+        //                 "Assets/Images/project/project05/angularToDo4-1200x700.png"
+        //             ],
+        //             src:
+        //                 "Assets/Images/project/project05/angularToDo4-1200x700.png",
+        //             overLay: "Bootstrap CSS"
+        //         },
+        //         {
+        //             alt: "alt text",
+        //             title: "title text",
+        //             srcSet: [
+        //                 "Assets/Images/project/project05/angularWeather2-1200x700.png"
+        //             ],
+        //             src:
+        //                 "Assets/Images/project/project05/angularWeather2-1200x700.png",
+        //             overLay: "Mobile First"
+        //         }
+        //     ],
+        //     img: {
+        //         alt: "Weather Now App",
+        //         title: "Weather Now App",
+        //         srcSet: ["Assets/Images/works/angularWeather2-1200x700.png"],
+        //         src: "Assets/Images/works/angularWeather2-1200x700.png"
+        //     },
+        //     description: {
+        //         taglineHeading: "Good design and clean coding",
+        //         taglineSubHeading: "That is a Principle",
+        //         projectDescription: [
+        //             "These Single Page Apps are built with AngularJS.",
+        //             "The apps also use Bootstrap CSS framework, HTML, CSS, JavaScript, TypeScript, Webpack, and jQuery."
+        //         ],
+        //         categories: "SPA & CSS Framework",
+        //         delivered: "2017 October",
+        //         liveSiteLink: "NA"
+        //     },
+        //     imgContainer: [
+        //         {
+        //             alt: "alt text",
+        //             title: "home page",
+        //             src:
+        //                 "Assets/Images/project/project05/angularToDo1-1200x700.png"
+        //         },
+        //         {
+        //             alt: "alt text",
+        //             title: "title text",
+        //             src:
+        //                 "Assets/Images/project/project05/angularToDo2-1200x700.png"
+        //         },
+        //         {
+        //             alt: "alt text",
+        //             title: "title text",
+        //             src:
+        //                 "Assets/Images/project/project05/angularToDo3-1200x700.png"
+        //         },
+        //         {
+        //             alt: "alt text",
+        //             title: "title text",
+        //             src:
+        //                 "Assets/Images/project/project05/angularToDo4-1200x700.png"
+        //         },
+        //         {
+        //             alt: "alt text",
+        //             title: "title text",
+        //             src:
+        //                 "Assets/Images/project/project05/angularWeather1-1200x700.png"
+        //         },
+        //         {
+        //             alt: "alt text",
+        //             title: "title text",
+        //             src:
+        //                 "Assets/Images/project/project05/angularWeather2-1200x700.png"
+        //         }
+        //     ]
+        // },
         {
             url: "project6",
             id: "600",

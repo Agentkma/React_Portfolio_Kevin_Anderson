@@ -37,7 +37,6 @@ export default function Home() {
     const [filterSelection, setFilterSelection] = useState("all");
     return (
         <FadeInPageContainer>
-            {" "}
             <SscrollContainer>
                 <IntroAbout />
 

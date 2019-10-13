@@ -50,9 +50,10 @@ export function ProjectDescription({ project }) {
                                     Delivered: <Sspan>{delivered}</Sspan>
                                 </Sli>
                             </Sul>
-                            <Sa href={liveSiteLink} target="_blank">
+                            {liveSiteLink === "NA" ? null : <Sa href={liveSiteLink} target="_blank">
                                 Live Preview
-                            </Sa>
+                            </Sa>}
+
                         </StyledColArticle>
                     </Srow2>
                 </Ssection>

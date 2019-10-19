@@ -1,6 +1,6 @@
 // ! External
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import styled from "styled-components";
 
 // ! Internal
@@ -13,6 +13,8 @@ import { mediaMin } from "../../Theme";
 const { stats } = content.about.main;
 
 
+
+
 function Stats() {
 
     // ! State
@@ -20,6 +22,13 @@ function Stats() {
     const [educationPoints, setEducationPoints] = useState(0);
     const [projects, setProjects] = useState(0);
     const [skills, setSkills] = useState(45);
+    const [degreesCerts, setDegreesCerts] = useState(5);
+    const [showSkillAnimation, setVhowSkillAnimation] = useState(false);
+    const [animatedCount, setAnimatedCount] = useState({ educationPoints: 0, projects: 0, skills: 0, degreesCerts: 0 })
+
+    // ! Misc
+
+    const statsRef = useRef(null);
 
     // ! Effects
 
@@ -27,9 +36,71 @@ function Stats() {
         // getLinkedInSkills();
         getGitHubProjects();
         getTreehousePoints();
-    }, [])
+
+
+    }, []);
+
+    useLayoutEffect(() => {
+        const section = parseInt(statsRef.current.offsetHeight);
+        window.addEventListener('scroll', calcScroll(section));
+
+        return () => {
+            window.removeEventListener('scroll', calcScroll)
+        };
+    });
+
+    useEffect(() => {
+        if (showSkillAnimation) {
+            animateNumbers()
+        }
+    }, [showSkillAnimation])
+
+
+
 
     // ! Methods
+
+    const getCount = (currentCount, type) => {
+        return currentCount <= animatedCount[type] ? currentCount + 1 : animatedCount[type];
+    }
+
+
+    const animateNumbers = () => {
+        // count from 0 to number every 100 ms
+        let count = 0;
+
+        let eduCount = getCount(count, educationPoints);
+        let projectCount = getCount(count, projects);
+        let skillsCount = getCount(count, skills);
+        let degreesCount = getCount(count, degreesCerts);
+
+        const timeoutId = setTimeout(() => {
+            count += 1;
+            setAnimatedCount({ educationPoints: eduCount, projects: projectCount, skills: skillsCount, degreesCerts: degreesCount })
+        }
+            , 100);
+
+
+        clearTimeout(timeoutId);
+
+    }
+
+
+    const calcScroll = (section) => {
+        const _window = window;
+        const heightDiff = parseInt(section);
+        const scrollPos = _window.scrollY;
+        if (scrollPos > heightDiff) {
+            // user has scrolled past Skills Section, 
+            // rerender by setting State 
+            setVhowSkillAnimation(true)
+
+        } else {
+            // user has scrolled back to header's territory, 
+            // it's optional here for you to remove the element 
+            setVhowSkillAnimation(false)
+        }
+    }
 
     const getGitHubProjects = async () => {
         const response = await fetch("https://api.github.com/users/Agentkma/repos");
@@ -54,19 +125,20 @@ function Stats() {
     };
 
     const renderLi = () => {
+
         return stats.map((s, i) => {
-            const { title, value } = s;
+            const { title } = s;
             if (title === "Education Pts") {
                 return (
                     <Sli key={i}>
-                        <SdivNumber>{educationPoints}</SdivNumber>
+                        <SdivNumber>{animatedCount.educationPoints}</SdivNumber>
                         <SdivSubjectRed>{title}</SdivSubjectRed>
                     </Sli>
                 );
             } else if (title === "Projects") {
                 return (
                     <Sli key={i}>
-                        <SdivNumber>{projects}</SdivNumber>
+                        <SdivNumber>{animatedCount.projects}</SdivNumber>
                         <SdivSubject>{title}</SdivSubject>
                     </Sli>
                 );
@@ -74,15 +146,18 @@ function Stats() {
                 return (
                     <Sli key={i}>
 
-                        <SdivNumber>{skills}</SdivNumber>
+                        <SdivNumber>{animatedCount.skills}</SdivNumber>
                         <SdivSubject>{title}</SdivSubject>
                     </Sli>
                 );
             }
 
+
+
+
             return (
                 <Sli key={i}>
-                    <SdivNumber>{value}</SdivNumber>
+                    <SdivNumber>{animatedCount.degreesCerts}</SdivNumber>
                     <SdivSubjectRed>{title}</SdivSubjectRed>
                 </Sli>
             );
@@ -91,10 +166,10 @@ function Stats() {
 
 
     return (
-        <Ssection>
+        <Ssection ref={statsRef}>
             <Srow>
                 <Sarticle>
-                    <Sul>{renderLi()}</Sul>
+                    <Sul>{showSkillAnimation ? renderLi() : null}</Sul>
                 </Sarticle>
             </Srow>
         </Ssection>

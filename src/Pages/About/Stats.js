@@ -1,6 +1,6 @@
 // ! External
 
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 // ! Internal
@@ -23,7 +23,7 @@ function Stats() {
     const [projects, setProjects] = useState(0);
     const [skills, setSkills] = useState(45);
     const [degreesCerts, setDegreesCerts] = useState(5);
-    const [showSkillAnimation, setVhowSkillAnimation] = useState(false);
+    const [showSkillAnimation, setShowSkillAnimation] = useState(false);
     const [animatedCount, setAnimatedCount] = useState({ educationPoints: 0, projects: 0, skills: 0, degreesCerts: 0 })
 
     // ! Misc
@@ -36,18 +36,16 @@ function Stats() {
         // getLinkedInSkills();
         getGitHubProjects();
         getTreehousePoints();
-
-
     }, []);
 
-    useLayoutEffect(() => {
-        const section = parseInt(statsRef.current.offsetHeight);
-        window.addEventListener('scroll', calcScroll(section));
+    useEffect(() => {
+
+        window.addEventListener('scroll', listener)
 
         return () => {
-            window.removeEventListener('scroll', calcScroll)
+            window.removeEventListener('scroll', listener)
         };
-    });
+    }, []);
 
     useEffect(() => {
         if (showSkillAnimation) {
@@ -56,9 +54,35 @@ function Stats() {
     }, [showSkillAnimation])
 
 
-
-
     // ! Methods
+
+    const listener =
+        e => {
+
+            const _window = window;
+            const scrollPos = _window.scrollY;
+            // * clg log reveals inside this function...
+            const sectionPosition = parseInt(statsRef.current.offsetTop);
+
+            // TODO CHECK to if the conditions can be met
+
+            if (scrollPos > sectionPosition && !showSkillAnimation) {
+                //  TODO ...AFTER WE SCROLL PAST SECTION...CLG SHOWS INSIDE THIS 
+                //  * IF ON EVERY SCROLL MOVEMENT... BUT the renderLI()  is triggered
+                // * b/c we see section go from black to having titles and 0's for count
+                // *.... so why would it keep entering this if statement
+                // * THAT THE setShowSkillAnimation
+                // user has scrolled past Skills Section, 
+                // rerender by setting State 
+                setShowSkillAnimation(true)
+
+            } else if (scrollPos < sectionPosition && showSkillAnimation) {
+                console.log('inside else')
+                // user has scrolled back to header's territory, 
+                // it's optional here for you to remove the element 
+                setShowSkillAnimation(false)
+            }
+        }
 
     const getCount = (currentCount, type) => {
         return currentCount <= animatedCount[type] ? currentCount + 1 : animatedCount[type];
@@ -80,27 +104,12 @@ function Stats() {
         }
             , 100);
 
-
         clearTimeout(timeoutId);
 
     }
 
 
-    const calcScroll = (section) => {
-        const _window = window;
-        const heightDiff = parseInt(section);
-        const scrollPos = _window.scrollY;
-        if (scrollPos > heightDiff) {
-            // user has scrolled past Skills Section, 
-            // rerender by setting State 
-            setVhowSkillAnimation(true)
 
-        } else {
-            // user has scrolled back to header's territory, 
-            // it's optional here for you to remove the element 
-            setVhowSkillAnimation(false)
-        }
-    }
 
     const getGitHubProjects = async () => {
         const response = await fetch("https://api.github.com/users/Agentkma/repos");
@@ -123,41 +132,28 @@ function Stats() {
         setEducationPoints(myJson.points.total);
 
     };
+    const getPointsPath = (title = '') => {
+        let count;
+        switch (title) {
+            case "Education Pts": count = animatedCount.educationPoints;
+                break;
+            case "Projects": count = animatedCount.projects;
+                break;
+            case "Skills": count = animatedCount.skills;
+                break;
+            default: count = animatedCount.degreesCerts;
+        }
+        return count;
+    }
+
 
     const renderLi = () => {
 
         return stats.map((s, i) => {
             const { title } = s;
-            if (title === "Education Pts") {
-                return (
-                    <Sli key={i}>
-                        <SdivNumber>{animatedCount.educationPoints}</SdivNumber>
-                        <SdivSubjectRed>{title}</SdivSubjectRed>
-                    </Sli>
-                );
-            } else if (title === "Projects") {
-                return (
-                    <Sli key={i}>
-                        <SdivNumber>{animatedCount.projects}</SdivNumber>
-                        <SdivSubject>{title}</SdivSubject>
-                    </Sli>
-                );
-            } else if (title === "Skills") {
-                return (
-                    <Sli key={i}>
-
-                        <SdivNumber>{animatedCount.skills}</SdivNumber>
-                        <SdivSubject>{title}</SdivSubject>
-                    </Sli>
-                );
-            }
-
-
-
-
             return (
-                <Sli key={i}>
-                    <SdivNumber>{animatedCount.degreesCerts}</SdivNumber>
+                <Sli key={`${i}-${title}`}>
+                    <SdivNumber>{getPointsPath(title)}</SdivNumber>
                     <SdivSubjectRed>{title}</SdivSubjectRed>
                 </Sli>
             );

@@ -25,6 +25,7 @@ function Stats() {
     const [degreesCerts, setDegreesCerts] = useState(5);
     const [showSkillAnimation, setShowSkillAnimation] = useState(false);
     const [animatedCount, setAnimatedCount] = useState({ educationPoints: 0, projects: 0, skills: 0, degreesCerts: 0 })
+    const [count, setCount] = useState(0);
 
     // ! Misc
 
@@ -47,33 +48,51 @@ function Stats() {
         };
     }, []);
 
-    useEffect(() => {
+    const useInterval = (callback, delay) => {
+        const savedCallback = useRef();
+
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            function tick() {
+                savedCallback.current();
+            }
+            if (delay !== null || count > animatedCount.educationPoints && count > animatedCount.projects && count > animatedCount.skills && count > animatedCount.degreesCerts) {
+                let id = setInterval(tick, delay);
+                return () => clearInterval(id);
+            }
+        }, [delay]);
+    }
+
+    useInterval(() => {
         if (showSkillAnimation) {
-            animateNumbers()
+            // Your custom logic here
+
+            let eduCount = getCount({ state: educationPoints, type: 'educationPoints' });
+            let projectCount = getCount({ state: projects, type: 'projects' });
+            let skillsCount = getCount({ state: skills, type: 'skills' });
+            let degreesCount = getCount({ state: degreesCerts, type: 'degreesCerts' });
+
+            setAnimatedCount({ educationPoints: eduCount, projects: projectCount, skills: skillsCount, degreesCerts: degreesCount });
+            setCount(count + 1);
         }
-    }, [showSkillAnimation])
+    }, 5);
 
 
     // ! Methods
 
     const listener =
         e => {
-
             const _window = window;
             const scrollPos = _window.scrollY;
-            // * clg log reveals inside this function...
-            const sectionPosition = parseInt(statsRef.current.offsetTop);
-
-            // TODO CHECK to if the conditions can be met
+            const sectionPosition = parseInt(statsRef.current.offsetTop) - 400;
 
             if (scrollPos > sectionPosition && !showSkillAnimation) {
-                //  TODO ...AFTER WE SCROLL PAST SECTION...CLG SHOWS INSIDE THIS 
-                //  * IF ON EVERY SCROLL MOVEMENT... BUT the renderLI()  is triggered
-                // * b/c we see section go from black to having titles and 0's for count
-                // *.... so why would it keep entering this if statement
-                // * THAT THE setShowSkillAnimation
-                // user has scrolled past Skills Section, 
-                // rerender by setting State 
+
                 setShowSkillAnimation(true)
 
             } else if (scrollPos < sectionPosition && showSkillAnimation) {
@@ -84,32 +103,9 @@ function Stats() {
             }
         }
 
-    const getCount = (currentCount, type) => {
-        return currentCount <= animatedCount[type] ? currentCount + 1 : animatedCount[type];
+    const getCount = ({ state, type }) => {
+        return count < state ? count + 1 : animatedCount[type];
     }
-
-
-    const animateNumbers = () => {
-        // count from 0 to number every 100 ms
-        let count = 0;
-
-        let eduCount = getCount(count, educationPoints);
-        let projectCount = getCount(count, projects);
-        let skillsCount = getCount(count, skills);
-        let degreesCount = getCount(count, degreesCerts);
-
-        const timeoutId = setTimeout(() => {
-            count += 1;
-            setAnimatedCount({ educationPoints: eduCount, projects: projectCount, skills: skillsCount, degreesCerts: degreesCount })
-        }
-            , 100);
-
-        clearTimeout(timeoutId);
-
-    }
-
-
-
 
     const getGitHubProjects = async () => {
         const response = await fetch("https://api.github.com/users/Agentkma/repos");

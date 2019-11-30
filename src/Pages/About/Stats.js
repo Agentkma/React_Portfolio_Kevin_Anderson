@@ -12,11 +12,7 @@ import { mediaMin } from "../../Theme";
 
 const { stats } = content.about.main;
 
-
-
-
 function Stats() {
-
     // ! State
 
     const [educationPoints, setEducationPoints] = useState(0);
@@ -24,7 +20,12 @@ function Stats() {
     const [skills, setSkills] = useState(45);
     const [degreesCerts, setDegreesCerts] = useState(5);
     const [showSkillAnimation, setShowSkillAnimation] = useState(false);
-    const [animatedCount, setAnimatedCount] = useState({ educationPoints: 0, projects: 0, skills: 0, degreesCerts: 0 })
+    const [animatedCount, setAnimatedCount] = useState({
+        educationPoints: 0,
+        projects: 0,
+        skills: 0,
+        degreesCerts: 0
+    });
     const [count, setCount] = useState(0);
 
     // ! Misc
@@ -37,16 +38,22 @@ function Stats() {
         // getLinkedInSkills();
         getGitHubProjects();
         getTreehousePoints();
+
+        window.addEventListener("scroll", listener);
+
+        return () => {
+            window.removeEventListener("scroll", listener);
+        };
     }, []);
 
     useEffect(() => {
-
-        window.addEventListener('scroll', listener)
-
-        return () => {
-            window.removeEventListener('scroll', listener)
-        };
-    }, []);
+        useInterval(
+            useIntervalCallback(
+                "educationPoints",
+                getIntervalDelay(educationPoints)
+            )
+        );
+    }, [showSkillAnimation]);
 
     const useInterval = (callback, delay) => {
         const savedCallback = useRef();
@@ -61,54 +68,116 @@ function Stats() {
             function tick() {
                 savedCallback.current();
             }
-            if (delay !== null || count > animatedCount.educationPoints && count > animatedCount.projects && count > animatedCount.skills && count > animatedCount.degreesCerts) {
+            if (
+                delay !== null ||
+                count > animatedCount.educationPoints ||
+                count > animatedCount.projects ||
+                count > animatedCount.skills ||
+                count > animatedCount.degreesCerts
+            ) {
                 let id = setInterval(tick, delay);
                 return () => clearInterval(id);
             }
         }, [delay]);
-    }
+    };
 
-    useInterval(() => {
-        if (showSkillAnimation) {
-            // Your custom logic here
+    // * problem: animated numbers need have different delays....delay should be
+    // * relative to how many numbers the point s have..1 number, 2 number, 3 number
+    // * then divide so the delay makes the numbers animate at varying speeds in
+    // * order to finish up at the same time
+    // * this will probably require  a modification to state and or useInterval
+    // * will need a useEffect for showAnimatedNumbers to trigger the animation start
 
-            let eduCount = getCount({ state: educationPoints, type: 'educationPoints' });
-            let projectCount = getCount({ state: projects, type: 'projects' });
-            let skillsCount = getCount({ state: skills, type: 'skills' });
-            let degreesCount = getCount({ state: degreesCerts, type: 'degreesCerts' });
+    const useIntervalCallback = ({ pointType = "" }) => {
+        return function() {
+            let count = getCount({
+                state: [pointType],
+                type: pointType
+            });
 
-            setAnimatedCount({ educationPoints: eduCount, projects: projectCount, skills: skillsCount, degreesCerts: degreesCount });
+            setAnimatedCount(prevState => {
+                return { ...prevState, [pointType]: count };
+            });
             setCount(count + 1);
-        }
-    }, 5);
+        };
+    };
 
+    const getIntervalDelay = points => {
+        // * highest digits will be edupoints which will be in the 5 digit range
+        // * lowest digits will be in 1 digit range
+        // * every digit less should have delay 10x
+        const digits = points.toString().length;
+        const multiplyer = 5 - digits;
+        let delay = 5;
+        switch (multiplyer) {
+            case 0:
+                break;
+            case 1:
+                delay *= 10;
+                break;
+            case 2:
+                delay *= 100;
+                break;
+            case 3:
+                delay *= 1000;
+                break;
+            case 4:
+                delay *= 10000;
+                break;
+            default:
+                break;
+        }
+        return delay;
+    };
+
+    // useInterval(() => {
+    //     if (showSkillAnimation) {
+    //         let eduCount = getCount({
+    //             state: educationPoints,
+    //             type: "educationPoints"
+    //         });
+    //         let projectCount = getCount({ state: projects, type: "projects" });
+    //         let skillsCount = getCount({ state: skills, type: "skills" });
+    //         let degreesCount = getCount({
+    //             state: degreesCerts,
+    //             type: "degreesCerts"
+    //         });
+
+    //         setAnimatedCount({
+    //             educationPoints: eduCount,
+    //             projects: projectCount,
+    //             skills: skillsCount,
+    //             degreesCerts: degreesCount
+    //         });
+    //         setCount(count + 1);
+    //     }
+    // }, 5);
 
     // ! Methods
 
-    const listener =
-        e => {
-            const _window = window;
-            const scrollPos = _window.scrollY;
-            const sectionPosition = parseInt(statsRef.current.offsetTop) - 400;
+    const listener = e => {
+        const _window = window;
+        const scrollPos = _window.scrollY;
+        const sectionPosition = parseInt(statsRef.current.offsetTop) - 400;
 
-            if (scrollPos > sectionPosition && !showSkillAnimation) {
-
-                setShowSkillAnimation(true)
-
-            } else if (scrollPos < sectionPosition && showSkillAnimation) {
-                console.log('inside else')
-                // user has scrolled back to header's territory, 
-                // it's optional here for you to remove the element 
-                setShowSkillAnimation(false)
-            }
+        if (scrollPos > sectionPosition && !showSkillAnimation) {
+            setShowSkillAnimation(true);
+        } else if (scrollPos < sectionPosition && showSkillAnimation) {
+            console.log("inside else");
+            // user has scrolled back to header's territory,
+            // it's optional here for you to remove the element
+            setShowSkillAnimation(false);
         }
+    };
 
     const getCount = ({ state, type }) => {
         return count < state ? count + 1 : animatedCount[type];
-    }
+    };
 
     const getGitHubProjects = async () => {
-        const response = await fetch("https://api.github.com/users/Agentkma/repos");
+        const response = await fetch(
+            "https://api.github.com/users/Agentkma/repos"
+        );
         const myJson = await response.json();
         setProjects(myJson.length);
     };
@@ -117,34 +186,37 @@ function Stats() {
     const getLinkedInSkills = async () => {
         const response = await fetch(
             "https://api.linkedin.com/v2/skills?locale.language=en&locale.country=US"
-        )
+        );
         const myJson = await response.json();
         setSkills(myJson.elements.length);
     };
 
     const getTreehousePoints = async () => {
-        const response = await fetch("https://teamtreehouse.com/kevinanderson6.json");
+        const response = await fetch(
+            "https://teamtreehouse.com/kevinanderson6.json"
+        );
         const myJson = await response.json();
         setEducationPoints(myJson.points.total);
-
     };
-    const getPointsPath = (title = '') => {
+    const getPointsPath = (title = "") => {
         let count;
         switch (title) {
-            case "Education Pts": count = animatedCount.educationPoints;
+            case "Education Pts":
+                count = animatedCount.educationPoints;
                 break;
-            case "Projects": count = animatedCount.projects;
+            case "Projects":
+                count = animatedCount.projects;
                 break;
-            case "Skills": count = animatedCount.skills;
+            case "Skills":
+                count = animatedCount.skills;
                 break;
-            default: count = animatedCount.degreesCerts;
+            default:
+                count = animatedCount.degreesCerts;
         }
         return count;
-    }
-
+    };
 
     const renderLi = () => {
-
         return stats.map((s, i) => {
             const { title } = s;
             return (
@@ -155,7 +227,6 @@ function Stats() {
             );
         });
     };
-
 
     return (
         <Ssection ref={statsRef}>
@@ -168,10 +239,7 @@ function Stats() {
     );
 }
 
-
-export default Stats
-
-
+export default Stats;
 
 // ! Styles
 

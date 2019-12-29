@@ -23,6 +23,7 @@ class Stats extends Component {
 
     componentDidMount() {
         // this.getLinkedInSkills();
+        // * comment
         this.getGitHubProjects();
         this.getTreehousePoints();
     }

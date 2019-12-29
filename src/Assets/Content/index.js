@@ -158,8 +158,8 @@ export const content = {
                     img: {
                         alt: "pic of React RSVP home page",
                         title: "React App",
-                        srcSet: ["Assets/Images/works/reactRSVP01100x650.png"],
-                        src: "Assets/Images/works/reactRSVP01100x650.png"
+                        srcSet: ["Assets/Images/works/ReactRSVP01100x650.png"],
+                        src: "Assets/Images/works/ReactRSVP01100x650.png"
                     },
                     name: "React Apps",
                     description: "Single Page Apps.",

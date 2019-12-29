@@ -1,6 +1,7 @@
 // ! External
 
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import CountUp from 'react-countup';
 import styled from "styled-components";
 
 // ! Internal
@@ -12,93 +13,122 @@ import { mediaMin } from "../../Theme";
 
 const { stats } = content.about.main;
 
-class Stats extends Component {
-    state = {
-        educationPoints: 0,
-        projects: 0,
-        skills: 0
-    };
+function Stats() {
+    // ! State
 
-    // ! Lifecylec Methods
+    const [educationPoints, setEducationPoints] = useState(0);
+    const [projects, setProjects] = useState(0);
+    const [skills, setSkills] = useState(45);
+    const [degreesCerts, setDegreesCerts] = useState(5);
+    const [showSkillAnimation, setShowSkillAnimation] = useState(false);
+ 
 
-    componentDidMount() {
-        // this.getLinkedInSkills();
-        this.getGitHubProjects();
-        this.getTreehousePoints();
-    }
+    // ! Misc
+
+    const statsRef = useRef(null);
+
+    // ! Effects
+
+    useEffect(() => {
+        // getLinkedInSkills();
+        getGitHubProjects();
+        getTreehousePoints();
+
+        window.addEventListener("scroll", listener);
+
+        return () => {
+            window.removeEventListener("scroll", listener);
+        };
+    }, []);
+
+    
 
     // ! Methods
 
-    getGitHubProjects = () => {
-        fetch("https://api.github.com/users/Agentkma/repos")
-            .then(response => response.json())
-            .then(myJson => this.setState({ projects: myJson.length }));
+    const listener = e => {
+        const _window = window;
+        const scrollPos = _window.scrollY;
+        const sectionPosition = parseInt(statsRef.current.offsetTop) - 400;
+
+        if (scrollPos > sectionPosition && !showSkillAnimation) {
+            setShowSkillAnimation(true);
+        } else if (scrollPos < sectionPosition && showSkillAnimation) {
+            console.log("inside else");
+            // user has scrolled back to header's territory,
+            // it's optional here for you to remove the element
+            // * comment
+            setShowSkillAnimation(false);
+        }
+    };
+
+
+    const getGitHubProjects = async () => {
+        const response = await fetch(
+            "https://api.github.com/users/Agentkma/repos"
+        );
+        const myJson = await response.json();
+        setProjects(myJson.length);
     };
     // Todo: set up LI JS SDK
     //https://developer.linkedin.com/docs/getting-started-js-sdk
-    getLinkedInSkills = () => {
-        fetch(
+    const getLinkedInSkills = async () => {
+        const response = await fetch(
             "https://api.linkedin.com/v2/skills?locale.language=en&locale.country=US"
-        )
-            .then(response => response.json())
-            .then(myJson => this.setState({ skills: myJson.elements.length }));
+        );
+        const myJson = await response.json();
+        setSkills(myJson.elements.length);
     };
 
-    getTreehousePoints = () => {
-        fetch("https://teamtreehouse.com/kevinanderson6.json")
-            .then(response => response.json())
-            .then(myJson =>
-                this.setState({ educationPoints: myJson.points.total })
-            );
+    const getTreehousePoints = async () => {
+        const response = await fetch(
+            "https://teamtreehouse.com/kevinanderson6.json"
+        );
+        const myJson = await response.json();
+        setEducationPoints(myJson.points.total);
+    };
+    const getPoints = (title = "") => {
+        let count;
+        switch (title) {
+            case "Education Pts":
+                count = educationPoints;
+                break;
+            case "Projects":
+                count =projects;
+                break;
+            case "Skills":
+                count = skills;
+                break;
+            default:
+                count = degreesCerts;
+        }
+        return count;
     };
 
-    renderLi = () => {
-        return stats.map((s, i) => {
-            const { title, value } = s;
-            if (title === "Education Pts") {
-                return (
-                    <Sli key={i}>
-                        <SdivNumber>{this.state.educationPoints}</SdivNumber>
-                        <SdivSubjectRed>{title}</SdivSubjectRed>
-                    </Sli>
-                );
-            } else if (title === "Projects") {
-                return (
-                    <Sli key={i}>
-                        <SdivNumber>{this.state.projects}</SdivNumber>
-                        <SdivSubject>{title}</SdivSubject>
-                    </Sli>
-                );
-            } else if (title === "Skills") {
-                return (
-                    <Sli key={i}>
-                        {/* <SdivNumber>{this.state.skills}</SdivNumber> */}
-                        <SdivNumber>45</SdivNumber>
-                        <SdivSubject>{title}</SdivSubject>
-                    </Sli>
-                );
-            }
-
+    const renderLi = () => {
+       
+        return stats.map(({ title }, i) => {
+         
+            const points =getPoints(title)
             return (
-                <Sli key={i}>
-                    <SdivNumber>{value}</SdivNumber>
+                <Sli key={`${i}-${title}`}>
+                    <SdivNumber>
+                    < CountUp start={0} end={points} duration={3}/>
+                   </SdivNumber>
                     <SdivSubjectRed>{title}</SdivSubjectRed>
                 </Sli>
             );
         });
     };
 
-    render() {
-        return (
-            <Ssection>
-                <Srow>
-                    <Sarticle>
-                        <Sul>{this.renderLi()}</Sul>
-                    </Sarticle>
-                </Srow>
-            </Ssection>
-        );
-    }
+    return (
+        <Ssection ref={statsRef}>
+            <Srow>
+                <Sarticle>
+                    <Sul>{showSkillAnimation ? renderLi() : null}</Sul>
+                </Sarticle>
+            </Srow>
+        </Ssection>
+    );
 }
 
 export default Stats;

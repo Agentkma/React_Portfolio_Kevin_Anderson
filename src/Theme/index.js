@@ -19,8 +19,8 @@ export const theme = {
     fontSizePrimary: "1rem",
     fontSizeSecondary: "1.5rem",
     fontSizeTertiary: "3rem",
-    fontFamilyPrimary: "font-family: 'Montserrat', sans-serif !important",
-    fontFamilySecondary: "font-family: 'Montserrat', sans-serif !important"
+    fontFamilyPrimary: "Montserrat, sans-serif !important",
+    fontFamilySecondary: "Montserrat, sans-serif !important"
 };
 
 // ! Media Queries

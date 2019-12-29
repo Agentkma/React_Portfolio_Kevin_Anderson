@@ -46,14 +46,14 @@ function Stats() {
         };
     }, []);
 
-    useEffect(() => {
-        useInterval(
-            useIntervalCallback(
-                "educationPoints",
-                getIntervalDelay(educationPoints)
-            )
-        );
-    }, [showSkillAnimation]);
+    // useEffect(() => {
+    //     useInterval(
+    //         useIntervalCallback(
+    //             "educationPoints",
+    //             getIntervalDelay(educationPoints)
+    //         )
+    //     );
+    // }, [showSkillAnimation]);
 
     const useInterval = (callback, delay) => {
         const savedCallback = useRef();
@@ -130,28 +130,28 @@ function Stats() {
         return delay;
     };
 
-    // useInterval(() => {
-    //     if (showSkillAnimation) {
-    //         let eduCount = getCount({
-    //             state: educationPoints,
-    //             type: "educationPoints"
-    //         });
-    //         let projectCount = getCount({ state: projects, type: "projects" });
-    //         let skillsCount = getCount({ state: skills, type: "skills" });
-    //         let degreesCount = getCount({
-    //             state: degreesCerts,
-    //             type: "degreesCerts"
-    //         });
+    useInterval(() => {
+        if (showSkillAnimation) {
+            let eduCount = getCount({
+                state: educationPoints,
+                type: "educationPoints"
+            });
+            let projectCount = getCount({ state: projects, type: "projects" });
+            let skillsCount = getCount({ state: skills, type: "skills" });
+            let degreesCount = getCount({
+                state: degreesCerts,
+                type: "degreesCerts"
+            });
 
-    //         setAnimatedCount({
-    //             educationPoints: eduCount,
-    //             projects: projectCount,
-    //             skills: skillsCount,
-    //             degreesCerts: degreesCount
-    //         });
-    //         setCount(count + 1);
-    //     }
-    // }, 5);
+            setAnimatedCount({
+                educationPoints: eduCount,
+                projects: projectCount,
+                skills: skillsCount,
+                degreesCerts: degreesCount
+            });
+            setCount(count + 1);
+        }
+    }, 5);
 
     // ! Methods
 

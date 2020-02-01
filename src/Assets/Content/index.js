@@ -825,6 +825,36 @@ export const content = {
                     src:
                         "Assets/Images/project/project06/reactRSVP3-1200x700.png",
                     overLay: "update info"
+                },
+                {
+                    alt: "Team Builder Step 1: Select your region",
+                    title: "Select Your Region",
+                    srcSet: [
+                        "Assets/Images/project/project06/teamBuilder1-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project06/teamBuilder1-1200x700.png",
+                    overLay: "update info"
+                },
+                {
+                    alt: "Team Builder 2: Region Selected",
+                    title: "Region Selected",
+                    srcSet: [
+                        "Assets/Images/project/project06/teamBuilder2-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project06/teamBuilder2-1200x700.png",
+                    overLay: "update info"
+                },
+                {
+                    alt: "Team Builder 3: open Account Exec Panel",
+                    title: "Open Account Exect Panel and view choices",
+                    srcSet: [
+                        "Assets/Images/project/project06/teamBuilder3-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project06/teamBuilder3-1200x700.png",
+                    overLay: "update info"
                 }
             ],
             img: {
@@ -888,11 +918,42 @@ export const content = {
                     src:
                         "Assets/Images/project/project06/reactRSVP7-1200x700.png"
                 },
+                // {
+                //     alt: "alt text",
+                //     title: "title text",
+                //     src:
+                //         "Assets/Images/project/project06/reactRSVP8-1200x700.png"
+                // },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Team Builder Step 1: Select your region",
+                    title: "Select Your Region",
                     src:
-                        "Assets/Images/project/project06/reactRSVP8-1200x700.png"
+                        "Assets/Images/project/project06/teamBuilder1-1200x700.png"
+                },
+                {
+                    alt: "Team Builder 2: Region Selected",
+                    title: "Region Selected",
+                    src:
+                        "Assets/Images/project/project06/teamBuilder2-1200x700.png"
+                },
+                {
+                    alt: "Team Builder 3: open Account Exec Panel",
+                    title: "Open Account Exect Panel and view choices",
+                    src:
+                        "Assets/Images/project/project06/teamBuilder3-1200x700.png"
+                },
+                {
+                    alt:
+                        "Team Builder 4: select choice in Accout Exec Panel Section",
+                    title: "Choice selected in Accout Exec Panel Section",
+                    src:
+                        "Assets/Images/project/project06/teamBuilder4-1200x700.png"
+                },
+                {
+                    alt: "Team Builder 5: team choices completed",
+                    title: "All members of team selected and shown on cards",
+                    src:
+                        "Assets/Images/project/project06/teamBuilder5-1200x700.png"
                 }
             ]
         },

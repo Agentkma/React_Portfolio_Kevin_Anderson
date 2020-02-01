@@ -16,8 +16,6 @@ export const content = {
                 "Styled-Components ...",
                 "Material UI ...",
                 "and Testing-Library/React"
-
-
             ]
         },
         main: {
@@ -129,9 +127,7 @@ export const content = {
                     img: {
                         alt: "Album Art",
                         title: "Design & Animation",
-                        srcSet: [
-                            "Assets/Images/works/AlbumArtOne.png"
-                        ],
+                        srcSet: ["Assets/Images/works/AlbumArtOne.png"],
                         src: "Assets/Images/works/AlbumArtOne.png"
                     },
                     name: "Album Art",
@@ -158,8 +154,8 @@ export const content = {
                     img: {
                         alt: "pic of React RSVP home page",
                         title: "React App",
-                        srcSet: ["Assets/Images/works/ReactRSVP01100x650.png"],
-                        src: "Assets/Images/works/ReactRSVP01100x650.png"
+                        srcSet: ["Assets/Images/works/reactRSVP01100x650.png"],
+                        src: "Assets/Images/works/reactRSVP01100x650.png"
                     },
                     name: "React Apps",
                     description: "Single Page Apps.",
@@ -193,8 +189,7 @@ export const content = {
                     description: "Mobile Apps.",
                     worksFilter: ["all", "mobile", "SPA", "full-stack"],
                     to: "/project8"
-                },
-
+                }
             ]
         }
     },
@@ -558,13 +553,10 @@ export const content = {
                 {
                     alt: "alt",
                     title: "Design & Animation",
-                    srcSet: [
-                        "Assets/Images/project/project09/AlbumArtOne.png"
-                    ],
-                    src:
-                        "Assets/Images/project/project09/AlbumArtOne.png",
+                    srcSet: ["Assets/Images/project/project09/AlbumArtOne.png"],
+                    src: "Assets/Images/project/project09/AlbumArtOne.png",
                     overLay: "Design"
-                },
+                }
                 // {
                 //     alt: "alt",
                 //     title: "Mobile First",
@@ -620,14 +612,13 @@ export const content = {
             img: {
                 alt: "Album Art",
                 title: "Album Art One",
-                srcSet: ["Assets/Images/project/project09/AlbumArtOne.png",],
-                src: "Assets/Images/project/project09/AlbumArtOne.png",
+                srcSet: ["Assets/Images/project/project09/AlbumArtOne.png"],
+                src: "Assets/Images/project/project09/AlbumArtOne.png"
             },
             description: {
                 taglineHeading: "Good design and clean coding",
                 taglineSubHeading: "That is a Principle",
                 projectDescription: [
-
                     "The design and animations are built with React,CSS, and Styled-Components."
                 ],
                 categories: "Design",
@@ -638,15 +629,13 @@ export const content = {
                 {
                     alt: "album art one",
                     title: "still pic",
-                    src:
-                        "Assets/Images/project/project09/AlbumArtOne.png"
+                    src: "Assets/Images/project/project09/AlbumArtOne.png"
                 },
                 {
                     alt: "album art one animated",
                     title: "animated",
-                    src:
-                        "Assets/Images/project/project09/AlbumArtOne.gif"
-                },
+                    src: "Assets/Images/project/project09/AlbumArtOne.gif"
+                }
                 // {
                 //     alt: "alt text",
                 //     title: "title text",
@@ -836,6 +825,36 @@ export const content = {
                     src:
                         "Assets/Images/project/project06/reactRSVP3-1200x700.png",
                     overLay: "update info"
+                },
+                {
+                    alt: "Team Builder Step 1: Select your region",
+                    title: "Select Your Region",
+                    srcSet: [
+                        "Assets/Images/project/project06/teamBuilder1-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project06/teamBuilder1-1200x700.png",
+                    overLay: "update info"
+                },
+                {
+                    alt: "Team Builder 2: Region Selected",
+                    title: "Region Selected",
+                    srcSet: [
+                        "Assets/Images/project/project06/teamBuilder2-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project06/teamBuilder2-1200x700.png",
+                    overLay: "update info"
+                },
+                {
+                    alt: "Team Builder 3: open Account Exec Panel",
+                    title: "Open Account Exect Panel and view choices",
+                    srcSet: [
+                        "Assets/Images/project/project06/teamBuilder3-1200x700.png"
+                    ],
+                    src:
+                        "Assets/Images/project/project06/teamBuilder3-1200x700.png",
+                    overLay: "update info"
                 }
             ],
             img: {
@@ -899,11 +918,42 @@ export const content = {
                     src:
                         "Assets/Images/project/project06/reactRSVP7-1200x700.png"
                 },
+                // {
+                //     alt: "alt text",
+                //     title: "title text",
+                //     src:
+                //         "Assets/Images/project/project06/reactRSVP8-1200x700.png"
+                // },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Team Builder Step 1: Select your region",
+                    title: "Select Your Region",
                     src:
-                        "Assets/Images/project/project06/reactRSVP8-1200x700.png"
+                        "Assets/Images/project/project06/teamBuilder1-1200x700.png"
+                },
+                {
+                    alt: "Team Builder 2: Region Selected",
+                    title: "Region Selected",
+                    src:
+                        "Assets/Images/project/project06/teamBuilder2-1200x700.png"
+                },
+                {
+                    alt: "Team Builder 3: open Account Exec Panel",
+                    title: "Open Account Exect Panel and view choices",
+                    src:
+                        "Assets/Images/project/project06/teamBuilder3-1200x700.png"
+                },
+                {
+                    alt:
+                        "Team Builder 4: select choice in Accout Exec Panel Section",
+                    title: "Choice selected in Accout Exec Panel Section",
+                    src:
+                        "Assets/Images/project/project06/teamBuilder4-1200x700.png"
+                },
+                {
+                    alt: "Team Builder 5: team choices completed",
+                    title: "All members of team selected and shown on cards",
+                    src:
+                        "Assets/Images/project/project06/teamBuilder5-1200x700.png"
                 }
             ]
         },

@@ -1334,14 +1334,6 @@ export const content = {
                 }
             },
             {
-                link: "public/Resume_Kevin_Anderson_Web.pdf",
-                img: {
-                    alt: "weblink to Kevin Anderson resume pdf file",
-                    title: "resume Icon",
-                    src: "Assets/Images/social/resumeDL.png"
-                }
-            },
-            {
                 link: "/contact",
                 img: {
                     alt: "a weblink to Kevin Anderson email",

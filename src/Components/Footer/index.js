@@ -9,45 +9,21 @@ import { content } from "../../Assets/Content";
 import { media } from "../../Theme";
 
 export const Footer = () => {
-    const socialLitems = content.footer.social.map(li => {
-        const source = require(`../../${li.img.src}`);
+    const socialLitems = content.footer.social.map(({ img, link }) => {
+        const source = require(`../../${img.src}`);
 
-        if (li.title === "resume Icon") {
-            return (
-                <StyledLi key={li.img.src}>
-                    <a
-                        download
-                        target="_blank "
-                        rel="noopener noreferrer"
-                        href={li.link}
-                    >
-                        <StyledImg
-                            data-no-retina
-                            alt={li.img.alt}
-                            title={li.img.title}
-                            src={source}
-                        />
-                    </a>
-                </StyledLi>
-            );
-        } else {
-            return (
-                <StyledLi key={li.img.src}>
-                    <a
-                        target="_blank "
-                        rel="noopener noreferrer"
-                        href={li.link}
-                    >
-                        <StyledImg
-                            data-no-retina
-                            alt={li.img.alt}
-                            title={li.img.title}
-                            src={source}
-                        />
-                    </a>
-                </StyledLi>
-            );
-        }
+        return (
+            <StyledLi key={img.src}>
+                <a target="_blank" rel="noopener noreferrer" href={link}>
+                    <StyledImg
+                        data-no-retina
+                        alt={img.alt}
+                        title={img.title}
+                        src={source}
+                    />
+                </a>
+            </StyledLi>
+        );
     });
 
     return (

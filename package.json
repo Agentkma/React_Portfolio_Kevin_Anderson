@@ -15,7 +15,7 @@
         "react-countup": "^4.3.1",
         "react-dom": "^16.9.0",
         "react-router-dom": "^4.3.1",
-        "react-scripts": "^3.3.0",
+        "react-scripts": "3.4.0",
         "react-styled-carousel": "^0.4.12",
         "redux-thunk": "^2.3.0",
         "styled-components": "^5.0.1",

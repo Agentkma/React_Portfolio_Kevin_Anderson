@@ -5,17 +5,18 @@ export const content = {
             subHeading: [
                 "I'm a Software Developer.",
                 "I work in Denver, CO.",
-                "I create web apps.",
+                "I create Web Apps.",
                 "I'm a solution builder...",
-                "a lifelong learner...",
-                "a rational optimist...",
-                "a humanist and...",
-                "an open source enthusiast",
-                "This site was built with...",
+                "a Lifelong Learner...",
+                "a Rational Optimist...",
+                "a Humanist and...",
+                "an Open Source enthusiast.",
+                "I built this site with ...",
                 "React 16 ...",
                 "Styled-Components ...",
                 "Material UI ...",
-                "and Testing-Library/React"
+                "Formik and...",
+                "Testing-Library/React"
             ]
         },
         main: {
@@ -1213,7 +1214,7 @@ export const content = {
                                 "Managing different teams and employees while solving the problems of custom building was challenging. I enjoyed finding improvements in our product and process through continuous process improvement.",
                                 "I decided to apply my love for problem solving and solution building to the world of technology which I had become more and more interested in.",
                                 "My technical education has been primarily through project based course education with Treehouse, Galvanize, and Udemy. In addition I've learned from working with others in person, many other web based education sources, and of course documentation.",
-                                "I also love to laugh, read, hike, bike, snowboard, and spending time with my family and dogs."
+                                "I also love to laugh, read, hike, bike, snowboard, and spending time with my family and dog."
                             ]
                         }
                     }

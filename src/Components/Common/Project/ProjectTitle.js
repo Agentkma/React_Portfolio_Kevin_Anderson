@@ -1,11 +1,15 @@
 // ! External
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 // ! Internal
 import { content } from "../../../Assets/Content";
 
 export function ProjectTitle({ project }) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const { name, categories } = content.projects[project].title;
     return (
         <Ssection id={project}>

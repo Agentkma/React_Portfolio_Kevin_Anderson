@@ -1,12 +1,47 @@
-
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import CodeIcon from "@material-ui/icons/Code";
 
 // ! Internal
 import { mediaMin } from "../../Theme";
+import drawerBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
+import { SlideDown, Rotate } from "../../Theme/animations";
+import { ScloseIcon } from "../../shared/StyledComponents";
 
 // ! Styles
+
+export const SlideDownNavDiv = styled(SlideDown)`
+    display: block !important;
+    position: fixed;
+    width: 100%;
+    top: 9vh;
+    z-index: 101;
+    @media (min-width: 768px) {
+        top: 0;
+        right: 0;
+        z-index: 999;
+        position: fixed;
+        height: 100vh;
+    }
+`;
+
+export const Nav = styled.nav`
+    @media (min-width: 768px) {
+        height: 100%;
+        padding: 5rem;
+        text-align: center;
+        background-image: url(${drawerBgImg});
+        background-size: cover;
+        background-position: center center;
+    }
+`;
+
+export const ScloseIconMod = styled(ScloseIcon)`
+    visibility: hidden;
+    @media (min-width: 768px) {
+        visibility: visible;
+    }
+`;
 
 export const Ul = styled.ul`
     text-align: center;
@@ -22,9 +57,9 @@ export const Ul = styled.ul`
         background: transparent;`};
 `;
 
-export const Sul = styled(Ul)`padding:0;`;
-
-
+export const Sul = styled(Ul)`
+    padding: 0;
+`;
 
 export const SLi = styled.li`
     height: 2rem;
@@ -69,7 +104,6 @@ export const SLi = styled.li`
         }`};
 `;
 
-
 export const SprojectSubUL = styled.ul`
     transform: scaleY(0);
     opacity: 0;
@@ -80,7 +114,6 @@ export const SprojectSubUL = styled.ul`
         transform: scaleY(1);
     } */
 `;
-
 
 export const Sli = styled.li`
     position: relative;
@@ -203,4 +236,36 @@ export const StyledCodeIcon = styled(CodeIcon)`
     }
     ${mediaMin.tablet`  height: 2.5rem !important;`};
 `;
+export const MenuCollapser = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
 
+    background-color: ${props => props.theme.colorBgPrimary};
+    width: 100%;
+    z-index: 1000000;
+    height: 9vh;
+    line-height: 2rem;
+    font-family: ${props => props.theme.fontFamilyPrimary};
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0 1.125rem;
+    padding-top: 1rem;
+    box-sizing: border-box;
+`;
+
+export const StyledLogoRotate = styled(Rotate)`
+    width: auto;
+    height: 90%;
+    transition: all 0.25s ease-in;
+    &:hover {
+        opacity: 0.4;
+    }
+`;
+
+export const LogoImg = styled.img`
+    width: auto;
+    height: 100%;
+`;

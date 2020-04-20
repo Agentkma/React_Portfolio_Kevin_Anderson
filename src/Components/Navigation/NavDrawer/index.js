@@ -1,59 +1,78 @@
 // ! External
 
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
 
 // ! Internal
-import NavItems from "../NavItems";
-import drawerBgImg from "../../../Assets/Images/bg/about-bg-1920x1080.jpg";
-import { SlideDown } from "../../../Theme/animations";
-import { ScloseIcon } from "../../../shared/StyledComponents";
+
+import {
+    SlideDownNavDiv,
+    Nav,
+    ScloseIconMod,
+    SLi,
+    Sli,
+    SsubLi,
+    SnavLink,
+    SnavItem,
+    Ul,
+    Sul
+} from "../styled-components";
+import { ScaleInVerTop } from "../../../Theme/animations";
+import { content } from "../../../Assets/Content";
 
 export const NavDrawer = ({ click }) => {
+    const [projectListOpen, setProjectListOpen] = useState(false);
+
+    const projectListClickHandler = () => {
+        setProjectListOpen(!projectListOpen);
+    };
+
+    const renderProjectSubul = () => {
+        const { projects } = content;
+        return projects.map((project, index) => {
+            const { url, id } = project;
+
+            return (
+                <SsubLi key={index}>
+                    <SnavItem to={`/${url}`} onClick={click}>
+                        {id}
+                    </SnavItem>
+                </SsubLi>
+            );
+        });
+    };
+
     return (
-        <SlideDownNavDiv data-testid="nav-dawer" >
-            <Nav role="navigation" >
+        <SlideDownNavDiv data-testid="nav-dawer">
+            <Nav role="navigation">
                 <ScloseIconMod onClick={click} />
-                <NavItems click={click} />
+                <Ul>
+                    <Sli>
+                        <SnavLink to="/" exact onClick={click}>
+                            Portfolio
+                        </SnavLink>
+                    </Sli>
+                    <Sli>
+                        <SnavLink to="/about" onClick={click}>
+                            About
+                        </SnavLink>
+                    </Sli>
+                    <SLi onClick={projectListClickHandler}>
+                        Project View
+                        {projectListOpen && (
+                            <ScaleInVerTop>
+                                <Sul>{renderProjectSubul()}</Sul>
+                            </ScaleInVerTop>
+                        )}
+                    </SLi>
+                    <Sli>
+                        <SnavLink to="/contact" onClick={click}>
+                            Say Hello
+                        </SnavLink>
+                    </Sli>
+                </Ul>
             </Nav>
         </SlideDownNavDiv>
     );
 };
 
 export default NavDrawer;
-
-// ! Styles
-
-const SlideDownNavDiv = styled(SlideDown)`
-    display: block !important;
-    position: fixed;
-    width: 100%;
-    top: 9vh;
-    z-index: 101;
-    @media (min-width: 768px) {
-        top: 0;
-        right: 0;
-        z-index: 999;
-        position: fixed;
-        height: 100vh;
-    }
-`;
-
-const Nav = styled.nav`
-  
-    @media (min-width: 768px) {
-        height: 100%;
-        padding: 5rem;
-        text-align: center;
-        background-image: url(${drawerBgImg});
-        background-size: cover;
-        background-position: center center;
-    }
-`;
-
-const ScloseIconMod = styled(ScloseIcon)`
-    visibility: hidden;
-    @media (min-width: 768px) {
-        visibility: visible;
-    }
-`;

@@ -1,13 +1,39 @@
 // ! External
-import React from "react";
+import React, { useContext } from "react";
+import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { func, object } from "prop-types";
 
 // ! Internal
-import NavHamburger from "../NavHamburger";
-import { Rotate } from "../../../Theme/animations";
 
-export const NavBar = ({ click }) => {
+import { theme } from "../../../Theme";
+import {
+    Container,
+    HamburgerDiv,
+    HamburgerBar,
+    StyledCodeIcon,
+    MenuCollapser,
+    StyledLogoRotate,
+    LogoImg
+} from "../styled-components";
+import { WorksFilterContext } from "../../../Hoc/Layout/context";
+
+export const NavBar = ({ click, location }) => {
+    const { toggleWorksFilter } = useContext(WorksFilterContext);
+    const codeIcon =
+        location.pathname === "/" ? (
+            <div>
+                <a
+                    href="#works-filter-panel"
+                    style={{ color: theme.colorBgSecondary }}
+                >
+                    <StyledCodeIcon
+                        onClick={toggleWorksFilter}
+                        data-testid="nav-code-icon"
+                    />
+                </a>
+            </div>
+        ) : null;
     return (
         <MenuCollapser>
             <Link to={"./"}>
@@ -18,44 +44,20 @@ export const NavBar = ({ click }) => {
                     />
                 </StyledLogoRotate>
             </Link>
-
-            <NavHamburger click={click} data-testid="nav-hamburger" />
+            <Container>
+                {codeIcon}
+                <HamburgerDiv onClick={click} data-testid="nav-hamburger">
+                    <HamburgerBar />
+                    <HamburgerBar />
+                    <HamburgerBar />
+                </HamburgerDiv>
+            </Container>
         </MenuCollapser>
     );
 };
+NavBar.propTypes = {
+    click: func,
+    location: object
+};
 
-export default NavBar;
-
-const MenuCollapser = styled.div`
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    background-color: ${props => props.theme.colorBgPrimary};
-    width: 100%;
-    z-index: 1000000;
-    height: 9vh;
-    line-height: 2rem;
-    font-family: ${props => props.theme.fontFamilyPrimary};
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 0 1.125rem;
-    padding-top: 1rem;
-    box-sizing: border-box;
-`;
-
-const StyledLogoRotate = styled(Rotate)`
-    width: auto;
-    height: 90%;
-    transition: all 0.25s ease-in;
-    &:hover {
-        opacity: 0.4;
-    }
-`;
-
-const LogoImg = styled.img`
-    width: auto;
-    height: 100%;
-`;
+export default withRouter(NavBar);

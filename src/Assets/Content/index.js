@@ -244,7 +244,7 @@ export const content = {
                 ],
                 categories: "Front End & CSS Framework",
                 delivered: "2017 September",
-                liveSiteLink: "https://agentkma.github.io/MacroPal2.0/"
+                liveSiteLink: "https://agentkma.github.io/galvanize-eats/"
             },
             imgContainer: [
                 {
@@ -874,7 +874,7 @@ export const content = {
                 ],
                 categories: "SPA",
                 delivered: "2018 November",
-                liveSiteLink: "NA"
+                liveSiteLink: "https://agentkma.github.io/reactRSVPapp/"
             },
             imgContainer: [
                 {

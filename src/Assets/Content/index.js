@@ -33,7 +33,7 @@ export const content = {
             projects: [
                 {
                     img: {
-                        alt: "pic of galvanize eats app home page",
+                        alt: "galvanize eats app home page",
                         title: "galvanize eats app",
                         srcSet: [
                             "Assets/Images/works/galvanizeEats1100x650.webp"
@@ -47,7 +47,7 @@ export const content = {
                 },
                 {
                     img: {
-                        alt: "pic of home page of macro pal app",
+                        alt: "home page of macro pal app",
                         title: "macro pal app",
                         srcSet: ["Assets/Images/works/macroPal1100x650.webp"],
                         src: "Assets/Images/works/macroPal1100x650.png"
@@ -60,7 +60,7 @@ export const content = {
                 },
                 {
                     img: {
-                        alt: "pic of safe nav app home page",
+                        alt: "safe nav app home page",
                         title: "safe nav app",
                         srcSet: ["Assets/Images/works/safeNav1100x650.webp"],
                         src: "Assets/Images/works/safeNav1100x650.png"
@@ -113,7 +113,7 @@ export const content = {
                 // },
                 {
                     img: {
-                        alt: "pic of gRecipes app home page",
+                        alt: "gRecipes app home page",
                         title: "gRecipes App",
                         srcSet: ["Assets/Images/works/gRecipes1100x650.webp"],
                         src: "Assets/Images/works/gRecipes1100x650.png"
@@ -126,7 +126,7 @@ export const content = {
                 },
                 {
                     img: {
-                        alt: "Album Art",
+                        alt: "Album Art 1",
                         title: "Design & Animation",
                         srcSet: ["Assets/Images/works/AlbumArtOne.png"],
                         src: "Assets/Images/works/AlbumArtOne.png"
@@ -153,7 +153,7 @@ export const content = {
                 // },
                 {
                     img: {
-                        alt: "pic of React RSVP home page",
+                        alt: "React RSVP home page",
                         title: "React App",
                         srcSet: ["Assets/Images/works/reactRSVP01100x650.png"],
                         src: "Assets/Images/works/reactRSVP01100x650.png"
@@ -204,7 +204,7 @@ export const content = {
             },
             bannerImg: [
                 {
-                    alt: "alt",
+                    alt: "Galvanize Eats Hero View",
                     title: "title",
                     srcSet: [
                         "Assets/Images/project/project01/gEats6-1200x700.png"
@@ -212,7 +212,7 @@ export const content = {
                     src: "Assets/Images/project/project01/gEats6-1200x700.png"
                 },
                 {
-                    alt: "alt",
+                    alt: "Galvanize Eats Order Confirmation",
                     title: "title",
                     srcSet: [
                         "Assets/Images/project/project01/gEats2-1200x700.png"
@@ -220,7 +220,7 @@ export const content = {
                     src: "Assets/Images/project/project01/gEats2-1200x700.png"
                 },
                 {
-                    alt: "alt",
+                    alt: "Galvanize Eats About Section",
                     title: "title",
                     srcSet: [
                         "Assets/Images/project/project01/gEats3-1200x700.png"
@@ -288,8 +288,8 @@ export const content = {
             },
             bannerImg: [
                 {
-                    alt: "alt",
-                    title: "title",
+                    alt: "Macro Pal Initial View",
+                    title: "Macro Pal Initial View",
                     srcSet: [
                         "Assets/Images/project/project02/macroPal1-1200x700.png"
                     ],
@@ -297,8 +297,8 @@ export const content = {
                         "Assets/Images/project/project02/macroPal1-1200x700.png"
                 },
                 {
-                    alt: "alt",
-                    title: "title",
+                    alt: "Macro Pal Form View",
+                    title: "Macro Pal Form View",
                     srcSet: [
                         "Assets/Images/project/project02/macroPal2-1200x700.png"
                     ],
@@ -306,8 +306,8 @@ export const content = {
                         "Assets/Images/project/project02/macroPal2-1200x700.png"
                 },
                 {
-                    alt: "alt",
-                    title: "title",
+                    alt: "Macro Pal Build Step View",
+                    title: "Macro Pal Build Step View",
                     srcSet: [
                         "Assets/Images/project/project02/macroPal3-1200x700.png"
                     ],
@@ -379,24 +379,24 @@ export const content = {
             },
             bannerImg: [
                 {
-                    alt: "alt",
-                    title: "title",
+                    alt: "Safe Nav Hero View",
+                    title: "Safe Nav Hero View",
                     srcSet: [
                         "Assets/Images/project/project03/safeNav1-1200x700.png"
                     ],
                     src: "Assets/Images/project/project03/safeNav1-1200x700.png"
                 },
                 {
-                    alt: "alt",
-                    title: "title",
+                    alt: "Safe Nav Features Section",
+                    title: "Safe Nav Features Section",
                     srcSet: [
                         "Assets/Images/project/project03/safeNav2-1200x700.png"
                     ],
                     src: "Assets/Images/project/project03/safeNav2-1200x700.png"
                 },
                 {
-                    alt: "alt",
-                    title: "title",
+                    alt: "Safe Nav Mobile Phone Hero View",
+                    title: "Safe Nav Mobile Phone Hero View",
                     srcSet: [
                         "Assets/Images/project/project03/safeNav3-800x600.png"
                     ],
@@ -422,33 +422,33 @@ export const content = {
             },
             imgContainer: [
                 {
-                    alt: "alt text",
+                    alt: "Safe Nav Hero View",
                     title: "home page",
                     src: "Assets/Images/project/project03/safeNav1-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Safe Nav Features Section",
+                    title: "Safe Nav Features Section",
                     src: "Assets/Images/project/project03/safeNav2-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Safe Nav Moblile Hero View",
+                    title: "Safe Nav Moblile Hero View",
                     src: "Assets/Images/project/project03/safeNav3-800x600.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Safe Nav Moblile Solutions View",
+                    title: "Safe Nav Moblile Solutions View",
                     src: "Assets/Images/project/project03/safeNav4-800x600.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Safe Nav Tablet Solutions View",
+                    title: "Safe Nav Tablet Solutions View",
                     src: "Assets/Images/project/project03/safeNav5-800x600.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Safe Nav Tablet Hero View",
+                    title: "Safe Nav Tablet Hero View",
                     src: "Assets/Images/project/project03/safeNav6-800x600.png"
                 }
             ]
@@ -462,7 +462,7 @@ export const content = {
             },
             bannerImg: [
                 {
-                    alt: "alt",
+                    alt: "gRecipes Hero View",
                     title: "Full Stack & CSS Framework",
                     srcSet: [
                         "Assets/Images/project/project04/gRecipe1-1200x700.png"
@@ -472,7 +472,7 @@ export const content = {
                     overLay: "Full Stack & CSS Framework"
                 },
                 {
-                    alt: "alt",
+                    alt: "gRecipes Recipes View",
                     title: "Mobile First",
                     srcSet: [
                         "Assets/Images/project/project04/gRecipe2-1200x700.png"
@@ -482,7 +482,7 @@ export const content = {
                     overLay: "Mobile First"
                 },
                 {
-                    alt: "alt",
+                    alt: "gRecipes New Receipe View",
                     title: "Material Design",
                     srcSet: [
                         "Assets/Images/project/project04/gRecipe3-1200x700.png"
@@ -512,33 +512,33 @@ export const content = {
             },
             imgContainer: [
                 {
-                    alt: "alt text",
+                    alt: "gRecipes hero view",
                     title: "home page",
                     src: "Assets/Images/project/project04/gRecipe1-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "gRecipes recipes section",
+                    title: "gRecipes recipes section",
                     src: "Assets/Images/project/project04/gRecipe2-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "gRecipes new recipe section",
+                    title: "gRecipes new recipe section",
                     src: "Assets/Images/project/project04/gRecipe3-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "gRecipes recipes reviews section",
+                    title: "gRecipes recipes reviews section",
                     src: "Assets/Images/project/project04/gRecipe4-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "gRecipes create a recipe section",
+                    title: "gRecipes create a recipe section",
                     src: "Assets/Images/project/project04/gRecipe5-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "gRecipes home mobile view",
+                    title: "gRecipes home mobile view",
                     src: "Assets/Images/project/project04/gRecipe6-800x600.png"
                 }
             ]
@@ -552,7 +552,7 @@ export const content = {
             },
             bannerImg: [
                 {
-                    alt: "alt",
+                    alt: "Album Art 1",
                     title: "Design & Animation",
                     srcSet: ["Assets/Images/project/project09/AlbumArtOne.png"],
                     src: "Assets/Images/project/project09/AlbumArtOne.png",
@@ -798,8 +798,8 @@ export const content = {
             },
             bannerImg: [
                 {
-                    alt: "alt",
-                    title: "SPA",
+                    alt: "Lets RSVP app initial view",
+                    title: "gRecipes home mobile view",
                     srcSet: [
                         "Assets/Images/project/project06/reactRSVP1-1200x700.png"
                     ],
@@ -808,8 +808,8 @@ export const content = {
                     overLay: "update info"
                 },
                 {
-                    alt: "alt",
-                    title: "update info",
+                    alt: "Lets RSVP app attending view",
+                    title: "Lets RSVP app attending view",
                     srcSet: [
                         "Assets/Images/project/project06/reactRSVP2-1200x700.png"
                     ],
@@ -818,8 +818,8 @@ export const content = {
                     overLay: "update info"
                 },
                 {
-                    alt: "alt",
-                    title: "update info",
+                    alt: "Lets RSVP app hide no response view",
+                    title: "Lets RSVP app hide no response view",
                     srcSet: [
                         "Assets/Images/project/project06/reactRSVP3-1200x700.png"
                     ],
@@ -878,44 +878,44 @@ export const content = {
             },
             imgContainer: [
                 {
-                    alt: "alt text",
+                    alt: "Lets RSVP app initial view",
                     title: "home page",
                     src:
                         "Assets/Images/project/project06/reactRSVP1-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Lets RSVP app confirmed view",
+                    title: "Lets RSVP app confirmed view",
                     src:
                         "Assets/Images/project/project06/reactRSVP2-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Lets RSVP app hide no response view",
+                    title: "Lets RSVP app hide no response view",
                     src:
                         "Assets/Images/project/project06/reactRSVP3-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Lets RSVP app unhide no response view",
+                    title: "Lets RSVP app unhide no response view",
                     src:
                         "Assets/Images/project/project06/reactRSVP4-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Lets RSVP app unconfirm view",
+                    title: "Lets RSVP app unconfirm view",
                     src:
                         "Assets/Images/project/project06/reactRSVP5-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Lets RSVP app delete view",
+                    title: "Lets RSVP app delete view",
                     src:
                         "Assets/Images/project/project06/reactRSVP6-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Lets RSVP app delete view 2",
+                    title: "Lets RSVP app delete view 2",
                     src:
                         "Assets/Images/project/project06/reactRSVP7-1200x700.png"
                 },
@@ -1016,44 +1016,46 @@ export const content = {
             },
             imgContainer: [
                 {
-                    alt: "alt text",
+                    alt: "Angular PhotoLog App Home View",
                     title: "home page",
                     src:
                         "Assets/Images/project/project07/AngularPhotoLog1-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Angular PhotoLog App Comments View",
+                    title: "Angular PhotoLog App Comments View",
                     src:
                         "Assets/Images/project/project07/AngularPhotoLog2-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Angular PhotoLog App add comments initial View",
+                    title: "Angular PhotoLog App add comments initial View",
                     src:
                         "Assets/Images/project/project07/AngularPhotoLog3-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Angular PhotoLog App add comments Name Field View",
+                    title: "Angular PhotoLog App add comments Name Field View",
                     src:
                         "Assets/Images/project/project07/AngularPhotoLog4-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt:
+                        "Angular PhotoLog App add comments Finished new comment View",
+                    title:
+                        "Angular PhotoLog App add comments Finished new comment View",
                     src:
                         "Assets/Images/project/project07/AngularPhotoLog5-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Angular PhotoLog App nav bar expaned View",
+                    title: "Angular PhotoLog App nav bar expaned View",
                     src:
                         "Assets/Images/project/project07/AngularPhotoLog6-1200x700.png"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "Angular PhotoLog App nav bar View",
+                    title: "Angular PhotoLog App nav bar View",
                     src:
                         "Assets/Images/project/project07/AngularPhotoLog7-1200x700.png"
                 }
@@ -1068,15 +1070,15 @@ export const content = {
             },
             bannerImg: [
                 {
-                    alt: "alt",
+                    alt: "TerraGo Home View",
                     title: "mobile",
                     srcSet: ["Assets/Images/works/terraGoSplash-1100x650.png"],
                     src: "Assets/Images/works/terraGoSplash-1100x650.png",
                     overLay: "update info"
                 },
                 {
-                    alt: "alt",
-                    title: "update info",
+                    alt: "TerraGo Login View",
+                    title: "TerraGo Login View",
                     srcSet: [
                         "Assets/Images/project/project08/KaptureTerraGOlogin.gif"
                     ],
@@ -1114,38 +1116,38 @@ export const content = {
             },
             imgContainer: [
                 {
-                    alt: "alt text",
-                    title: "home page",
+                    alt: "TerraGo Login View",
+                    title: "TerraGo Login View",
                     src:
                         "Assets/Images/project/project08/KaptureTerraGOlogin.gif"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "TerraGo Adding Ride Details View",
+                    title: "TerraGo Adding Ride Details View",
                     src:
                         "Assets/Images/project/project08/KaptureTerraGOProfileAndRideView.gif"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "TerraGo Adding Deleting Ride Details View",
+                    title: "TerraGo Adding Deleting Ride Details View",
                     src:
                         "Assets/Images/project/project08/KaptureTerraGORideDelete.gif"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "TerraGo logged in initial View",
+                    title: "TerraGo logged in initial View",
                     src:
                         "Assets/Images/project/project08/KaptureTerraGORideMap1.0.gif"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "TerraGo ride chart summary View",
+                    title: "erraGo ride chart summary View",
                     src:
                         "Assets/Images/project/project08/KaptureTerraGOrideSummary.gif"
                 },
                 {
-                    alt: "alt text",
-                    title: "title text",
+                    alt: "TerraGo ride tracking start view",
+                    title: "TerraGo ride tracking start view",
                     src:
                         "Assets/Images/project/project08/KaptureTerraGOstart.gif"
                 }

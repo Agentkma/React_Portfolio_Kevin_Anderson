@@ -12,7 +12,12 @@ import { ScaleInVerTop } from "../../../Theme/animations";
 export const WorksFilterPanel = ({ click }) => {
     const items = content.home.main.worksFilter.map((category, index) => {
         return (
-            <li key={index} onClick={e => click(e)}>
+            <li
+                key={index}
+                onClick={e => click(e)}
+                role="menuitem"
+                tabindex="-1"
+            >
                 {category}
             </li>
         );
@@ -22,7 +27,14 @@ export const WorksFilterPanel = ({ click }) => {
         <ScaleInVerTop id="works-filter-panel">
             <Ssection>
                 <Container>
-                    <Sul>{items}</Sul>
+                    <Sul
+                        id="worksFilterPanel"
+                        role="menu"
+                        aria-label="works"
+                        tabindex="0"
+                    >
+                        {items}
+                    </Sul>
                 </Container>
             </Ssection>
         </ScaleInVerTop>

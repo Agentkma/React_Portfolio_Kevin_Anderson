@@ -19,23 +19,15 @@ import {
 import { WorksFilterContext } from "../../../Hoc/Layout/context";
 
 export const NavBar = ({ click, location }) => {
-    const { toggleWorksFilter } = useContext(WorksFilterContext);
-    const codeIcon =
-        location.pathname === "/" ? (
-            <div>
-                <a
-                    href="#works-filter-panel"
-                    style={{ color: theme.colorBgSecondary }}
-                >
-                    <StyledCodeIcon
-                        onClick={toggleWorksFilter}
-                        data-testid="nav-code-icon"
-                    />
-                </a>
-            </div>
-        ) : null;
+    const { toggleWorksFilter, showWorksFilter } = useContext(
+        WorksFilterContext
+    );
+
     return (
-        <MenuCollapser>
+        <MenuCollapser
+            role="toolbar"
+            aria-label="main app toolbar and navigation"
+        >
             <Link to={"./"}>
                 <StyledLogoRotate>
                     {" "}
@@ -45,8 +37,25 @@ export const NavBar = ({ click, location }) => {
                 </StyledLogoRotate>
             </Link>
             <Container>
-                {codeIcon}
-                <HamburgerDiv onClick={click} data-testid="nav-hamburger">
+                {location.pathname === "/" && (
+                    <a
+                        role="button"
+                        arial-label="works filter panel"
+                        aria-haspopup="true"
+                        aria-controls="worksFilterPanel"
+                        aria-expanded={showWorksFilter}
+                        onClick={toggleWorksFilter}
+                        href="#works-filter-panel"
+                        style={{ color: theme.colorBgSecondary }}
+                    >
+                        <StyledCodeIcon data-testid="nav-code-icon" />
+                    </a>
+                )}
+                <HamburgerDiv
+                    onClick={click}
+                    data-testid="nav-hamburger"
+                    tabindex="0"
+                >
                     <HamburgerBar />
                     <HamburgerBar />
                     <HamburgerBar />

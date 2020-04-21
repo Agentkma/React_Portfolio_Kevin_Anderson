@@ -1,9 +1,7 @@
-
-import * as emailjs from 'emailjs-com';
+import * as emailjs from "emailjs-com";
 import React, { useState } from "react";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
-
 
 import {
     Ssection,
@@ -15,24 +13,23 @@ import {
     SerrorMessage
 } from "./styled-components";
 
-import { emailJsUserID } from '../../config';
+import { emailJsUserID } from "../../config";
 
 let template_params = {
-    "reply_to": "reply_to_value",
-    "from_name": "from_name_value",
-    "to_name": "Kevin Anderson",
-    "message_html": "message_html_value"
-}
+    reply_to: "reply_to_value",
+    from_name: "from_name_value",
+    to_name: "Kevin Anderson",
+    message_html: "message_html_value"
+};
 
 const service_id = "gmail";
 const template_id = "template_iAQcKsQI";
 
 export const legendMessage = {
-    default: 'Reach Out...',
-    messageSent: 'Message Sent!',
-    messageSentError: 'Error Sending Message'
-}
-
+    default: "Reach Out...",
+    messageSent: "Message Sent!",
+    messageSentError: "Error Sending Message"
+};
 
 const ContactSchema = Yup.object().shape({
     name: Yup.string()
@@ -48,10 +45,7 @@ const ContactSchema = Yup.object().shape({
         .required("Message Required")
 });
 
-
-
 const handleSubmit = async (values, actions, setLegend) => {
-
     const { email, message, name } = values;
     const { setStatus, setSubmitting, setErrors, resetForm } = actions;
 
@@ -60,34 +54,31 @@ const handleSubmit = async (values, actions, setLegend) => {
     template_params["reply_to"] = email;
 
     try {
-        await emailjs.send(service_id, template_id, template_params, emailJsUserID);
+        await emailjs.send(
+            service_id,
+            template_id,
+            template_params,
+            emailJsUserID
+        );
 
         resetForm();
-        setLegend(legendMessage.messageSent)
-
-    }
-    catch (error) {
+        setLegend(legendMessage.messageSent);
+    } catch (error) {
         setSubmitting(false);
         setErrors(JSON.stringify(error));
         setStatus({
             msg: legendMessage.messageSentError
         });
-        setLegend(legendMessage.messageSentError)
-
+        setLegend(legendMessage.messageSentError);
     }
-
-
-}
-
+};
 
 export const Form = () => {
-
     const [legend, setLegend] = useState(legendMessage.default);
 
-
     const handleBlur = () => {
-        setLegend(legendMessage.default)
-    }
+        setLegend(legendMessage.default);
+    };
 
     return (
         <Ssection>
@@ -98,51 +89,61 @@ export const Form = () => {
                     message: ""
                 }}
                 validationSchema={ContactSchema}
-                onSubmit={(values, actions) => handleSubmit(values, actions, setLegend)}
-
-
+                onSubmit={(values, actions) =>
+                    handleSubmit(values, actions, setLegend)
+                }
             >
-
                 {({ errors }) => (
-                    <Sform aria-label='contact form'>
+                    <Sform aria-label="contact form">
                         <Sfieldset>
                             <Slegend>{legend}</Slegend>
+
                             <Sfield
+                                aria-label="name"
                                 name="name"
                                 type="name"
-                                placeholder='Your Name'
+                                placeholder="Your Name"
                                 onBlur={handleBlur}
                             ></Sfield>
-                            <ErrorMessage data-testid='name-field-error' name="name" component={SerrorMessage} />
+                            <ErrorMessage
+                                data-testid="name-field-error"
+                                name="name"
+                                component={SerrorMessage}
+                            />
                             <Sfield
+                                aria-label="email"
                                 name="email"
                                 type="email"
-                                placeholder='your@email.com'
+                                placeholder="your@email.com"
                                 onBlur={handleBlur}
-
                             ></Sfield>
-                            <ErrorMessage component={SerrorMessage} name="email" />
+                            <ErrorMessage
+                                component={SerrorMessage}
+                                name="email"
+                            />
 
                             <Sfield
+                                aria-label="your message text"
                                 name="message"
                                 type="message"
-                                component='textarea'
-                                placeholder='Your Message'
+                                component="textarea"
+                                placeholder="Your Message"
                                 onBlur={handleBlur}
                             />
-                            <ErrorMessage component={SerrorMessage} name="message" />
+                            <ErrorMessage
+                                component={SerrorMessage}
+                                name="message"
+                            />
 
-                            <Sbutton id="submit" name="submit" type="submit" >
+                            <Sbutton id="submit" name="submit" type="submit">
                                 Send Message
-                        </Sbutton>
+                            </Sbutton>
                         </Sfieldset>
                     </Sform>
                 )}
             </Formik>
         </Ssection>
-    )
+    );
 };
 
 export default Form;
-
-

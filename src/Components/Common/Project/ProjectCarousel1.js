@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 // ! Internal
 import { content } from "../../../Assets/Content";
-
+import { mediaMin } from "../../../Theme";
 export function ProjectCarousel1({ project }) {
     const { bannerImg } = content.projects[project];
 
@@ -61,6 +61,7 @@ const Simg = styled.img`
     width: 100%;
     height: 91vh;
     border: 0;
+    ${mediaMin.xlDesktop` width: 65vw; margin:auto`};
 `;
 
 const SleftArrow = styled(ArrowBack)`

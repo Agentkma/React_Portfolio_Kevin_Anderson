@@ -7,7 +7,7 @@ import {
     Sa,
     Scontainer,
     InnerWrap,
-    Srow
+    Srow,
 } from "../../../shared/StyledComponents";
 import { mediaMin } from "../../../Theme";
 import { content } from "../../../Assets/Content";
@@ -19,7 +19,7 @@ export function ProjectDescription({ project }) {
         projectDescription,
         categories,
         delivered,
-        liveSiteLink
+        liveSiteLink,
     } = content.projects[project].description;
     return (
         <InnerWrap>
@@ -50,10 +50,11 @@ export function ProjectDescription({ project }) {
                                     Delivered: <Sspan>{delivered}</Sspan>
                                 </Sli>
                             </Sul>
-                            {liveSiteLink === "NA" ? null : <Sa href={liveSiteLink} target="_blank">
-                                Live Preview
-                            </Sa>}
-
+                            {liveSiteLink === "NA" ? null : (
+                                <Sa href={liveSiteLink} target="_blank">
+                                    Live App
+                                </Sa>
+                            )}
                         </StyledColArticle>
                     </Srow2>
                 </Ssection>
@@ -86,8 +87,8 @@ const Sarticle = styled(StyledColArticle)`
 const Sh3 = styled.h3`
     font-size: 3rem;
     line-height: 4rem;
-    font-family: ${props => props.theme.fontFamilySecondary};
-    color: ${props => props.theme.colorFontTertiary};
+    font-family: ${(props) => props.theme.fontFamilySecondary};
+    color: ${(props) => props.theme.colorFontTertiary};
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 500;
@@ -96,7 +97,7 @@ const Sh3 = styled.h3`
 `;
 
 const Sdiv = styled.div`
-    background-color: ${props => props.theme.colorAccentPrimary};
+    background-color: ${(props) => props.theme.colorAccentPrimary};
     width: 7.5rem;
     height: 2px;
     display: inline-block;
@@ -107,8 +108,8 @@ const Sdiv = styled.div`
 const Sh6 = styled.h6`
     font-size: 1.25rem;
     line-height: 21px;
-    font-family: ${props => props.theme.fontFamilySecondary};
-    color: ${props => props.theme.colorFontQuinternary};
+    font-family: ${(props) => props.theme.fontFamilySecondary};
+    color: ${(props) => props.theme.colorFontQuinternary};
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 500;
@@ -130,7 +131,7 @@ const Srow2 = styled(Srow)`
 const Sp = styled.p`
     display: table;
     padding-bottom: 1rem;
-    color: ${props => props.theme.colorFontQuinternary};
+    color: ${(props) => props.theme.colorFontQuinternary};
     font-size: 1rem;
     line-height: 1.5625rem;
     margin-bottom: 0;
@@ -148,20 +149,20 @@ const Sul = styled.ul`
 
 const Sli = styled.li`
     padding: 0.625rem 0;
-    border-top: solid 1px ${props => props.theme.colorAccentSecondary};
+    border-top: solid 1px ${(props) => props.theme.colorAccentSecondary};
     font-size: 1rem;
     line-height: 2.5rem;
     font-weight: bold;
-    font-family: ${props => props.theme.fontFamilySecondary};
-    color: ${props => props.theme.colorFontTertiary};
+    font-family: ${(props) => props.theme.fontFamilySecondary};
+    color: ${(props) => props.theme.colorFontTertiary};
     list-style-type: none;
     padding: 0;
 `;
 
 const Sspan = styled.span`
-    font-family: ${props => props.theme.fontFamilySecondary};
+    font-family: ${(props) => props.theme.fontFamilySecondary};
     font-weight: 200;
-    color: ${props => props.theme.colorFontQuaternary};
+    color: ${(props) => props.theme.colorFontQuaternary};
     font-size: 1rem;
     line-height: 1.5rem;
 `;

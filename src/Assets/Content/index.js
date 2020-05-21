@@ -259,18 +259,20 @@ export const content = {
                 srcSet: ["Assets/Images/works/macroPal1100x650.webp"],
                 src: "Assets/Images/works/macroPal1100x650.png",
             },
-            description: {
-                taglineHeading: "Good design and clean coding",
-                taglineSubHeading: "That is a Principle",
-                projectDescription: [
-                    "Galvanize Eats is a simple app demonstrating the use of forms and dynamic menu items received from an API.",
-                    " The order data is organized into an order object and sent to an API.",
-                    "The app uses Materialize CSS framework, HTML, CSS, JavaScript, and jQuery.",
-                ],
-                categories: "Front End & CSS Framework",
-                delivered: "2017 September",
-                liveSiteLink: "https://agentkma.github.io/galvanize-eats/",
-            },
+            description: [
+                {
+                    taglineHeading: "Good design and clean coding",
+                    taglineSubHeading: "That is a Principle",
+                    projectDescription: [
+                        "Galvanize Eats is a simple app demonstrating the use of forms and dynamic menu items received from an API.",
+                        " The order data is organized into an order object and sent to an API.",
+                        "The app uses Materialize CSS framework, HTML, CSS, JavaScript, and jQuery.",
+                    ],
+                    categories: "Front End & CSS Framework",
+                    delivered: "2017 September",
+                    liveSiteLink: "https://agentkma.github.io/galvanize-eats/",
+                },
+            ],
             imgContainer: [
                 // {
                 //     alt: "galvanize eats order form and shopping cart",
@@ -346,18 +348,20 @@ export const content = {
                 srcSet: ["Assets/Images/works/macroPal1100x650.webp"],
                 src: "Assets/Images/works/macroPal1100x650.png",
             },
-            description: {
-                taglineHeading: "Good design and clean coding",
-                taglineSubHeading: "That is a Principle",
-                projectDescription: [
-                    "MacroPal is an app that uses form user input to calculate how many calories and macros you need daily.",
-                    "You can use this info to build a weekly grocery list. You can also search foods to find their calories and macros.",
-                    "Technology used is HTML, CSS, JavaScript, SASS, jQuery, an API, and Materialize CSS Framework.",
-                ],
-                categories: "Front End & CSS Framework",
-                delivered: "2017 August",
-                liveSiteLink: "https://agentkma.github.io/MacroPal2.0/",
-            },
+            description: [
+                {
+                    taglineHeading: "Good design and clean coding",
+                    taglineSubHeading: "That is a Principle",
+                    projectDescription: [
+                        "MacroPal is an app that uses form user input to calculate how many calories and macros you need daily.",
+                        "You can use this info to build a weekly grocery list. You can also search foods to find their calories and macros.",
+                        "Technology used is HTML, CSS, JavaScript, SASS, jQuery, an API, and Materialize CSS Framework.",
+                    ],
+                    categories: "Front End & CSS Framework",
+                    delivered: "2017 August",
+                    liveSiteLink: "https://agentkma.github.io/MacroPal2.0/",
+                },
+            ],
             imgContainer: [
                 // {
                 //     alt: "macroPal homepage screen shot",
@@ -437,17 +441,19 @@ export const content = {
                 srcSet: ["Assets/Images/works/safeNav1100x650.webp"],
                 src: "Assets/Images/works/safeNav1100x650.png",
             },
-            description: {
-                taglineHeading: "Good design and clean coding",
-                taglineSubHeading: "That is a Principle",
-                projectDescription: [
-                    "SafeNav is an app demonstrating a basic product info site.",
-                    "Tech used is HTML, CSS, JavaScript, jQuery, and Bootstrap CSS Framework.",
-                ],
-                categories: "Front End & CSS Framework",
-                delivered: "2017 July",
-                liveSiteLink: "https://agentkma.github.io/Safenav/",
-            },
+            description: [
+                {
+                    taglineHeading: "Good design and clean coding",
+                    taglineSubHeading: "That is a Principle",
+                    projectDescription: [
+                        "SafeNav is an app demonstrating a basic product info site.",
+                        "Tech used is HTML, CSS, JavaScript, jQuery, and Bootstrap CSS Framework.",
+                    ],
+                    categories: "Front End & CSS Framework",
+                    delivered: "2017 July",
+                    liveSiteLink: "https://agentkma.github.io/Safenav/",
+                },
+            ],
             imgContainer: [
                 // {
                 //     alt: "alt text",
@@ -527,18 +533,20 @@ export const content = {
                 srcSet: ["Assets/Images/works/gRecipes1100x650.webp"],
                 src: "Assets/Images/works/gRecipes1100x650.png",
             },
-            description: {
-                taglineHeading: "Good design and clean coding",
-                taglineSubHeading: "That is a Principle",
-                projectDescription: [
-                    "gRecipes is a demo app modeled after allrecipes.com.",
-                    "It is a Full Stack CRUD decoupled app. The front end is deployed with Firebase while the back end is deployed with Heroku.",
-                    "Other tech includes HTML, CSS, JavaScript, jQuery, Materialize CSS, Node.js, Express.js, and Knex.",
-                ],
-                categories: "Full Stack & CSS Framework",
-                delivered: "2017 September",
-                liveSiteLink: "https://grecipes-2be24.firebaseapp.com/",
-            },
+            description: [
+                {
+                    taglineHeading: "Good design and clean coding",
+                    taglineSubHeading: "That is a Principle",
+                    projectDescription: [
+                        "gRecipes is a demo app modeled after allrecipes.com.",
+                        "It is a Full Stack CRUD decoupled app. The front end is deployed with Firebase while the back end is deployed with Heroku.",
+                        "Other tech includes HTML, CSS, JavaScript, jQuery, Materialize CSS, Node.js, Express.js, and Knex.",
+                    ],
+                    categories: "Full Stack & CSS Framework",
+                    delivered: "2017 September",
+                    liveSiteLink: "https://grecipes-2be24.firebaseapp.com/",
+                },
+            ],
             imgContainer: [
                 // {
                 //     alt: "alt text",
@@ -650,16 +658,18 @@ export const content = {
                 srcSet: ["Assets/Images/project/project09/AlbumArtOne.png"],
                 src: "Assets/Images/project/project09/AlbumArtOne.png",
             },
-            description: {
-                taglineHeading: "Good design and clean coding",
-                taglineSubHeading: "That is a Principle",
-                projectDescription: [
-                    "The design and animations are built with React,CSS, and Styled-Components.",
-                ],
-                categories: "Design",
-                delivered: "2018 - Present",
-                liveSiteLink: "NA",
-            },
+            description: [
+                {
+                    taglineHeading: "Good design and clean coding",
+                    taglineSubHeading: "That is a Principle",
+                    projectDescription: [
+                        "The design and animations are built with React,CSS, and Styled-Components.",
+                    ],
+                    categories: "Design",
+                    delivered: "2018 - Present",
+                    liveSiteLink: "NA",
+                },
+            ],
             imgContainer: [
                 {
                     alt: "album art one",
@@ -898,18 +908,35 @@ export const content = {
                 srcSet: ["Assets/Images/works/reactRSVP021100x650.png"],
                 src: "Assets/Images/works/reactRSVP021100x650.png",
             },
-            description: {
-                taglineHeading: "Good design and clean coding",
-                taglineSubHeading: "That is a Principle",
-                projectDescription: [
-                    "This Portfolio Site is the latest React JS app build.",
-                    "These Single Page Apps are built with React JS.",
-                    "The apps also use HTML, CSS, JavaScript, Styled-Components, and Material UI.",
-                ],
-                categories: "SPA",
-                delivered: "2018 November",
-                liveSiteLink: "https://agentkma.github.io/reactRSVPapp/",
-            },
+            description: [
+                {
+                    taglineHeading: "RSVP App",
+                    taglineSubHeading:
+                        "Good Design & Clean Coding: That is a Principle",
+                    projectDescription: [
+                        "This app allows user to add, update, delete RSVP's.",
+                        "This Single Page App is built with React JS.",
+                        "The apps also use HTML, CSS, JavaScript",
+                    ],
+                    categories: "SPA",
+                    delivered: "2018 November",
+                    liveSiteLink: "https://agentkma.github.io/reactRSVPapp/",
+                },
+                {
+                    taglineHeading: "Team Builder App",
+                    taglineSubHeading:
+                        "Good Design & Clean Coding: That is a Principle",
+                    projectDescription: [
+                        "This app allows a user to build a team.",
+                        "This Single Page App is built with React JS.",
+                        "The apps also use HTML, CSS, JavaScript, and Material UI.",
+                    ],
+                    categories: "SPA",
+                    delivered: "2020 March",
+                    liveSiteLink: "  https://agentkma.github.io/team-builder/",
+                },
+            ],
+
             imgContainer: [
                 // {
                 //     alt: "alt text",
@@ -1037,17 +1064,19 @@ export const content = {
                 srcSet: ["Assets/Images/works/AngularPhotoLog-1100x650.png"],
                 src: "Assets/Images/works/AngularPhotoLog6-1100x650.png",
             },
-            description: {
-                taglineHeading: "Good design and clean coding",
-                taglineSubHeading: "That is a Principle",
-                projectDescription: [
-                    "These Single Page Apps are built with Angular.",
-                    "The apps also use HTML, CSS, and TypeScript.",
-                ],
-                categories: "SPA",
-                delivered: "2018 January",
-                liveSiteLink: "NA",
-            },
+            description: [
+                {
+                    taglineHeading: "Good design and clean coding",
+                    taglineSubHeading: "That is a Principle",
+                    projectDescription: [
+                        "These Single Page Apps are built with Angular.",
+                        "The apps also use HTML, CSS, and TypeScript.",
+                    ],
+                    categories: "SPA",
+                    delivered: "2018 January",
+                    liveSiteLink: "NA",
+                },
+            ],
             imgContainer: [
                 {
                     alt: "alt text",
@@ -1135,17 +1164,19 @@ export const content = {
                 srcSet: ["Assets/Images/works/terraGoSplash-1100x650.png"],
                 src: "Assets/Images/works/terraGoSplash-1100x650.png",
             },
-            description: {
-                taglineHeading: "Good design and clean coding",
-                taglineSubHeading: "That is a Principle",
-                projectDescription: [
-                    "These Single Page Apps are built with React-Native.",
-                    "The apps also use CSS, and JavaScript.",
-                ],
-                categories: "Mobile",
-                delivered: "2017 December",
-                liveSiteLink: "NA",
-            },
+            description: [
+                {
+                    taglineHeading: "Good design and clean coding",
+                    taglineSubHeading: "That is a Principle",
+                    projectDescription: [
+                        "These Single Page Apps are built with React-Native.",
+                        "The apps also use CSS, and JavaScript.",
+                    ],
+                    categories: "Mobile",
+                    delivered: "2017 December",
+                    liveSiteLink: "NA",
+                },
+            ],
             imgContainer: [
                 {
                     alt: "alt text",

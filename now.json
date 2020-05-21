@@ -4,7 +4,6 @@
     "github": {
         "enabled": false
     },
-    "name": "kevin-anderson-portfolio",
     "builds": [
         {
             "src": "package.json",

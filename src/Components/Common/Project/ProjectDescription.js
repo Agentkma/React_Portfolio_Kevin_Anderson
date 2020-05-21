@@ -13,53 +13,57 @@ import { mediaMin } from "../../../Theme";
 import { content } from "../../../Assets/Content";
 
 export function ProjectDescription({ project }) {
-    const {
-        taglineHeading,
-        taglineSubHeading,
-        projectDescription,
-        categories,
-        delivered,
-        liveSiteLink,
-    } = content.projects[project].description;
-    return (
-        <InnerWrap>
-            <Scontainer>
-                <Ssection>
-                    <Srow>
-                        <Sarticle>
-                            <Sh3>{taglineHeading}</Sh3>
-                            <Sdiv />
-                            <Sh6>{taglineSubHeading}</Sh6>
-                        </Sarticle>
-                    </Srow>
-                    <Srow2>
-                        <StyledColArticle>
-                            {projectDescription.map((s, index) => (
-                                <Sp key={index}>{s}</Sp>
-                            ))}
-                        </StyledColArticle>
-                        <StyledColArticle>
-                            <Sul>
-                                <Sli>
-                                    Category: <Sspan>{categories}</Sspan>
-                                </Sli>
-                                <Sli>
-                                    Client: <Sspan>None/Personal Project</Sspan>
-                                </Sli>
-                                <Sli>
-                                    Delivered: <Sspan>{delivered}</Sspan>
-                                </Sli>
-                            </Sul>
-                            {liveSiteLink === "NA" ? null : (
-                                <Sa href={liveSiteLink} target="_blank">
-                                    Live App
-                                </Sa>
-                            )}
-                        </StyledColArticle>
-                    </Srow2>
-                </Ssection>
-            </Scontainer>
-        </InnerWrap>
+    const descriptions = content.projects[project].description;
+
+    return descriptions.map(
+        ({
+            taglineHeading,
+            taglineSubHeading,
+            projectDescription,
+            categories,
+            delivered,
+            liveSiteLink,
+        }) => (
+            <InnerWrap>
+                <Scontainer>
+                    <Ssection>
+                        <Srow>
+                            <Sarticle>
+                                <Sh3>{taglineHeading}</Sh3>
+                                <Sdiv />
+                                <Sh6>{taglineSubHeading}</Sh6>
+                            </Sarticle>
+                        </Srow>
+                        <Srow2>
+                            <StyledColArticle>
+                                {projectDescription.map((s, index) => (
+                                    <Sp key={index}>{s}</Sp>
+                                ))}
+                            </StyledColArticle>
+                            <StyledColArticle>
+                                <Sul>
+                                    <Sli>
+                                        Category: <Sspan>{categories}</Sspan>
+                                    </Sli>
+                                    <Sli>
+                                        Client:{" "}
+                                        <Sspan>None/Personal Project</Sspan>
+                                    </Sli>
+                                    <Sli>
+                                        Delivered: <Sspan>{delivered}</Sspan>
+                                    </Sli>
+                                </Sul>
+                                {liveSiteLink === "NA" ? null : (
+                                    <Sa href={liveSiteLink} target="_blank">
+                                        Live App
+                                    </Sa>
+                                )}
+                            </StyledColArticle>
+                        </Srow2>
+                    </Ssection>
+                </Scontainer>
+            </InnerWrap>
+        )
     );
 }
 

@@ -1368,7 +1368,7 @@ export const content = {
     },
     contact: {
         header: {
-            email: "kevin@kevinanderson.codes",
+            email: "kevin.m.anderson@icloud.com",
             location: "Denver, CO",
         },
         form: {

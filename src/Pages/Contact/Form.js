@@ -22,7 +22,7 @@ let template_params = {
     message_html: "message_html_value",
 };
 
-const service_id = "icloud";
+const service_id = "outlook";
 const template_id = "template_iAQcKsQI";
 
 export const legendMessage = {

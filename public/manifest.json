@@ -1,15 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+    "short_name": "kevinanderson.codes",
+    "name": "Kevin Anderson | Portfolio Site",
+    "description": "Learn about Kevin Anderson as a developer and person.  See some of his work and reach out if you want.",
+    "icons": [
+        {
+            "src": "Assets/Images/LogoSmall.png",
+            "sizes": "236x228",
+            "type": "image/png"
+        },
+        {
+            "src": "Assets/Images/LogoLarge.png",
+            "sizes": "594x586",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "./index.html",
+    "display": "standalone",
+    "theme_color": "#292929",
+    "background_color": "#ffffff"
 }

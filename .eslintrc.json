@@ -13,5 +13,8 @@
         "ecmaFeatures": {
             "jsx": true
         }
+    },
+    "rules": {
+        "react/display-name": ["enabled", { "ignoreTranspilerName": true }]
     }
 }

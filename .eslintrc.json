@@ -1,0 +1,17 @@
+{
+    "plugins": ["testing-library"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/recommended",
+        "plugin:testing-library/react",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    }
+}

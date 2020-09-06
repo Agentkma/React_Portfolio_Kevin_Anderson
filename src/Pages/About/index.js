@@ -11,7 +11,7 @@ import {
     SsectionGrid,
     SdivValign,
     SsectionParallax,
-    SarticleMainHeading
+    SarticleMainHeading,
 } from "../../shared/StyledComponents";
 import { mediaMin } from "../../Theme";
 import { FadeInPageContainer } from "../../Theme/animations";
@@ -39,7 +39,7 @@ const renderGridItemsValues = () => {
     });
 };
 
-function About() {
+export function About() {
     return (
         <FadeInPageContainer>
             <SsectionHeading>
@@ -76,8 +76,8 @@ const SsectionHeading = styled(SsectionParallax)`
 `;
 
 const Sh6MainHeading = styled.h6`
-    font-family: ${props => props.theme.fontFamilyPrimary};
-    color: ${props => props.theme.colorFontSecondary};
+    font-family: ${(props) => props.theme.fontFamilyPrimary};
+    color: ${(props) => props.theme.colorFontSecondary};
     font-size: 2rem;
     line-height: 2.4375rem;
     margin-top: 0.625rem;

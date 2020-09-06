@@ -1,5 +1,5 @@
 // ! External
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 // ! Internal
@@ -8,71 +8,55 @@ import { BounceInLeft } from "../../../Theme/animations";
 import { media, mediaAnd, mediaMin } from "../../../Theme";
 import Container from "../../../Components/Common/Container";
 
-export class IntroAbout extends Component {
-    state = {
-        itemsArray: content.home.header.subHeading,
-        itemCount: 0,
-        itemCurrent: null
-    };
+export default function IntroAbout() {
+    const itemsArray = content.home.header.subHeading;
+    const [itemCount, setItemCount] = useState(0);
+    const [itemCurrent, setItemCurrent] = useState(null);
 
-    // ! Lifecycle Methods
+    useEffect(() => {
+        const renderAboutItems = () => {
+            setItemCount((prevCount) => {
+                return prevCount + 1;
+            });
+            setItemCurrent(itemsArray[itemCount]);
 
-    componentDidMount() {
-        this.interval = setInterval(() => this.renderAboutItems(), 3500);
-    }
+            if (itemCount === itemsArray.length - 1) {
+                setItemCurrent(0);
+            }
+        };
+        const interval = setInterval(() => renderAboutItems(), 3500);
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
+    return (
+        <Ssection>
+            <SdivHalf>
+                <SdivVertAlign>
+                    <Container>
+                        <Sarticle>
+                            <SdivMH>
+                                <Sh6H>{content.home.header.mainHeading}</Sh6H>
+                            </SdivMH>
 
-    // ! Methods
-
-    renderAboutItems = () => {
-        let { itemsArray, itemCount } = this.state;
-        this.setState(prevState => ({
-            itemCount: prevState.itemCount + 1,
-            itemCurrent: itemsArray[itemCount]
-        }));
-
-        if (itemCount === itemsArray.length - 1) {
-            this.setState({ itemCount: 0 });
-        }
-    };
-    render() {
-        return (
-            <Ssection>
-                <SdivHalf>
-                    <SdivVertAlign>
-                        <Container>
-                            <Sarticle>
-                                <SdivMH>
-                                    <Sh6H>
-                                        {content.home.header.mainHeading}
-                                    </Sh6H>
-                                </SdivMH>
-
-                                <SdivCD>
-                                    <Sh6HL>
-                                        <SloadingBar>
-                                            {this.state.itemCurrent}
-                                        </SloadingBar>
-                                    </Sh6HL>
-                                </SdivCD>
-                            </Sarticle>
-                        </Container>
-                    </SdivVertAlign>
-                </SdivHalf>
-            </Ssection>
-        );
-    }
+                            <SdivCD>
+                                <Sh6HL>
+                                    <SloadingBar>{itemCurrent}</SloadingBar>
+                                </Sh6HL>
+                            </SdivCD>
+                        </Sarticle>
+                    </Container>
+                </SdivVertAlign>
+            </SdivHalf>
+        </Ssection>
+    );
 }
-
-export default IntroAbout;
 
 // ! Styles
 
 const Ssection = styled.section`
-    background-color: ${props => props.theme.colorBgPrimary};
+    background-color: ${(props) => props.theme.colorBgPrimary};
 `;
 const SdivHalf = styled.div`
     margin-left: 0;
@@ -128,7 +112,7 @@ const SdivCD = styled.div`
 `;
 
 const Sh6HL = styled.h6`
-    color: ${props => props.theme.colorFontTertiary};
+    color: ${(props) => props.theme.colorFontTertiary};
     font-size: 2.5rem;
     line-height: 1.2;
     margin-top: 0;
@@ -151,7 +135,7 @@ const SloadingBar = styled(BounceInLeft)`
         bottom: 0px;
         height: 5px;
         width: 100%;
-        background-color: ${props => props.theme.colorAccentPrimary};
+        background-color: ${(props) => props.theme.colorAccentPrimary};
         z-index: 2;
     }
 `;

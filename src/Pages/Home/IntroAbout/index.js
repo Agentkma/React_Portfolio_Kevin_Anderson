@@ -8,27 +8,26 @@ import { BounceInLeft } from "../../../Theme/animations";
 import { media, mediaAnd, mediaMin } from "../../../Theme";
 import Container from "../../../Components/Common/Container";
 
-export default function IntroAbout() {
+export const IntroAbout = () => {
     const itemsArray = content.home.header.subHeading;
     const [itemCount, setItemCount] = useState(0);
     const [itemCurrent, setItemCurrent] = useState(null);
 
     useEffect(() => {
         const renderAboutItems = () => {
-            setItemCount((prevCount) => {
-                return prevCount + 1;
-            });
-            setItemCurrent(itemsArray[itemCount]);
-
             if (itemCount === itemsArray.length - 1) {
-                setItemCurrent(0);
+                setItemCount(0);
+            } else {
+                setItemCount((prevCount) => prevCount + 1);
             }
+            setItemCurrent(itemsArray[itemCount]);
         };
         const interval = setInterval(() => renderAboutItems(), 3500);
+
         return () => {
             clearInterval(interval);
         };
-    }, []);
+    }, [itemsArray, itemCount]);
 
     return (
         <Ssection>
@@ -51,8 +50,8 @@ export default function IntroAbout() {
             </SdivHalf>
         </Ssection>
     );
-}
-
+};
+export default IntroAbout;
 // ! Styles
 
 const Ssection = styled.section`

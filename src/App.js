@@ -41,10 +41,10 @@ class App extends Component {
     render() {
         return (
             <Div>
-                <WorksFilterContext.Provider value={this.state}>
-                    <Navigation />
-                    <Main>
-                        <ThemeProvider theme={theme}>
+                <ThemeProvider theme={theme}>
+                    <WorksFilterContext.Provider value={this.state}>
+                        <Navigation />
+                        <Main>
                             <Router>
                                 <Home default path="/" />
                                 <Project1 path="/project1" />
@@ -59,10 +59,10 @@ class App extends Component {
                                 <About path="/about" />
                                 <Error path="/error" />
                             </Router>
-                        </ThemeProvider>
-                    </Main>
-                    <Footer content={content.footer.social} />
-                </WorksFilterContext.Provider>
+                        </Main>
+                        <Footer content={content.footer.social} />
+                    </WorksFilterContext.Provider>
+                </ThemeProvider>
             </Div>
         );
     }

@@ -14,7 +14,7 @@ import {
     SnavLink,
     SnavItem,
     Ul,
-    Sul
+    Sul,
 } from "../styled-components";
 import { ScaleInVerTop } from "../../../Theme/animations";
 import { content } from "../../../Assets/Content";
@@ -47,7 +47,7 @@ export const NavDrawer = ({ click }) => {
                 <ScloseIconMod onClick={click} />
                 <Ul>
                     <Sli>
-                        <SnavLink to="/" exact onClick={click}>
+                        <SnavLink to="/" onClick={click}>
                             Portfolio
                         </SnavLink>
                     </Sli>

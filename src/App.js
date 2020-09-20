@@ -1,7 +1,7 @@
 // ! External
 import React, { Component } from "react";
-import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
+import { Router } from "@reach/router";
 
 // ! Internal
 
@@ -9,7 +9,6 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import Error from "./Pages/Error";
-import Layout from "./Hoc/Layout/index";
 import { theme } from "./Theme";
 import Project1 from "./Pages/Project/Project1";
 import Project2 from "./Pages/Project/Project2";
@@ -19,50 +18,66 @@ import Project5 from "./Pages/Project/Project5";
 import Project6 from "./Pages/Project/Project6";
 import Project7 from "./Pages/Project/Project7";
 import Project8 from "./Pages/Project/Project8";
+import Navigation from "./Components/Navigation";
+import Footer from "./Components/Footer";
+import { WorksFilterContext } from "./context";
+import { content } from "./Assets/Content";
 
 class App extends Component {
-    state = {
-        showWorksFilter: false
-    };
-
     // ! Methods
     handleShowWorksFilter = () => {
         this.setState({ showWorksFilter: !this.state.showWorksFilter });
+    };
+    toggleWorksFilter = () => {
+        this.setState(({ showWorksFilter }) => {
+            return { showWorksFilter: !showWorksFilter };
+        });
+    };
+    state = {
+        showWorksFilter: false,
+        toggleWorksFilter: this.toggleWorksFilter,
     };
 
     render() {
         return (
             <Div>
-                <ThemeProvider theme={theme}>
-                    <Layout
-                        theme={theme}
-                        showWorksFilter={this.state.showWorksFilter}
-                        toggleShowWorksFilter={this.handleShowWorksFilter}
-                    >
-                        <Switch>
-                            <Route path="/" exact component={Home} />
-                            <Route path="/project1" component={Project1} />
-                            <Route path="/project2" component={Project2} />
-                            <Route path="/project3" component={Project3} />
-                            <Route path="/project4" component={Project4} />
-                            <Route path="/project5" component={Project5} />
-                            <Route path="/project6" component={Project6} />
-                            <Route path="/project7" component={Project7} />
-                            <Route path="/project8" component={Project8} />
-                            <Route path="/contact" component={Contact} />
-                            <Route path="/about" component={About} />
-                            <Route path="/error" component={Error} />
-                            <Redirect to="/" />
-                        </Switch>
-                    </Layout>
-                </ThemeProvider>
+                <WorksFilterContext.Provider value={this.state}>
+                    <Navigation />
+                    <Main>
+                        <ThemeProvider theme={theme}>
+                            <Router>
+                                <Home default path="/" />
+                                <Project1 path="/project1" />
+                                <Project2 path="/project2" />
+                                <Project3 path="/project3" />
+                                <Project4 path="/project4" />
+                                <Project5 path="/project5" />
+                                <Project6 path="/project6" />
+                                <Project7 path="/project7" />
+                                <Project8 path="/project8" />
+                                <Contact path="/contact" />
+                                <About path="/about" />
+                                <Error path="/error" />
+                            </Router>
+                        </ThemeProvider>
+                    </Main>
+                    <Footer content={content.footer.social} />
+                </WorksFilterContext.Provider>
             </Div>
         );
     }
 }
 
-export default withRouter(App);
+export default App;
 
 const Div = styled.div`
     box-sizing: border-box;
+`;
+
+export const Main = styled.main`
+    display: block;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-top: 9vh;
+    font-family: ${(props) => props.theme.fontFamilyPrimary};
 `;

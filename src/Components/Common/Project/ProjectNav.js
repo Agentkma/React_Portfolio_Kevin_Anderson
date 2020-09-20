@@ -1,6 +1,6 @@
 // ! External
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@reach/router";
 import styled from "styled-components";
 
 // ! Internal
@@ -11,7 +11,7 @@ function ProjectNav({ gridNavHref }) {
     let currentProject = window.location.pathname.split("/").join("");
 
     let currentIndex = content.projects.findIndex(
-        project => project.url === currentProject
+        (project) => project.url === currentProject
     );
 
     const prevProject = () => {
@@ -73,7 +73,7 @@ export default ProjectNav;
 
 const Ssection = styled.section`
     margin-top: 3rem;
-    background-color: ${props => props.theme.colorBgTertiary};
+    background-color: ${(props) => props.theme.colorBgTertiary};
 `;
 
 const Sarticle = styled.article`
@@ -93,14 +93,14 @@ const Sul = styled.ul`
 const Sli = styled.li`
     display: inline-block;
     margin: 5px;
-    background-color: ${props => props.theme.colorBgPrimary};
+    background-color: ${(props) => props.theme.colorBgPrimary};
     padding: 1.5rem;
     border-radius: 50%;
     list-style-type: none;
     cursor: pointer;
     &:hover {
         transition: all 0.5s ease-in;
-        background-color: ${props => props.theme.colorFontHoverPrimary};
+        background-color: ${(props) => props.theme.colorFontHoverPrimary};
     }
 `;
 

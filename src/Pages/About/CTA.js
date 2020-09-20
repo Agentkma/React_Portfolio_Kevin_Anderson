@@ -1,7 +1,7 @@
 // ! External
 
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "@reach/router";
 import styled from "styled-components";
 
 // ! Internal
@@ -13,7 +13,7 @@ import { SdivLine } from "./Values";
 
 const { contact } = content.about.main;
 
-const CTA = function() {
+const CTA = function () {
     const { header, main } = contact;
     return (
         <Ssection>
@@ -23,9 +23,9 @@ const CTA = function() {
                     <Sh3>{header}</Sh3>
                     <SdivLine />
                     <Sh6>{main}</Sh6>
-                    <NavLink to="/contact">
+                    <Link to="/contact">
                         <Sspan>Contact Me</Sspan>
-                    </NavLink>
+                    </Link>
                 </Sarticle>
             </Srow>
         </Ssection>
@@ -52,29 +52,29 @@ const Sarticle = styled.article`
 `;
 
 const Sh3 = styled.h3`
-    font-size: ${props => props.theme.fontSizeSecondary};
+    font-size: ${(props) => props.theme.fontSizeSecondary};
     line-height: 48px;
-    font-family: ${props => props.theme.fontFamilyPrimary};
-    color: ${props => props.theme.colorFontSecondary};
+    font-family: ${(props) => props.theme.fontFamilyPrimary};
+    color: ${(props) => props.theme.colorFontSecondary};
     margin-top: 0;
     margin-bottom: 0;
 `;
 
 const Sh6 = styled.h6`
-    font-size: ${props => props.theme.fontSizeSmall};
+    font-size: ${(props) => props.theme.fontSizeSmall};
     line-height: 48px;
-    font-family: ${props => props.theme.fontFamilyPrimary};
-    color: ${props => props.theme.colorFontSecondary};
+    font-family: ${(props) => props.theme.fontFamilyPrimary};
+    color: ${(props) => props.theme.colorFontSecondary};
     margin-top: 0;
     margin-bottom: 0;
 `;
 
 const Sspan = styled.span`
-    background-color: ${props => props.theme.colorAccentPrimary};
+    background-color: ${(props) => props.theme.colorAccentPrimary};
     border: none;
     border-radius: 0;
     box-sizing: border-box;
-    color: ${props => props.theme.colorFontSecondary};
+    color: ${(props) => props.theme.colorFontSecondary};
     cursor: pointer;
     display: inline-block;
     font-size: 0.75rem;

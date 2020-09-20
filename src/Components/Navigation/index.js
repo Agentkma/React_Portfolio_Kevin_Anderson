@@ -1,42 +1,27 @@
 // ! External
-import React, { Component } from "react";
-import { func } from "prop-types";
+import React, { useState } from "react";
 
 //! Internal
 
 import NavBar from "./NavBar";
 import NavDrawer from "./NavDrawer";
 
-export class Navigation extends Component {
-    state = {
-        showNavDrawer: false
-    };
+export const Navigation = (props) => {
+    const [showNavDrawer, setShowNavDrawer] = useState(false);
 
-    static propTypes = {
-        click: func
+    const navDrawerToggleHandler = () => {
+        setShowNavDrawer((prevState) => !prevState);
     };
+    const navDrawer = showNavDrawer ? (
+        <NavDrawer click={navDrawerToggleHandler} />
+    ) : null;
 
-    navDrawerClosedHandler = () => {
-        this.setState({ showNavDrawer: false });
-    };
-
-    navDrawerToggleHandler = () => {
-        this.setState(({ showNavDrawer }) => {
-            return { showNavDrawer: !showNavDrawer };
-        });
-    };
-
-    render() {
-        const navDrawer = this.state.showNavDrawer ? (
-            <NavDrawer click={this.navDrawerToggleHandler} />
-        ) : null;
-        return (
-            <div>
-                <NavBar click={this.navDrawerToggleHandler} />
-                {navDrawer}
-            </div>
-        );
-    }
-}
+    return (
+        <div>
+            <NavBar click={navDrawerToggleHandler} />
+            {navDrawer}
+        </div>
+    );
+};
 
 export default Navigation;

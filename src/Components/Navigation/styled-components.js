@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "@reach/router";
 import styled from "styled-components";
 import CodeIcon from "@material-ui/icons/Code";
 
@@ -50,7 +50,7 @@ export const Ul = styled.ul`
     padding: 50px;
     padding-bottom: 100px;
     width: 100%;
-    background-color: ${props => props.theme.colorBgPrimary};
+    background-color: ${(props) => props.theme.colorBgPrimary};
     box-sizing: border-box;
     ${mediaMin.tablet` position: relative;
         top: 10%;
@@ -66,15 +66,15 @@ export const SLi = styled.li`
     cursor: pointer;
     position: relative;
     display: inline-block;
-    background-color: ${props => props.theme.colorBgPrimary};
+    background-color: ${(props) => props.theme.colorBgPrimary};
     margin-right: -5px;
     &:first-child {
         border-left: 0;
     }
-    color: ${props => props.theme.colorFontPrimary};
+    color: ${(props) => props.theme.colorFontPrimary};
     text-transform: uppercase;
     display: block;
-    font-size: ${props => props.theme.fontSizeSmall};
+    font-size: ${(props) => props.theme.fontSizeSmall};
     font-weight: normal;
     line-height: 21px;
     padding: 6px 0;
@@ -85,15 +85,15 @@ export const SLi = styled.li`
     transition: all 0.5s ease-out;
     &:hover {
         height: 100%;
-        background-color: ${props => props.theme.colorAccentSecondary};
+        background-color: ${(props) => props.theme.colorAccentSecondary};
         text-decoration: none;
     }
     ${mediaMin.tablet`width: 75%;
         margin: 0 auto;
         background: transparent;
-        color: ${props => props.theme.colorFontSecondary};
+        color: ${(props) => props.theme.colorFontSecondary};
         text-transform: lowercase;
-        font-size: ${props => props.theme.fontSizeSecondary};
+        font-size: ${(props) => props.theme.fontSizeSecondary};
         font-weight: 400;
         line-height: 2rem;
         letter-spacing: 0.125rem;
@@ -118,7 +118,7 @@ export const SprojectSubUL = styled.ul`
 export const Sli = styled.li`
     position: relative;
     display: inline-block;
-    background-color: ${props => props.theme.colorBgPrimary};
+    background-color: ${(props) => props.theme.colorBgPrimary};
     margin-right: -5px;
     &:first-child {
         border-left: 0;
@@ -132,7 +132,7 @@ export const Sli = styled.li`
     text-shadow: none;
     transition: background-color 0.5s ease-out;
     &:hover {
-        background-color: ${props => props.theme.colorAccentSecondary};
+        background-color: ${(props) => props.theme.colorAccentSecondary};
         text-decoration: none;
     }
     ${mediaMin.tablet`
@@ -153,23 +153,23 @@ export const SsubLi = styled(Sli)`
     line-height: 1rem !important;
 `;
 
-export const SnavLink = styled(NavLink)`
+export const SnavLink = styled(Link)`
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
-    color: ${props => props.theme.colorFontPrimary};
-    font-size: ${props => props.theme.fontSizeSmall};
+    color: ${(props) => props.theme.colorFontPrimary};
+    font-size: ${(props) => props.theme.fontSizeSmall};
     font-weight: normal;
     ${mediaMin.tablet`
         text-transform: lowercase;
-        color: ${props => props.theme.colorFontSecondary};
-        font-size: ${props => props.theme.fontSizeSecondary};
+        color: ${(props) => props.theme.colorFontSecondary};
+        font-size: ${(props) => props.theme.fontSizeSecondary};
         font-weight: 400;
         line-height: 2rem;
         letter-spacing: 0.125rem;
         &:hover {
-            color: ${props => props.theme.colorFontHoverPrimary};
+            color: ${(props) => props.theme.colorFontHoverPrimary};
         }`};
 `;
 
@@ -191,7 +191,7 @@ export const HamburgerDiv = styled.div`
     width: auto !important;
     height: 2rem;
     background-repeat: repeat-x;
-    color: ${props => props.theme.colorBgPrimary};
+    color: ${(props) => props.theme.colorBgPrimary};
     margin-top: 0;
     cursor: pointer;
     font-size: 0.875rem;
@@ -202,7 +202,7 @@ export const HamburgerDiv = styled.div`
     &:hover,
     &:focus {
         background-image: none;
-        background-color: ${props => props.theme.colorAccentSecondary};
+        background-color: ${(props) => props.theme.colorAccentSecondary};
         color: #000;
     }
     ${mediaMin.tablet` height: 2.5rem;
@@ -232,7 +232,7 @@ export const StyledCodeIcon = styled(CodeIcon)`
     &:hover,
     &:focus {
         background-image: none;
-        background-color: ${props => props.theme.colorAccentSecondary};
+        background-color: ${(props) => props.theme.colorAccentSecondary};
     }
     ${mediaMin.tablet`  height: 2.5rem !important;`};
 `;
@@ -241,12 +241,12 @@ export const MenuCollapser = styled.div`
     top: 0;
     left: 0;
 
-    background-color: ${props => props.theme.colorBgPrimary};
+    background-color: ${(props) => props.theme.colorBgPrimary};
     width: 100%;
     z-index: 1000000;
     height: 9vh;
     line-height: 2rem;
-    font-family: ${props => props.theme.fontFamilyPrimary};
+    font-family: ${(props) => props.theme.fontFamilyPrimary};
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;

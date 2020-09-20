@@ -1,12 +1,11 @@
 // ! External
 import React from "react";
-// import PropTypes from 'prop-types'
 
 // ! Internal
 import styled from "styled-components";
 import { SsectionGrid } from "../../shared/StyledComponents";
 
-const ProjectsContainer = props => <Ssection>{props.children}</Ssection>;
+const ProjectsContainer = (props) => <Ssection>{props.children}</Ssection>;
 
 export default ProjectsContainer;
 

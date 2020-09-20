@@ -1,6 +1,6 @@
 // ! External
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@reach/router";
 import styled from "styled-components";
 
 // ! Internal
@@ -11,7 +11,7 @@ import { media } from "../../../Theme";
 export const ProjectItem = ({ name }) => {
     const { projects } = content.home.main;
 
-    let project = projects.filter(p => p.name === name);
+    let project = projects.filter((p) => p.name === name);
 
     const { description, img, to } = project[0];
 
@@ -79,7 +79,7 @@ const Slink = styled(Link)`
     z-index: 100000000;
     text-decoration: none !important;
     transition: all 0.4s ease-in-out;
-    color: ${props => props.theme.colorFontTertiary};
+    color: ${(props) => props.theme.colorFontTertiary};
     background-color: white;
     &:hover {
         opacity: 1;
@@ -102,11 +102,11 @@ const Sp = styled.p`
     letter-spacing: normal;
     margin-top: 0;
     border-bottom: solid 2px;
-    border-color: ${props => props.theme.colorAccentPrimary};
+    border-color: ${(props) => props.theme.colorAccentPrimary};
     padding-bottom: 5px;
     text-transform: none;
     width: fit-content;
-    color: ${props => props.theme.colorFontQuaternary};
+    color: ${(props) => props.theme.colorFontQuaternary};
     ${media.desktop`font-size: 0.875rem;
     line-height: 1.3125rem;`};
 `;
@@ -118,7 +118,7 @@ const Sh1 = styled.h1`
     line-height: 2.5625rem;
     text-transform: none;
     padding-bottom: 5px;
-    color: ${props => props.theme.colorFontQuaternary};
+    color: ${(props) => props.theme.colorFontQuaternary};
     width: fit-content;
     ${media.desktop`font-size: 2.875rem;
     line-height: 3.3125rem;`};

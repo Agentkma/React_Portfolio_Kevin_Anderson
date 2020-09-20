@@ -1,7 +1,6 @@
 // ! External
 import React, { useContext } from "react";
-import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, Location } from "@reach/router";
 import { func, object } from "prop-types";
 
 // ! Internal
@@ -14,50 +13,55 @@ import {
     StyledCodeIcon,
     MenuCollapser,
     StyledLogoRotate,
-    LogoImg
+    LogoImg,
 } from "../styled-components";
-import { WorksFilterContext } from "../../../Hoc/Layout/context";
+import { WorksFilterContext } from "../../../context";
 
-export const NavBar = ({ click, location }) => {
+export const NavBar = ({ click }) => {
     const { toggleWorksFilter } = useContext(WorksFilterContext);
-    const codeIcon =
-        location.pathname === "/" ? (
-            <div>
-                <a
-                    href="#works-filter-panel"
-                    style={{ color: theme.colorBgSecondary }}
-                >
-                    <StyledCodeIcon
-                        onClick={toggleWorksFilter}
-                        data-testid="nav-code-icon"
-                    />
-                </a>
-            </div>
-        ) : null;
     return (
-        <MenuCollapser>
-            <Link to={"./"}>
-                <StyledLogoRotate>
-                    {" "}
-                    <LogoImg
-                        src={require("../../../Assets/Images/logo@2x.svg")}
-                    />
-                </StyledLogoRotate>
-            </Link>
-            <Container>
-                {codeIcon}
-                <HamburgerDiv onClick={click} data-testid="nav-hamburger">
-                    <HamburgerBar />
-                    <HamburgerBar />
-                    <HamburgerBar />
-                </HamburgerDiv>
-            </Container>
-        </MenuCollapser>
+        <Location>
+            {({ location }) => (
+                <MenuCollapser>
+                    <Link to={"./"}>
+                        <StyledLogoRotate>
+                            {" "}
+                            <LogoImg
+                                src={require("../../../Assets/Images/logo@2x.svg")}
+                            />
+                        </StyledLogoRotate>
+                    </Link>
+                    <Container>
+                        {location.pathname === "/" ? (
+                            <div>
+                                <a
+                                    href="#works-filter-panel"
+                                    style={{ color: theme.colorBgSecondary }}
+                                >
+                                    <StyledCodeIcon
+                                        onClick={toggleWorksFilter}
+                                        data-testid="nav-code-icon"
+                                    />
+                                </a>
+                            </div>
+                        ) : null}
+                        <HamburgerDiv
+                            onClick={click}
+                            data-testid="nav-hamburger"
+                        >
+                            <HamburgerBar />
+                            <HamburgerBar />
+                            <HamburgerBar />
+                        </HamburgerDiv>
+                    </Container>
+                </MenuCollapser>
+            )}
+        </Location>
     );
 };
 NavBar.propTypes = {
     click: func,
-    location: object
+    location: object,
 };
 
-export default withRouter(NavBar);
+export default NavBar;

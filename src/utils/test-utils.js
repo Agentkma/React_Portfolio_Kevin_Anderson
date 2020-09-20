@@ -1,7 +1,8 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
-import { Router } from "react-router-dom";
+import { Router } from "@reach/router";
+
 import { createMemoryHistory } from "history";
 import { render } from "@testing-library/react";
 

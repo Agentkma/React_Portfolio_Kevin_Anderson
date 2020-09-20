@@ -9,15 +9,15 @@ import { content } from "../../Assets/Content";
 import ProjectsContainer from "../../Hoc/ProjectsContainer";
 import { FadeInPageContainer } from "../../Theme/animations";
 import { SscrollContainer } from "../../shared/StyledComponents";
-import { WorksFilterContext } from "../../Hoc/Layout/context";
+import { WorksFilterContext } from "../../context";
 const { projects } = content.home.main;
 
-const renderProjects = filterSelection => {
+const renderProjects = (filterSelection) => {
     return projects
-        .filter(p => {
+        .filter((p) => {
             return p.worksFilter.includes(filterSelection);
         })
-        .map(project => {
+        .map((project) => {
             const { description, img, name } = project;
 
             return (
@@ -42,7 +42,7 @@ export default function Home() {
 
                 {showWorksFilter ? (
                     <WorksFilterPanel
-                        click={e => setFilterSelection(e.target.textContent)}
+                        click={(e) => setFilterSelection(e.target.textContent)}
                     />
                 ) : null}
                 <ProjectsContainer>

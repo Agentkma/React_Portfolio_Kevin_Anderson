@@ -9,6 +9,7 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import Error from "./Pages/Error";
+import ErrorBoundary from "./ErrorBoundary";
 import { theme } from "./Theme";
 import Project1 from "./Pages/Project/Project1";
 import Project2 from "./Pages/Project/Project2";
@@ -42,26 +43,28 @@ class App extends Component {
         return (
             <Div>
                 <ThemeProvider theme={theme}>
-                    <WorksFilterContext.Provider value={this.state}>
-                        <Navigation />
-                        <Main>
-                            <Router>
-                                <Home default path="/" />
-                                <Project1 path="/project1" />
-                                <Project2 path="/project2" />
-                                <Project3 path="/project3" />
-                                <Project4 path="/project4" />
-                                <Project5 path="/project5" />
-                                <Project6 path="/project6" />
-                                <Project7 path="/project7" />
-                                <Project8 path="/project8" />
-                                <Contact path="/contact" />
-                                <About path="/about" />
-                                <Error path="/error" />
-                            </Router>
-                        </Main>
-                        <Footer content={content.footer.social} />
-                    </WorksFilterContext.Provider>
+                    <ErrorBoundary>
+                        <WorksFilterContext.Provider value={this.state}>
+                            <Navigation />
+                            <Main>
+                                <Router>
+                                    <Home default path="/" />
+                                    <Project1 path="/project1" />
+                                    <Project2 path="/project2" />
+                                    <Project3 path="/project3" />
+                                    <Project4 path="/project4" />
+                                    <Project5 path="/project5" />
+                                    <Project6 path="/project6" />
+                                    <Project7 path="/project7" />
+                                    <Project8 path="/project8" />
+                                    <Contact path="/contact" />
+                                    <About path="/about" />
+                                    <Error path="/error" />
+                                </Router>
+                            </Main>
+                            <Footer content={content.footer.social} />
+                        </WorksFilterContext.Provider>
+                    </ErrorBoundary>
                 </ThemeProvider>
             </Div>
         );

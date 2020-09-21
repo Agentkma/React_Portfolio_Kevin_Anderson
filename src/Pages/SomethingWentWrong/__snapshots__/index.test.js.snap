@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fnVYJo kUypNa"
+  >
+    <div
+      class="sc-bdnylx sc-fFSRdu eUZwpq kLCaPu"
+    >
+      <div
+        class="sc-hKFyIo kRdfZX"
+      >
+        <section
+          class="sc-bkbjAj TAfqs"
+        >
+          <div
+            class="sc-gtssRu kdWXWM"
+          >
+            <h3
+              class="sc-iemXMA bvBvhV"
+            >
+              Oops!
+            </h3>
+             
+            <div
+              class="sc-eCApGN sc-jSFkmK dGvYhX goEUMs"
+            />
+             
+            <h6
+              class="sc-dIvqjp eaSzUE"
+            >
+              Something Went Wrong!
+            </h6>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

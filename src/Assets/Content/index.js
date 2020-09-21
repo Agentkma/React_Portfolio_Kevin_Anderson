@@ -1384,6 +1384,12 @@ export const content = {
             button: "Go Home",
         },
     },
+    somethingWentWrong: {
+        header: "Oops!",
+        main: {
+            message: "Something Went Wrong!",
+        },
+    },
     footer: {
         social: [
             {

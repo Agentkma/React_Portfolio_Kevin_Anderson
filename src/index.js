@@ -1,12 +1,13 @@
 // ! External
-import registerServiceWorker from "./registerServiceWorker";
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+// import registerServiceWorker from "./registerServiceWorker";
+import registerServiceWorker from './swRegister';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 // ! Internal
 
-import App from "./App";
+import App from './App';
 
 const app = (
     <BrowserRouter>
@@ -14,5 +15,5 @@ const app = (
     </BrowserRouter>
 );
 
-ReactDOM.render(app, document.getElementById("root"));
+ReactDOM.render(app, document.getElementById('root'));
 registerServiceWorker();

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/React_Portfolio_Kevin_Anderson/static/css/main.dfed9ead.chunk.css",
-    "main.js": "/React_Portfolio_Kevin_Anderson/static/js/main.0b0cbbac.chunk.js",
-    "main.js.map": "/React_Portfolio_Kevin_Anderson/static/js/main.0b0cbbac.chunk.js.map",
+    "main.js": "/React_Portfolio_Kevin_Anderson/static/js/main.3920b11d.chunk.js",
+    "main.js.map": "/React_Portfolio_Kevin_Anderson/static/js/main.3920b11d.chunk.js.map",
     "runtime-main.js": "/React_Portfolio_Kevin_Anderson/static/js/runtime-main.913755eb.js",
     "runtime-main.js.map": "/React_Portfolio_Kevin_Anderson/static/js/runtime-main.913755eb.js.map",
     "static/js/2.247deee2.chunk.js": "/React_Portfolio_Kevin_Anderson/static/js/2.247deee2.chunk.js",
     "static/js/2.247deee2.chunk.js.map": "/React_Portfolio_Kevin_Anderson/static/js/2.247deee2.chunk.js.map",
     "index.html": "/React_Portfolio_Kevin_Anderson/index.html",
-    "precache-manifest.bc9c020198df7cc7f9fc9e0474cc827e.js": "/React_Portfolio_Kevin_Anderson/precache-manifest.bc9c020198df7cc7f9fc9e0474cc827e.js",
+    "precache-manifest.a457077a76ae7d8fd0192358d8b0fee5.js": "/React_Portfolio_Kevin_Anderson/precache-manifest.a457077a76ae7d8fd0192358d8b0fee5.js",
     "service-worker.js": "/React_Portfolio_Kevin_Anderson/service-worker.js",
     "static/css/main.dfed9ead.chunk.css.map": "/React_Portfolio_Kevin_Anderson/static/css/main.dfed9ead.chunk.css.map",
     "static/js/2.247deee2.chunk.js.LICENSE.txt": "/React_Portfolio_Kevin_Anderson/static/js/2.247deee2.chunk.js.LICENSE.txt",
@@ -56,6 +56,7 @@
     "static/media/Logo192.png": "/React_Portfolio_Kevin_Anderson/static/media/Logo192.c3557c51.png",
     "static/media/LogoLarge.png": "/React_Portfolio_Kevin_Anderson/static/media/LogoLarge.84d4efc8.png",
     "static/media/LogoSmall.png": "/React_Portfolio_Kevin_Anderson/static/media/LogoSmall.489003ae.png",
+    "static/media/ReactRSVP01100x650.png": "/React_Portfolio_Kevin_Anderson/static/media/ReactRSVP01100x650.964d9d31.png",
     "static/media/about-bg-1920x1080.webp": "/React_Portfolio_Kevin_Anderson/static/media/about-bg-1920x1080.5dcdfb92.webp",
     "static/media/about-bg-1920x1080.jpg": "/React_Portfolio_Kevin_Anderson/static/media/about-bg-1920x1080.ad29ba63.jpg",
     "static/media/about-code.png": "/React_Portfolio_Kevin_Anderson/static/media/about-code.399609e1.png",
@@ -132,7 +133,6 @@
     "static/media/preload-ios.png": "/React_Portfolio_Kevin_Anderson/static/media/preload-ios.6b4c1064.png",
     "static/media/preload-quads.png": "/React_Portfolio_Kevin_Anderson/static/media/preload-quads.2664a2fa.png",
     "static/media/prev.svg": "/React_Portfolio_Kevin_Anderson/static/media/prev.6bf5638f.svg",
-    "static/media/reactRSVP01100x650.png": "/React_Portfolio_Kevin_Anderson/static/media/reactRSVP01100x650.964d9d31.png",
     "static/media/reactRSVP1-1200x700.png": "/React_Portfolio_Kevin_Anderson/static/media/reactRSVP1-1200x700.f967048a.png",
     "static/media/reactRSVP2-1200x700.png": "/React_Portfolio_Kevin_Anderson/static/media/reactRSVP2-1200x700.76138f82.png",
     "static/media/reactRSVP3-1200x700.png": "/React_Portfolio_Kevin_Anderson/static/media/reactRSVP3-1200x700.b735d58e.png",
@@ -165,6 +165,6 @@
     "static/js/runtime-main.913755eb.js",
     "static/js/2.247deee2.chunk.js",
     "static/css/main.dfed9ead.chunk.css",
-    "static/js/main.0b0cbbac.chunk.js"
+    "static/js/main.3920b11d.chunk.js"
   ]
 }

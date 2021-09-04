@@ -6,25 +6,29 @@ import styled from "styled-components";
 // ! Internal
 import { content } from "../../../Assets/Content";
 import { Scontainer, Srow } from "../../../shared/StyledComponents";
+const getPrevProject = ({currentIndex}) => {
+    let prevIndex =
+        (currentIndex - 1 + content.projects.length) %
+        content.projects.length;
+
+    return content.projects[prevIndex].url;
+};
+const getNextProject = ({currentIndex}) => {
+    let nextIndex = (currentIndex + 1) % content.projects.length;
+    return content.projects[nextIndex].url;
+};
+
+const getCurrentIndex =(currentProject)=> content.projects.findIndex(
+    (project) => project.url === currentProject
+);
 
 function ProjectNav({ gridNavHref }) {
-    let currentProject = window.location.pathname.split("/").join("");
+    const currentProject = window.location.pathname.split("/").join("");
 
-    let currentIndex = content.projects.findIndex(
-        (project) => project.url === currentProject
-    );
+    const currentIndex = getCurrentIndex(currentProject);
 
-    const prevProject = () => {
-        let prevIndex =
-            (currentIndex - 1 + content.projects.length) %
-            content.projects.length;
-
-        return content.projects[prevIndex].url;
-    };
-    const nextProject = () => {
-        let nextIndex = (currentIndex + 1) % content.projects.length;
-        return content.projects[nextIndex].url;
-    };
+    const prevProject = getPrevProject({currentIndex});
+    const nextProject = getNextProject({currentIndex});
 
     return (
         <Ssection>
@@ -33,7 +37,7 @@ function ProjectNav({ gridNavHref }) {
                     <Sarticle>
                         <Sul>
                             <Sli>
-                                <Link to={prevProject(currentProject)}>
+                                <Link to={`/${prevProject}`}>
                                     <Simg
                                         alt="left arrow"
                                         title="left arrow button"
@@ -51,7 +55,7 @@ function ProjectNav({ gridNavHref }) {
                                 </a>
                             </Sli>
                             <Sli>
-                                <Link to={nextProject(currentProject)}>
+                                <Link to={`/${nextProject}`}>
                                     <Simg
                                         alt="right arrow"
                                         title="right arrow button"

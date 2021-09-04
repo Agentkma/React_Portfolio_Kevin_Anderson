@@ -46,22 +46,24 @@ class App extends Component {
                     <ErrorBoundary>
                         <WorksFilterContext.Provider value={this.state}>
                             <Navigation />
-                            <Main>
+                            
                                 <Router>
+                                <Main path="/">
                                     <Home default path="/" />
-                                    <Project1 path="/project1" />
-                                    <Project2 path="/project2" />
-                                    <Project3 path="/project3" />
-                                    <Project4 path="/project4" />
-                                    <Project5 path="/project5" />
-                                    <Project6 path="/project6" />
-                                    <Project7 path="/project7" />
-                                    <Project8 path="/project8" />
-                                    <Contact path="/contact" />
-                                    <About path="/about" />
-                                    <Error path="/error" />
+                                    <Project1 path="project1" />
+                                    <Project2 path="project2" />
+                                    <Project3 path="project3" />
+                                    <Project4 path="project4" />
+                                    <Project5 path="project5" />
+                                    <Project6 path="project6" />
+                                    <Project7 path="project7" />
+                                    <Project8 path="project8" />
+                                    <Contact path="contact" />
+                                    <About path="about" />
+                                    <Error path="error" />
+                                    </Main>
                                 </Router>
-                            </Main>
+                            
                             <Footer content={content.footer.social} />
                         </WorksFilterContext.Provider>
                     </ErrorBoundary>

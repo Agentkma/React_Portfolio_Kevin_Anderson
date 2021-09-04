@@ -6,7 +6,7 @@ import IntroAbout from "./IntroAbout";
 import WorksFilterPanel from "./WorksFilterPanel";
 import ProjectItem from "./ProjectItem";
 import { content } from "../../Assets/Content";
-import ProjectsContainer from "../../Hoc/ProjectsContainer";
+import ProjectsContainer from "../../hoc/projectsContainer";
 import { FadeInPageContainer } from "../../Theme/animations";
 import { SscrollContainer } from "../../shared/StyledComponents";
 import { WorksFilterContext } from "../../context";

@@ -1,6 +1,7 @@
 {
     "name": "kevin-anderson-portfolio",
     "version": "0.1.0",
+    "homepage": "https://agentkma.github.io/React_Portfolio_Kevin_Anderson/",
     "private": true,
     "dependencies": {
         "@material-ui/core": "^4.4.2",
@@ -9,6 +10,7 @@
         "dotenv": "^8.1.0",
         "emailjs-com": "^2.4.0",
         "formik": "^1.5.8",
+        "gh-pages": "^3.2.3",
         "history": "^5.0.0",
         "moment": "^2.24.0",
         "react": "^16.9.0",
@@ -18,7 +20,7 @@
         "react-styled-carousel": "^0.5.1",
         "redux-thunk": "^2.3.0",
         "styled-components": "^5.0.1",
-        "yup": "^0.27.0"
+        "yup": "^0.32.9"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -26,7 +28,7 @@
         "now-build": "react-scripts build",
         "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
         "eject": "react-scripts eject",
-        "deploy": "vercel --prod"
+        "deploy": "npm run build && gh-pages -d build"
     },
     "browserslist": [
         ">0.2%",

@@ -1,12 +1,9 @@
-// ! External
-import React, { useState } from "react";
-
-//! Internal
+import  { useState } from "react";
 
 import NavBar from "./NavBar";
 import NavDrawer from "./NavDrawer";
 
-export const Navigation = (props) => {
+export const Navigation = () => {
     const [showNavDrawer, setShowNavDrawer] = useState(false);
 
     const navDrawerToggleHandler = () => {

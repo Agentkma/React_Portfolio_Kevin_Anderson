@@ -1,74 +1,74 @@
-import { css } from "styled-components";
+import { css, DefaultTheme, RuleSet } from "styled-components";
+import { TaggedTemplateExpression, TemplateLiteral } from "typescript";
 
-export const theme = {
-    colorBgPrimary: "white",
-    colorBgSecondary: "#292929",
-    colorBgTertiary: "#f0f4f4",
-    colorBgQuaternary: "#121212",
-    colorFontPrimary: "#666",
-    colorFontSecondary: "white",
-    colorFontTertiary: "#121212",
-    colorFontQuaternary: "#292929",
-    colorFontQuinternary: "#999999",
-    colorFontHoverPrimary: "#ff2238 !important",
-    colorAccentPrimary: "#ff2238 !important",
-    colorAccentSecondary: "#eee",
-    colorAccentTertiary: "#000",
-    colorBorderPrimary: "#121212",
-    fontSizeSmall: "0.7rem",
-    fontSizePrimary: "1rem",
-    fontSizeSecondary: "1.5rem",
-    fontSizeTertiary: "3rem",
-    fontFamilyPrimary: "Montserrat, sans-serif !important",
-    fontFamilySecondary: "Montserrat, sans-serif !important"
+export const theme: DefaultTheme = {
+  colorBorderPrimary: "#121212",
+  fontSizeSmall: "0.7rem",
+  fontSizePrimary: "1rem",
+  fontSizeSecondary: "1.5rem",
+  fontSizeTertiary: "3rem",
+  fontFamilyPrimary: "Montserrat, sans-serif !important",
+  fontFamilySecondary: "Montserrat, sans-serif !important",
 };
 
-// ! Media Queries
-const sizesAnd = {
-    /* Extra Larg Desktop */
-    xlDesktop: 1170,
-    tablet: 768,
-    /*iPhone Landscape Mode and Mediium Smart Phones*/
-    phoneLandscape: 480
+// Define the sizesAnd object with proper types
+interface SizesAnd {
+  xlDesktop: number;
+  tablet: number;
+  phoneLandscape: number;
+}
+
+const sizesAnd: SizesAnd = {
+  xlDesktop: 1170,
+  tablet: 768,
+  phoneLandscape: 480,
 };
 
-const sizes = {
-    tablet: 768,
-    /* Larger than desktop */
-    desktop: 992,
-    /* xlDesktop */
-    xlDesktop: 1200
+// Define the sizes object with proper types
+interface Sizes {
+  tablet: number;
+  desktop: number;
+  xlDesktop: number;
+}
+
+const sizes: Sizes = {
+  tablet: 768,
+  desktop: 992,
+  xlDesktop: 1200,
 };
 
 // Iterate through the sizes and create a media template
 export const mediaAnd = Object.keys(sizesAnd).reduce((acc, label) => {
-    acc[label] = (...args) => css`
-        @media (screen and max-width: ${sizes[label] / 16}rem) {
-            ${css(...args)};
-        }
-    `;
+  const key = label as keyof SizesAnd;
+  //@ts-ignore
+  acc[key] = (...args: Parameters<typeof css>) => `
+    @media (max-width: ${sizesAnd[key]}px) {
+    ${css(...args)};
+    }
+  `;
+  return acc;
+}, {} as Record<keyof SizesAnd, (...args: Parameters<typeof css>) => ReturnType<typeof css>>);
 
-    return acc;
-}, {});
-
-// Iterate through the sizes and create a media template
 export const media = Object.keys(sizes).reduce((acc, label) => {
-    acc[label] = (...args) => css`
-        @media (max-width: ${sizes[label] / 16}rem) {
-            ${css(...args)};
-        }
-    `;
-
-    return acc;
-}, {});
+  const key = label as keyof Sizes;
+  //@ts-ignore
+  acc[key] = (...args: Parameters<typeof css>) => `
+    @media (min-width: ${sizes[key]}px) {
+      ${css(...args)};
+    }
+  `;
+  return acc;
+}, {} as Record<keyof Sizes, (...args: Parameters<typeof css>) => ReturnType<typeof css>>);
 
 // Iterate through the sizes and create a media template
 export const mediaMin = Object.keys(sizes).reduce((acc, label) => {
-    acc[label] = (...args) => css`
-        @media (min-width: ${sizes[label] / 16}rem) {
-            ${css(...args)};
-        }
-    `;
+  const key = label as keyof Sizes;
+  //@ts-ignore
+  acc[key] = (...args: Parameters<typeof css>) => css`
+    @media (min-width: ${sizes[key] / 16}rem) {
+      ${css(...args)};
+    }
+  `;
 
-    return acc;
-}, {});
+  return acc;
+}, {} as Record<keyof Sizes, (...args: Parameters<typeof css>) => ReturnType<typeof css>>);

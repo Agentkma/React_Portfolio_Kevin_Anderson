@@ -1,13 +1,10 @@
-// ! External
-import React from "react";
 import styled from "styled-components";
-
-// ! Internal
+import { FC,PropsWithChildren } from "react";
 
 import { mediaMin } from "../../../Theme";
 
-export const Container = props => {
-    return <Sdiv>{props.children}</Sdiv>;
+export const Container:FC<PropsWithChildren> = ({children}) => {
+    return <Sdiv>{children}</Sdiv>;
 };
 
 export default Container;

@@ -116,8 +116,7 @@ const Sh6HL = styled.h6`
     line-height: 1.2;
     margin-top: 0;
     margin-bottom: 0;
-    ${mediaAnd.tablet`font-size: 4.4rem;
-    font-weight: 300;`};
+    ${mediaAnd.tablet`font-size: 4.4rem; font-weight: 300;`};
     ${mediaAnd.xlDesktop`font-size: 6rem;`};
 `;
 

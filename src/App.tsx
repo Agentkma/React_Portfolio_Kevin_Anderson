@@ -21,7 +21,7 @@ import Footer from "./Components/Footer";
 import { WorksFilterContext } from "./context";
 
 const App: React.FC = () => {
-  const [showWorksFilter, setShowWorksFilter] = useState(false);
+  const [showWorksFilter, setShowWorksFilter] = useState<boolean>(false);
 
   const toggleWorksFilter = useCallback(() => {
     setShowWorksFilter((prev) => !prev);

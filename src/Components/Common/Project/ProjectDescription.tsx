@@ -1,5 +1,3 @@
-// ! External
-import React from "react";
 import styled from "styled-components";
 
 // ! Internal
@@ -12,7 +10,11 @@ import {
 import { mediaMin } from "../../../Theme";
 import { content } from "../../../Assets/Content";
 
-export function ProjectDescription({ project }) {
+interface ProjectCarousel1Props {
+  project: string;
+}
+
+export function ProjectDescription({ project }:ProjectCarousel1Props) {
     const descriptions = content.projects[project].description;
 
     return descriptions.map(

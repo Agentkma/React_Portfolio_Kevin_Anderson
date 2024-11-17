@@ -1,6 +1,6 @@
 // ! External
-import ArrowForward from "@material-ui/icons/ArrowForward";
-import ArrowBack from "@material-ui/icons/ArrowBack";
+import ArrowForward from "@mui/icons-material/ArrowForward";
+import ArrowBack from "@mui/icons-material/ArrowBack";
 import React from "react";
 import Slider from "react-styled-carousel";
 import styled from "styled-components";

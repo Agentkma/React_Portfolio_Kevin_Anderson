@@ -1,8 +1,8 @@
 // ! External
-import Accessibility from "@material-ui/icons/Accessibility";
-import Create from "@material-ui/icons/Create";
-import School from "@material-ui/icons/School";
-import WB_Sunny from "@material-ui/icons/WbSunny";
+import Accessibility from "@mui/icons-material/Accessibility";
+import Create from "@mui/icons-material/Create";
+import School from "@mui/icons-material/School";
+import WB_Sunny from "@mui/icons-material/WbSunny";
 import React from "react";
 import styled from "styled-components";
 

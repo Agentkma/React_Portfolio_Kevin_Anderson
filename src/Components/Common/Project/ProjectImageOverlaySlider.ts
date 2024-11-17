@@ -1,7 +1,7 @@
 // ! External
-import ArrowForward from "@material-ui/icons/ArrowForward";
-import ArrowBack from "@material-ui/icons/ArrowBack";
-import Picture from "@material-ui/icons/PictureInPicture";
+import ArrowForward from "@mui/icons-material/ArrowForward";
+import ArrowBack from "@mui/icons-material/ArrowBack";
+import Picture from "@mui/icons-material/PictureInPicture";
 import { ScloseIcon } from "../../../shared/StyledComponents";
 import React from "react";
 import Slider from "react-styled-carousel";

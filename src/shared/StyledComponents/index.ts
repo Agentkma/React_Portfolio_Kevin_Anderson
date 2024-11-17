@@ -1,6 +1,6 @@
 // ! External
 
-import CloseIcon from "@material-ui/icons/Close";
+import CloseIcon from "@mui/icons-material/Close";
 
 // ! Internal
 

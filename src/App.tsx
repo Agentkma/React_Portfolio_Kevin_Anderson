@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
@@ -17,8 +18,7 @@ import Project7 from "./Pages/Project/Project7";
 import Project8 from "./Pages/Project/Project8";
 import Navigation from "./Components/Navigation";
 import Footer from "./Components/Footer";
-import { WorksFilterContext } from "./Context";
-import { content } from "./Assets/Content";
+import { WorksFilterContext } from "./context";
 
 const App: React.FC = () => {
   const [showWorksFilter, setShowWorksFilter] = useState(false);
@@ -53,7 +53,7 @@ const App: React.FC = () => {
                 </Routes>
               </Main>
             </Router>
-            <Footer content={content.footer.social} />
+            <Footer  />
           </WorksFilterContext.Provider>
         </ErrorBoundary>
       </ThemeProvider>

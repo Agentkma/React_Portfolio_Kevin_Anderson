@@ -4,12 +4,10 @@ import styled from "styled-components";
 import { mediaMin } from "../../../Theme";
 import { content } from "../../../Assets/Content";
 import ProjectImagesOverlaySlider from "./ProjectImageOverlaySlider";
+import { ProjectIndex } from "shared/types";
 
-interface ProjectImagesProps {
-  project: string;
-}
 
-const ProjectImages: React.FC<ProjectImagesProps> = ({ project }) => {
+const ProjectImages: React.FC< ProjectIndex> = ({ project }) => {
   const [showImageOverlaySlider, setShowImageOverlaySlider] = useState(false);
   const [currentImg, setCurrentImg] = useState<number | null>(null);
   const imgCount = content.projects[Number(project)].imgContainer.length;

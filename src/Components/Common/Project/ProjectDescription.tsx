@@ -9,12 +9,9 @@ import {
 } from "../../../shared/StyledComponents";
 import { mediaMin } from "../../../Theme";
 import { content  } from "../../../Assets/Content";
+import { ProjectIndex } from "shared/types";
 
-interface ProjectCarousel1Props {
-  project: string;
-}
-
-export function ProjectDescription({ project }:ProjectCarousel1Props) {
+export function ProjectDescription({ project }:ProjectIndex) {
     const descriptions = content.projects[Number(project)].description;
 
     return descriptions.map(

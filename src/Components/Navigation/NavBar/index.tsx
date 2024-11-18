@@ -1,6 +1,5 @@
-// ! External
-import React, { useContext } from "react";
-import { Link, Location } from "react-router";
+import { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { func, object } from "prop-types";
 
 // ! Internal
@@ -17,11 +16,12 @@ import {
 } from "../styled-components";
 import { WorksFilterContext } from "../../../context";
 
-export const NavBar = ({ click }) => {
+interface NavBarProps {click: () => void;}
+
+export const NavBar = ({ click }:NavBarProps) => {
   const { toggleWorksFilter } = useContext(WorksFilterContext);
+  const location = useLocation();
   return (
-    <Location>
-      {({ location }) => (
         <MenuCollapser>
           <Link to={"./"}>
             <StyledLogoRotate>
@@ -50,8 +50,6 @@ export const NavBar = ({ click }) => {
             </HamburgerDiv>
           </Container>
         </MenuCollapser>
-      )}
-    </Location>
   );
 };
 NavBar.propTypes = {

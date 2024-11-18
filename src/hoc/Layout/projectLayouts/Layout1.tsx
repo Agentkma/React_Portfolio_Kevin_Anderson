@@ -4,8 +4,9 @@ import ProjectCarousel1 from "../../../Components/Common/Project/ProjectCarousel
 import ProjectNav from "../../../Components/Common/Project/ProjectNav";
 import { SscrollContainer } from "../../../shared/StyledComponents";
 import ProjectImages from "../../../Components/Common/Project/ProjectImages";
+import { ProjectIndex } from "shared/types";
 
-export function Layout1({ project }:{project:string}) {
+export function Layout1({ project }:ProjectIndex) {
     return (
         <SscrollContainer>
             <ProjectTitle project={project} />

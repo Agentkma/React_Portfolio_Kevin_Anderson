@@ -1,19 +1,15 @@
-// ! External
-
-import React, { Fragment } from "react";
 import styled from "styled-components";
 
-// ! Internal
-
-import { content } from "../../../Assets/Content";
+import { content,BannerImg } from "../../../Assets/Content";
 import { mediaMin } from "../../../Theme";
 import {
     SsectionParallax,
     SarticleMainHeading,
     SdivValign
 } from "../../../shared/StyledComponents";
+import { ProjectIndex } from "shared/types";
 
-const renderBgSections = bannerImg => {
+const renderBgSections = (bannerImg:BannerImg[]) => {
     return bannerImg.map((img, index) => {
         const { overLay, src } = img;
 
@@ -33,10 +29,10 @@ const renderBgSections = bannerImg => {
     });
 };
 
-const ProjectParallax = ({ project }) => {
-    const { bannerImg } = content.projects[project];
+const ProjectParallax = ({ project }: ProjectIndex) => {
+    const { bannerImg } = content.projects[Number(project)];
 
-    return <Fragment>{renderBgSections(bannerImg)}</Fragment>;
+    return <>{renderBgSections(bannerImg)}</>;
 };
 
 export default ProjectParallax;

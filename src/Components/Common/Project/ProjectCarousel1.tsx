@@ -5,12 +5,10 @@ import styled from "styled-components";
 
 import { content } from "../../../Assets/Content";
 import { mediaMin } from "../../../Theme";
+import { ProjectIndex } from "shared/types";
 
-interface ProjectCarousel1Props {
-  project: string;
-}
 
-export function ProjectCarousel1({ project }: ProjectCarousel1Props) {
+export function ProjectCarousel1({ project }: ProjectIndex) {
   const { bannerImg } = content.projects[Number(project)];
 
   return (

@@ -1,8 +1,4 @@
-// ! External
-
-import React, { useState } from "react";
-
-// ! Internal
+import  { useState } from "react";
 
 import {
     SlideDownNavDiv,
@@ -19,7 +15,9 @@ import {
 import { ScaleInVerTop } from "../../../Theme/animations";
 import { content } from "../../../Assets/Content";
 
-export const NavDrawer = ({ click }) => {
+interface NavDrawerProps {click: () => void;}
+
+export const NavDrawer = ({ click }:NavDrawerProps) => {
     const [projectListOpen, setProjectListOpen] = useState(false);
 
     const projectListClickHandler = () => {

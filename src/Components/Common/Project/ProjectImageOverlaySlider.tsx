@@ -1,21 +1,19 @@
-// ! External
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import Picture from "@mui/icons-material/PictureInPicture";
 import { ScloseIcon } from "../../../shared/StyledComponents";
-import React from "react";
 import Slider from "react-styled-carousel";
 import styled from "styled-components";
 
-// ! Internal
 import { content } from "../../../Assets/Content";
 import { FadeInPageContainer } from "../../../Theme/animations";
-interface ProjectImageOverlaySliderProps {
+import { ProjectIndex } from "shared/types";
+type ProjectImageOverlaySliderProps ={
     click: () => void;
     counterPlus: () => void;
     counterMinus: () => void;
-    project: string;
-}
+   
+} &  ProjectIndex
 export function ProjectImageOverlaySlider({
     click,
     counterPlus,

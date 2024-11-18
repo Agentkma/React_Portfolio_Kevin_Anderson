@@ -1,9 +1,5 @@
-// ! External
-import moment from "moment";
-import React from "react";
+import moment from "moment";;
 import styled from "styled-components";
-
-// ! Internal
 
 import { content } from "../../Assets/Content";
 import { media } from "../../Theme";

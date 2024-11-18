@@ -1,9 +1,7 @@
-// ! External
 import registerServiceWorker from "./registerServiceWorker";
-import React from "react";
+
 import ReactDOM from "react-dom";
 
-// ! Internal
 
 import App from "./App";
 

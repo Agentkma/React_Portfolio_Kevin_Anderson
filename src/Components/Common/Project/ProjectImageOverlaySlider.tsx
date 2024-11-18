@@ -10,14 +10,19 @@ import styled from "styled-components";
 // ! Internal
 import { content } from "../../../Assets/Content";
 import { FadeInPageContainer } from "../../../Theme/animations";
-
+interface ProjectImageOverlaySliderProps {
+    click: () => void;
+    counterPlus: () => void;
+    counterMinus: () => void;
+    project: string;
+}
 export function ProjectImageOverlaySlider({
     click,
     counterPlus,
     counterMinus,
     project
-}) {
-    const { imgContainer } = content.projects[project];
+}:ProjectImageOverlaySliderProps) {
+    const { imgContainer } = content.projects[Number(project)];
 
     return (
         <FadeInPageContainer>

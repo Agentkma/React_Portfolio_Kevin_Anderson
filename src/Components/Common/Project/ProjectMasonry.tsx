@@ -1,15 +1,13 @@
-// ! External
-
-import React from "react";
 import styled from "styled-components";
 
-// ! Internal
 
-import { content } from "../../../Assets/Content";
+import { content,BannerImg } from "../../../Assets/Content";
 import { mediaMin } from "../../../Theme";
 import { SresponsiveImg } from "../../../shared/StyledComponents";
 
-const renderBgSections = bannerImgsArray => {
+
+
+const renderBgSections = (bannerImgsArray: BannerImg[]) => {
     return bannerImgsArray.map((img, index) => {
         const { alt, title, overLay, src, srcSet } = img;
 
@@ -28,9 +26,9 @@ const renderBgSections = bannerImgsArray => {
         );
     });
 };
-
-const ProjectMasonry = ({ project }) => {
-    const { bannerImg: bannerImgsArray } = content.projects[project];
+interface ProjectMasonryProps { project: string; }
+const ProjectMasonry = ({ project }:ProjectMasonryProps) => {
+    const { bannerImg: bannerImgsArray } = content.projects[Number(project)];
 
     return <Ssection>{renderBgSections(bannerImgsArray)}</Ssection>;
 };

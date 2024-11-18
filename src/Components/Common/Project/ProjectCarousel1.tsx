@@ -11,7 +11,7 @@ interface ProjectCarousel1Props {
 }
 
 export function ProjectCarousel1({ project }: ProjectCarousel1Props) {
-  const { bannerImg } = content.projects[project];
+  const { bannerImg } = content.projects[Number(project)];
 
   return (
     <Ssection>

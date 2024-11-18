@@ -8,14 +8,14 @@ import {
     Srow,
 } from "../../../shared/StyledComponents";
 import { mediaMin } from "../../../Theme";
-import { content } from "../../../Assets/Content";
+import { content  } from "../../../Assets/Content";
 
 interface ProjectCarousel1Props {
   project: string;
 }
 
 export function ProjectDescription({ project }:ProjectCarousel1Props) {
-    const descriptions = content.projects[project].description;
+    const descriptions = content.projects[Number(project)].description;
 
     return descriptions.map(
         ({

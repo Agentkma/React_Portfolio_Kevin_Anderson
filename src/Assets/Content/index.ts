@@ -1,3 +1,39 @@
+export interface BannerImg {
+  alt: string;
+  src: string;
+  srcSet: string[];
+  title: string;
+  overLay?: string;
+}
+export interface Project {
+  id: string;
+  url: string;
+  title: {
+    name: string;
+    categories: string;
+  };
+  bannerImg: BannerImg[];
+  img: {
+    alt: string;
+    title: string;
+    srcSet: string[];
+    src: string;
+  };
+  description: {
+    taglineHeading: string;
+    taglineSubHeading: string;
+    projectDescription: string[];
+    categories: string;
+    delivered: string;
+    liveSiteLink: string;
+  }[];
+  imgContainer: {
+    alt: string;
+    title: string;
+    src: string;
+  }[];
+}
+
 interface Content {
   home: {
     header: {
@@ -20,40 +56,7 @@ interface Content {
       }[];
     };
   };
-  projects: {
-    id: string;
-    url: string;
-    title: {
-      name: string;
-      categories: string;
-    };
-    bannerImg: {
-      alt: string;
-      src: string;
-      srcSet: string[];
-      title: string;
-      overLay?: string;
-    }[];
-    img: {
-      alt: string;
-      title: string;
-      srcSet: string[];
-      src: string;
-    };
-    description: {
-      taglineHeading: string;
-      taglineSubHeading: string;
-      projectDescription: string[];
-      categories: string;
-      delivered: string;
-      liveSiteLink: string;
-    }[];
-    imgContainer: {
-      alt: string;
-      title: string;
-      src: string;
-    }[];
-  }[];
+  projects: Project[];
   about: {
     header: { intro: string };
     main: {

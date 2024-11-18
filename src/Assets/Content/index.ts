@@ -21,21 +21,120 @@ interface Content {
     };
   };
   projects: {
-    [key: string]: {
-      bannerImg: {
-        alt: string;
-        src: string;
-        srcSet: string[];
-        title: string;
+    id: string;
+    url: string;
+    title: {
+      name: string;
+      categories: string;
+    };
+    bannerImg: {
+      alt: string;
+      src: string;
+      srcSet: string[];
+      title: string;
+      overLay?: string;
+    }[];
+    img: {
+      alt: string;
+      title: string;
+      srcSet: string[];
+      src: string;
+    };
+    description: {
+      taglineHeading: string;
+      taglineSubHeading: string;
+      projectDescription: string[];
+      categories: string;
+      delivered: string;
+      liveSiteLink: string;
+    }[];
+    imgContainer: {
+      alt: string;
+      title: string;
+      src: string;
+    }[];
+  }[];
+  about: {
+    header: { intro: string };
+    main: {
+      gridItems: {
+        type: string;
+        value?: {
+          img?: string;
+          alt?: string;
+          title?: string;
+          txt?: {
+            primary: string;
+            secondary: string;
+          };
+        };
+        story?: {
+          img?: string;
+          txt?: {
+            primary: string;
+            secondary: string[];
+          };
+        };
       }[];
+      profile: {
+        img: {
+          src: string;
+          alt: string;
+          title: string;
+        };
+        name: string;
+        title: string;
+        details: string;
+      };
+      stats: {
+        title: string;
+        value: string | number;
+      }[];
+      values: {
+        icon: string;
+        title: string;
+        text: string;
+      }[];
+      contact: {
+        header: string;
+        main: string;
+      };
+    };
+  };
+  contact: {
+    header: {
+      email: string;
+      location: string;
+    };
+    form: {
+      submit: string;
+    };
+  };
+  error: {
+    header: string;
+    main: {
+      message: string;
+      button: string;
+    };
+  };
+  somethingWentWrong: {
+    header: string;
+    main: {
+      message: string;
     };
   };
   footer: {
     social: {
-      [key: string]: string;
-    };
+      link: string;
+      img: {
+        alt: string;
+        title: string;
+        src: string;
+      };
+    }[];
   };
 }
+
 export const content: Content = {
   home: {
     header: {
@@ -1224,7 +1323,6 @@ export const content: Content = {
             title: "learning",
           },
         },
-
         {
           type: "story image",
           story: {

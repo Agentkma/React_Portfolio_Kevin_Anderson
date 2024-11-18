@@ -1,26 +1,29 @@
-// ! External
-import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// ! Internal
 import { content } from "../../../Assets/Content";
 import { Scontainer, Srow } from "../../../shared/StyledComponents";
-const getPrevProject = ({ currentIndex }) => {
+
+interface ProjectNavProps {
+  gridNavHref: string;
+}
+
+const getPrevProject = ({ currentIndex }: { currentIndex: number }): string => {
   let prevIndex =
     (currentIndex - 1 + content.projects.length) % content.projects.length;
 
   return content.projects[prevIndex].url;
 };
-const getNextProject = ({ currentIndex }) => {
+
+const getNextProject = ({ currentIndex }: { currentIndex: number }): string => {
   let nextIndex = (currentIndex + 1) % content.projects.length;
   return content.projects[nextIndex].url;
 };
 
-const getCurrentIndex = (currentProject) =>
+const getCurrentIndex = (currentProject: string): number =>
   content.projects.findIndex((project) => project.url === currentProject);
 
-function ProjectNav({ gridNavHref }) {
+function ProjectNav({ gridNavHref }: ProjectNavProps) {
   const currentProject = window.location.pathname.split("/").join("");
 
   const currentIndex = getCurrentIndex(currentProject);

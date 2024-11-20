@@ -1,10 +1,6 @@
-// ! External
-
-import React, { useState, useEffect, useRef } from "react";
+import  { useState, useEffect, useRef } from "react";
 import CountUp from 'react-countup';
 import styled from "styled-components";
-
-// ! Internal
 
 import { content } from "../../Assets/Content";
 import StatsBgImg from "../../Assets/Images/about/about-stats1.jpg";
@@ -19,13 +15,13 @@ function Stats() {
     const [educationPoints, setEducationPoints] = useState(0);
     const [projects, setProjects] = useState(0);
     const [skills, setSkills] = useState(45);
-    const [degreesCerts, setDegreesCerts] = useState(5);
+    const degreesCerts = 5
     const [showSkillAnimation, setShowSkillAnimation] = useState(false);
  
 
     // ! Misc
 
-    const statsRef = useRef(null);
+    const statsRef = useRef<HTMLDivElement>(null);
 
     // ! Effects
 
@@ -45,18 +41,15 @@ function Stats() {
 
     // ! Methods
 
-    const listener = e => {
+    const listener = (e: Event) => {
         const _window = window;
         const scrollPos = _window.scrollY;
-        const sectionPosition = parseInt(statsRef.current.offsetTop) - 400;
+        const sectionPosition = statsRef.current ? parseInt(statsRef.current?.offsetTop.toString()) - 400 : 0;
 
         if (scrollPos > sectionPosition && !showSkillAnimation) {
             setShowSkillAnimation(true);
         } else if (scrollPos < sectionPosition && showSkillAnimation) {
             console.log("inside else");
-            // user has scrolled back to header's territory,
-            // it's optional here for you to remove the element
-            // * comment
             setShowSkillAnimation(false);
         }
     };

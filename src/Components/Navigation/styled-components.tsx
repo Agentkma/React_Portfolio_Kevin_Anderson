@@ -2,13 +2,10 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import CodeIcon from "@mui/icons-material/Code";
 
-// ! Internal
 import { mediaMin } from "../../Theme";
 import drawerBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
 import { SlideDown, Rotate } from "../../Theme/animations";
 import { ScloseIcon } from "../../shared/StyledComponents";
-
-// ! Styles
 
 export const SlideDownNavDiv = styled(SlideDown)`
   display: block !important;

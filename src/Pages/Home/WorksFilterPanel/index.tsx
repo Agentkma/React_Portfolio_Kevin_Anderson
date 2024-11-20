@@ -1,15 +1,16 @@
-// ! External
 import React from "react";
 import styled from "styled-components";
 
-// ! Internal
 import { content } from "../../../Assets/Content";
 import Container from "../../../Components/Common/Container";
 import { media } from "../../../Theme";
 import { ScaleInVerTop } from "../../../Theme/animations";
-//* misc
 
-export const WorksFilterPanel = ({ click }) => {
+interface WorksFilterPanelProps {
+    click: (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
+}
+
+export const WorksFilterPanel = ({ click }: WorksFilterPanelProps) => {
     const items = content.home.main.worksFilter.map((category, index) => {
         return (
             <li key={index} onClick={e => click(e)}>

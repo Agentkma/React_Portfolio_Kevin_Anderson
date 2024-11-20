@@ -1,5 +1,5 @@
 import * as emailjs from "emailjs-com";
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
@@ -43,7 +43,26 @@ const ContactSchema = Yup.object().shape({
         .required("Message Required"),
 });
 
-const handleSubmit = async (values, actions, setLegend) => {
+interface FormValues {
+    name: string;
+    email: string;
+    message: string;
+}
+
+interface FormActions {
+    setStatus: (status: any) => void;
+    setSubmitting: (isSubmitting: boolean) => void;
+    setErrors: (errors: any) => void;
+    resetForm: () => void;
+}
+
+type SetLegend = (legend: string) => void;
+
+const handleSubmit = async (
+    values: FormValues,
+    actions: FormActions,
+    setLegend: SetLegend
+) => {
     const { email, message, name } = values;
     const { setStatus, setSubmitting, setErrors, resetForm } = actions;
 

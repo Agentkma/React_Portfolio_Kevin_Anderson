@@ -1,8 +1,5 @@
-// ! External
-import React from "react";
 import styled from "styled-components";
 
-// ! Internal
 import { content } from "../../Assets/Content";
 import {
     Scontainer,
@@ -20,7 +17,7 @@ import Profile from "./Profile";
 import Stats from "./Stats";
 import Values from "./Values";
 import CTA from "./CTA";
-import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg";
+import headingBgImg from "../../Assets/Images/bg/about-bg-1920x1080.jpg"; // Ensure this path is correct
 
 const renderGridItemsValues = () => {
     return content.about.main.gridItems.map((item, index) => {

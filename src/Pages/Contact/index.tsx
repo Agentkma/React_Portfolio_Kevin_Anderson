@@ -1,9 +1,4 @@
-// ! External
-
-import React from "react";
 import styled from "styled-components";
-
-// ! Internal
 
 import Form from "./Form";
 import { content } from "../../Assets/Content";

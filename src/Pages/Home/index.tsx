@@ -1,9 +1,6 @@
-// ! External
-import React, { useState, useContext } from "react";
+import { useContext, useState } from "react";
 
-// ! Internal
 import IntroAbout from "./IntroAbout";
-import WorksFilterPanel from "./WorksFilterPanel";
 import ProjectItem from "./ProjectItem";
 import { content } from "../../Assets/Content";
 import ProjectsContainer from "../../hoc/projectsContainer";
@@ -12,38 +9,53 @@ import { SscrollContainer } from "../../shared/StyledComponents";
 import { WorksFilterContext } from "../../context";
 const { projects } = content.home.main;
 
-const renderProjects = (filterSelection) => {
+interface Project {
+    description: string;
+    img: {
+        alt: string;
+        title: string;
+        srcSet: string[];
+        src: string;
+    };
+    name: string;
+    worksFilter: string[];
+}
+
+const renderProjects = (filterSelection: string): JSX.Element[] => {
     return projects
-        .filter((p) => {
+        .filter((p: Project) => {
             return p.worksFilter.includes(filterSelection);
         })
-        .map((project) => {
+        .map((project: Project) => {
             const { description, img, name } = project;
 
             return (
                 <ProjectItem
                     key={name}
-                    description={description}
                     name={name}
-                    img={img}
+                   
                 />
             );
         });
 };
 
 export default function Home() {
-    // Declare a new state variable, which we'll call "count"
     const { showWorksFilter } = useContext(WorksFilterContext);
     const [filterSelection, setFilterSelection] = useState("all");
+
     return (
         <FadeInPageContainer>
             <SscrollContainer>
                 <IntroAbout />
 
                 {showWorksFilter ? (
-                    <WorksFilterPanel
-                        click={(e) => setFilterSelection(e.target.textContent)}
-                    />
+                    <div>
+                        <button onClick={() => setFilterSelection("all")}>All</button>
+                        <button onClick={() => setFilterSelection("css-frameworks")}>
+                            CSS Frameworks
+                        </button>
+                        {/* Add more filter buttons as needed */}
+                    </div>
                 ) : null}
                 <ProjectsContainer>
                     {renderProjects(filterSelection)}

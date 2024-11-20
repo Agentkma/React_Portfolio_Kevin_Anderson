@@ -1,8 +1,6 @@
-// ! External
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import styled from "styled-components";
 
-// ! Internal
 import { content } from "../../../Assets/Content";
 import { BounceInLeft } from "../../../Theme/animations";
 import { media, mediaAnd, mediaMin } from "../../../Theme";
@@ -11,7 +9,7 @@ import Container from "../../../Components/Common/Container";
 export const IntroAbout = () => {
     const itemsArray = content.home.header.subHeading;
     const [itemCount, setItemCount] = useState(0);
-    const [itemCurrent, setItemCurrent] = useState(null);
+    const [itemCurrent, setItemCurrent] = useState<string | null>(null);
 
     useEffect(() => {
         const renderAboutItems = () => {

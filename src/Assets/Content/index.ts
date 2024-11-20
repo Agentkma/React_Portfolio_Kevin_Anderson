@@ -33,7 +33,27 @@ export interface Project {
     src: string;
   }[];
 }
-
+export interface GridItem {
+  type: string;
+  value?: {
+    img?: string;
+    alt?: string;
+    title?: string;
+    txt?: {
+      primary: string;
+      secondary: string;
+    };
+  };
+  story?: {
+    alt?: string;
+    title?: string;
+    img?: string;
+    txt?: {
+      primary: string;
+      secondary: string[];
+    };
+  };
+}
 interface Content {
   home: {
     header: {
@@ -60,25 +80,7 @@ interface Content {
   about: {
     header: { intro: string };
     main: {
-      gridItems: {
-        type: string;
-        value?: {
-          img?: string;
-          alt?: string;
-          title?: string;
-          txt?: {
-            primary: string;
-            secondary: string;
-          };
-        };
-        story?: {
-          img?: string;
-          txt?: {
-            primary: string;
-            secondary: string[];
-          };
-        };
-      }[];
+      gridItems: GridItem[];
       profile: {
         img: {
           src: string;

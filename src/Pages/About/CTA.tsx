@@ -1,10 +1,6 @@
-// ! External
 
-import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-
-// ! Internal
 
 import { content } from "../../Assets/Content";
 import CTAbgImg from "../../Assets/Images/bg/about-interested-1600x1006.jpg";

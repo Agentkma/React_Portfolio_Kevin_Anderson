@@ -1,70 +1,71 @@
-// ! External
-import React from "react";
 import styled from "styled-components";
 
-// ! Internal
 import {
     SdivLineSmall,
     SresponsiveImg
 } from "../../shared/StyledComponents";
 import { mediaMin } from "../../Theme";
 import { content } from "../../Assets/Content";
-import { VALUE_IMAGE } from "../../Constants";
+import { VALUE_IMAGE } from "../../constants/index";
 
-export const GridItem = ({ index, type }) => {
+interface GridItemProps {
+    index: number;
+    type: string;
+}
+
+export const GridItem = ({ index, type }: GridItemProps) => {
     const { gridItems } = content.about.main;
     const gridItem = gridItems[index];
 
     if (type === VALUE_IMAGE) {
-        const { img, alt, title } = gridItem.value;
+       
 
         return (
             <SarticleHeroImg>
                 <picture>
-                    <source srcSet={require(`../../${img}`)} type="image/jpg" />
+                    <source srcSet={require(`../../${gridItem.value?.img}`)} type="image/jpg" />
                     <SresponsiveImg
-                        src={require(`../../${img}`)}
-                        alt={alt}
-                        title={title}
+                        src={require(`../../${gridItem.value?.img}`)}
+                        alt={gridItem.value?.alt}
+                        title={gridItem.value?.title}
                     />
                 </picture>{" "}
             </SarticleHeroImg>
         );
     } else if (type === "value text") {
-        const { primary, secondary } = gridItem.value.txt;
-        return (
-            <SarticleHeroTxt>
+        
+           return( <SarticleHeroTxt>
                 <div>
-                    <Sh3HeroTxt>{primary}</Sh3HeroTxt>
+                    <Sh3HeroTxt>{gridItem.value?.txt?.primary}</Sh3HeroTxt>
                     <SdivLineSmall />
-                    <Sh6HeroTxt>{secondary}</Sh6HeroTxt>
+                    <Sh6HeroTxt>{gridItem.value?.txt?.secondary}</Sh6HeroTxt>
                 </div>
             </SarticleHeroTxt>
         );
     } else if (type === "story image") {
-        const { img, alt, title } = gridItem.story;
+       
 
         return (
             <SarticleHeroImg>
                 <picture>
-                    <source srcSet={require(`../../${img}`)} type="image/jpg" />
+                    <source srcSet={require(`../../${gridItem.story?.img}`)} type="image/jpg" />
                     <SresponsiveImg
-                        src={require(`../../${img}`)}
-                        alt={alt}
-                        title={title}
+                        src={require(`../../${gridItem.story?.img}`)}
+                        alt={gridItem.story?.alt}
+                        title={gridItem.story?.title}
                     />
                 </picture>{" "}
             </SarticleHeroImg>
         );
     } else if (type === "story text") {
-        const { primary, secondary } = gridItem.story.txt;
+        
         return (
             <SarticleHeroTxt>
                 <div>
-                    <Sh4HeroTxt3 as="h4">{primary}</Sh4HeroTxt3>
+                    <Sh4HeroTxt3 as="h4">{ gridItem.story?.txt?.primary}</Sh4HeroTxt3>
                     <SdivLineSmall />
                     <SpHero>
-                        {secondary.map((text, i) => {
+                        { gridItem.story?.txt?.secondary.map((text, i) => {
                             return (
                                 <span key={i}>
                                     {text} <br /> <br />

@@ -1,14 +1,15 @@
-// ! External
-import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// ! Internal
 import { content } from "../../../Assets/Content";
 import cursor from "../../../Assets/Images/plus@2x.png";
 import { media } from "../../../Theme";
 
-export const ProjectItem = ({ name }) => {
+interface ProjectItemProps {
+  name: string;
+}
+
+export const ProjectItem = ({ name }: ProjectItemProps) => {
   const { projects } = content.home.main;
 
   let project = projects.filter((p) => p.name === name);

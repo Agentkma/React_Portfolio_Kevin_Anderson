@@ -1,12 +1,8 @@
-// ! External
 import Accessibility from "@mui/icons-material/Accessibility";
 import Create from "@mui/icons-material/Create";
 import School from "@mui/icons-material/School";
 import WB_Sunny from "@mui/icons-material/WbSunny";
-import React from "react";
 import styled from "styled-components";
-
-// ! Internal
 
 import { content } from "../../Assets/Content";
 import { mediaMin } from "../../Theme";
@@ -14,7 +10,13 @@ import { SdivLineSmall } from "../../shared/StyledComponents";
 
 const values = content.about.main.values;
 
-const renderIcon = icon => {
+interface Value {
+    icon: string;
+    title: string;
+    text: string;
+}
+
+const renderIcon = (icon: string): JSX.Element => {
     switch (icon) {
         case "Ssun":
             return <Ssun />;
@@ -29,8 +31,8 @@ const renderIcon = icon => {
     }
 };
 
-const renderArticleItems = () => {
-    return values.map((a, i) => {
+const renderArticleItems = (): JSX.Element[] => {
+    return values.map((a: Value, i: number) => {
         const { icon, title, text } = a;
         return (
             <SarticleV as="article" key={i}>
@@ -42,6 +44,7 @@ const renderArticleItems = () => {
         );
     });
 };
+
 
 const Values = () => {
     return <Ssection>{renderArticleItems()}</Ssection>;

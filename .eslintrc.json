@@ -1,5 +1,9 @@
 {
-    "plugins": ["testing-library"],
+    "plugins": [
+        "testing-library",
+        "jest-dom",
+        "react"
+    ],
     "extends": [
         "eslint:recommended",
         "plugin:jest-dom/recommended",
@@ -9,12 +13,17 @@
     ],
     "parserOptions": {
         "sourceType": "module",
-        "ecmaVersion": 6,
+        "ecmaVersion": 15,
         "ecmaFeatures": {
             "jsx": true
         }
     },
     "rules": {
-        "react/display-name": ["enabled", { "ignoreTranspilerName": true }]
+        "react/display-name": [
+            "warn",
+            {
+                "ignoreTranspilerName": true
+            }
+        ]
     }
 }

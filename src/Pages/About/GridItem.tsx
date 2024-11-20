@@ -6,7 +6,8 @@ import {
 } from "../../shared/StyledComponents";
 import { mediaMin } from "../../Theme";
 import { content } from "../../Assets/Content";
-import { VALUE_IMAGE } from "../../constants/index";
+// @ts-ignore
+import { VALUE_IMAGE } from "../../Constants/index";
 
 interface GridItemProps {
     index: number;

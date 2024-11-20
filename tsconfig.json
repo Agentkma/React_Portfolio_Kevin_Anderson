@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "baseUrl": "src",
+        "baseUrl": "./src",
         "paths": {
             "test-utils": [
-                "./utils/test-utils"
+                "utils/test-utils.ts"
             ]
         },
         "target": "es5",
@@ -19,8 +19,10 @@
         "forceConsistentCasingInFileNames": true,
         "noFallthroughCasesInSwitch": true,
         "module": "esnext",
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "resolveJsonModule": true,
+        "allowImportingTsExtensions": true,
+        "allowArbitraryExtensions": true,
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx"

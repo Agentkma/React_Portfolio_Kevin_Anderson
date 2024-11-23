@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 import { content } from "../../../Assets/Content";
 import { Scontainer, Srow } from "../../../shared/StyledComponents";
+import prevSvg from "../../../Assets/Images/prev.svg";
+import gridSvg from "../../../Assets/Images/grid.svg";
+import nextSvg from "../../../Assets/Images/next.svg";
 
 interface ProjectNavProps {
   gridNavHref: string;
@@ -42,7 +45,7 @@ function ProjectNav({ gridNavHref }: ProjectNavProps) {
                   <Simg
                     alt="left arrow"
                     title="left arrow button"
-                    src={require("../../../Assets/Images/prev.svg")}
+                    src={prevSvg}
                   />
                 </Link>
               </Sli>
@@ -51,7 +54,7 @@ function ProjectNav({ gridNavHref }: ProjectNavProps) {
                   <Simg
                     alt="image grid icon"
                     title="image grid icon"
-                    src={require("../../../Assets/Images/grid.svg")}
+                    src={gridSvg}
                   />
                 </a>
               </Sli>
@@ -60,7 +63,7 @@ function ProjectNav({ gridNavHref }: ProjectNavProps) {
                   <Simg
                     alt="right arrow"
                     title="right arrow button"
-                    src={require("../../../Assets/Images/next.svg")}
+                    src={nextSvg}
                   />
                 </Link>
               </Sli>

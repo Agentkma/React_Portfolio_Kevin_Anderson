@@ -1,4 +1,4 @@
-import moment from "moment";;
+import moment from "moment";
 import styled from "styled-components";
 
 import { content } from "../../Assets/Content";

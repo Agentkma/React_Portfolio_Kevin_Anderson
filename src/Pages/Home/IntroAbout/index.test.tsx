@@ -3,7 +3,7 @@ import React from "react";
 
 import { IntroAbout } from "./index";
 // import react-testing methods
-import { render } from "test-utils";
+import { render } from "../../../utils/test-utils";
 
 test("snapshot", () => {
     const { asFragment } = render(<IntroAbout />);

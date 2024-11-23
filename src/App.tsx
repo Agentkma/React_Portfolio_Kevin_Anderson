@@ -33,9 +33,9 @@ const App: React.FC = () => {
         <ErrorBoundary>
           <WorksFilterContext.Provider
             value={{ showWorksFilter, toggleWorksFilter }}
-          >
+          ><Router>
             <Navigation />
-            <Router>
+            
               <Main>
                 <Routes>
                   <Route path="/" element={<Home />} />
@@ -60,6 +60,8 @@ const App: React.FC = () => {
     </Div>
   );
 };
+
+App.displayName = "Kevin Anderson Portfolio";
 
 export default App;
 

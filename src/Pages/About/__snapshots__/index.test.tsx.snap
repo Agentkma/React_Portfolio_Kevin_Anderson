@@ -1,0 +1,445 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-eOzmre gUQBoy"
+  >
+    <section
+      class="sc-khLCKb sc-huXwEz tDXsr cOZrsh"
+    >
+      <div
+        class="sc-fAUdSK gkZxdF"
+      >
+        <div
+          class="sc-blHHSb cYpmAB"
+        >
+          <div
+            class="sc-gtLWhw cqYCkV"
+          >
+            <article
+              class="sc-dstKZu jxpjjh"
+            >
+              <h6
+                class="sc-FFETS dzmuza"
+              >
+                Welcome to my portfolio site.
+              </h6>
+              <div
+                class="sc-dntaoT bGSjd"
+              />
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      class="sc-hsfCcR doWsGU"
+    >
+      <section
+        class="sc-ghWlax igNKes"
+      >
+        <article
+          class="sc-eauhAA edALub"
+        >
+          <picture>
+            <source
+              srcset=""
+              type="image/jpg"
+            />
+            <img
+              alt="javascript and react code on screen"
+              class="sc-kLhKbu bhufPr"
+              src=""
+              title="coding"
+            />
+          </picture>
+           
+        </article>
+        <article
+          class="sc-fFoeYl hbHqWc"
+        >
+          <div>
+            <h3
+              class="sc-gQaihK hekbvY"
+            >
+              I like solving challenging problems
+            </h3>
+            <div
+              class="sc-dntaoT sc-ivxoEo bGSjd jdOLTe"
+            />
+            <h6
+              class="sc-dprtRQ dDVZYo"
+            >
+              And Building Creative Solutions.
+            </h6>
+          </div>
+        </article>
+        <article
+          class="sc-fFoeYl hbHqWc"
+        >
+          <div>
+            <h3
+              class="sc-gQaihK hekbvY"
+            >
+              I love to learn and grow
+            </h3>
+            <div
+              class="sc-dntaoT sc-ivxoEo bGSjd jdOLTe"
+            />
+            <h6
+              class="sc-dprtRQ dDVZYo"
+            >
+              That is My Passion.
+            </h6>
+          </div>
+        </article>
+        <article
+          class="sc-eauhAA edALub"
+        >
+          <picture>
+            <source
+              srcset=""
+              type="image/jpg"
+            />
+            <img
+              alt="human face profile view with universe inside the head"
+              class="sc-kLhKbu bhufPr"
+              src=""
+              title="learning"
+            />
+          </picture>
+           
+        </article>
+        <article
+          class="sc-eauhAA edALub"
+        >
+          <picture>
+            <source
+              srcset=""
+              type="image/jpg"
+            />
+            <img
+              class="sc-kLhKbu bhufPr"
+              src=""
+            />
+          </picture>
+           
+        </article>
+        <article
+          class="sc-fFoeYl hbHqWc"
+        >
+          <div>
+            <h4
+              class="sc-gQaihK sc-iuUfFv hekbvY exMlYX"
+            >
+              My Story
+            </h4>
+            <div
+              class="sc-dntaoT sc-ivxoEo bGSjd jdOLTe"
+            />
+            <p
+              class="sc-eUlrpB hluwfO"
+            >
+              <span>
+                My first career was in construction management. 
+                <br />
+                 
+                <br />
+              </span>
+              <span>
+                Managing different teams and employees while solving the problems of custom building was challenging. I enjoyed finding improvements in our product and process through continuous process improvement. 
+                <br />
+                 
+                <br />
+              </span>
+              <span>
+                I decided to apply my love for problem solving and solution building to the world of technology which I had become more and more interested in. 
+                <br />
+                 
+                <br />
+              </span>
+              <span>
+                My technical education has been primarily through project based course education with Treehouse, Galvanize, and Udemy. In addition I've learned from working with others in person, many other web based education sources, and of course documentation. 
+                <br />
+                 
+                <br />
+              </span>
+              <span>
+                I also love to laugh, read, hike, bike, snowboard, and spending time with my family and dog. 
+                <br />
+                 
+                <br />
+              </span>
+            </p>
+          </div>
+        </article>
+        <article
+          class="sc-fFoeYl hbHqWc"
+        >
+          <div>
+            <h4
+              class="sc-gQaihK sc-iuUfFv hekbvY exMlYX"
+            >
+              My Goals
+            </h4>
+            <div
+              class="sc-dntaoT sc-ivxoEo bGSjd jdOLTe"
+            />
+            <p
+              class="sc-eUlrpB hluwfO"
+            >
+              <span>
+                My goals are to continue to learn about life, reality, and grow my abilities to create solutions through code as part of a team. 
+                <br />
+                 
+                <br />
+              </span>
+              <span>
+                I want to share my knowledge and learn from others. 
+                <br />
+                 
+                <br />
+              </span>
+              <span>
+                I want to make the most of my time on earth and continue to learn, grow, and contribute as long as I'm here. 
+                <br />
+                 
+                <br />
+              </span>
+            </p>
+          </div>
+        </article>
+        <article
+          class="sc-eauhAA edALub"
+        >
+          <picture>
+            <source
+              srcset=""
+              type="image/jpg"
+            />
+            <img
+              class="sc-kLhKbu bhufPr"
+              src=""
+            />
+          </picture>
+           
+        </article>
+      </section>
+      <section
+        class="sc-geXuza iLdbEK"
+      >
+        <div
+          class="sc-blHHSb cYpmAB"
+        >
+          <article
+            class="sc-hJRrWL kNMSuF"
+          >
+            <img
+              alt="profile pic of kevin anderson"
+              class="sc-kLhKbu bhufPr"
+              src=""
+              title="profile pic"
+            />
+            <div
+              class="sc-fwzISk fdBsJr"
+            >
+              <h4
+                class="sc-hbtGpV coaAgN"
+              >
+                Kevin Anderson
+              </h4>
+              <div
+                class="sc-dntaoT sc-ivxoEo bGSjd jdOLTe"
+              />
+              <h6
+                class="sc-bMTdWJ hBNgcB"
+              >
+                Software Developer
+              </h6>
+            </div>
+            <div
+              class="sc-jhZTHU fUlyHE"
+            >
+              <p
+                class="sc-epnzzT dqFKCV"
+              >
+                Lifelong Learner. Humanist. Realist. Rational Optimist. Husband. Coder.
+              </p>
+              <div
+                class="sc-dntaoT sc-ivxoEo bGSjd jdOLTe"
+              />
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
+        class="sc-uYFMi gEtkjo"
+      >
+        <div
+          class="sc-gtLWhw cqYCkV"
+        >
+          <article
+            class="sc-bbQqnZ iJeVYM"
+          >
+            <ul
+              class="sc-iwXfZk eYsKef"
+            />
+          </article>
+        </div>
+      </section>
+      <section
+        class="sc-dhCplO rXPkq"
+      >
+        <article
+          class="sc-eMwmJz exCXa-d"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium sc-drVZOg bkRAEd css-1umw9bq-MuiSvgIcon-root"
+            data-testid="WbSunnyIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m6.76 4.84-1.8-1.79-1.41 1.41 1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zm-3.21 13.7 1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6m-1 16.95h2V19.5h-2zm-7.45-3.91 1.41 1.41 1.79-1.8-1.41-1.41z"
+            />
+          </svg>
+          <h3
+            class="sc-jSSkKI dvFqKT"
+          >
+            Live
+          </h3>
+          <div
+            class="sc-dntaoT sc-ivxoEo sc-iqyJx bGSjd jdOLTe hnuLug"
+          />
+          <p
+            class="sc-eDHQDy jYuyjH"
+          >
+            to enjoy family, friends, and this wonderful planet.
+          </p>
+        </article>
+        <article
+          class="sc-eMwmJz exCXa-d"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium sc-eWPXlR bcDivj css-1umw9bq-MuiSvgIcon-root"
+            data-testid="SchoolIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z"
+            />
+          </svg>
+          <h3
+            class="sc-jSSkKI dvFqKT"
+          >
+            Learn
+          </h3>
+          <div
+            class="sc-dntaoT sc-ivxoEo sc-iqyJx bGSjd jdOLTe hnuLug"
+          />
+          <p
+            class="sc-eDHQDy jYuyjH"
+          >
+            about the world, people, and creative coding.
+          </p>
+        </article>
+        <article
+          class="sc-eMwmJz exCXa-d"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium sc-jIyAiq cRDkxE css-1umw9bq-MuiSvgIcon-root"
+            data-testid="AccessibilityIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m9 7h-6v13h-2v-6h-2v6H9V9H3V7h18z"
+            />
+          </svg>
+          <h3
+            class="sc-jSSkKI dvFqKT"
+          >
+            Grow
+          </h3>
+          <div
+            class="sc-dntaoT sc-ivxoEo sc-iqyJx bGSjd jdOLTe hnuLug"
+          />
+          <p
+            class="sc-eDHQDy jYuyjH"
+          >
+            as a human, husband, and team member.
+          </p>
+        </article>
+        <article
+          class="sc-eMwmJz exCXa-d"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium sc-lnsxGb eyUSHr css-1umw9bq-MuiSvgIcon-root"
+            data-testid="CreateIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"
+            />
+          </svg>
+          <h3
+            class="sc-jSSkKI dvFqKT"
+          >
+            Create
+          </h3>
+          <div
+            class="sc-dntaoT sc-ivxoEo sc-iqyJx bGSjd jdOLTe hnuLug"
+          />
+          <p
+            class="sc-eDHQDy jYuyjH"
+          >
+            solutions to challenging problems and apps that imrove lives.
+          </p>
+        </article>
+      </section>
+      <section
+        class="sc-giBObj jUyQCx"
+      >
+        <div
+          class="sc-gtLWhw cqYCkV"
+        >
+          <article
+            class="sc-UblHX gevelf"
+          >
+             
+            <h3
+              class="sc-fufdwm ccaXfL"
+            >
+              Interested in working together?
+            </h3>
+            <div
+              class="sc-dntaoT sc-ivxoEo sc-iqyJx bGSjd jdOLTe hnuLug"
+            />
+            <h6
+              class="sc-Rjrgp kBuIch"
+            >
+              Let's talk
+            </h6>
+            <a
+              href="/contact"
+            >
+              <span
+                class="sc-frniUE eizNow"
+              >
+                Contact Me
+              </span>
+            </a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+</DocumentFragment>
+`;

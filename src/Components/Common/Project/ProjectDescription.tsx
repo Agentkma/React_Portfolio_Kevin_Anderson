@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FC } from "react";
 
 // ! Internal
 import {
@@ -11,10 +12,11 @@ import { mediaMin } from "../../../Theme";
 import { content  } from "../../../Assets/Content";
 import { ProjectIndex } from "shared/types";
 
-export function ProjectDescription({ project }:ProjectIndex) {
+export const ProjectDescription:FC<ProjectIndex> = ({ project })=> {
     const descriptions = content.projects[Number(project)].description;
 
-    return descriptions.map(
+    return <> 
+    {descriptions.map(
         ({
             taglineHeading,
             taglineSubHeading,
@@ -63,7 +65,8 @@ export function ProjectDescription({ project }:ProjectIndex) {
                 </Scontainer>
             </InnerWrap>
         )
-    );
+    )}
+    </>
 }
 
 export default ProjectDescription;

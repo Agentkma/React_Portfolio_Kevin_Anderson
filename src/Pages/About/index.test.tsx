@@ -1,12 +1,9 @@
-// import dependencies
-import React from "react";
-
 import { About } from "./index";
-// import react-testing methods
-import { render } from "test-utils";
+
+import { renderWithRouter } from "../../utils/test-utils";
 
 test("snapshot", () => {
-    const { asFragment } = render(<About />);
+    const { asFragment } = renderWithRouter(<About />, { route: "/about" });
 
     expect(asFragment()).toMatchSnapshot();
 });

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FC } from "react";
 
 import {
     SdivLineSmall,
@@ -14,7 +15,7 @@ interface GridItemProps {
     type: string;
 }
 
-export const GridItem = ({ index, type }: GridItemProps) => {
+export const GridItem:FC<GridItemProps> = ({ index, type } ) => {
     const { gridItems } = content.about.main;
     const gridItem = gridItems[index];
 
@@ -77,6 +78,9 @@ export const GridItem = ({ index, type }: GridItemProps) => {
                 </div>
             </SarticleHeroTxt>
         );
+    }
+    else {
+        return null;
     }
 };
 

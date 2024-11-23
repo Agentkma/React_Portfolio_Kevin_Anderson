@@ -19,10 +19,10 @@
         "forceConsistentCasingInFileNames": true,
         "noFallthroughCasesInSwitch": true,
         "module": "esnext",
-        "moduleResolution": "bundler",
+        "moduleResolution": "node",
         "resolveJsonModule": true,
-        "allowImportingTsExtensions": true,
-        "allowArbitraryExtensions": true,
+        //"allowImportingTsExtensions": true,
+        // "allowArbitraryExtensions": true,
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx"

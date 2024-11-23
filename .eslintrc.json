@@ -7,13 +7,13 @@
     "extends": [
         "eslint:recommended",
         "plugin:jest-dom/recommended",
-        "plugin:testing-library/recommended",
+        // "plugin:testing-library/recommended",
         "plugin:testing-library/react",
         "plugin:react/recommended"
     ],
     "parserOptions": {
         "sourceType": "module",
-        "ecmaVersion": 15,
+        "ecmaVersion": 2020,
         "ecmaFeatures": {
             "jsx": true
         }

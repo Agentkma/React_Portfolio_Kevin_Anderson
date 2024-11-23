@@ -3,7 +3,7 @@ import React from "react";
 
 // import react-testing methods
 
-import { screen, render, userEvent, fireEvent } from "test-utils";
+import { screen, renderWithRouter, userEvent, fireEvent } from "../../utils/test-utils";
 
 import { legendMessage } from "./Form";
 // the component to test
@@ -13,7 +13,7 @@ test("should have correct Legend text upon first view", () => {
     // Arrange
 
     // The render method renders a React element into the DOM and returns utility functions for testing the component
-    render(<Contact />);
+    renderWithRouter(<Contact />, { route: "/contact" });
 
     const legendText = screen.getByText(`${legendMessage.default}`);
     // Assert
@@ -21,7 +21,7 @@ test("should have correct Legend text upon first view", () => {
 });
 
 test("should have correct error messages if inputs left blank", async () => {
-    render(<Contact />);
+    renderWithRouter(<Contact />, { route: "/contact" });
 
     const submitBtn = screen.getByText("Send Message");
 
@@ -40,7 +40,7 @@ test("should have correct error messages if inputs left blank", async () => {
 test("should give error message if name input too short", async () => {
     // The render method renders a React element into the DOM and returns utility functions for testing the component
 
-    render(<Contact />);
+    renderWithRouter(<Contact />, { route: "/contact" });
     const nameField = screen.getByPlaceholderText("Your Name");
     const submitBtn = screen.getByText("Send Message");
 

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="sc-kLhKbu ejqDqW"
+  >
+    <div
+      class="sc-ixGGxD ktPDgB"
+    >
+      <div
+        class="sc-khLCKb ceYbfy"
+      >
+        <div
+          class="sc-ghWlax eVqhLY"
+        >
+          <article
+            class="sc-dstKZu fIpumk"
+          >
+            <div
+              class="sc-keTIit AHsWQ"
+            >
+              <h6
+                class="sc-dpBQxM gZsyXj"
+              >
+                My name is Kevin Anderson
+              </h6>
+            </div>
+            <div
+              class="sc-jwIPbr dQdfUs"
+            >
+              <h6
+                class="sc-cHqXqK hSQKHR"
+              >
+                <span
+                  class="sc-dntaoT sc-jtQUzJ gpVQnc jsnuzY"
+                />
+              </h6>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

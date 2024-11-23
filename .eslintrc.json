@@ -1,20 +1,33 @@
 {
-    "plugins": ["testing-library"],
+    "plugins": [
+        "@typescript-eslint",
+        "testing-library",
+        "jest-dom",
+        "react"
+    ],
     "extends": [
         "eslint:recommended",
         "plugin:jest-dom/recommended",
-        "plugin:testing-library/recommended",
+        // "plugin:testing-library/recommended",
         "plugin:testing-library/react",
         "plugin:react/recommended"
     ],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "sourceType": "module",
-        "ecmaVersion": 6,
+        "ecmaVersion": 2020,
         "ecmaFeatures": {
             "jsx": true
         }
     },
     "rules": {
-        "react/display-name": ["enabled", { "ignoreTranspilerName": true }]
+        "react/display-name": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ]
     }
 }

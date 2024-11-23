@@ -1,8 +1,5 @@
-import { useContext } from "react";
+import { useContext, FC } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { func, object } from "prop-types";
-
-// ! Internal
 
 import { theme } from "../../../Theme";
 import {
@@ -18,7 +15,7 @@ import { WorksFilterContext } from "../../../context";
 
 interface NavBarProps {click: () => void;}
 
-export const NavBar = ({ click }:NavBarProps) => {
+export const NavBar:FC<NavBarProps> = ({ click }) => {
   const { toggleWorksFilter } = useContext(WorksFilterContext);
   const location = useLocation();
   return (
@@ -26,7 +23,7 @@ export const NavBar = ({ click }:NavBarProps) => {
           <Link to={"./"}>
             <StyledLogoRotate>
               {" "}
-              <LogoImg src={require("../../../Assets/Images/logo@2x.svg")} />
+              <LogoImg src={require("../../../Assets/Images/logo@2x.png")} />
             </StyledLogoRotate>
           </Link>
           <Container>
@@ -51,10 +48,6 @@ export const NavBar = ({ click }:NavBarProps) => {
           </Container>
         </MenuCollapser>
   );
-};
-NavBar.propTypes = {
-  click: func,
-  location: object,
 };
 
 export default NavBar;

@@ -1,5 +1,6 @@
 {
     "plugins": [
+        "@typescript-eslint",
         "testing-library",
         "jest-dom",
         "react"
@@ -11,6 +12,7 @@
         "plugin:testing-library/react",
         "plugin:react/recommended"
     ],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "sourceType": "module",
         "ecmaVersion": 2020,
@@ -19,10 +21,17 @@
         }
     },
     "rules": {
+        "react/react-in-jsx-scope": "off",
         "react/display-name": [
             "warn",
             {
                 "ignoreTranspilerName": true
+            }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_"
             }
         ]
     }

@@ -1,7 +1,19 @@
-import { css, DefaultTheme, RuleSet } from "styled-components";
-import { TaggedTemplateExpression, TemplateLiteral } from "typescript";
+import { css, DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
+  colorBgPrimary: "white",
+  colorBgSecondary: "#292929",
+  colorBgTertiary: "#f0f4f4",
+  colorBgQuaternary: "#121212",
+  colorFontPrimary: "#666",
+  colorFontSecondary: "white",
+  colorFontTertiary: "#121212",
+  colorFontQuaternary: "#292929",
+  colorFontQuinternary: "#999999",
+  colorFontHoverPrimary: "#ff2238 !important",
+  colorAccentPrimary: "#ff2238 !important",
+  colorAccentSecondary: "#eee",
+  colorAccentTertiary: "#000",
   colorBorderPrimary: "#121212",
   fontSizeSmall: "0.7rem",
   fontSizePrimary: "1rem",
@@ -37,6 +49,12 @@ const sizes: Sizes = {
   xlDesktop: 1200,
 };
 
+type MediaFunction = (
+  ..._args: Parameters<typeof css>
+) => ReturnType<typeof css>;
+
+type Media = Record<keyof Sizes, MediaFunction>;
+
 // Iterate through the sizes and create a media template
 export const mediaAnd = Object.keys(sizesAnd).reduce((acc, label) => {
   const key = label as keyof SizesAnd;
@@ -47,7 +65,7 @@ export const mediaAnd = Object.keys(sizesAnd).reduce((acc, label) => {
     }
   `;
   return acc;
-}, {} as Record<keyof SizesAnd, (...args: Parameters<typeof css>) => ReturnType<typeof css>>);
+}, {} as Media);
 
 export const media = Object.keys(sizes).reduce((acc, label) => {
   const key = label as keyof Sizes;
@@ -58,12 +76,11 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
     }
   `;
   return acc;
-}, {} as Record<keyof Sizes, (...args: Parameters<typeof css>) => ReturnType<typeof css>>);
+}, {} as Media);
 
 // Iterate through the sizes and create a media template
 export const mediaMin = Object.keys(sizes).reduce((acc, label) => {
   const key = label as keyof Sizes;
-  //@ts-ignore
   acc[key] = (...args: Parameters<typeof css>) => css`
     @media (min-width: ${sizes[key] / 16}rem) {
       ${css(...args)};
@@ -71,4 +88,4 @@ export const mediaMin = Object.keys(sizes).reduce((acc, label) => {
   `;
 
   return acc;
-}, {} as Record<keyof Sizes, (...args: Parameters<typeof css>) => ReturnType<typeof css>>);
+}, {} as Media);

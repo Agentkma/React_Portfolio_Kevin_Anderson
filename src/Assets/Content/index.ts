@@ -146,21 +146,18 @@ export const content: Content = {
       mainHeading: "My name is Kevin Anderson",
       subHeading: [
         "I'm a Software Developer.",
-        "I work in Denver, CO.",
-        "I create Web Apps.",
-        "I'm a solution builder...",
         "a Lifelong Learner...",
         "a Rational Optimist...",
         "a Humanist and...",
-        "an Open Source enthusiast.",
-        "I built this app with ...",
-        "React ...",
-        "@Reach-Router ...",
-        "Styled-Components ...",
-        "@Material-ui ...",
+        "I built this app with...",
+        "Typescript...",
+        "React...",
+        "@React-Router...",
+        "Styled-Components...",
+        "@Material-ui...",
         "email-js...",
         "Formik and...",
-        "@Testing-Library/React.",
+        "@Testing-Library",
       ],
     },
     main: {
@@ -1432,7 +1429,7 @@ export const content: Content = {
   contact: {
     header: {
       email: "kevin.m.anderson@icloud.com",
-      location: "Denver, CO",
+      location: "Mount Holly, VT",
     },
     form: {
       submit: "Send Message",

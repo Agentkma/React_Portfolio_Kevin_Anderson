@@ -1,6 +1,11 @@
 import React, { useState, useCallback } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import {
+Outlet,
+  Routes,
+  Route
+} from "react-router-dom";
 
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
@@ -20,6 +25,17 @@ import Navigation from "./Components/Navigation";
 import Footer from "./Components/Footer";
 import { WorksFilterContext } from "./context";
 
+const Layout = () => { 
+  return (
+    <Main>
+      <Navigation />
+      <Outlet />
+      <Footer />
+    </Main>
+  );
+ }
+console.log('theme',theme)
+
 const App: React.FC = () => {
   const [showWorksFilter, setShowWorksFilter] = useState<boolean>(false);
 
@@ -33,27 +49,28 @@ const App: React.FC = () => {
         <ErrorBoundary>
           <WorksFilterContext.Provider
             value={{ showWorksFilter, toggleWorksFilter }}
-          ><Router>
-            <Navigation />
-            
-              <Main>
+          >
                 <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/project1" element={<Project1 />} />
-                  <Route path="/project2" element={<Project2 />} />
-                  <Route path="/project3" element={<Project3 />} />
-                  <Route path="/project4" element={<Project4 />} />
-                  <Route path="/project5" element={<Project5 />} />
-                  <Route path="/project6" element={<Project6 />} />
-                  <Route path="/project7" element={<Project7 />} />
-                  <Route path="/project8" element={<Project8 />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="*" element={<Error />} />
+                  <Route  element={<Layout/>} > 
+                    <Route index element={<Home />} />
+                    <Route path="project1" element={<Project1 />} />
+                    <Route path="project2" element={<Project2 />} />
+                    <Route path="project3" element={<Project3 />} />
+                    <Route path="project4" element={<Project4 />} />
+                    <Route path="project5" element={<Project5 />} />
+                    <Route path="project6" element={<Project6 />} />
+                    <Route path="project7" element={<Project7 />} />
+                    <Route path="project8" element={<Project8 />} />
+                    <Route path="contact" element={<Contact />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="*" element={<Error />} />
+                  </Route>
+                 
+                  
                 </Routes>
-              </Main>
-            </Router>
-            <Footer  />
+                
+
+         
           </WorksFilterContext.Provider>
         </ErrorBoundary>
       </ThemeProvider>

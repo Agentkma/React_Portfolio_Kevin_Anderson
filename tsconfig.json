@@ -25,7 +25,11 @@
         // "allowArbitraryExtensions": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        "types": [
+            "react",
+            "jest"
+        ],
     },
     "include": [
         "src",

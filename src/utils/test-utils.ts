@@ -2,9 +2,9 @@ import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
-import { ReactNode } from "react";
+import { ReactElement } from "react";
 
-const renderWithRouter = (ui: React.ReactElement, { route = "/" } = {}) => {
+const renderWithRouter = (ui: ReactElement, { route = "/" } = {}) => {
   window.history.pushState({}, `Test page at route ${route}`, route);
 
   return {

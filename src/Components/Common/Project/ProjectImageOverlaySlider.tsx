@@ -9,15 +9,11 @@ import { content } from "../../../Assets/Content";
 import { FadeInPageContainer } from "../../../Theme/animations";
 import { ProjectIndex } from "shared/types";
 type ProjectImageOverlaySliderProps ={
-    click: () => void;
-    counterPlus: () => void;
-    counterMinus: () => void;
+    onClick: () => void;
    
 } &  ProjectIndex
 export function ProjectImageOverlaySlider({
-    click,
-    counterPlus,
-    counterMinus,
+    onClick,
     project
 }:ProjectImageOverlaySliderProps) {
     const { imgContainer } = content.projects[Number(project)];
@@ -25,7 +21,7 @@ export function ProjectImageOverlaySlider({
     return (
         <FadeInPageContainer>
             <Ssection>
-                <ScloseIconMod onClick={click} />
+                <ScloseIconMod onClick={onClick} />
                 <Sslider
                     autoSlide={false}
                     cardsToShow={1}
@@ -35,8 +31,8 @@ export function ProjectImageOverlaySlider({
                     showDots
                     Dot={<Picture />}
                     DotsWrapper={() => <Sdots />}
-                    RightArrow={<SrightArrow onClick={counterPlus} />}
-                    LeftArrow={<SleftArrow onClick={counterMinus} />}
+                    RightArrow={<SrightArrow />}
+                    LeftArrow={<SleftArrow  />}
                 >
                     {imgContainer.map((img, index) => {
                         const { alt, src, title } = img;

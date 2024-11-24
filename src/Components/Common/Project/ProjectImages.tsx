@@ -9,23 +9,18 @@ import { ProjectIndex } from "shared/types";
 
 const ProjectImages: React.FC< ProjectIndex> = ({ project }) => {
   const [showImageOverlaySlider, setShowImageOverlaySlider] = useState(false);
-  const [currentImg, setCurrentImg] = useState<number | null>(null);
-  const imgCount = content.projects[Number(project)].imgContainer.length;
 
-  const handleOverlayToggle = (index?: number) => {
-
+  const handleOverlayToggle = () => 
     setShowImageOverlaySlider((prev) => !prev);
-    if(index){
-        setCurrentImg(index + 1);
-    }
-  };
+   
+  
 
   const { imgContainer } = content.projects[Number(project)];
   const images = imgContainer.map((img, index) => (
     <article
       key={index}
       onClick={() => {
-        handleOverlayToggle(index);
+        handleOverlayToggle();
       }}
     >
       <Simg
@@ -40,10 +35,9 @@ const ProjectImages: React.FC< ProjectIndex> = ({ project }) => {
     <Ssection>
       {showImageOverlaySlider && (
         <ProjectImagesOverlaySlider
-          click={handleOverlayToggle}
+          onClick={handleOverlayToggle}
           project={project}
-          counterMinus={() => setCurrentImg((prev) => prev! - 1)}
-          counterPlus={() => setCurrentImg((prev) => prev! + 1)}
+        
         />
       )}
       {images}

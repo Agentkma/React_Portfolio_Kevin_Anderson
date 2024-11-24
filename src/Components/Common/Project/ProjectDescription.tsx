@@ -24,8 +24,8 @@ export const ProjectDescription:FC<ProjectIndex> = ({ project })=> {
             categories,
             delivered,
             liveSiteLink,
-        }) => (
-            <InnerWrap>
+        }, i) => (
+            <InnerWrap key ={`${delivered}-${i}`}>
                 <Scontainer>
                     <Ssection>
                         <Srow>

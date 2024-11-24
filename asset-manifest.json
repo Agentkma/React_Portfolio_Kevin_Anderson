@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React_Portfolio_Kevin_Anderson/static/css/main.724e9bea.css",
-    "main.js": "/React_Portfolio_Kevin_Anderson/static/js/main.925b1662.js",
+    "main.js": "/React_Portfolio_Kevin_Anderson/static/js/main.958af335.js",
     "static/media/KapturesKevBooks-1100x650.gif": "/React_Portfolio_Kevin_Anderson/static/media/KapturesKevBooks-1100x650.544d0817297e6d7187c9.gif",
     "static/media/customVP-550x325.gif": "/React_Portfolio_Kevin_Anderson/static/media/customVP-550x325.1b6ae09439a1d5983a5c.gif",
     "static/media/AlbumArtOne.gif": "/React_Portfolio_Kevin_Anderson/static/media/AlbumArtOne.51e5aa0f30d5f1739223.gif",
@@ -154,10 +154,10 @@
     "static/media/close.svg": "/React_Portfolio_Kevin_Anderson/static/media/close.33222e9c3821ba8eaf98.svg",
     "index.html": "/React_Portfolio_Kevin_Anderson/index.html",
     "main.724e9bea.css.map": "/React_Portfolio_Kevin_Anderson/static/css/main.724e9bea.css.map",
-    "main.925b1662.js.map": "/React_Portfolio_Kevin_Anderson/static/js/main.925b1662.js.map"
+    "main.958af335.js.map": "/React_Portfolio_Kevin_Anderson/static/js/main.958af335.js.map"
   },
   "entrypoints": [
     "static/css/main.724e9bea.css",
-    "static/js/main.925b1662.js"
+    "static/js/main.958af335.js"
   ]
 }

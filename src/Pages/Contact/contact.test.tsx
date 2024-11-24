@@ -1,22 +1,18 @@
-// import dependencies
 import React from "react";
 
-// import react-testing methods
 
 import { screen, renderWithRouter, userEvent, fireEvent } from "../../utils/test-utils";
 
 import { legendMessage } from "./Form";
-// the component to test
+
 import { Contact } from "./index";
 
 test("should have correct Legend text upon first view", () => {
-    // Arrange
 
-    // The render method renders a React element into the DOM and returns utility functions for testing the component
     renderWithRouter(<Contact />, { route: "/contact" });
 
     const legendText = screen.getByText(`${legendMessage.default}`);
-    // Assert
+ 
     expect(legendText).toBeInTheDocument();
 });
 
@@ -25,9 +21,8 @@ test("should have correct error messages if inputs left blank", async () => {
 
     const submitBtn = screen.getByText("Send Message");
 
-    // Assert
 
-    userEvent.click(submitBtn);
+    await userEvent.click(submitBtn);
 
     const nameFieldError = await screen.findByText("Name Required");
 
@@ -38,18 +33,16 @@ test("should have correct error messages if inputs left blank", async () => {
     expect(textFieldError).toBeInTheDocument();
 });
 test("should give error message if name input too short", async () => {
-    // The render method renders a React element into the DOM and returns utility functions for testing the component
-
+   
     renderWithRouter(<Contact />, { route: "/contact" });
     const nameField = screen.getByPlaceholderText("Your Name");
     const submitBtn = screen.getByText("Send Message");
 
-    // Act
     fireEvent.change(nameField, { target: { value: "jl" } });
 
-    // Assert
+  
 
-    userEvent.click(submitBtn);
+   await userEvent.click(submitBtn);
 
     const nameError = await screen.findByText("Too Short!");
 

@@ -12,6 +12,9 @@
         "plugin:testing-library/react",
         "plugin:react/recommended"
     ],
+    "env": {
+        "jest/globals": true
+    },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "sourceType": "module",

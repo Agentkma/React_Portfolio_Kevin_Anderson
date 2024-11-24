@@ -16,7 +16,7 @@ interface Value {
     text: string;
 }
 
-const renderIcon = (icon: string): JSX.Element => {
+const renderIcon = (icon: string)=> {
     switch (icon) {
         case "Ssun":
             return <Ssun />;
@@ -31,7 +31,7 @@ const renderIcon = (icon: string): JSX.Element => {
     }
 };
 
-const renderArticleItems = (): JSX.Element[] => {
+const renderArticleItems = () => {
     return values.map((a: Value, i: number) => {
         const { icon, title, text } = a;
         return (

@@ -1,4 +1,4 @@
-import  { useState, useEffect, useRef } from "react";
+import  { useState, useEffect, useRef, FC } from "react";
 import CountUp from 'react-countup';
 import styled from "styled-components";
 
@@ -9,21 +9,16 @@ import { mediaMin } from "../../Theme";
 
 const { stats } = content.about.main;
 
-function Stats() {
-    // ! State
+const Stats:FC =()=> {
 
     const [educationPoints, setEducationPoints] = useState(0);
     const [projects, setProjects] = useState(0);
-    const [skills, setSkills] = useState(45);
+    const [skills] = useState(45);
     const degreesCerts = 5
     const [showSkillAnimation, setShowSkillAnimation] = useState(false);
- 
-
-    // ! Misc
 
     const statsRef = useRef<HTMLDivElement>(null);
 
-    // ! Effects
 
     useEffect(() => {
         // getLinkedInSkills();
@@ -38,18 +33,19 @@ function Stats() {
     }, []);
 
     
-
-    // ! Methods
-
-    const listener = (e: Event) => {
+    const listener = () => {
         const _window = window;
         const scrollPos = _window.scrollY;
         const sectionPosition = statsRef.current ? parseInt(statsRef.current?.offsetTop.toString()) - 400 : 0;
 
+        
         if (scrollPos > sectionPosition && !showSkillAnimation) {
             setShowSkillAnimation(true);
-        } else if (scrollPos < sectionPosition && showSkillAnimation) {
-            console.log("inside else");
+            return 
+        } 
+        
+         if (scrollPos < sectionPosition && showSkillAnimation) {
+          
             setShowSkillAnimation(false);
         }
     };
@@ -63,14 +59,14 @@ function Stats() {
         setProjects(myJson.length);
     };
     // Todo: set up LI JS SDK
-    //https://developer.linkedin.com/docs/getting-started-js-sdk
-    const getLinkedInSkills = async () => {
-        const response = await fetch(
-            "https://api.linkedin.com/v2/skills?locale.language=en&locale.country=US"
-        );
-        const myJson = await response.json();
-        setSkills(myJson.elements.length);
-    };
+    // //https://developer.linkedin.com/docs/getting-started-js-sdk
+    // const getLinkedInSkills = async () => {
+    //     const response = await fetch(
+    //         "https://api.linkedin.com/v2/skills?locale.language=en&locale.country=US"
+    //     );
+    //     const myJson = await response.json();
+    //     setSkills(myJson.elements.length);
+    // };
 
     const getTreehousePoints = async () => {
         const response = await fetch(

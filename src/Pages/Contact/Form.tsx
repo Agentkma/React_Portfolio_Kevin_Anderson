@@ -110,7 +110,7 @@ export const Form = () => {
                     handleSubmit(values, actions, setLegend)
                 }
             >
-                {({ errors }) => (
+                {() => (
                     <Sform aria-label="contact form">
                         <Sfieldset>
                             <Slegend>{legend}</Slegend>

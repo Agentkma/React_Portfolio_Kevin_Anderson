@@ -21,13 +21,13 @@ interface Project {
     worksFilter: string[];
 }
 
-const renderProjects = (filterSelection: string): JSX.Element[] => {
+const renderProjects = (filterSelection: string) => {
     return projects
         .filter((p: Project) => {
             return p.worksFilter.includes(filterSelection);
         })
         .map((project: Project) => {
-            const { description, img, name } = project;
+            const {  name } = project;
 
             return (
                 <ProjectItem

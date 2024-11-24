@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "proto/about";
+
+package about;
+
+service AboutService {
+  // Sends the about data
+  rpc GetAbout (GetAboutRequest) returns (GetAboutResponse) {}
+}
+
+message Value {
+  string name = 1;
+  string description = 2;
+}
+
+message Profile {
+  string name = 1;
+  string title = 2;
+  repeated Value value = 3;
+}
+
+message About {
+  string goals = 1;
+  string story = 2;
+  Profile profile =3;
+}
+
+message GetAboutRequest {
+}
+
+
+message GetAboutResponse {
+  About about = 1;
+}

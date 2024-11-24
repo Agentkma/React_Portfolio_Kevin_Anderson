@@ -1,7 +1,7 @@
 {
   "name": "kevin-anderson-portfolio",
   "version": "0.1.0",
-  "homepage": "https://agentkma.github.io/React_Portfolio_Kevin_Anderson/",
+  "homepage": "https://agentkma.github.io/React_Portfolio_Kevin_Anderson",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -35,7 +35,8 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     ">0.2%",

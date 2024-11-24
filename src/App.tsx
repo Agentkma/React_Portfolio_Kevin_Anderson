@@ -34,7 +34,6 @@ const Layout = () => {
     </Main>
   );
  }
-console.log('theme',theme)
 
 const App: React.FC = () => {
   const [showWorksFilter, setShowWorksFilter] = useState<boolean>(false);
